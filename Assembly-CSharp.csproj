@@ -109,6 +109,7 @@
     <Compile Include="Assets\Scripts\EFT\Interactive\WorldInteractiveObject.cs" />
     <Compile Include="Assets\Scripts\EFT\InventoryLogic\EItemAttributeId.cs" />
     <Compile Include="Assets\Scripts\EFT\InventoryLogic\Item.cs" />
+    <Compile Include="Assets\Scripts\EFT\InventoryLogic\SightComponent.cs" />
     <Compile Include="Assets\Scripts\EFT\ItemGameSounds\ItemDropSounds.cs" />
     <Compile Include="Assets\Scripts\EFT\ItemGameSounds\ItemDropSurfaceSet.cs" />
     <Compile Include="Assets\Scripts\EFT\MovingPlatforms\MovingPlatform.cs" />
@@ -156,7 +157,10 @@
     <Compile Include="Assets\Scripts\NavMeshDoorLink.cs" />
     <Compile Include="Assets\Scripts\ObjectInHandsAnimator.cs" />
     <Compile Include="Assets\Scripts\PreviewPivot.cs" />
+    <Compile Include="Assets\Scripts\RainCondensator.cs" />
+    <Compile Include="Assets\Scripts\ScopeMaskRenderer.cs" />
     <Compile Include="Assets\Scripts\ScopePrefabCache.cs" />
+    <Compile Include="Assets\Scripts\SightModVisualControllers.cs" />
     <Compile Include="Assets\Scripts\StaticLoot.cs" />
     <Compile Include="Assets\Scripts\ThrowableSettings.cs" />
     <Compile Include="Assets\Scripts\TransformLinks.cs" />
@@ -708,6 +712,9 @@
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AssetBundleBrowser.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AssetBundleBrowser.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
