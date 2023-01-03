@@ -1,65 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace Diz.Skinning
 {
-    // Token: 0x020023C5 RID: 9157
     public class Skin : AbstractSkin
     {
-        [SerializeField] private Transform _baseTransform;
-
         [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
 
-        // Token: 0x0400BAFA RID: 47866
-        [SerializeField] private String[] _bonePaths;
+        [SerializeField] private string[] _bonePaths;
 
-        // Token: 0x0400BAFB RID: 47867
-        [SerializeField] private String _rootBonePath;
+        [SerializeField] private string _rootBonePath;
 
-        [Header("Set this in order to procedurally get all of the bonePaths")]
-        [SerializeField]
-        private Boolean _toggle;
-
-        // Token: 0x0400BAFC RID: 47868
-        private Skeleton skeleton_0;
-
-        private void OnValidate()
+#if UNITY_EDITOR
+        [ContextMenu("Procedurally get all bone paths")]
+        private void HydrateBonePaths()
         {
-            if (this._toggle)
+            _bonePaths = GetBonePaths(new List<string>(), _skinnedMeshRenderer.bones).ToArray();
+        }
+
+        private List<string> GetBonePaths(List<string> list, Transform[] bonesTransforms)
+        {
+            var rootTransform = UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetPrefabStage(gameObject)
+                .prefabContentsRoot.transform;
+            
+            foreach (var t in bonesTransforms)
             {
-                this._toggle = false;
-                if (this._baseTransform != null)
+                var bonePath = t.name;
+                var parent = t.parent;
+                while (parent != rootTransform)
                 {
-                    this._bonePaths = GetBonePaths(new List<String>(), this._baseTransform).ToArray();
+                    var parentName = parent.name;
+
+                    bonePath = parentName + "/" + bonePath;
+                    parent = parent.parent;
+                }
+
+                if (bonePath.Contains("Root_Joint"))
+                {
+                    list.Add(bonePath.Replace("Skeleton/", ""));
+                }
+                else
+                {
+                    list.Add(bonePath.Replace("Skeleton", "Root_Joint"));
                 }
             }
-        }
 
-        private static String GetGameObjectPath(Transform transform)
-        {
-            String path = transform.name;
-            while (transform.parent != null)
-            {
-                transform = transform.parent;
-                path = transform.name + "/" + path;
-            }
-
-            return path;
-        }
-
-        private List<String> GetBonePaths(List<String> list, Transform inputTransform) {
-            String transformName = GetGameObjectPath(inputTransform);
-            if (!transformName.Contains("HumanRibcage") && transformName.Contains("Spine3/")) {
-                transformName = transformName.Replace("HumanSpine3/", "HumanSpine3/Base HumanRibcage/");
-            }
-
-            list.Add($"Root_Joint/{transformName}");
-            for (Int32 i = 0; i < inputTransform.childCount; i++) {
-                this.GetBonePaths(list, inputTransform.GetChild(i));
-            }
-
+            _rootBonePath = list[0];
             return list;
         }
+#endif
     }
 }
