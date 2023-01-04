@@ -1,11 +1,39 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 // Token: 0x020005F2 RID: 1522
 public class PreviewPivot : MonoBehaviour
 {
-	// Token: 0x06002888 RID: 10376 RVA: 0x000B7398 File Offset: 0x000B5598
-	// Token: 0x04002406 RID: 9222
+
+	[ContextMenu("Apply Default Settings")]
+	public void ApplyDefaultSettings()
+	{
+		pivotPosition = GetBounds();
+		pivotRotation = new Quaternion(0f, 0.7071068f, 0, 0.7071068f);
+		Icon = new IconSettings
+		{
+			rotation = new Quaternion(0f, 0.8433914f, 0f, -0.537299633f),
+			boundsScale = 0.9f
+		};
+	}
+
+	private Vector3 GetBounds()
+	{
+		var bounds = gameObject.GetComponentsInChildren<Renderer>(false)
+			.Where(r => !r.name.Contains("linza") && r.name != "MuzzleJetCombinedMesh").Select(r => r.bounds)
+			.Where(b => b.extents != Vector3.zero);
+		var boundsArray = bounds as Bounds[] ?? bounds.ToArray();
+		return !boundsArray.Any() ? default : boundsArray.Aggregate(Encapsulate).center;
+	}
+
+	private Bounds Encapsulate(Bounds current, Bounds next)
+	{
+		current.Encapsulate(next);
+		return current;
+	}
+
 	public Vector3 pivotPosition = Vector3.zero;
 
 	// Token: 0x04002407 RID: 9223
@@ -18,7 +46,7 @@ public class PreviewPivot : MonoBehaviour
 	public Vector3 SpawnPosition = Vector3.zero;
 
 	// Token: 0x0400240A RID: 9226
-	public PreviewPivot.IconSettings Icon = new PreviewPivot.IconSettings();
+	public IconSettings Icon;
 
 	// Token: 0x020005F3 RID: 1523
 	[Serializable]
