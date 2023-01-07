@@ -21,7 +21,7 @@ namespace AssetBundleBrowser.Custom
 
         internal void OnEnable(Rect pos)
         {
-            idsLookup = new DictionaryData();
+            idsLookup = GetDataFromFile();
             _position = pos;
             _idsLookupDict = ToDictionary(idsLookup);
         }
@@ -64,12 +64,12 @@ namespace AssetBundleBrowser.Custom
 
             if (GUILayout.Button("SAVE DATA TO FILE"))
             {
-                
+                WriteDataToFile();
             }
             
             if (GUILayout.Button("GET DATA FROM FILE"))
             {
-                
+                GetDataFromFile();
             }
             
             //==\\ VISUAL DICTIONARY REPRESENTATION //==\\
@@ -145,11 +145,50 @@ namespace AssetBundleBrowser.Custom
             GUILayout.BeginVertical(GUILayout.MaxWidth(20f));
             for (var i = 0; i < idsLookup.sdk.Count; i++)
             {
-                if (!GUILayout.Button("x")) continue;
+                if (!GUILayout.Button(new GUIContent("x", "Remove item"))) continue;
                 idsLookup.RemoveAt(i);
             }
 
             GUILayout.EndVertical();
+        }
+        
+        private void WriteDataToFile()
+        {
+            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
+            using (var streamWriter = new StreamWriter(path))
+            {
+                var json = JsonUtility.ToJson(idsLookup, true);
+                streamWriter.Write(json);
+            }
+        }
+
+        private DictionaryData GetDataFromFile()
+        {
+            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
+            try
+            {
+                using (var streamReader = new StreamReader(path))
+                {
+                    var text = streamReader.ReadToEnd();
+                    var json = JsonUtility.FromJson<DictionaryData>(text);
+
+                    if (!json.SuitableForDict)
+                    {
+                        throw new Exception("Json is faulty");
+                    }
+
+                    return json;
+                }
+            }
+            catch
+            {
+                Debug.LogError($"Some error occured while reading data at path: {path}, creating new empty file.");
+                using (var streamWriter = new StreamWriter(path))
+                {
+                    streamWriter.Write("{}");
+                }
+                return new DictionaryData();
+            }
         }
         
         public void ReplacePathIDs(string bundleName, string outputDirectory, BuildAssetBundleOptions options)
@@ -207,7 +246,9 @@ namespace AssetBundleBrowser.Custom
         
         public List<long> sdk;
         public List<long> eft;
-
+        
+        public bool SuitableForDict => sdk.Count == eft.Count;
+        
         public void Add(long key, long value)
         {
             sdk.Add(key);
