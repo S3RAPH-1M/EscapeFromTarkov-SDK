@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using AssetBundleBrowser.AssetBundleModel;
+using AssetBundleBrowser.Custom;
 using UnityEditor;
 using UnityEngine;
 
@@ -28,6 +30,7 @@ namespace AssetBundleBrowser
             Browser,
             Builder,
             Inspect,
+            Replacer
         }
         [SerializeField]
         Mode m_Mode;
@@ -35,14 +38,10 @@ namespace AssetBundleBrowser
         [SerializeField]
         int m_DataSourceIndex;
 
-        [SerializeField]
-        internal AssetBundleManageTab m_ManageTab;
-
-        [SerializeField]
-        internal AssetBundleBuildTab m_BuildTab;
-
-        [SerializeField]
-        internal AssetBundleInspectTab m_InspectTab;
+        [SerializeField] internal AssetBundleManageTab m_ManageTab;
+        [SerializeField] internal AssetBundleBuildTab m_BuildTab;
+        [SerializeField] internal AssetBundleInspectTab m_InspectTab;
+        [SerializeField] internal AssetBundleReplacerTab m_ReplacerTab;
 
         private Texture2D m_RefreshTexture;
 
@@ -83,6 +82,9 @@ namespace AssetBundleBrowser
             if (m_InspectTab == null)
                 m_InspectTab = new AssetBundleInspectTab();
             m_InspectTab.OnEnable(subPos);
+            if (m_ReplacerTab == null)
+                m_ReplacerTab = new AssetBundleReplacerTab();
+            m_ReplacerTab.OnEnable(subPos);
 
             m_RefreshTexture = EditorGUIUtility.FindTexture("Refresh");
 
@@ -129,6 +131,13 @@ namespace AssetBundleBrowser
             Rect subPos = new Rect(0, padding, position.width, position.height - padding);
             return subPos;
         }
+        
+        private Rect GetReplacerWindowArea()
+        {
+            var subPos = new Rect(k_MenubarPadding * 1.5f, k_MenubarPadding, position.width - k_MenubarPadding * 2.5f,
+                position.height - k_MenubarPadding);
+            return subPos;
+        }
 
         private void Update()
         {
@@ -157,6 +166,9 @@ namespace AssetBundleBrowser
                 case Mode.Inspect:
                     m_InspectTab.OnGUI(GetSubWindowArea());
                     break;
+                case Mode.Replacer:
+                    m_ReplacerTab.OnGUI(GetReplacerWindowArea());
+                    break;
                 case Mode.Browser:
                 default:
                     m_ManageTab.OnGUI(GetSubWindowArea());
@@ -184,11 +196,13 @@ namespace AssetBundleBrowser
                     if (clicked)
                         m_InspectTab.RefreshBundles();
                     break;
+                case Mode.Replacer:
+                    GUILayout.Space(m_RefreshTexture.width + k_ToolbarPadding);
+                    break;
             }
 
             float toolbarWidth = position.width - k_ToolbarPadding * 4 - m_RefreshTexture.width;
-            //string[] labels = new string[2] { "Configure", "Build"};
-            string[] labels = new string[3] { "Configure", "Build", "Inspect" };
+            string[] labels = { "Configure", "Build", "Inspect", "PathID Replacer" };
             m_Mode = (Mode)GUILayout.Toolbar((int)m_Mode, labels, "LargeButton", GUILayout.Width(toolbarWidth) );
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
@@ -201,7 +215,7 @@ namespace AssetBundleBrowser
                 {
                     GUILayout.Label("Bundle Data Source:");
                     GUILayout.FlexibleSpace();
-                    var c = new GUIContent(string.Format("{0} ({1})", AssetBundleModel.Model.DataSource.Name, AssetBundleModel.Model.DataSource.ProviderName), "Select Asset Bundle Set");
+                    var c = new GUIContent(string.Format("{0} ({1})", Model.DataSource.Name, Model.DataSource.ProviderName), "Select Asset Bundle Set");
                     if (GUILayout.Button(c , EditorStyles.toolbarPopup) )
                     {
                         GenericMenu menu = new GenericMenu();
@@ -221,7 +235,7 @@ namespace AssetBundleBrowser
                                 {
                                     m_DataSourceIndex = counter;
                                     var thisDataSource = ds;
-                                    AssetBundleModel.Model.DataSource = thisDataSource;
+                                    Model.DataSource = thisDataSource;
                                     m_ManageTab.ForceReloadData();
                                 }
                             );
@@ -232,7 +246,7 @@ namespace AssetBundleBrowser
                     }
 
                     GUILayout.FlexibleSpace();
-                    if (AssetBundleModel.Model.DataSource.IsReadOnly())
+                    if (Model.DataSource.IsReadOnly())
                     {
                         GUIStyle tbLabel = new GUIStyle(EditorStyles.toolbar);
                         tbLabel.alignment = TextAnchor.MiddleRight;

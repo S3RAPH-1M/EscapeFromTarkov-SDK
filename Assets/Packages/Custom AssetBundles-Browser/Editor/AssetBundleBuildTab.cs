@@ -343,15 +343,18 @@ namespace AssetBundleBrowser
                 }
             }
 
-            ABBuildInfo buildInfo = new ABBuildInfo();
+            ABBuildInfo buildInfo = new ABBuildInfo
+            {
+                outputDirectory = m_UserData.m_OutputPath,
+                options = opt,
+                buildTarget = (BuildTarget)m_UserData.m_BuildTarget
+            };
 
-            buildInfo.outputDirectory = m_UserData.m_OutputPath;
-            buildInfo.options = opt;
-            buildInfo.buildTarget = (BuildTarget)m_UserData.m_BuildTarget;
             buildInfo.onBuild = (assetBundleName) =>
             {
-                if (m_InspectTab == null)
-                    return;
+                AssetBundleBrowserMain.instance.m_ReplacerTab.ReplacePathIDs(assetBundleName, buildInfo.outputDirectory,
+                    buildInfo.options);
+                if (m_InspectTab == null) return;
                 m_InspectTab.AddBundleFolder(buildInfo.outputDirectory);
                 m_InspectTab.RefreshBundles();
             };
