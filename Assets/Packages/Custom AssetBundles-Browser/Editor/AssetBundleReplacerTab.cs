@@ -17,6 +17,7 @@ namespace AssetBundleBrowser.Custom
         private Dictionary<AssetTypeValue, long> _fieldsToChange;
         private long _key;
         private long _value;
+        private bool _logging;
         private Rect _position;
         private Vector2 _scrollPosition;
 
@@ -38,6 +39,7 @@ namespace AssetBundleBrowser.Custom
         private void OnGUIEditor()
         {
             var titleStyle = new GUIStyle(EditorStyles.boldLabel) {alignment = TextAnchor.MiddleCenter, fontSize = 16};
+            _logging = GUI.Toggle(new Rect(17, 5, 15, 15), _logging, new GUIContent("", "Enable logging"));
             GUILayout.BeginArea(_position, titleStyle);
 
             EditorGUILayout.BeginHorizontal();
@@ -273,7 +275,8 @@ namespace AssetBundleBrowser.Custom
                     if (_fieldsToChange.ContainsKey(fieldValue)) continue;
 
                     _fieldsToChange.Add(fieldValue, eftPathID);
-                    Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.GetName()}");
+                    if (_logging)
+                        Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.GetName()}");
                 }
                 else
                 {
@@ -313,7 +316,7 @@ namespace AssetBundleBrowser.Custom
             {
                 case BuildAssetBundleOptions.None:
                 {
-                    var modPath = path + "_mod";
+                    var modPath = path + "_c";
                     using (var writer = new AssetsFileWriter(modPath))
                     {
                         bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZMA);
@@ -325,12 +328,14 @@ namespace AssetBundleBrowser.Custom
                 }
                 case BuildAssetBundleOptions.ChunkBasedCompression:
                 {
-                    File.Delete(path);
-                    using (var writer = new AssetsFileWriter(path))
+                    var modPath = path + "_c";
+                    using (var writer = new AssetsFileWriter(modPath))
                     {
                         bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZ4);
                     }
-
+                    am.UnloadAll();
+                    File.Delete(path);
+                    File.Move(modPath, path);
                     break;
                 }
             }
