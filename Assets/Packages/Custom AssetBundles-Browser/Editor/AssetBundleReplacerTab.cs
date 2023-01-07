@@ -14,6 +14,7 @@ namespace AssetBundleBrowser.Custom
     {
         [SerializeField] private DictionaryData idsLookup;
         private Dictionary<long, long> _idsLookupDict;
+        private Dictionary<AssetTypeValue, long> _fieldsToChange;
         private long _key;
         private long _value;
         private Rect _position;
@@ -24,6 +25,7 @@ namespace AssetBundleBrowser.Custom
             idsLookup = GetDataFromFile();
             _position = pos;
             _idsLookupDict = ToDictionary(idsLookup);
+            _fieldsToChange = new Dictionary<AssetTypeValue, long>();
         }
 
         internal void OnGUI(Rect pos)
@@ -40,6 +42,7 @@ namespace AssetBundleBrowser.Custom
 
             EditorGUILayout.BeginHorizontal();
             DrawGUIField("SDK PathID", ref _key, titleStyle);
+            GUILayout.Label("Made by SamSWAT", new GUIStyle(titleStyle){margin = new RectOffset(0,0,15,0)});
             DrawGUIField("EFT PathID", ref _value, titleStyle);
             EditorGUILayout.EndHorizontal();
 
@@ -53,9 +56,9 @@ namespace AssetBundleBrowser.Custom
                 }
 
                 idsLookup.Add(_key, _value);
-                _idsLookupDict.Add(_key,_value);
+                _idsLookupDict.Add(_key, _value);
             }
-            
+
             if (GUILayout.Button("CLEAR EVERYTHING"))
             {
                 idsLookup.Clear();
@@ -66,12 +69,12 @@ namespace AssetBundleBrowser.Custom
             {
                 WriteDataToFile();
             }
-            
+
             if (GUILayout.Button("GET DATA FROM FILE"))
             {
                 GetDataFromFile();
             }
-            
+
             //==\\ VISUAL DICTIONARY REPRESENTATION //==\\
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition);
             GUILayout.Space(5f);
@@ -82,10 +85,10 @@ namespace AssetBundleBrowser.Custom
             GUILayout.EndHorizontal();
             EditorGUILayout.EndScrollView();
             GUILayout.EndArea();
-            
+
             _idsLookupDict = ToDictionary(idsLookup);
         }
-        
+
         private Dictionary<long, long> ToDictionary(DictionaryData data)
         {
             var dictionary = new Dictionary<long, long>();
@@ -102,7 +105,7 @@ namespace AssetBundleBrowser.Custom
             field = EditorGUILayout.LongField(field);
             EditorGUILayout.EndVertical();
         }
-        
+
         private void DrawKeys()
         {
             GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.478f));
@@ -118,13 +121,13 @@ namespace AssetBundleBrowser.Custom
                     Debug.LogError($"{key} is already defined in SDK PathIDs");
                     break;
                 }
-                
+
                 idsLookup.sdk[i] = key;
             }
 
             GUILayout.EndVertical();
         }
-        
+
         private void DrawValues()
         {
             GUILayout.BeginVertical();
@@ -151,7 +154,7 @@ namespace AssetBundleBrowser.Custom
 
             GUILayout.EndVertical();
         }
-        
+
         private void WriteDataToFile()
         {
             var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
@@ -187,10 +190,11 @@ namespace AssetBundleBrowser.Custom
                 {
                     streamWriter.Write("{}");
                 }
+
                 return new DictionaryData();
             }
         }
-        
+
         public void ReplacePathIDs(string bundleName, string outputDirectory, BuildAssetBundleOptions options)
         {
             var path = $"{Directory.GetCurrentDirectory()}/{outputDirectory}/{bundleName}";
@@ -199,42 +203,141 @@ namespace AssetBundleBrowser.Custom
 
             var bundle = am.LoadBundleFile(path);
             var assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
-            var assetList = assetsFile.table.GetAssetsOfType((int) AssetClassID.Material);
+            var assetList = assetsFile.table.assetFileInfo;
 
+            var replaced = TryReplaceFields(assetList, am, assetsFile, replacers);
+            if (!replaced)
+            {
+                Debug.Log($"skipping {bundle.name} as no ids were found to replace");
+                am.UnloadAll();
+                return;
+            }
+
+            WriteChangesFromMemory(assetsFile, replacers, path, bundle);
+            am.UnloadAll();
+            CompressBundle(am, options, path);
+        }
+
+        private bool TryReplaceFields(AssetFileInfoEx[] assetList, AssetsManager am, AssetsFileInstance assetsFile,
+            List<AssetsReplacer> replacers)
+        {
+            var counter = 0;
             foreach (var asset in assetList)
             {
-                var baseField = am.GetTypeInstance(assetsFile, asset).GetBaseField();
-                var field = baseField.Get("m_Shader").Get("m_PathID").GetValue();
-                field.Set((long)1111111111);
-                
+                var typeInstance = am.GetTypeInstance(assetsFile, asset);
+                var baseField = typeInstance.GetBaseField();
+
+                RecursiveSearch(baseField);
+
+                if (_fieldsToChange.Count == 0) continue;
+
+                foreach (var kvp in _fieldsToChange)
+                {
+                    var fieldValue = kvp.Key;
+                    var pathID = kvp.Value;
+
+                    fieldValue.Set(pathID);
+                }
+
                 var newBytes = baseField.WriteToByteArray();
-                var repl = new AssetsReplacerFromMemory(0, asset.index, (int) asset.curFileType, 0xffff, newBytes);
-                replacers.Add(repl);
-                Debug.Log($"Made changes in {baseField.GetName()}");
+                var replacer = new AssetsReplacerFromMemory(0, asset.index, (int) asset.curFileType,
+                    AssetHelper.GetScriptIndex(assetsFile.file, asset), newBytes);
+                replacers.Add(replacer);
+                counter++;
+                _fieldsToChange.Clear();
             }
 
+            return counter > 0;
+        }
+        
+        private void RecursiveSearch(AssetTypeValueField field)
+        {
+            foreach (var child in field.children)
+            {
+                if (child.templateField.hasValue && !child.templateField.isArray) 
+                    continue;
+                if (child.templateField.isArray && child.templateField.children[1].valueType != EnumValueTypes.ValueType_None)
+                    continue;
+
+                var typeName = child.templateField.type;
+
+                if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.childrenCount == 2)
+                {
+                    var fieldValue = child.Get("m_PathID").GetValue();
+                    var pathId = fieldValue.AsInt64();
+
+                    if (pathId == 0) continue;
+
+                    if (!_idsLookupDict.TryGetValue(pathId, out var eftPathID)) continue;
+
+                    if (_fieldsToChange.ContainsKey(fieldValue)) continue;
+
+                    _fieldsToChange.Add(fieldValue, eftPathID);
+                    Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.GetName()}");
+                }
+                else
+                {
+                    RecursiveSearch(child);
+                }
+            }
+        }
+
+        private static void WriteChangesFromMemory(AssetsFileInstance assetsFile, List<AssetsReplacer> replacers, 
+            string path, BundleFileInstance bundle)
+        {
             byte[] newAssetData;
-            
-            using (var stream = new MemoryStream())
-            using (var writer = new AssetsFileWriter(stream))
+            using (var memoryStream = new MemoryStream())
+            using (var writer = new AssetsFileWriter(memoryStream))
             {
                 assetsFile.file.Write(writer, 0, replacers);
-                newAssetData = stream.ToArray();
+                newAssetData = memoryStream.ToArray();
             }
 
-            var origPath = path;
-            path += "_mod";
+            var bunRepl = new BundleReplacerFromMemory(assetsFile.name, null, true, newAssetData, -1);
+
+            //var modPath = path + "_mod";
             using (var writer = new AssetsFileWriter(path))
             {
-                var bunRepl = new BundleReplacerFromMemory(assetsFile.name, null, true, newAssetData, -1);
-                bundle.file.Write(writer, new List<BundleReplacer> { bunRepl });
+                bundle.file.Write(writer, new List<BundleReplacer> {bunRepl});
             }
-            am.UnloadAll(true);
-            File.Delete(origPath);
-            File.Move(path, origPath);
+            
+            //File.Delete(path);
+            //File.Move(modPath, path);
+            // if sharing violation exception will come back, uncomment things above
+        }
+
+        private void CompressBundle(AssetsManager am, BuildAssetBundleOptions options, string path)
+        {
+            var bundle = am.LoadBundleFile(path);
+            switch (options)
+            {
+                case BuildAssetBundleOptions.None:
+                {
+                    var modPath = path + "_mod";
+                    using (var writer = new AssetsFileWriter(modPath))
+                    {
+                        bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZMA);
+                    }
+                    am.UnloadAll();
+                    File.Delete(path);
+                    File.Move(modPath, path);
+                    break;
+                }
+                case BuildAssetBundleOptions.ChunkBasedCompression:
+                {
+                    File.Delete(path);
+                    using (var writer = new AssetsFileWriter(path))
+                    {
+                        bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZ4);
+                    }
+
+                    break;
+                }
+            }
+            am.UnloadAll();
         }
     }
-    
+
     [Serializable]
     internal class DictionaryData
     {
