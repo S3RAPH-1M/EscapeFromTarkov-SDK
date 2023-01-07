@@ -69,11 +69,17 @@ namespace AssetBundleBrowser.Custom
                 assetsFile.file.Write(writer, 0, replacers);
                 newAssetData = stream.ToArray();
             }
-            
-            var bunRepl = new BundleReplacerFromMemory(assetsFile.name, null, true, newAssetData, -1);
-            var bunWriter = new AssetsFileWriter(File.OpenWrite(path));
-            bundle.file.Write(bunWriter, new List<BundleReplacer> { bunRepl });
+
+            var origPath = path;
+            path += "_mod";
+            using (var writer = new AssetsFileWriter(path))
+            {
+                var bunRepl = new BundleReplacerFromMemory(assetsFile.name, null, true, newAssetData, -1);
+                bundle.file.Write(writer, new List<BundleReplacer> { bunRepl });
+            }
             am.UnloadAll(true);
+            File.Delete(origPath);
+            File.Move(path, origPath);
         }
     }
 }
