@@ -10,28 +10,13 @@ public class PreviewPivot : MonoBehaviour
 	[ContextMenu("Apply Default Settings")]
 	public void ApplyDefaultSettings()
 	{
-		pivotPosition = GetBounds();
+		pivotPosition = ItemPreview.GetBounds(gameObject).center;
 		pivotRotation = new Quaternion(0f, 0.7071068f, 0, 0.7071068f);
 		Icon = new IconSettings
 		{
 			rotation = new Quaternion(0f, 0.8433914f, 0f, -0.537299633f),
 			boundsScale = 0.9f
 		};
-	}
-
-	private Vector3 GetBounds()
-	{
-		var bounds = gameObject.GetComponentsInChildren<Renderer>(false)
-			.Where(r => !r.name.Contains("linza") && r.name != "MuzzleJetCombinedMesh").Select(r => r.bounds)
-			.Where(b => b.extents != Vector3.zero);
-		var boundsArray = bounds as Bounds[] ?? bounds.ToArray();
-		return !boundsArray.Any() ? default : boundsArray.Aggregate(Encapsulate).center;
-	}
-
-	private Bounds Encapsulate(Bounds current, Bounds next)
-	{
-		current.Encapsulate(next);
-		return current;
 	}
 
 	public Vector3 pivotPosition = Vector3.zero;
