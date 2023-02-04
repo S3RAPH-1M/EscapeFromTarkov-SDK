@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\EFT\Hideout\e.cs" />
     <Compile Include="Assets\Scripts\EFT\InputSystem\ECommand.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\BarbedWire.cs" />
+    <Compile Include="Assets\Scripts\EFT\Interactive\EDoorState.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\ExfiltrationPoint.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\LootableContainer.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\LootableContainerParameters.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Assets\Scripts\FirearmsEffects.cs" />
     <Compile Include="Assets\Scripts\GrenadePrefab.cs" />
     <Compile Include="Assets\Scripts\GrenadeSettings.cs" />
+    <Compile Include="Assets\Scripts\GripPose.cs" />
     <Compile Include="Assets\Scripts\HeatEmitter.cs" />
     <Compile Include="Assets\Scripts\HeatHazeEmitter.cs" />
     <Compile Include="Assets\Scripts\HotObject.cs" />
