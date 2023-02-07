@@ -50,12 +50,12 @@ Install EscapeFromTarkov-SDK with git
 
 ## Support
 
-REPLACE ME LATER
+If you need support you can join the SPT discord and find me in there. Or add me on Discord "SSH#6545"
 
 
-
-
-
+<p align="left">
+<a href="https://discord.gg/Xn9msqQZan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Xn9msqQZan" height="30" width="40" /></a>
+</p>
 
 
 
