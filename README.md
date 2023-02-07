@@ -29,7 +29,9 @@ Install EscapeFromTarkov-SDK with git
 - Ability to Create Custom Armors / Rigs
 - Ability to Create Custom Backpacks
 - Ability to Create Custom FPP Hands
-- Ability to Create Custom Melee Weapons
+- Ability to Create Custom Melee Weapons - STILL IN TESTING
+- Ability to Create Custom Firearms - STILL IN TESTING
+- Ability to Create Custom Maps - STILL IN  TESTING
 - Full Unity Engine Control when bundling Assets
 - Quick & Easy Asset Bundler.
 
