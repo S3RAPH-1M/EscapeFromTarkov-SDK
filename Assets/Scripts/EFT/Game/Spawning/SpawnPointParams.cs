@@ -7,6 +7,8 @@ namespace EFT.Game.Spawning
 	{
 		// Token: 0x04008FB2 RID: 36786
 		public string Id;
+		
+		public ClassVector3 Position;
 
 		// Token: 0x04008FB4 RID: 36788
 		public float Rotation;
