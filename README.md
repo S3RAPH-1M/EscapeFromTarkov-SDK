@@ -25,11 +25,13 @@ Install EscapeFromTarkov-SDK with git
     
 ## Features
 
-- Ability to Create Custom Character Models
-- Ability to Create Custom Armors / Rigs
-- Ability to Create Custom Backpacks
-- Ability to Create Custom FPP Hands
-- Ability to Create Custom Melee Weapons
+- Ability to Create Custom Character Models - Examples Included
+- Ability to Create Custom Armors / Rigs - Examples Included
+- Ability to Create Custom Backpacks - Examples Included
+- Ability to Create Custom FPP Hands - Examples Included
+- Ability to Create Custom Melee Weapons - STILL IN TESTING
+- Ability to Create Custom Firearms - STILL IN TESTING
+- Ability to Create Custom Maps - STILL IN  TESTING
 - Full Unity Engine Control when bundling Assets
 - Quick & Easy Asset Bundler.
 
@@ -48,12 +50,12 @@ Install EscapeFromTarkov-SDK with git
 
 ## Support
 
-REPLACE ME LATER
+If you need support you can join the SPT discord and find me in there. Or add me on Discord "SSH#6545"
 
 
-
-
-
+<p align="left">
+<a href="https://discord.gg/Xn9msqQZan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Xn9msqQZan" height="30" width="40" /></a>
+</p>
 
 
 
