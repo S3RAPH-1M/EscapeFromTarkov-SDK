@@ -17,11 +17,15 @@ This project is meant for the modders who want to work on custom assets for Esca
 ## Installation
 
 Install EscapeFromTarkov-SDK with git
-
+Step 1: 
 ```bash
   git clone "https://github.com/S3RAPH-1M/EscapeFromTarkov-SDK.git"
   cd EscapeFromTarkov-SDK
 ```
+Step 2: Download & Install Unity Hub. 
+Step 3: Download & Install Unity 2019.4.39 (Click on the unity icon at the bottom)
+Step 4: Within Unity Hub. Add the EFT SDK Project to Unity Hub.
+Step 5: Launch the SDK
     
 ## Features
 
