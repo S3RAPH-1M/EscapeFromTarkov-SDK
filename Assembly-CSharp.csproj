@@ -58,9 +58,19 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AICell.cs" />
     <Compile Include="Assets\Scripts\AICellData.cs" />
+    <Compile Include="Assets\Scripts\AnimationEventSystem\AnimationEventsStateBehaviour.cs" />
+    <Compile Include="Assets\Scripts\AnimationEventSystem\AnimatorControllerStaticData.cs" />
+    <Compile Include="Assets\Scripts\AnimationEventsContainer.cs" />
     <Compile Include="Assets\Scripts\BaseBallistic.cs" />
     <Compile Include="Assets\Scripts\BaseSoundPlayer.cs" />
     <Compile Include="Assets\Scripts\BetterAudio.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\BezierControlPointMode.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\BezierCurve.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\BezierSpline.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\Line.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\SplineDecorator.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\SplineWalker.cs" />
+    <Compile Include="Assets\Scripts\BezierSplineTools\SplineWalkerMode.cs" />
     <Compile Include="Assets\Scripts\BotCellController.cs" />
     <Compile Include="Assets\Scripts\BotZone.cs" />
     <Compile Include="Assets\Scripts\Bsg\GameSettings\EquatableGameSetting.cs" />
@@ -70,6 +80,7 @@
     <Compile Include="Assets\Scripts\Bsg\GameSettings\StateGameSetting.cs" />
     <Compile Include="Assets\Scripts\ClassVector3.cs" />
     <Compile Include="Assets\Scripts\CollimatorSight.cs" />
+    <Compile Include="Assets\Scripts\Custom\Item Preview\ItemPreview.cs" />
     <Compile Include="Assets\Scripts\CustomNavigationPoint.cs" />
     <Compile Include="Assets\Scripts\DamageInfo.cs" />
     <Compile Include="Assets\Scripts\Diz\Binding\IBindable.cs" />
@@ -149,6 +160,7 @@
     <Compile Include="Assets\Scripts\JsonType\EDateTime.cs" />
     <Compile Include="Assets\Scripts\LevelSettings.cs" />
     <Compile Include="Assets\Scripts\LocationScene.cs" />
+    <Compile Include="Assets\Scripts\MgBelt.cs" />
     <Compile Include="Assets\Scripts\MuzzleEffect.cs" />
     <Compile Include="Assets\Scripts\MuzzleFume.cs" />
     <Compile Include="Assets\Scripts\MuzzleJet.cs" />
@@ -166,6 +178,7 @@
     <Compile Include="Assets\Scripts\StaticLoot.cs" />
     <Compile Include="Assets\Scripts\ThrowableSettings.cs" />
     <Compile Include="Assets\Scripts\TransformLinks.cs" />
+    <Compile Include="Assets\Scripts\UsableHandsPrefab.cs" />
     <Compile Include="Assets\Scripts\VolumetricFog.cs" />
     <Compile Include="Assets\Scripts\VolumetricLight.cs" />
     <Compile Include="Assets\Scripts\WeaponPrefab.cs" />
@@ -354,6 +367,21 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.39f1\Editor\Data\Managed\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetsTools.NET">
+      <HintPath>Assets\Plugins\AssetsTools.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Assets\Plugins\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>Assets\Plugins\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>Assets\Plugins\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>Assets\Plugins\Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.39f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -715,9 +743,6 @@
     <Reference Include="Unity.Timeline">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.AssetBundleBrowser.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.AssetBundleBrowser.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
     </Reference>
@@ -735,6 +760,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.AssetBundleBrowser.Editor.csproj">
+      <Project>{C0F18735-8706-71BD-2777-C82815607895}</Project>
+      <Name>Unity.AssetBundleBrowser.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

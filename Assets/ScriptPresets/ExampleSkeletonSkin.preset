@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ExampleSkeletonSkin
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: 08edfe2ca1c7fd541be5b33054148dbe,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _baseTransform
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _skinnedMeshRenderer
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.size
+    value: 58
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[0]
+    value: Root_Joint/Base HumanPelvis
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[1]
+    value: Root_Joint/Base HumanPelvis/Base HumanLThigh1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[2]
+    value: Root_Joint/Base HumanPelvis/Base HumanLThigh1/Base HumanLThigh2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[3]
+    value: Root_Joint/Base HumanPelvis/Base HumanLThigh1/Base HumanLThigh2/Base HumanLCalf
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[4]
+    value: Root_Joint/Base HumanPelvis/Base HumanLThigh1/Base HumanLThigh2/Base HumanLCalf/Base
+      HumanLFoot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[5]
+    value: Root_Joint/Base HumanPelvis/Base HumanLThigh1/Base HumanLThigh2/Base HumanLCalf/Base
+      HumanLFoot/Base HumanLToe
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[6]
+    value: Root_Joint/Base HumanPelvis/Base HumanRThigh1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[7]
+    value: Root_Joint/Base HumanPelvis/Base HumanRThigh1/Base HumanRThigh2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[8]
+    value: Root_Joint/Base HumanPelvis/Base HumanRThigh1/Base HumanRThigh2/Base HumanRCalf
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[9]
+    value: Root_Joint/Base HumanPelvis/Base HumanRThigh1/Base HumanRThigh2/Base HumanRCalf/Base
+      HumanRFoot
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[10]
+    value: Root_Joint/Base HumanPelvis/Base HumanRThigh1/Base HumanRThigh2/Base HumanRCalf/Base
+      HumanRFoot/Base HumanRToe
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[11]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[12]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[13]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[14]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanNeck
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[15]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanNeck/Base HumanHead
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[16]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[17]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[18]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[19]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[20]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[21]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[22]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[23]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit11/Base
+      HumanLDigit12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[24]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit11/Base
+      HumanLDigit12/Base HumanLDigit13
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[25]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit21
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[26]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit21/Base
+      HumanLDigit22
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[27]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit21/Base
+      HumanLDigit22/Base HumanLDigit23
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[28]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit31
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[29]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit31/Base
+      HumanLDigit32
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[30]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit31/Base
+      HumanLDigit32/Base HumanLDigit33
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[31]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit41
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[32]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit41/Base
+      HumanLDigit42
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[33]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit41/Base
+      HumanLDigit42/Base HumanLDigit43
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[34]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit51
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[35]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit51/Base
+      HumanLDigit52
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[36]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanLCollarbone/Base HumanLUpperarm/Base HumanLForearm1/Base
+      HumanLForearm2/Base HumanLForearm3/Base HumanLPalm/Base HumanLDigit51/Base
+      HumanLDigit52/Base HumanLDigit53
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[37]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[38]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[39]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[40]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[41]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[42]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[43]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit11
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[44]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit11/Base
+      HumanRDigit12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[45]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit11/Base
+      HumanRDigit12/Base HumanRDigit13
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[46]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit21
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[47]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit21/Base
+      HumanRDigit22
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[48]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit21/Base
+      HumanRDigit22/Base HumanRDigit23
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[49]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit31
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[50]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit31/Base
+      HumanRDigit32
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[51]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit31/Base
+      HumanRDigit32/Base HumanRDigit33
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[52]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit41
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[53]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit41/Base
+      HumanRDigit42
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[54]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit41/Base
+      HumanRDigit42/Base HumanRDigit43
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[55]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit51
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[56]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit51/Base
+      HumanRDigit52
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _bonePaths.Array.data[57]
+    value: Root_Joint/Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
+      HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm/Base HumanRForearm1/Base
+      HumanRForearm2/Base HumanRForearm3/Base HumanRPalm/Base HumanRDigit51/Base
+      HumanRDigit52/Base HumanRDigit53
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _rootBonePath
+    value: Root_Joint/Base HumanPelvis
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: _toggle
+    value: 0
+    objectReference: {fileID: 0}
