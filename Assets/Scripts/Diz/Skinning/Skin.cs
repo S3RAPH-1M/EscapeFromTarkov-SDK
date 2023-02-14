@@ -6,22 +6,21 @@ namespace Diz.Skinning
     public class Skin : AbstractSkin
     {
         [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
-
         [SerializeField] private string[] _bonePaths;
-
         [SerializeField] private string _rootBonePath;
 
 #if UNITY_EDITOR
         [ContextMenu("Procedurally get all bone paths")]
         private void HydrateBonePaths()
         {
+            UnityEditor.Undo.RecordObject(this, "Filled all bone paths");
             _bonePaths = GetBonePaths(new List<string>(), _skinnedMeshRenderer.bones).ToArray();
+            UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(this);
         }
 
         private List<string> GetBonePaths(List<string> list, Transform[] bonesTransforms)
         {
-            var rootTransform = UnityEditor.Experimental.SceneManagement.PrefabStageUtility.GetPrefabStage(gameObject)
-                .prefabContentsRoot.transform;
+            var rootTransform = GetTransformRoot(transform);
             
             foreach (var t in bonesTransforms)
             {
@@ -47,6 +46,16 @@ namespace Diz.Skinning
 
             _rootBonePath = list[0];
             return list;
+        }
+
+        private Transform GetTransformRoot(Transform t)
+        {
+            while (t.parent != null)
+            {
+                t = t.parent;
+            }
+
+            return t;
         }
 #endif
     }
