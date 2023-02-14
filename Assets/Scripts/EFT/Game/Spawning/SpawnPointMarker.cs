@@ -25,10 +25,21 @@ namespace EFT.Game.Spawning
 				return this._spawnPoint;
 			}
 		}
-		
-		// Token: 0x0600BF08 RID: 48904 RVA: 0x0032C570 File Offset: 0x0032A770
+
+		private void UpdateSerializedFields()
+		{
+			if (transform.hasChanged)
+			{
+				_spawnPoint.Position = transform.position;
+				_spawnPoint.Rotation = transform.rotation;
+			}
+
+			_spawnPoint.Name = gameObject.name;
+		}
+
 		public void OnDrawGizmos()
 		{
+			UpdateSerializedFields();
 			if (GClass728.SpawnCategoryMask == ESpawnCategoryMask.None)
 			{
 				return;
