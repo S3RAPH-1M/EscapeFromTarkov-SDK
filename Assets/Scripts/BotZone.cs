@@ -114,6 +114,7 @@ public class BotZone : MonoBehaviour
 	
 	private void method_10()
 	{
+		if (AmbushPoints.Length == 0) return;
 		Vector3 position = Camera.current.transform.position;
 		float sDist = this.DistDrawAmbush * this.DistDrawAmbush;
 		foreach (CustomNavigationPoint customNavigationPoint in this.AmbushPoints)
