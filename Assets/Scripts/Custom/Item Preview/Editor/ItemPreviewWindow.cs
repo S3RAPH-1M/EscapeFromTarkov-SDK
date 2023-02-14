@@ -58,8 +58,14 @@ public class ItemPreviewWindow : EditorWindow
         RenderPreviewWindow();
         GUILayout.Space(position.height / 2.5f);
         GUILayout.Label("Icon Generator", style);
+        GUILayout.Space(5f);
         _itemHeight = EditorGUILayout.IntField("Item Height From Template", _itemHeight);
         _itemWidth = EditorGUILayout.IntField("Item Width From Template", _itemWidth);
+        if (GUILayout.Button("Save current rotation to PreviewPivot"))
+        {
+            itemToRender.GetComponent<PreviewPivot>().Icon.rotation = itemToRenderInstance.transform.rotation;
+            PrefabUtility.SavePrefabAsset(itemToRender);
+        }
         if (GUILayout.Button("Render Icon"))
         {
             if (itemToRender == null) return;
