@@ -9,6 +9,12 @@ namespace AnimationEventSystem
 	[CreateAssetMenu]
 	public class AnimatorControllerStaticData : ScriptableObject
 	{
-		
+		// Token: 0x04005844 RID: 22596
+		[SerializeField]
+		private List<EventsCollection> _stateHashToEventsCollection;
+
+		// Token: 0x04005845 RID: 22597
+		[SerializeField]
+		private List<LActionSetup> _stateHashToLActionSetups;
 	}
 }
