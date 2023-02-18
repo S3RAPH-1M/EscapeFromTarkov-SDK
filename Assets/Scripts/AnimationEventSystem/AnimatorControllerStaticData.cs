@@ -13,8 +13,8 @@ namespace AnimationEventSystem
 		[SerializeField]
 		private List<EventsCollection> _stateHashToEventsCollection;
 
-		// Token: 0x04005845 RID: 22597
-		[SerializeField]
+        // Token: 0x04005845 RID: 22597
+        [SerializeField]
 		private List<LActionSetup> _stateHashToLActionSetups;
 	}
 }

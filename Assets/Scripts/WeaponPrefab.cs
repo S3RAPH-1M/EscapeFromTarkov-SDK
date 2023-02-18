@@ -56,6 +56,10 @@ public class WeaponPrefab : AssetPoolObject
 	[SerializeField]
 	private Avatar _avatar;
 
+	// Token: 0x04002363 RID: 9059
+	[SerializeField]
+	public RestSettings RestSettings;
+
 	// Token: 0x040021BB RID: 8635
 	public GameObject DefaultMuzzlePrefab;
 
@@ -79,6 +83,22 @@ public class WeaponPrefab : AssetPoolObject
 
 	// Token: 0x040021C2 RID: 8642
 	public Vector2 DupletAccuracyPenaltyY;
+
+	public WeaponPrefab.AimPlane FarPlane = new WeaponPrefab.AimPlane
+	{
+		Name = "farplane",
+		Depth = 0.5f
+	};
+
+	// Token: 0x0400236D RID: 9069
+	public WeaponPrefab.AimPlane DefaultAimPlane = new WeaponPrefab.AimPlane
+	{
+		Name = "default",
+		Depth = 0f
+	};
+
+	// Token: 0x0400236E RID: 9070
+	public WeaponPrefab.AimPlane[] CustomAimPlanes;
 
 	// Token: 0x040021C6 RID: 8646
 	[SerializeField]
@@ -128,6 +148,52 @@ public class WeaponPrefab : AssetPoolObject
 	// Token: 0x040021DC RID: 8668
 	public string[] AnimatedBones;
 
+	// Token: 0x04002386 RID: 9094
+	public TransformLinks Hierarchy;
+
 	// Token: 0x040021DD RID: 8669
 	public int[] LayersDefaultStates;
+
+	// Token: 0x04002389 RID: 9097
+	public WeaponPrefab.MaterialConfig[] MaterialsConfig = Array.Empty<WeaponPrefab.MaterialConfig>();
+
+	// Token: 0x0400238A RID: 9098
+	[Header("Extractor params for LODs")]
+	public WeaponPrefab.LODConfig[] LodsConfig = Array.Empty<WeaponPrefab.LODConfig>();
+
+	// Token: 0x0200061A RID: 1562
+	[Serializable]
+	public class AimPlane
+	{
+		// Token: 0x0400238B RID: 9099
+		public string Name;
+
+		// Token: 0x0400238C RID: 9100
+		public float Depth;
+	}
+
+	// Token: 0x0200061B RID: 1563
+	[Serializable]
+	public class MaterialConfig
+	{
+		// Token: 0x0400238D RID: 9101
+		public string renderer;
+
+		// Token: 0x0400238E RID: 9102
+		public Material material;
+	}
+
+	// Token: 0x0200061C RID: 1564
+	[Serializable]
+	public class LODConfig
+	{
+		// Token: 0x0400238F RID: 9103
+		public float screenRelativeTransitionHeight;
+
+		// Token: 0x04002390 RID: 9104
+		public float fadeTransitionWidth;
+
+		// Token: 0x04002391 RID: 9105
+		public string[] renderers = Array.Empty<string>();
+	}
 }
