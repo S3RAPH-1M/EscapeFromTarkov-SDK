@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: ppsh_main
+  m_EditorClassIdentifier: 
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 600
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 0
+  _clipLiength: 0.92
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 479b0c113bff72442924d894502159a3, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: a29fc30b6f399f747b69a5accd7392d7, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 1f239f6ee2b52e7409f4750e2e5b1621, type: 3}
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 6c415c3f5a1b38f4e8bb56a54ce6a957, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 44d9fa8d9f3b65944bf9dedcfd31fb51, type: 3}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 11400000, guid: c32d41f047ee48745aecb2c413f87f65, type: 2}
