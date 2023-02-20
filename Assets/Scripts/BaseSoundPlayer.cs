@@ -7,6 +7,18 @@ using UnityEngine;
 // Token: 0x020007D4 RID: 2004
 public class BaseSoundPlayer : MonoBehaviour
 {
+	// Token: 0x04002E93 RID: 11923
+	[SerializeField]
+	public List<BaseSoundPlayer.SoundElement> AdditionalSounds = new List<BaseSoundPlayer.SoundElement>();
+
+	// Token: 0x04002E94 RID: 11924
+	[SerializeField]
+	public BaseSoundPlayer.SoundElement[] MainSounds;
+
+	// Token: 0x020007D5 RID: 2005
+	[Serializable]
+	public class SoundElement
+	{
 		// Token: 0x04002E98 RID: 11928
 		public string EventName = "";
 
@@ -18,4 +30,5 @@ public class BaseSoundPlayer : MonoBehaviour
 
 		// Token: 0x04002E9B RID: 11931
 		public AudioClip[] SoundClips;
+	}
 }
