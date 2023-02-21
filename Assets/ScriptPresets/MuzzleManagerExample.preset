@@ -1,0 +1,299 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MuzzleManagerExample
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: a07d50b90e089af4f8c45be448945544,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetMaterial
+    value: 
+    objectReference: {fileID: 2100000, guid: 3b903ba895c451a40ace06a0e6062f31, type: 2}
+  - target: {fileID: 0}
+    propertyPath: AtlasXCount
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: AtlasYCount
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.size
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].inSlope
+    value: 1.2165605
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].outSlope
+    value: 1.2165605
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].value
+    value: 1.2165605
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].inSlope
+    value: 1.2165605
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].outSlope
+    value: 1.2165605
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_Curve.Array.data[1].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MoveCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.size
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].time
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].inSlope
+    value: 7.819673
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].outSlope
+    value: 7.819673
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].inWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[0].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].time
+    value: 0.12788258
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].inSlope
+    value: 3.9098365
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].outSlope
+    value: 3.9098365
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[1].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].time
+    value: 0.60926014
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].value
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].inSlope
+    value: -1.2796237
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].outSlope
+    value: -1.2796237
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[2].outWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].time
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].value
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].inSlope
+    value: -2.5592475
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].outSlope
+    value: -2.5592475
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].tangentMode
+    value: 34
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].weightedMode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].inWeight
+    value: 0.33333334
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_Curve.Array.data[3].outWeight
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_PreInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_PostInfinity
+    value: 2
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: JetLightCurve.m_RotationOrder
+    value: 4
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: ShotLength
+    value: 0.12
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: TestPlay
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: TestShoot
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: TestHold
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: TestDebugPosition
+    value: 0.273
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: TestDelay
+    value: 0.1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Light
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: MeshParentName
+    value: weapon
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: Hierarchy
+    value: 
+    objectReference: {fileID: 0}

@@ -1,0 +1,388 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cd7383f30b391498402bd11e45fff5, type: 3}
+  m_Name: weapon_example_static_data
+  m_EditorClassIdentifier: 
+  _stateHashToEventsCollection:
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: IdleStart
+      _functionNameHash: 198060848
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 1
+        StringParam: 
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.0089899525
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: WeapIn
+      _functionNameHash: -224219248
+      Enabled: 1
+      _time: 1
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 2
+        StringParam: 
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.008461132
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: WeapOut
+      _functionNameHash: 1174204865
+      Enabled: 1
+      _time: 0.9682708
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 1
+        StringParam: 
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.009518773
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: ChargePull
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.4524138
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: Arm
+      _functionNameHash: 386854108
+      Enabled: 1
+      _time: 0.49793103
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: WeapIn
+      _functionNameHash: -224219248
+      Enabled: 1
+      _time: 1
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: Disarm
+      _functionNameHash: 1239352288
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: FiringBullet
+      _functionNameHash: -58181185
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: Arm
+      _functionNameHash: 386854108
+      Enabled: 1
+      _time: 0.16234796
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: ShellEject
+      _functionNameHash: -1819682913
+      Enabled: 1
+      _time: 0.30950227
+      EventConditions:
+      - BoolValue: 0
+        FloatValue: 0
+        IntValue: 0
+        ParameterName: Jam
+        ConditionParamType: 2
+        ConditionMode: 0
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: FireEnd
+      _functionNameHash: -1677976749
+      Enabled: 1
+      _time: 0.8725542
+      EventConditions:
+      - BoolValue: 0
+        FloatValue: 0
+        IntValue: 0
+        ParameterName: Jam
+        ConditionParamType: 2
+        ConditionMode: 0
+      - BoolValue: 0
+        FloatValue: 0
+        IntValue: 0
+        ParameterName: Misfire
+        ConditionParamType: 2
+        ConditionMode: 0
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 1
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 4
+      _functionName: UseProp
+      _functionNameHash: -1376281788
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 4
+      _functionName: UseProp
+      _functionNameHash: -1376281788
+      Enabled: 1
+      _time: 0.5
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: SndBackpackDrop
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 0
+      _functionName: OnBackpackDrop
+      _functionNameHash: 224242560
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  _stateHashToLActionSetups:
+  - StartThreshold: 0.2
+    LayerWeight:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -5.0000005
+        outSlope: -5.0000005
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    _stateHash: 0
+  - StartThreshold: 0.2
+    LayerWeight:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: -5
+        outSlope: -5
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 0
+        inSlope: -5
+        outSlope: -5
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    _stateHash: 0
+  - StartThreshold: 0.7
+    LayerWeight:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -5.0000005
+        outSlope: -5.0000005
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    _stateHash: 0

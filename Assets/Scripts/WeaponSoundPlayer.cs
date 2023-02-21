@@ -24,6 +24,9 @@ public class WeaponSoundPlayer : BaseSoundPlayer
 	// Token: 0x04002F93 RID: 12179
 	public SoundBank DoubletSilenced;
 
+	// Token: 0x04002FA4 RID: 12196
+	private AudioMixerGroup _group;
+
 	// Token: 0x04002F94 RID: 12180
 	private bool _isSilenced;
 
