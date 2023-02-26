@@ -12,8 +12,7 @@ namespace AssetBundleBrowser.Custom
     [Serializable]
     public class AssetBundleReplacerTab
     {
-        [SerializeField] private DictionaryData idsLookup;
-        private Dictionary<long, long> _idsLookupDict;
+        [SerializeField] private DictionaryData data;
         private Dictionary<AssetTypeValue, long> _fieldsToChange;
         private long _key;
         private long _value;
@@ -23,9 +22,8 @@ namespace AssetBundleBrowser.Custom
 
         internal void OnEnable(Rect pos)
         {
-            idsLookup = GetDataFromFile();
+            data = GetDataFromFile();
             _position = pos;
-            _idsLookupDict = ToDictionary(idsLookup);
             _fieldsToChange = new Dictionary<AssetTypeValue, long>();
         }
 
@@ -51,20 +49,18 @@ namespace AssetBundleBrowser.Custom
             GUILayout.Space(5f);
             if (GUILayout.Button("ADD ENTRY"))
             {
-                if (idsLookup.sdk.Contains(_key))
+                if (data.sdk.Contains(_key))
                 {
                     Debug.LogError("This SDK PathID is already defined");
                     return;
                 }
 
-                idsLookup.Add(_key, _value);
-                _idsLookupDict.Add(_key, _value);
+                data.Add(_key, _value);
             }
 
             if (GUILayout.Button("CLEAR EVERYTHING"))
             {
-                idsLookup.Clear();
-                _idsLookupDict.Clear();
+                data.Clear();
             }
 
             if (GUILayout.Button("SAVE DATA TO FILE"))
@@ -74,7 +70,7 @@ namespace AssetBundleBrowser.Custom
 
             if (GUILayout.Button("GET DATA FROM FILE"))
             {
-                GetDataFromFile();
+                data = GetDataFromFile();
             }
 
             //==\\ VISUAL DICTIONARY REPRESENTATION //==\\
@@ -82,21 +78,12 @@ namespace AssetBundleBrowser.Custom
             GUILayout.Space(5f);
             GUILayout.BeginHorizontal();
             DrawKeys();
-            DrawDeleteButtons();
+            DrawButtons();
             DrawValues();
+            DrawDescriptions();
             GUILayout.EndHorizontal();
             EditorGUILayout.EndScrollView();
             GUILayout.EndArea();
-
-            _idsLookupDict = ToDictionary(idsLookup);
-        }
-
-        private Dictionary<long, long> ToDictionary(DictionaryData data)
-        {
-            var dictionary = new Dictionary<long, long>();
-            for (int i = 0; i != Math.Min(data.sdk.Count, data.eft.Count); i++)
-                dictionary.Add(data.sdk[i], data.eft[i]);
-            return dictionary;
         }
 
         private void DrawGUIField(string label, ref long field, GUIStyle titleStyle)
@@ -110,21 +97,21 @@ namespace AssetBundleBrowser.Custom
 
         private void DrawKeys()
         {
-            GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.478f));
-            for (var i = 0; i < idsLookup.sdk.Count; i++)
+            GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.25f));
+            for (var i = 0; i < data.sdk.Count; i++)
             {
                 GUILayout.Space(1f);
                 EditorGUI.BeginChangeCheck();
-                var key = EditorGUILayout.LongField(idsLookup.sdk[i]);
+                var key = EditorGUILayout.LongField(data.sdk[i]);
                 if (!EditorGUI.EndChangeCheck()) continue;
 
-                if (idsLookup.sdk.Contains(key))
+                if (data.sdk.Contains(key))
                 {
                     Debug.LogError($"{key} is already defined in SDK PathIDs");
                     break;
                 }
 
-                idsLookup.sdk[i] = key;
+                data.sdk[i] = key;
             }
 
             GUILayout.EndVertical();
@@ -132,26 +119,60 @@ namespace AssetBundleBrowser.Custom
 
         private void DrawValues()
         {
-            GUILayout.BeginVertical();
-            for (var i = 0; i < idsLookup.eft.Count; i++)
+            GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.25f));
+            for (var i = 0; i < data.eft.Count; i++)
             {
                 GUILayout.Space(1f);
                 EditorGUI.BeginChangeCheck();
-                var value = EditorGUILayout.LongField(idsLookup.eft[i]);
+                var value = EditorGUILayout.LongField(data.eft[i]);
                 if (!EditorGUI.EndChangeCheck()) continue;
-                idsLookup.eft[i] = value;
+                data.eft[i] = value;
             }
 
             GUILayout.EndVertical();
         }
 
-        private void DrawDeleteButtons()
+        private void DrawButtons()
         {
-            GUILayout.BeginVertical(GUILayout.MaxWidth(20f));
-            for (var i = 0; i < idsLookup.sdk.Count; i++)
+            GUILayout.BeginVertical(GUILayout.MaxWidth(25f));
+            for (var i = 0; i < data.sdk.Count; i++)
+            {
+                if (!GUILayout.Button(new GUIContent("∧", "Move item up"))) continue;
+                var newIndex = i - 1;
+                if (newIndex < 0) return;
+                data.Move(i, newIndex);
+            }
+            GUILayout.EndVertical();
+            
+            GUILayout.BeginVertical(GUILayout.MaxWidth(25f));
+            for (var i = 0; i < data.sdk.Count; i++)
             {
                 if (!GUILayout.Button(new GUIContent("x", "Remove item"))) continue;
-                idsLookup.RemoveAt(i);
+                data.RemoveAt(i);
+            }
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical(GUILayout.MaxWidth(25f));
+            for (var i = 0; i < data.sdk.Count; i++)
+            {
+                if (!GUILayout.Button(new GUIContent("∨", "Move item down"))) continue;
+                var newIndex = i + 1;
+                if (newIndex >= data.sdk.Count) return;
+                data.Move(i, newIndex);
+            }
+            GUILayout.EndVertical();
+        }
+
+        private void DrawDescriptions()
+        {
+            GUILayout.BeginVertical();
+            for (var i = 0; i < data.sdk.Count; i++)
+            {
+                GUILayout.Space(1f);
+                EditorGUI.BeginChangeCheck();
+                var value = EditorGUILayout.TextField(data.descriptionList[i]);
+                if (!EditorGUI.EndChangeCheck()) continue;
+                data.descriptionList[i] = value;
             }
 
             GUILayout.EndVertical();
@@ -162,7 +183,7 @@ namespace AssetBundleBrowser.Custom
             var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
             using (var streamWriter = new StreamWriter(path))
             {
-                var json = JsonUtility.ToJson(idsLookup, true);
+                var json = JsonUtility.ToJson(data, true);
                 streamWriter.Write(json);
             }
         }
@@ -174,24 +195,24 @@ namespace AssetBundleBrowser.Custom
             {
                 using (var streamReader = new StreamReader(path))
                 {
-                    var text = streamReader.ReadToEnd();
-                    var json = JsonUtility.FromJson<DictionaryData>(text);
+                    var json = streamReader.ReadToEnd();
+                    var data = JsonUtility.FromJson<DictionaryData>(json);
 
-                    if (!json.SuitableForDict)
+                    if (!data.SuitableForDict)
                     {
                         throw new Exception("Json is faulty");
                     }
 
-                    return json;
+                    return data;
                 }
             }
             catch
             {
-                Debug.LogError($"Some error occured while reading data at path: {path}, creating new empty file.");
-                using (var streamWriter = new StreamWriter(path))
+                Debug.LogError($"Some error occured while reading data at path: {path}, temporary empty file will be created.");
+                /*using (var streamWriter = new StreamWriter(path))
                 {
                     streamWriter.Write("{}");
-                }
+                }*/
 
                 return new DictionaryData();
             }
@@ -270,7 +291,7 @@ namespace AssetBundleBrowser.Custom
 
                     if (pathId == 0) continue;
 
-                    if (!_idsLookupDict.TryGetValue(pathId, out var eftPathID)) continue;
+                    if (!data.Lookup.TryGetValue(pathId, out var eftPathID)) continue;
 
                     if (_fieldsToChange.ContainsKey(fieldValue)) continue;
 
@@ -306,7 +327,8 @@ namespace AssetBundleBrowser.Custom
             
             //File.Delete(path);
             //File.Move(modPath, path);
-            // if sharing violation exception will come back, uncomment things above
+            
+            // !!!if sharing violation exception will come back, uncomment things above!!!
         }
 
         private void CompressBundle(AssetsManager am, BuildAssetBundleOptions options, string path)
@@ -344,35 +366,83 @@ namespace AssetBundleBrowser.Custom
     }
 
     [Serializable]
-    internal class DictionaryData
+    internal class DictionaryData : ISerializationCallbackReceiver 
     {
         public DictionaryData()
         {
             sdk = new List<long>();
             eft = new List<long>();
+            descriptionList = new List<string>();
+            Lookup = new Dictionary<long, long>();
         }
         
         public List<long> sdk;
         public List<long> eft;
+        public List<string> descriptionList;
+        public Dictionary<long, long> Lookup;
         
         public bool SuitableForDict => sdk.Count == eft.Count;
         
-        public void Add(long key, long value)
+        public void Add(long key, long value, string description = "")
         {
             sdk.Add(key);
             eft.Add(value);
+            descriptionList.Add(description);
+            Lookup.Add(key, value);
         }
 
         public void Clear()
         {
             sdk.Clear();
             eft.Clear();
+            descriptionList.Clear();
+            Lookup.Clear();
         }
 
         public void RemoveAt(int i)
         {
+            var keyToDelete = sdk[i];
             sdk.RemoveAt(i);
             eft.RemoveAt(i);
+            descriptionList.RemoveAt(i);
+            Lookup.Remove(keyToDelete);
+        }
+        
+        public void Move(int oldIndex, int newIndex)
+        {
+            var key = sdk[oldIndex];
+            var value = eft[oldIndex];
+            var desc = descriptionList[oldIndex];
+            
+            RemoveAt(oldIndex);
+
+            //if (newIndex > oldIndex) newIndex--; 
+
+            sdk.Insert(newIndex, key);
+            eft.Insert(newIndex, value);
+            descriptionList.Insert(newIndex, desc);
+        }
+
+        public void OnBeforeSerialize() { }
+
+        public void OnAfterDeserialize()
+        {
+            Lookup = new Dictionary<long, long>();
+            for (int i = 0; i != Math.Min(sdk.Count, eft.Count); i++)
+            {
+                Lookup.Add(sdk[i], eft[i]);
+            }
+            FixMissingDescriptions();
+        }
+
+        private void FixMissingDescriptions()
+        {
+            if (sdk.Count == descriptionList.Count) return;
+            
+            foreach (var _ in sdk)
+            {
+                descriptionList.Add("");
+            }
         }
     }
 }
