@@ -78,8 +78,9 @@ namespace AssetBundleBrowser.Custom
             GUILayout.Space(5f);
             GUILayout.BeginHorizontal();
             DrawKeys();
-            DrawDeleteButtons();
+            DrawButtons();
             DrawValues();
+            DrawDescriptions();
             GUILayout.EndHorizontal();
             EditorGUILayout.EndScrollView();
             GUILayout.EndArea();
@@ -96,7 +97,7 @@ namespace AssetBundleBrowser.Custom
 
         private void DrawKeys()
         {
-            GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.478f));
+            GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.25f));
             for (var i = 0; i < data.sdk.Count; i++)
             {
                 GUILayout.Space(1f);
@@ -118,7 +119,7 @@ namespace AssetBundleBrowser.Custom
 
         private void DrawValues()
         {
-            GUILayout.BeginVertical();
+            GUILayout.BeginVertical(GUILayout.Width(_position.width * 0.25f));
             for (var i = 0; i < data.eft.Count; i++)
             {
                 GUILayout.Space(1f);
@@ -131,13 +132,47 @@ namespace AssetBundleBrowser.Custom
             GUILayout.EndVertical();
         }
 
-        private void DrawDeleteButtons()
+        private void DrawButtons()
         {
-            GUILayout.BeginVertical(GUILayout.MaxWidth(20f));
+            GUILayout.BeginVertical(GUILayout.MaxWidth(25f));
+            for (var i = 0; i < data.sdk.Count; i++)
+            {
+                if (!GUILayout.Button(new GUIContent("∧", "Move item up"))) continue;
+                var newIndex = i - 1;
+                if (newIndex < 0) return;
+                data.Move(i, newIndex);
+            }
+            GUILayout.EndVertical();
+            
+            GUILayout.BeginVertical(GUILayout.MaxWidth(25f));
             for (var i = 0; i < data.sdk.Count; i++)
             {
                 if (!GUILayout.Button(new GUIContent("x", "Remove item"))) continue;
                 data.RemoveAt(i);
+            }
+            GUILayout.EndVertical();
+
+            GUILayout.BeginVertical(GUILayout.MaxWidth(25f));
+            for (var i = 0; i < data.sdk.Count; i++)
+            {
+                if (!GUILayout.Button(new GUIContent("∨", "Move item down"))) continue;
+                var newIndex = i + 1;
+                if (newIndex >= data.sdk.Count) return;
+                data.Move(i, newIndex);
+            }
+            GUILayout.EndVertical();
+        }
+
+        private void DrawDescriptions()
+        {
+            GUILayout.BeginVertical();
+            for (var i = 0; i < data.sdk.Count; i++)
+            {
+                GUILayout.Space(1f);
+                EditorGUI.BeginChangeCheck();
+                var value = EditorGUILayout.TextField(data.descriptionList[i]);
+                if (!EditorGUI.EndChangeCheck()) continue;
+                data.descriptionList[i] = value;
             }
 
             GUILayout.EndVertical();
@@ -337,19 +372,22 @@ namespace AssetBundleBrowser.Custom
         {
             sdk = new List<long>();
             eft = new List<long>();
+            descriptionList = new List<string>();
             Lookup = new Dictionary<long, long>();
         }
         
         public List<long> sdk;
         public List<long> eft;
+        public List<string> descriptionList;
         public Dictionary<long, long> Lookup;
         
         public bool SuitableForDict => sdk.Count == eft.Count;
         
-        public void Add(long key, long value)
+        public void Add(long key, long value, string description = "")
         {
             sdk.Add(key);
             eft.Add(value);
+            descriptionList.Add(description);
             Lookup.Add(key, value);
         }
 
@@ -357,6 +395,7 @@ namespace AssetBundleBrowser.Custom
         {
             sdk.Clear();
             eft.Clear();
+            descriptionList.Clear();
             Lookup.Clear();
         }
 
@@ -365,7 +404,23 @@ namespace AssetBundleBrowser.Custom
             var keyToDelete = sdk[i];
             sdk.RemoveAt(i);
             eft.RemoveAt(i);
+            descriptionList.RemoveAt(i);
             Lookup.Remove(keyToDelete);
+        }
+        
+        public void Move(int oldIndex, int newIndex)
+        {
+            var key = sdk[oldIndex];
+            var value = eft[oldIndex];
+            var desc = descriptionList[oldIndex];
+            
+            RemoveAt(oldIndex);
+
+            //if (newIndex > oldIndex) newIndex--; 
+
+            sdk.Insert(newIndex, key);
+            eft.Insert(newIndex, value);
+            descriptionList.Insert(newIndex, desc);
         }
 
         public void OnBeforeSerialize() { }
@@ -376,6 +431,17 @@ namespace AssetBundleBrowser.Custom
             for (int i = 0; i != Math.Min(sdk.Count, eft.Count); i++)
             {
                 Lookup.Add(sdk[i], eft[i]);
+            }
+            FixMissingDescriptions();
+        }
+
+        private void FixMissingDescriptions()
+        {
+            if (sdk.Count == descriptionList.Count) return;
+            
+            foreach (var _ in sdk)
+            {
+                descriptionList.Add("");
             }
         }
     }
