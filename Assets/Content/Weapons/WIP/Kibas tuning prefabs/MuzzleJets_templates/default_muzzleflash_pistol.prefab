@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1299321636316580
+--- !u!1 &1041978093979770
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4952221452155579}
-  - component: {fileID: 114031343353477938}
-  - component: {fileID: 114399983338781887}
-  - component: {fileID: 114089315517252681}
-  - component: {fileID: 114930498921788412}
-  - component: {fileID: 114949777098480177}
-  - component: {fileID: 114682421131335603}
+  - component: {fileID: 4788933965039667}
+  - component: {fileID: 114971762490017621}
+  - component: {fileID: 114339146128082785}
+  - component: {fileID: 114028846645940519}
+  - component: {fileID: 114980890529230233}
+  - component: {fileID: 114754881364367774}
+  - component: {fileID: 114523449572755541}
   m_Layer: 0
   m_Name: default_muzzleflash_pistol
   m_TagString: Untagged
@@ -22,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4952221452155579
+--- !u!4 &4788933965039667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_LocalRotation: {x: 0.000000119209275, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0.000013660377, y: -0, z: -0}
---- !u!114 &114031343353477938
+--- !u!114 &114971762490017621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955192fb6cf02a245a9e4b04667649e7, type: 3}
@@ -208,13 +208,13 @@ MonoBehaviour:
   AxisShiftMult: 2
   Chance: 0.35
   RandomShiftsMult: {x: 1, y: 1}
---- !u!114 &114399983338781887
+--- !u!114 &114339146128082785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5d2e51b01d34f941afb657f06972821, type: 3}
@@ -370,13 +370,13 @@ MonoBehaviour:
     Value: 134
     Values: 0d0d0e0e0f10101111121213131414151516161717181819191a1b1b1c1c1d1d1e1e1f1f202021212222232324242526262727282e353c444b525a616870777e867e777068615a524b443c352e282727262625242423232222212120201f1f1e1e1d1d1c1c1b1b1a19191818171716161515141413131212111110100f0e0e0d
   EmissionTimeShift: -0.01
---- !u!114 &114089315517252681
+--- !u!114 &114028846645940519
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f4591e6ef125534dada831973d4130f, type: 3}
@@ -544,13 +544,13 @@ MonoBehaviour:
   SmokeLengthRandomness: 10
   SmokeIncreasingByShot: 0.4
   ShotFactorDropTime: 0.5
---- !u!114 &114930498921788412
+--- !u!114 &114980890529230233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae72bbdd5dcca54f95119548373eb75, type: 3}
@@ -558,13 +558,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPos: 0
   EmitterRadius: 0
-  ConusSize: 1
+  ConusSize: 0.5
   Sizes:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.4024683
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -573,7 +573,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0.75213677
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -588,7 +588,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.4
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -611,8 +611,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.4
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -620,7 +620,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.6
       value: 1
       inSlope: 0
       outSlope: 0
@@ -631,16 +631,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SizesRnd: 0.5
+  SizesRnd: 0.178
   Size: 1
-  Speed: 1
-  LifeTime: 1
+  Speed: 5
+  LifeTime: 5
   Color:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 1, b: 1, a: 0.050980393}
+    key1: {r: 1, g: 1, b: 1, a: 0.1882353}
+    key2: {r: 0, g: 0, b: 0, a: 0.1882353}
+    key3: {r: 0, g: 0, b: 0, a: 0.1882353}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -655,8 +655,8 @@ MonoBehaviour:
     ctime7: 0
     atime0: 0
     atime1: 65535
-    atime2: 0
-    atime3: 0
+    atime2: 65535
+    atime3: 65535
     atime4: 0
     atime5: 0
     atime6: 0
@@ -664,15 +664,15 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  CountMin: 1
-  CountRange: 3
---- !u!114 &114949777098480177
+  CountMin: 0
+  CountRange: 2
+--- !u!114 &114754881364367774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae72bbdd5dcca54f95119548373eb75, type: 3}
@@ -680,13 +680,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPos: 0
   EmitterRadius: 0
-  ConusSize: 1
+  ConusSize: 0.23
   Sizes:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.4024683
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0.75213677
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -709,8 +709,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.4
+      value: 0.8285046
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -718,7 +718,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.6
       value: 1
       inSlope: 0
       outSlope: 0
@@ -733,8 +733,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.4
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -742,7 +742,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.5
       value: 1
       inSlope: 0
       outSlope: 0
@@ -753,15 +753,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SizesRnd: 0.5
-  Size: 1
-  Speed: 1
-  LifeTime: 1
+  SizesRnd: 0.068
+  Size: 0.4
+  Speed: 5
+  LifeTime: 0.2
   Color:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 1, b: 1, a: 0.8}
+    key1: {r: 1, g: 1, b: 1, a: 0.79607844}
+    key2: {r: 0, g: 0, b: 0, a: 0.7882353}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -776,8 +776,8 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 32253
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
@@ -785,16 +785,16 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  CountMin: 1
-  CountRange: 3
---- !u!114 &114682421131335603
+    m_NumAlphaKeys: 3
+  CountMin: 0
+  CountRange: 1
+--- !u!114 &114523449572755541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299321636316580}
+  m_GameObject: {fileID: 1041978093979770}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d3b4ad0aabc64408a053c8da95b5f9, type: 3}

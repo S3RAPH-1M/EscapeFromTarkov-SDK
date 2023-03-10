@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1147983611798404
+--- !u!1 &1219177937728128
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4316318976868107}
-  - component: {fileID: 114515432452590024}
-  - component: {fileID: 114373608432531246}
-  - component: {fileID: 114977337686485360}
-  - component: {fileID: 114966734616355666}
-  - component: {fileID: 114499411749020624}
-  - component: {fileID: 114723594963193047}
+  - component: {fileID: 4916093828317233}
+  - component: {fileID: 114062627699911435}
+  - component: {fileID: 114852371345514353}
+  - component: {fileID: 114135411743669764}
+  - component: {fileID: 114791583445325526}
+  - component: {fileID: 114146300239275760}
+  - component: {fileID: 114783833386811661}
   m_Layer: 0
   m_Name: utes_muzzleflash
   m_TagString: Untagged
@@ -22,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4316318976868107
+--- !u!4 &4916093828317233
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -0.080000006, z: -0.07999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,13 +36,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &114515432452590024
+--- !u!114 &114062627699911435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5d2e51b01d34f941afb657f06972821, type: 3}
@@ -53,711 +53,25 @@ MonoBehaviour:
   ConusSize: 0.11
   CountMin: -1
   CountRange: 7
-  LifetimeCurve:
-    Curve:
-      m_Curve:
-      - time: 0
-        value: 0.59999996
-        inSlope: -4.5
-        outSlope: -4.5
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.099999994
-        value: 0.14999999
-        inSlope: -4.5
-        outSlope: -0.27499998
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.5
-        value: 0.04
-        inSlope: -0.27499998
-        outSlope: 0.41474733
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.5721405
-        value: 0.069920085
-        inSlope: 0.41474733
-        outSlope: 0.11794133
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.7
-        value: 0.085
-        inSlope: 0.11794133
-        outSlope: 0.7666667
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.84999996
-        value: 0.19999999
-        inSlope: 0.7666667
-        outSlope: 2.6666658
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 1
-        value: 0.59999996
-        inSlope: 2.6666658
-        outSlope: 2.6666658
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Value: 1.5
-    Values:
-    - 0.9
-    - 0.8472656
-    - 0.7945312
-    - 0.74179685
-    - 0.6890625
-    - 0.6363281
-    - 0.5835937
-    - 0.53085935
-    - 0.47812498
-    - 0.4253906
-    - 0.37265623
-    - 0.31992185
-    - 0.26718754
-    - 0.22435546
-    - 0.2211328
-    - 0.21791014
-    - 0.2146875
-    - 0.21146482
-    - 0.20824218
-    - 0.20501952
-    - 0.20179686
-    - 0.19857422
-    - 0.19535154
-    - 0.1921289
-    - 0.18890624
-    - 0.18568358
-    - 0.18246092
-    - 0.17923827
-    - 0.17601562
-    - 0.17279296
-    - 0.1695703
-    - 0.16634765
-    - 0.163125
-    - 0.15990233
-    - 0.15667967
-    - 0.15345702
-    - 0.15023436
-    - 0.1470117
-    - 0.14378905
-    - 0.1405664
-    - 0.13734373
-    - 0.13412106
-    - 0.13089842
-    - 0.12767577
-    - 0.12445311
-    - 0.12123045
-    - 0.118007794
-    - 0.114785135
-    - 0.11156248
-    - 0.10833982
-    - 0.10511717
-    - 0.10189451
-    - 0.09867185
-    - 0.0954492
-    - 0.092226535
-    - 0.08900389
-    - 0.08578123
-    - 0.08255857
-    - 0.07933592
-    - 0.076113254
-    - 0.07289061
-    - 0.06966795
-    - 0.06644529
-    - 0.06322264
-    - 0.06
-    - 0.064860314
-    - 0.06972064
-    - 0.07458095
-    - 0.07944128
-    - 0.0843016
-    - 0.08916192
-    - 0.094022244
-    - 0.09888256
-    - 0.10374288
-    - 0.10593885
-    - 0.10732098
-    - 0.10870311
-    - 0.110085234
-    - 0.111467354
-    - 0.11284949
-    - 0.1142316
-    - 0.11561373
-    - 0.116995856
-    - 0.118377976
-    - 0.11976011
-    - 0.12114222
-    - 0.12252436
-    - 0.12390648
-    - 0.1252886
-    - 0.12667073
-    - 0.13109377
-    - 0.14007814
-    - 0.14906251
-    - 0.15804689
-    - 0.16703127
-    - 0.17601565
-    - 0.18500003
-    - 0.19398439
-    - 0.20296878
-    - 0.21195316
-    - 0.22093754
-    - 0.2299219
-    - 0.23890628
-    - 0.24789065
-    - 0.25687504
-    - 0.2658594
-    - 0.27484378
-    - 0.2838282
-    - 0.29281256
-    - 0.30625013
-    - 0.33750013
-    - 0.3687501
-    - 0.40000007
-    - 0.4312501
-    - 0.4625001
-    - 0.49375007
-    - 0.52500004
-    - 0.55625004
-    - 0.58750004
-    - 0.61875004
-    - 0.65
-    - 0.68125004
-    - 0.7125
-    - 0.74375
-    - 0.775
-    - 0.80625
-    - 0.8374999
-    - 0.86875
-  SpeedCurve:
-    Curve:
-      m_Curve:
-      - time: 0
-        value: 0.099999994
-        inSlope: 0.8571429
-        outSlope: 0.8571429
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.35
-        value: 0.4
-        inSlope: 0.8571429
-        outSlope: 1.9999998
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.5
-        value: 0.7
-        inSlope: 1.9999998
-        outSlope: 26.666693
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.53
-        value: 1.5
-        inSlope: 26.666693
-        outSlope: -11.428573
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.59999996
-        value: 0.7
-        inSlope: -11.428573
-        outSlope: -2.3076923
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.72999996
-        value: 0.4
-        inSlope: -2.3076923
-        outSlope: -1.111111
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 1
-        value: 0.099999994
-        inSlope: -1.111111
-        outSlope: -1.111111
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Value: 20
-    Values:
-    - 1.9999999
-    - 2.1339285
-    - 2.267857
-    - 2.4017856
-    - 2.5357141
-    - 2.669643
-    - 2.8035712
-    - 2.9375
-    - 3.0714285
-    - 3.205357
-    - 3.3392859
-    - 3.4732141
-    - 3.607143
-    - 3.7410715
-    - 3.875
-    - 4.0089283
-    - 4.142857
-    - 4.276786
-    - 4.4107146
-    - 4.544643
-    - 4.6785717
-    - 4.8125
-    - 4.9464283
-    - 5.080357
-    - 5.214286
-    - 5.3482146
-    - 5.4821434
-    - 5.616071
-    - 5.7500005
-    - 5.8839283
-    - 6.017857
-    - 6.151786
-    - 6.2857146
-    - 6.4196434
-    - 6.5535717
-    - 6.6875005
-    - 6.8214283
-    - 6.9553576
-    - 7.089286
-    - 7.2232146
-    - 7.3571434
-    - 7.4910717
-    - 7.6250005
-    - 7.7589293
-    - 7.892857
-    - 8.0625
-    - 8.375
-    - 8.6875
-    - 9
-    - 9.3125
-    - 9.625
-    - 9.9375
-    - 10.25
-    - 10.5625
-    - 10.875001
-    - 11.187501
-    - 11.500001
-    - 11.812501
-    - 12.125001
-    - 12.437501
-    - 12.750001
-    - 13.062501
-    - 13.375001
-    - 13.687501
-    - 14
-    - 18.166672
-    - 22.33334
-    - 26.500015
-    - 29.71428
-    - 27.928564
-    - 26.142849
-    - 24.357136
-    - 22.57142
-    - 20.785706
-    - 18.999992
-    - 17.214277
-    - 15.428561
-    - 13.927883
-    - 13.567306
-    - 13.206729
-    - 12.846151
-    - 12.485576
-    - 12.124998
-    - 11.764421
-    - 11.403845
-    - 11.043267
-    - 10.68269
-    - 10.322113
-    - 9.961536
-    - 9.600959
-    - 9.240381
-    - 8.879805
-    - 8.519228
-    - 8.158651
-    - 7.902777
-    - 7.729166
-    - 7.5555553
-    - 7.3819437
-    - 7.2083325
-    - 7.0347214
-    - 6.86111
-    - 6.687499
-    - 6.5138884
-    - 6.340277
-    - 6.166666
-    - 5.9930553
-    - 5.8194437
-    - 5.645833
-    - 5.4722214
-    - 5.2986107
-    - 5.124999
-    - 4.9513884
-    - 4.777777
-    - 4.604166
-    - 4.4305553
-    - 4.2569437
-    - 4.0833325
-    - 3.9097216
-    - 3.7361107
-    - 3.5624995
-    - 3.3888884
-    - 3.2152772
-    - 3.041666
-    - 2.868055
-    - 2.6944442
-    - 2.520833
-    - 2.3472219
-    - 2.173611
-  GravityCurve:
-    Curve:
-      m_Curve:
-      - time: 0
-        value: 0.39999998
-        inSlope: 0.6
-        outSlope: 0.6
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 1
-        value: 1
-        inSlope: 0.6
-        outSlope: 0.6
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Value: 1
-    Values:
-    - 0.39999998
-    - 0.40468746
-    - 0.40937498
-    - 0.41406247
-    - 0.41875
-    - 0.42343748
-    - 0.42812496
-    - 0.43281248
-    - 0.43749997
-    - 0.4421875
-    - 0.44687498
-    - 0.45156246
-    - 0.45624998
-    - 0.46093747
-    - 0.465625
-    - 0.47031248
-    - 0.47499996
-    - 0.47968748
-    - 0.48437497
-    - 0.4890625
-    - 0.49374998
-    - 0.49843746
-    - 0.50312495
-    - 0.5078125
-    - 0.5125
-    - 0.5171875
-    - 0.52187496
-    - 0.52656245
-    - 0.53125
-    - 0.5359375
-    - 0.540625
-    - 0.54531246
-    - 0.54999995
-    - 0.5546875
-    - 0.559375
-    - 0.5640625
-    - 0.56874996
-    - 0.57343745
-    - 0.578125
-    - 0.5828125
-    - 0.5875
-    - 0.59218746
-    - 0.59687495
-    - 0.6015625
-    - 0.60625
-    - 0.6109375
-    - 0.61562496
-    - 0.62031245
-    - 0.625
-    - 0.6296875
-    - 0.634375
-    - 0.63906246
-    - 0.64374995
-    - 0.6484375
-    - 0.653125
-    - 0.6578125
-    - 0.6625
-    - 0.66718745
-    - 0.671875
-    - 0.6765625
-    - 0.68125
-    - 0.6859375
-    - 0.69062495
-    - 0.6953125
-    - 0.7
-    - 0.7046875
-    - 0.709375
-    - 0.71406245
-    - 0.71875
-    - 0.7234375
-    - 0.728125
-    - 0.7328125
-    - 0.73749995
-    - 0.7421875
-    - 0.746875
-    - 0.7515625
-    - 0.75625
-    - 0.76093745
-    - 0.765625
-    - 0.7703125
-    - 0.775
-    - 0.7796875
-    - 0.78437495
-    - 0.7890625
-    - 0.79375
-    - 0.7984375
-    - 0.803125
-    - 0.80781245
-    - 0.8125
-    - 0.8171875
-    - 0.821875
-    - 0.8265625
-    - 0.83124995
-    - 0.8359375
-    - 0.840625
-    - 0.8453125
-    - 0.85
-    - 0.85468745
-    - 0.859375
-    - 0.8640625
-    - 0.86875
-    - 0.8734375
-    - 0.87812495
-    - 0.8828125
-    - 0.8875
-    - 0.8921875
-    - 0.896875
-    - 0.9015625
-    - 0.90625
-    - 0.9109375
-    - 0.915625
-    - 0.9203125
-    - 0.925
-    - 0.9296875
-    - 0.934375
-    - 0.9390625
-    - 0.94375
-    - 0.9484375
-    - 0.953125
-    - 0.9578125
-    - 0.9625
-    - 0.9671875
-    - 0.971875
-    - 0.9765625
-    - 0.98125
-    - 0.9859375
-    - 0.990625
-    - 0.9953125
-  DragCurve:
-    Curve:
-      m_Curve:
-      - time: 0
-        value: 0.79999995
-        inSlope: 0
-        outSlope: 0.5000002
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.29999998
-        value: 0.95
-        inSlope: 0.5000002
-        outSlope: 0.1999998
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.5
-        value: 0.98999995
-        inSlope: 0.1999998
-        outSlope: -0.26666644
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 0.65
-        value: 0.95
-        inSlope: -0.26666644
-        outSlope: -0.5714285
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - time: 1
-        value: 0.75
-        inSlope: -0.5714285
-        outSlope: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    Value: 1
-    Values:
-    - 0.0016000015
-    - 0.0014786161
-    - 0.001364272
-    - 0.0012566916
-    - 0.0011556027
-    - 0.0010607389
-    - 0.00097183906
-    - 0.00088864786
-    - 0.00081091555
-    - 0.00073839794
-    - 0.00067085633
-    - 0.00060805783
-    - 0.00054977497
-    - 0.0004957859
-    - 0.00044587435
-    - 0.00039982967
-    - 0.0003574468
-    - 0.00031852623
-    - 0.00028287407
-    - 0.000250302
-    - 0.00022062726
-    - 0.00019367278
-    - 0.00016926698
-    - 0.00014724389
-    - 0.00012744316
-    - 0.00010970971
-    - 9.389492E-05
-    - 7.985486E-05
-    - 6.745154E-05
-    - 5.65525E-05
-    - 4.7030906E-05
-    - 3.8765498E-05
-    - 3.1640608E-05
-    - 2.5546147E-05
-    - 2.0377629E-05
-    - 1.6036141E-05
-    - 1.2428369E-05
-    - 9.46658E-06
-    - 7.068633E-06
-    - 5.7942652E-06
-    - 5.0906706E-06
-    - 4.4531866E-06
-    - 3.877515E-06
-    - 3.359568E-06
-    - 2.8953123E-06
-    - 2.4809362E-06
-    - 2.1127162E-06
-    - 1.7870785E-06
-    - 1.5006297E-06
-    - 1.25008E-06
-    - 1.0322897E-06
-    - 8.4428524E-07
-    - 6.8320577E-07
-    - 5.4635984E-07
-    - 4.3118027E-07
-    - 3.352463E-07
-    - 2.5629078E-07
-    - 1.9217835E-07
-    - 1.409189E-07
-    - 1.00670995E-07
-    - 6.9729246E-08
-    - 4.6536748E-08
-    - 2.9676004E-08
-    - 1.7873553E-08
-    - 1.0000201E-08
-    - 2.1318577E-08
-    - 4.0278785E-08
-    - 6.973028E-08
-    - 1.1297172E-07
-    - 1.737582E-07
-    - 2.5629078E-07
-    - 3.6523113E-07
-    - 5.056816E-07
-    - 6.8321145E-07
-    - 9.0382343E-07
-    - 1.1739957E-06
-    - 1.5006297E-06
-    - 1.8911136E-06
-    - 2.3532464E-06
-    - 2.8953289E-06
-    - 3.5260555E-06
-    - 4.25464E-06
-    - 5.0906706E-06
-    - 6.044277E-06
-    - 8.236336E-06
-    - 1.13444075E-05
-    - 1.5258789E-05
-    - 2.010824E-05
-    - 2.6030857E-05
-    - 3.3174456E-05
-    - 4.1696447E-05
-    - 5.176343E-05
-    - 6.355185E-05
-    - 7.724762E-05
-    - 9.3046365E-05
-    - 0.00011115263
-    - 0.00013178107
-    - 0.00015515574
-    - 0.00018151052
-    - 0.00021108784
-    - 0.00024414062
-    - 0.00028093104
-    - 0.00032173126
-    - 0.00036682154
-    - 0.00041649304
-    - 0.00047104686
-    - 0.0005307913
-    - 0.00059604645
-    - 0.0006671412
-    - 0.0007444149
-    - 0.0008282137
-    - 0.0009188958
-    - 0.0010168296
-    - 0.0011223893
-    - 0.0012359619
-    - 0.0013579432
-    - 0.0014887381
-    - 0.0016287636
-    - 0.0017784399
-    - 0.0019382046
-    - 0.002108497
-    - 0.002289772
-    - 0.0024824918
-    - 0.002687128
-    - 0.0029041655
-    - 0.003134089
-    - 0.0033774024
-    - 0.0036346184
   EmissionCurve:
     Curve:
+      serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: 0.7
         inSlope: 0.3
         outSlope: 0.3
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 1
+      - serializedVersion: 3
+        time: 1
         value: 1
         inSlope: 0.3
         outSlope: 0.3
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -768,18 +82,23 @@ MonoBehaviour:
     Values: b2b3b3b4b4b5b6b6b7b7b8b9b9bababbbcbcbdbdbebfbfc0c0c1c2c2c3c3c4c5c5c6c6c7c8c8c9c9cacbcbcccccdcdcecfcfd0d0d1d2d2d3d3d4d5d5d6d6d7d8d8d9d9dadbdbdcdcdddededfdfe0e1e1e2e2e3e4e4e5e5e6e7e7e8e8e9eaeaebebecededeeeeeff0f0f1f1f2f3f3f4f4f5f6f6f7f7f8f9f9fafafbfcfcfdfdfe
   SizeCurve:
     Curve:
+      serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: 0.59999996
         inSlope: 0.40000004
         outSlope: 0.40000004
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 1
+      - serializedVersion: 3
+        time: 1
         value: 1
         inSlope: 0.40000004
         outSlope: 0.40000004
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -790,25 +109,32 @@ MonoBehaviour:
     Values: 1d1d1d1d1e1e1e1e1e1e1e1f1f1f1f1f1f2020202020202021212121212121222222222222232323232323232424242424242525252525252526262626262627272727272727282828282828292929292929292a2a2a2a2a2a2b2b2b2b2b2b2b2c2c2c2c2c2c2d2d2d2d2d2d2d2e2e2e2e2e2e2f2f2f2f2f2f2f303030303030
   TurbulenceAmplitudeCurve:
     Curve:
+      serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: 0.65
         inSlope: 0.70000005
         outSlope: 0.70000005
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 0.5
+      - serializedVersion: 3
+        time: 0.5
         value: 1
         inSlope: 0.70000005
         outSlope: -0.70000005
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 1
+      - serializedVersion: 3
+        time: 1
         value: 0.65
         inSlope: -0.70000005
         outSlope: -0.70000005
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -819,39 +145,50 @@ MonoBehaviour:
     Values: 111111111212121212121313131313131314141414141414151515151515151616161616161717171717171718181818181818191919191919191a1a1a1a1a1a1b1a1a1a1a1a1a191919191919191818181818181817171717171717161616161616151515151515151414141414141413131313131313121212121212111111
   TurbulenceFrequencyCurve:
     Curve:
+      serializedVersion: 2
       m_Curve:
-      - time: 0
+      - serializedVersion: 3
+        time: 0
         value: 0.099999994
         inSlope: 1.8
         outSlope: 0.5
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 0.39999998
+      - serializedVersion: 3
+        time: 0.39999998
         value: 0.29999998
         inSlope: 0.5
         outSlope: 6.9999986
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 0.5
+      - serializedVersion: 3
+        time: 0.5
         value: 1
         inSlope: 6.9999986
         outSlope: -7.000003
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 0.59999996
+      - serializedVersion: 3
+        time: 0.59999996
         value: 0.29999998
         inSlope: -7.000003
         outSlope: -0.49999985
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
-      - time: 1
+      - serializedVersion: 3
+        time: 1
         value: 0.100000024
         inSlope: -0.49999985
         outSlope: -1.8
+        tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -861,13 +198,13 @@ MonoBehaviour:
     Value: 134
     Values: 0d0d0e0e0f10101111121213131414151516161717181819191a1b1b1c1c1d1d1e1e1f1f202021212222232324242526262727282e353c444b525a616870777e867e777068615a524b443c352e282727262625242423232222212120201f1f1e1e1d1d1c1c1b1b1a19191818171716161515141413131212111110100f0e0e0d
   EmissionTimeShift: -0.01
---- !u!114 &114589993581415996
+--- !u!114 &114852371345514353
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f4591e6ef125534dada831973d4130f, type: 3}
@@ -884,18 +221,23 @@ MonoBehaviour:
   SmokeDiffusionBySmokeVelocity: 32
   MuzzleSpeedMultiplier: 1.2
   SpeedTurbulenceDensity:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 1
       inSlope: 0.10141078
       outSlope: 0.10141078
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 9
+    - serializedVersion: 3
+      time: 9
       value: 5
       inSlope: -0.003568381
       outSlope: -0.003568381
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -903,18 +245,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   SpeedTurbulenceStrength:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 1
       inSlope: 30.08011
       outSlope: 30.08011
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 8
+    - serializedVersion: 3
+      time: 8
       value: 80
       inSlope: -0.06502755
       outSlope: 3.1863205
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -922,25 +269,32 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   SpeedSmokeStrength:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 1
       inSlope: -0.25908774
       outSlope: -0.25908774
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 2.2733924
+    - serializedVersion: 3
+      time: 2.2733924
       value: 0.6521829
       inSlope: -0.04708767
       outSlope: -0.04708767
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 10
+    - serializedVersion: 3
+      time: 10
       value: 0.099999994
       inSlope: -0.2260509
       outSlope: -0.2260509
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -948,18 +302,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   SpeedStartDiffusion:
+    serializedVersion: 2
     m_Curve:
-    - time: 33
+    - serializedVersion: 3
+      time: 33
       value: 0.049999997
       inSlope: 0.010381571
       outSlope: 0.010381571
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 35
+    - serializedVersion: 3
+      time: 35
       value: 0.5
       inSlope: 0.00523823
       outSlope: 0.00523823
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -967,32 +326,41 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Smoke:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 0.03248305
       outSlope: 0.10052368
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 0.19999999
+    - serializedVersion: 3
+      time: 0.19999999
       value: 1
-      inSlope: 1.7710486E-06
+      inSlope: 0.0000017710486
       outSlope: -0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 0.45
+    - serializedVersion: 3
+      time: 0.45
       value: 1
       inSlope: 0
       outSlope: -0.003683281
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 1
+    - serializedVersion: 3
+      time: 1
       value: 0
       inSlope: -4.2208886
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1004,13 +372,13 @@ MonoBehaviour:
   SmokeLengthRandomness: 10
   SmokeIncreasingByShot: 0.4
   ShotFactorDropTime: 0.5
---- !u!114 &114420049391088346
+--- !u!114 &114135411743669764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae72bbdd5dcca54f95119548373eb75, type: 3}
@@ -1018,13 +386,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPos: 0
   EmitterRadius: 0
-  ConusSize: 1
+  ConusSize: 0.5
   Sizes:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.4024683
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1033,7 +401,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0.75213677
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1048,7 +416,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.4
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1071,8 +439,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.4
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1080,7 +448,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.6
       value: 1
       inSlope: 0
       outSlope: 0
@@ -1091,16 +459,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SizesRnd: 0.5
-  Size: 1
-  Speed: 1
-  LifeTime: 1
+  SizesRnd: 0.178
+  Size: 2
+  Speed: 10
+  LifeTime: 5
   Color:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 1, b: 1, a: 0.050980393}
+    key1: {r: 1, g: 1, b: 1, a: 0.1882353}
+    key2: {r: 0, g: 0, b: 0, a: 0.1882353}
+    key3: {r: 0, g: 0, b: 0, a: 0.1882353}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
@@ -1115,8 +483,8 @@ MonoBehaviour:
     ctime7: 0
     atime0: 0
     atime1: 65535
-    atime2: 0
-    atime3: 0
+    atime2: 65535
+    atime3: 65535
     atime4: 0
     atime5: 0
     atime6: 0
@@ -1124,15 +492,15 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  CountMin: 1
-  CountRange: 3
---- !u!114 &114966734616355666
+  CountMin: 0
+  CountRange: 2
+--- !u!114 &114791583445325526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 955192fb6cf02a245a9e4b04667649e7, type: 3}
@@ -1141,46 +509,36 @@ MonoBehaviour:
   Particles:
   - Position: 0.020000001
     Size: 0.19557787
-    RandomShift:
-      x: 0
-      y: 0
+    RandomShift: {x: 0, y: 0}
     AxisShift: 0
   - Position: 0.040000003
     Size: 0.3866814
-    RandomShift:
-      x: 0
-      y: 0
+    RandomShift: {x: 0, y: 0}
     AxisShift: 0
   - Position: 0.060000002
     Size: 0.43343776
-    RandomShift:
-      x: 0
-      y: 0
+    RandomShift: {x: 0, y: 0}
     AxisShift: 0
   - Position: 0.080000006
     Size: 0.44597536
-    RandomShift:
-      x: 0
-      y: 0
+    RandomShift: {x: 0, y: 0}
     AxisShift: 0
   - Position: 0.1
     Size: 0.5
-    RandomShift:
-      x: 0
-      y: 0
+    RandomShift: {x: 0, y: 0}
     AxisShift: 0
   Type: 0
   ParticlesCount: 5
-  JetBounds:
-    x: 0
-    y: 0.1
-    z: 1
+  JetBounds: {x: 0, y: 0.1, z: 1}
   PositionDensity:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0.5
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1188,25 +546,32 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   Sizes:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 1
       outSlope: 1
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 0.4020737
+    - serializedVersion: 3
+      time: 0.4020737
       value: 0.77521896
       inSlope: 0.87946653
       outSlope: 0.87946653
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 1
+    - serializedVersion: 3
+      time: 1
       value: 1
       inSlope: 1
       outSlope: 1
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1214,18 +579,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   RandomShiftsX:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 1
+    - serializedVersion: 3
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1233,18 +603,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   RandomShiftsY:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 1
+    - serializedVersion: 3
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1252,18 +627,23 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   AxisShift:
+    serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 3
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
-    - time: 1
+    - serializedVersion: 3
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
@@ -1273,16 +653,14 @@ MonoBehaviour:
   SizesMult: 0.5
   AxisShiftMult: 2
   Chance: 0.708
-  RandomShiftsMult:
-    x: 1
-    y: 1
---- !u!114 &114499411749020624
+  RandomShiftsMult: {x: 1, y: 1}
+--- !u!114 &114146300239275760
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ae72bbdd5dcca54f95119548373eb75, type: 3}
@@ -1290,13 +668,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartPos: 0
   EmitterRadius: 0
-  ConusSize: 1
+  ConusSize: 0.5
   Sizes:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.4024683
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1305,7 +683,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0.75213677
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1319,8 +697,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.4
+      value: 0.8285046
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1328,7 +706,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.6
       value: 1
       inSlope: 0
       outSlope: 0
@@ -1343,8 +721,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: 0.4
+      value: 0.7
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1352,7 +730,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1
+      time: 0.5
       value: 1
       inSlope: 0
       outSlope: 0
@@ -1363,15 +741,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SizesRnd: 0.5
-  Size: 1
-  Speed: 1
-  LifeTime: 1
+  SizesRnd: 0.089
+  Size: 0.4
+  Speed: 5
+  LifeTime: 0.2
   Color:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 1, g: 1, b: 1, a: 0.8}
+    key1: {r: 1, g: 1, b: 1, a: 0.79607844}
+    key2: {r: 0, g: 0, b: 0, a: 0.7882353}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1386,8 +764,8 @@ MonoBehaviour:
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 65535
-    atime2: 0
+    atime1: 32253
+    atime2: 65535
     atime3: 0
     atime4: 0
     atime5: 0
@@ -1395,35 +773,25 @@ MonoBehaviour:
     atime7: 0
     m_Mode: 0
     m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
+    m_NumAlphaKeys: 3
   CountMin: 1
-  CountRange: 3
---- !u!114 &114723594963193047
+  CountRange: 1
+--- !u!114 &114783833386811661
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147983611798404}
+  m_GameObject: {fileID: 1219177937728128}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6d3b4ad0aabc64408a053c8da95b5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bounds:
-    x: 1
-    y: 1
-    z: 1
-  Center:
-    x: 0
-    y: 0
-    z: 0
-  LifetimeDelta:
-    x: 0.46192896
-    y: 1.4517748
-  Size:
-    x: 0.29142135
-    y: 0.86431473
+  Bounds: {x: 1, y: 1, z: 1}
+  Center: {x: 0, y: 0, z: 0}
+  LifetimeDelta: {x: 0.46192896, y: 1.4517748}
+  Size: {x: 0.29142135, y: 0.86431473}
   Count: 3
   VelocityFactor: 10
   Angle: 0.04
