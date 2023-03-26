@@ -2,9 +2,9 @@ Shader "Hidden/PostProcessing/Bloom"
 {
     HLSLINCLUDE
 
-        #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/StdLib.hlsl"
-        #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/Colors.hlsl"
-        #include "Packages/com.unity.postprocessing/PostProcessing/Shaders/Sampling.hlsl"
+        #include "Assets/Packages/Custom Post Processing/PostProcessing/Shaders/StdLib.hlsl"
+        #include "Assets/Packages/Custom Post Processing/PostProcessing/Shaders/Colors.hlsl"
+        #include "Assets/Packages/Custom Post Processing/PostProcessing/Shaders/Sampling.hlsl"
 
         TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
         TEXTURE2D_SAMPLER2D(_BloomTex, sampler_BloomTex);
