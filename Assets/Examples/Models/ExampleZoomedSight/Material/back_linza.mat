@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: back_linza
-  m_Shader: {fileID: 4800000, guid: 0fc872da24eb98a4d9ff120cda7de856, type: 3}
-  m_ShaderKeywords:
+  m_Shader: {fileID: 4800000, guid: a386266043affd84ea7b14b4ab6e6b51, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -18,7 +18,7 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: {}
+    m_TexEnvs: []
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
