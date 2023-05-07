@@ -38,6 +38,16 @@ public class MuzzleSparks : MonoBehaviour
 	// Token: 0x04003BF3 RID: 15347
 	public float EmissionTimeShift;
 
+	// Token: 0x04003C0C RID: 15372
+	private Transform transform_0;
+
+	// Token: 0x04003C0D RID: 15373
+	private const int int_0 = 128;
+
+	// Token: 0x04003C0E RID: 15374
+	private const float float_0 = 0.0078125f;
+
+	[Serializable]
 	public class CurveValue
 	{
 		// Token: 0x06003D15 RID: 15637 RVA: 0x00123B40 File Offset: 0x00121D40
