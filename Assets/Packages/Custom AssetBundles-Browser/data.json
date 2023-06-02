@@ -57,7 +57,8 @@
         4859661277790921492,
         5434504197916602854,
         -8489410870997239279,
-        -9097646456559839648
+        -9097646456559839648,
+        -563920729567369474
     ],
     "eft": [
         -9098473984068178372,
@@ -117,7 +118,8 @@
         -4587696812477868827,
         -8341598494030230519,
         192419368978497674,
-        1602478987022572099
+        1602478987022572099,
+        8646871023065948827
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -177,6 +179,7 @@
         "Kibas Tuning | Silenced Pistol",
         "Kibas Tuning | Silenced Rifle",
         "Kibas Tuning | RTC_Front",
-        "Kibas Tuning | Utes MuzzleFlash"
+        "Kibas Tuning | Utes MuzzleFlash",
+        ""
     ]
 }
