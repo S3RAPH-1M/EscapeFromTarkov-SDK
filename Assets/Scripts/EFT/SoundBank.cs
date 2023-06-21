@@ -5,6 +5,7 @@ using UnityEngine;
 namespace EFT
 {
 	// Token: 0x02001462 RID: 5218
+	[CreateAssetMenu]
 	public class SoundBank : ScriptableObject
 	{
 		// Token: 0x0400774D RID: 30541
