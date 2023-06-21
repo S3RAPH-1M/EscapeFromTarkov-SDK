@@ -1,2 +1,6 @@
 Library/
 *.bundle
+AssetBundles/
+.vs/EFT-SDK/v17/.suo
+*.cache
+Temp/
