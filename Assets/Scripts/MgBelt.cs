@@ -6,6 +6,14 @@ using UnityEngine;
 // Token: 0x02000808 RID: 2056
 public class MgBelt : MonoBehaviour
 {
+	// Token: 0x04002FFE RID: 12286
+	[SerializeField]
+	private BezierCurve Curve1;
+
+	// Token: 0x04002FFF RID: 12287
+	[SerializeField]
+	private float _sleepCooldown = 4f;
+
 	// Token: 0x04003000 RID: 12288
 	public Rigidbody[] KeyElemetns;
 
@@ -23,5 +31,4 @@ public class MgBelt : MonoBehaviour
 
 	// Token: 0x04003005 RID: 12293
 	public AnimationCurve WeightCurve;
-
 }

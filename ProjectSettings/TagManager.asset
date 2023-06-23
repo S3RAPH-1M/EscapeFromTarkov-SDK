@@ -13,30 +13,30 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - DoorLowPolyCollider
+  - PlayerCollisionTest
+  - Terrain
+  - HighPolyCollider
+  - Triggers
+  - DisablerCullingObject
+  - Loot
+  - HitCollider
+  - PlayerRenderers
+  - LowPolyCollider
+  - Weapon Preview
+  - Shells
+  - CullingMask
+  - Interactive
+  - DeadBody
+  - RainDrops
+  - Menu Environment
+  - Foliage
+  - PlayerSpiritAura
+  - Sky
+  - LevelBorder
+  - TransparentCollider
+  - Grass
   m_SortingLayers:
   - name: Default
     uniqueID: 0
