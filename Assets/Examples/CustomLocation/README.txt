@@ -1,1 +1,1 @@
-For client-side part of the custom location refer to this plugin repo: TBD
+For client and server side part of the custom location refer to this repo: https://github.com/SamSWAT911/SamSWAT.CustomLocation
