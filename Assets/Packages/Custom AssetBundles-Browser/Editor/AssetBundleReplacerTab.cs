@@ -220,25 +220,32 @@ namespace AssetBundleBrowser.Custom
 
         public void ReplacePathIDs(string bundleName, string outputDirectory, BuildAssetBundleOptions options)
         {
-            var path = $"{Directory.GetCurrentDirectory()}/{outputDirectory}/{bundleName}";
-            var replacers = new List<AssetsReplacer>();
-            var am = new AssetsManager();
-
-            var bundle = am.LoadBundleFile(path);
-            var assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
-            var assetList = assetsFile.table.assetFileInfo;
-
-            var replaced = TryReplaceFields(assetList, am, assetsFile, replacers);
-            if (!replaced)
+            try
             {
-                Debug.Log($"skipping {bundle.name} as no ids were found to replace");
-                am.UnloadAll();
-                return;
-            }
+                var path = $"{Directory.GetCurrentDirectory()}/{outputDirectory}/{bundleName}";
+                var replacers = new List<AssetsReplacer>();
+                var am = new AssetsManager();
 
-            WriteChangesFromMemory(assetsFile, replacers, path, bundle);
-            am.UnloadAll();
-            CompressBundle(am, options, path);
+                var bundle = am.LoadBundleFile(path);
+                var assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
+                var assetList = assetsFile.table.assetFileInfo;
+
+                var replaced = TryReplaceFields(assetList, am, assetsFile, replacers);
+                if (!replaced)
+                {
+                    Debug.Log($"skipping {bundle.name} as no ids were found to replace");
+                    am.UnloadAll();
+                    return;
+                }
+
+                WriteChangesFromMemory(assetsFile, replacers, path, bundle);
+                am.UnloadAll();
+                CompressBundle(am, options, path);
+            }
+            catch (Exception e)
+            {
+                Debug.LogException(e);
+            }
         }
 
         private bool TryReplaceFields(AssetFileInfoEx[] assetList, AssetsManager am, AssetsFileInstance assetsFile,
