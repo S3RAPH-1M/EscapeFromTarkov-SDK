@@ -5,8 +5,8 @@ Shader "p0/Reflective/Bumped Specular SMap" {
 		_BaseTintColor ("Tint Color", Color) = (1,1,1,1)
 		_SpecMap ("GlossMap", 2D) = "white" {}
 		_SpecColor ("Specular Color", Color) = (0.5,0.5,0.5,1)
-		_Glossness ("_Glossness", Range(0.01, 10)) = 1
-		_Specularness ("_Specularness", Range(0.01, 10)) = 0.078125
+		_Glossness ("Specularness", Range(0.01, 10)) = 1
+		_Specularness ("Glossness", Range(0.01, 10)) = 0.078125
 		_ReflectColor ("Reflection Color", Color) = (1,1,1,0.5)
 		_MainTex ("Base (RGB) Specular (A)", 2D) = "white" {}
 		[Toggle(TINTMASK)] _HasTint ("Has tint", Float) = 0
