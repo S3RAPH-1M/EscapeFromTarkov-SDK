@@ -102,6 +102,7 @@ public class ItemPreviewWindow : EditorWindow
         {
             itemToRenderInstance.transform.localPosition = ItemPreview.GetBounds(itemToRenderInstance).center;
         }
+        itemToRenderInstance.transform.localScale = component != null ? component.scale : Vector3.one;
     }
 
     private void ClosePreviewWindow()

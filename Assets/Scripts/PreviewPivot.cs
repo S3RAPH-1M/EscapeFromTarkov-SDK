@@ -7,9 +7,11 @@ using UnityEngine;
 public class PreviewPivot : MonoBehaviour
 {
 
+#if UNITY_EDITOR
 	[ContextMenu("Apply Default Settings")]
 	public void ApplyDefaultSettings()
 	{
+		UnityEditor.Undo.RecordObject(this, "Applied default PreviewPivot settings");
 		pivotPosition = ItemPreview.GetBounds(gameObject).center;
 		pivotRotation = new Quaternion(0f, 0.7071068f, 0, 0.7071068f);
 		Icon = new IconSettings
@@ -17,8 +19,27 @@ public class PreviewPivot : MonoBehaviour
 			rotation = new Quaternion(0f, 0.8433914f, 0f, -0.537299633f),
 			boundsScale = 0.9f
 		};
+		UnityEditor.PrefabUtility.RecordPrefabInstancePropertyModifications(this);
 	}
 
+	public void Awake()
+	{
+		_oldRotation = Icon.rotation;
+	}
+
+	public void OnValidate()
+	{
+		if (!_oldRotation.Equals(Icon.rotation))
+		{
+			_oldRotation = Icon.rotation;
+			Icon.rotationEuler = Icon.rotation.eulerAngles;
+		}
+		else
+		{
+			Icon.rotation = Quaternion.Euler(Icon.rotationEuler);
+		}
+	}
+#endif
 	public Vector3 pivotPosition = Vector3.zero;
 
 	// Token: 0x04002407 RID: 9223
@@ -32,6 +53,8 @@ public class PreviewPivot : MonoBehaviour
 
 	// Token: 0x0400240A RID: 9226
 	public IconSettings Icon;
+
+	private Quaternion _oldRotation;
 
 	// Token: 0x020005F3 RID: 1523
 	[Serializable]
@@ -57,7 +80,9 @@ public class PreviewPivot : MonoBehaviour
 
 		// Token: 0x0400240D RID: 9229
 		public Quaternion rotation;
-
+		#if UNITY_EDITOR
+		public Vector3 rotationEuler;
+		#endif
 		// Token: 0x0400240E RID: 9230
 		public float boundsScale = 1f;
 
