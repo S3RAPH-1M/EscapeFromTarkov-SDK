@@ -75,7 +75,13 @@
         -7305776145360943285,
         1117732741378499441,
         -4037173891753180005,
-        -711463726851882686
+        -711463726851882686,
+        4870518337489161011,
+        -4736421079108240470,
+        -4460012622334025940,
+        -3950773507748613903,
+        4331944961376377431,
+        4963929626472855650
     ],
     "eft": [
         -9098473984068178372,
@@ -153,7 +159,13 @@
         -2467684226505883303,
         3963011786341507362,
         5767532647869597998,
-        5040192186352607596
+        5040192186352607596,
+        3504963903896989238,
+        -6116221695959880877,
+        7427788010283764793,
+        4940006776679540330,
+        -4083253403078759661,
+        1052853038577482737
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -231,6 +243,12 @@
         "shaders | Hidden/ScreenMask",
         "shaders | Hidden/Time of Day/Scattering",
         "shaders | Custom/OpticGlass",
-        "Hole Manager | Spec Round Mask"
+        "Hole Manager | Spec Round Mask",
+        "cubemap | patron metal",
+        "cubemap | patron brass matte",
+        "cubemap | patron full",
+        "cubemap | patron red",
+        "cubemap | patron brass",
+        "cubemap | patron metal matte"
     ]
 }
