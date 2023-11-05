@@ -31,6 +31,7 @@ Install EscapeFromTarkov-SDK with git
 
 - Ability to Create Custom Character Models - Examples Included
 - Ability to Create Custom Armors / Rigs - Examples Included
+- Ability to Create Custom Rigs Layouts - Examples Included (Only Prefab. No Code.)
 - Ability to Create Custom Backpacks - Examples Included
 - Ability to Create Custom FPP Hands - Examples Included
 - Ability to Create Custom Melee Weapons - Examples Included
