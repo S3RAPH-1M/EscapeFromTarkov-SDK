@@ -599,9 +599,9 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1067087135503378738, guid: 6b6f9202bb47e09438615128c54374a9, type: 3}
-  - {fileID: 1573358084136109322, guid: 6b6f9202bb47e09438615128c54374a9, type: 3}
-  - {fileID: -1360991219368177298, guid: 6b6f9202bb47e09438615128c54374a9, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2100000, guid: 7d8224c5379fb5f4d852a65af0f86893, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -686,7 +686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08edfe2ca1c7fd541be5b33054148dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseTransform: {fileID: 0}
   _skinnedMeshRenderer: {fileID: 7072082119024874061}
   _bonePaths:
   - Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base HumanRibcage/Base
@@ -805,7 +804,6 @@ MonoBehaviour:
     HumanRForearm3/Base HumanRPalm/Base HumanRDigit51/Base HumanRDigit52/Base HumanRDigit53
   _rootBonePath: Base HumanPelvis/Base HumanSpine1/Base HumanSpine2/Base HumanSpine3/Base
     HumanRibcage/Base HumanRCollarbone/Base HumanRUpperarm
-  _toggle: 0
 --- !u!114 &7678875736961941494
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: Thunder
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0.05
+  Rolloff: 5000
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 7
+  _clipLiength: 13.575261
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 55ad3d188de4c8043b233f8d7e81cfeb, type: 3}
+      - {fileID: 8300000, guid: c8a435cdce5bbc9458ae7cf778ad070b, type: 3}
+      - {fileID: 8300000, guid: 3b1bd60c69f42ea4e9028feb82651e71, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 55ad3d188de4c8043b233f8d7e81cfeb, type: 3}
+      - {fileID: 8300000, guid: c8a435cdce5bbc9458ae7cf778ad070b, type: 3}
+      - {fileID: 8300000, guid: 3b1bd60c69f42ea4e9028feb82651e71, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: d570acc7618f82b4aa8a7446b61e128a, type: 3}
+      - {fileID: 8300000, guid: fb3d7e3cb4e636f43bf9ec6ce98f7dbd, type: 3}
+      - {fileID: 8300000, guid: 503a58997e824724dbdb1c7f2692f0ea, type: 3}
+  - Clips:
+    - Clips: []
+    - Clips: []
+    - Clips: []
+  BlendOptions: {fileID: 11400000, guid: 4b754796fb4a38349aca8fb24ef92c33, type: 2}

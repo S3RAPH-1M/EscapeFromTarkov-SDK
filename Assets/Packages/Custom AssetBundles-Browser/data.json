@@ -165,7 +165,19 @@
         -3890568753834772748,
         -8060393950058466312,
         -422966819021616537,
-        -5984372119845698410
+        -5984372119845698410,
+        7171069248387077407,
+        -3554850206547060039,
+        -3226454439483082110,
+        5041503260182643882,
+        6142879839585165276,
+        8132829452305801434,
+        -2653559290639970895,
+        -7548672136593989104,
+        -5893350420614494845,
+        8785956743020224426,
+        -3026255568481339866,
+        -1127294855526903099
     ],
     "eft": [
         -9098473984068178372,
@@ -333,7 +345,19 @@
         9223139326766418594,
         7295684072403751235,
         -8881781124921059205,
-        -4069225464963834398
+        -4069225464963834398,
+        4234235162468179702,
+        -951331634639839744,
+        -9084985179351597799,
+        2211162232641454319,
+        3449339030260872870,
+        -8008660352800073480,
+        -9218096503835416963,
+        6669807739597408307,
+        -6590521260856463686,
+        8367282435613991712,
+        -2954185887128389457,
+        1520849694671116886
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -501,6 +525,18 @@
         "generic | weap generic spin 9",
         "generic | light switch button 1",
         "generic | light switch button 2",
-        "generic | light switch button 3"
+        "generic | light switch button 3",
+        "shaders | Time of Day/Atmosphere",
+        "shaders | Time of Day/Clear Alpha",
+        "shaders | Time of Day/Cloud Billboard",
+        "shaders | Time of Day/Cloud Layer",
+        "shaders | Time of Day/Cloud Layer 2",
+        "shaders | Time of Day/Cloud Layer 2 Light",
+        "shaders | Time of Day/Cloud Layer 2 Pointlight",
+        "shaders | Time of Day/Cloud Shadow",
+        "shaders | Time of Day/Moon",
+        "shaders | Time of Day/Skybox",
+        "shaders | Time of Day/Space",
+        "shaders | Time of Day/Sun"
     ]
 }

@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: RainFallDropsClose
+  m_Shader: {fileID: 4800000, guid: 504def2d01a063a4c9cb00b60713f9c1, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a52a00773fa92e14f9a1deac27c7e5a9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TintMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - USEHEAT: 0
+    - _AlphaMult: 0.1
+    - _Ambient: 2
+    - _Angle: 0
+    - _BumpScale: 1
+    - _BumpTiling: 1
+    - _CameraPosShift: -0.48
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DropsSpec: 128
+    - _DstBlend: 0
+    - _Factor: 0
+    - _Glossiness: 0.5
+    - _Glossness: 1
+    - _HasTint: 0
+    - _HeatTemp: 0
+    - _HeatVisible: 1
+    - _JustBlabla: 0
+    - _Metallic: 0
+    - _MinAmbient: 0.23863134
+    - _Mode: 0
+    - _NdotLOffset: 0.4
+    - _NightRippleFakeLightOffset: 0.2
+    - _NormalIntensity: 1
+    - _NormalUVMultiplier: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RippleFakeLightIntensityOffset: 0.7
+    - _RippleTexScale: 4
+    - _Scale: 30
+    - _ShadowOffset: 1.25
+    - _SideSpeed: 0
+    - _SizeMul: 2.02
+    - _SizeMulX: 1
+    - _SizeMulY: 1
+    - _SkinnedMeshMaterial: 0
+    - _Specularness: 0.078125
+    - _SrcBlend: 1
+    - _StencilType: 0
+    - _USERAIN: 0
+    - _UVSec: 0
+    - _Units: 0
+    - _Xsize: 0.021
+    - _YScale: 63.62
+    - _Ysize: 0.26
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseTintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _CamFwd: {r: 0.9516289, g: 0.29838318, b: -0.07328112, a: 0}
+    - _CamLeft: {r: 0, g: 0, b: 0, a: 0}
+    - _CamRight: {r: -0.076778725, g: 0.00000016391277, b: -0.99704826, a: 0}
+    - _CamUp: {r: -0.2975024, g: 0.9544462, b: 0.022909611, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Debug: {r: 3, g: 0, b: 0, a: 0}
+    - _DefVals: {r: 0.5, g: 0.7, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FallingVector: {r: 0, g: -20, b: 0, a: 0}
+    - _HeatCenter: {r: 0, g: 0, b: 0, a: 1}
+    - _HeatColor1: {r: 1, g: 0, b: 0, a: 1}
+    - _HeatColor2: {r: 1, g: 0.34, b: 0, a: 1}
+    - _HeatSize: {r: 0.02, g: 0.04, b: 0.02, a: 1}
+    - _ReflectColor: {r: 1, g: 1, b: 1, a: 0.5}
+    - _Size: {r: 0.004723958, g: 0.01, b: 0, a: 0}
+    - _SizeMul: {r: 0.19, g: 3, b: 0, a: -6.54}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecVals: {r: 1.1, g: 2, b: 0, a: 0}
+    - _Temperature: {r: 0.1, g: 0.2, b: 0.33, a: 0}
