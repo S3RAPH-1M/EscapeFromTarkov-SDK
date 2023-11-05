@@ -3,7 +3,22 @@ guid: 6b6f9202bb47e09438615128c54374a9
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bear_hands_restile
+    second: {fileID: 2100000, guid: 7d8224c5379fb5f4d852a65af0f86893, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 141cfe6e72cbdc946b7e9d83580fac35, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: watch_bear
+    second: {fileID: 2100000, guid: 94ed5fc345385b64db99917fb4968f3a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

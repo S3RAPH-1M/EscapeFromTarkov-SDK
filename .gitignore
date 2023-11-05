@@ -4,3 +4,5 @@ AssetBundles/
 .vs/EFT-SDK/v17/.suo
 *.cache
 Temp/
+.git/
+.vs/

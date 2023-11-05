@@ -1,12 +1,12 @@
 Shader "p0/Reflective/Bumped Specular SMap_Decal" {
 	Properties {
 		[MaterialEnum(Static, 0, Characters, 1, Hands, 2)] _StencilType ("_StencilType", Float) = 0
-		_Color ("Main Color", Vector) = (1,1,1,1)
+		_Color ("Main Color", Color) = (1,1,1,1)
 		_SpecMap ("GlossMap", 2D) = "white" {}
-		_SpecColor ("Specular Color", Vector) = (0.5,0.5,0.5,1)
+		_SpecColor ("Specular Color", Color) = (0.5,0.5,0.5,1)
 		_Glossness ("Specularness", Range(0.01, 10)) = 1
 		_Specularness ("Glossness", Range(0.01, 10)) = 0.078125
-		_ReflectColor ("Reflection Color", Vector) = (1,1,1,0.5)
+		_ReflectColor ("Reflection Color", Color) = (1,1,1,0.5)
 		_MainTex ("Base (RGB) Specular (A)", 2D) = "white" {}
 		_Cube ("Reflection Cubemap", Cube) = "" {}
 		_BumpMap ("Normalmap", 2D) = "bump" {}

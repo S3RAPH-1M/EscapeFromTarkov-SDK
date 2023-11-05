@@ -2,7 +2,7 @@
 
 Shader "Custom/Additive" {
 	Properties {
-		_TintColor ("Tint Color", Vector) = (0.5,0.5,0.5,0.5)
+		_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
 		_MainTex ("Particle Texture", 2D) = "white" {}
 		_InvFade ("Soft Particles Factor", Range(0.01, 10)) = 1
 		_InvWindowSize ("Inv Window Size", Float) = 1

@@ -1,6 +1,6 @@
 Shader "CW FX/BackLens" {
 	Properties {
-		_Color ("Color", Vector) = (1,1,1,1)
+		_Color ("Color", Color) = (1,1,1,1)
 		_Offset ("_Offset", Vector) = (0,0,0,0)
 	}
 	SubShader {

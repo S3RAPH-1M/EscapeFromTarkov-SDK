@@ -1,10 +1,10 @@
 Shader "Custom/OpticGlass" {
 	Properties {
-		_Color ("Main Color", Vector) = (1,1,1,1)
-		_SpecColor ("Specular Color", Vector) = (0.5,0.5,0.5,1)
+		_Color ("Main Color", Color) = (1,1,1,1)
+		_SpecColor ("Specular Color", Color) = (0.5,0.5,0.5,1)
 		_Shininess ("Shininess", Range(0.01, 4)) = 0.078125
 		_SpecPower ("Specular Power", Range(0.01, 10)) = 1
-		_ReflectColor ("Reflection Color", Vector) = (1,1,1,0.5)
+		_ReflectColor ("Reflection Color", Color) = (1,1,1,0.5)
 		_MainTex ("Base (RGB) Gloss (A)", 2D) = "white" {}
 		_SpecTex ("Specular (R)", 2D) = "white" {}
 		_Cube ("Reflection Cubemap", Cube) = "_Skybox" {}
