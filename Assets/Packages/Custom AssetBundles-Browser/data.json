@@ -177,7 +177,8 @@
         -5893350420614494845,
         8785956743020224426,
         -3026255568481339866,
-        -1127294855526903099
+        -1127294855526903099,
+        -8477008553635546058
     ],
     "eft": [
         -9098473984068178372,
@@ -357,7 +358,8 @@
         -6590521260856463686,
         8367282435613991712,
         -2954185887128389457,
-        1520849694671116886
+        1520849694671116886,
+        -1713581976433109572
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -537,6 +539,7 @@
         "shaders | Time of Day/Moon",
         "shaders | Time of Day/Skybox",
         "shaders | Time of Day/Space",
-        "shaders | Time of Day/Sun"
+        "shaders | Time of Day/Sun",
+        "shaders | Transparent/DepthZwriteDithered"
     ]
 }
