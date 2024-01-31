@@ -502,6 +502,7 @@
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\GrainBaker.shader" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\GaussianDownsample.compute" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\ScreenSpaceReflections.hlsl" />
+    <None Include="Assets\Shaders\Transparent_DepthZwriteDithered.shader" />
     <None Include="Assets\Shaders\Collimator.shader" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\API\XboxOne.hlsl" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\Copy.shader" />
