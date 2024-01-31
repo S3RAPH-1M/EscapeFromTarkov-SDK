@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: hammer_hit_body
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 95
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 2
+  _clipLiength: 2.5170069
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: bbd0dec4b6a7b304088bf775a2a20b7c, type: 3}
+      - {fileID: 8300000, guid: 96f9c2cec0c4285429b2f9e7e75a64ab, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: b515ee6e3fd21df4fb913608800d19a0, type: 3}
+      - {fileID: 8300000, guid: 6031b78a07a802640974d34e49a9c56e, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 0}

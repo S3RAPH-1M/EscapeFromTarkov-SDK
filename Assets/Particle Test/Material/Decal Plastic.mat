@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Decal Plastic
+  m_Shader: {fileID: 4800000, guid: f3903ae7e3dee1d46986b70128c46ea2, type: 3}
+  m_ShaderKeywords: _ALPHABLEND_ON _NORMALMAP
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2005
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: e3ad1cb8e091da24b83e189b33b1e68b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ee8b67b5b0bec774b873f1c9963d2888, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AddAlpha: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.426
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 10
+    - _Factor: 0
+    - _Glossiness: 0.26
+    - _Metallic: 0.25
+    - _Mode: 2
+    - _NormalIntensity: 0.16
+    - _OcclusionStrength: 1
+    - _Parallax: 0.08
+    - _Shininess: 0.7
+    - _SrcBlend: 5
+    - _StencilType: 0
+    - _UVSec: 0
+    - _Units: 0
+    - _ZWrite: 0
+    - _lifetime: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DefVals: {r: 0.1, g: 2.5, b: 0, a: 0}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SpecColor: {r: 0, g: 0, b: 0, a: 0}
+    - _Temperature: {r: 0.1, g: 0.12, b: 1, a: 0}

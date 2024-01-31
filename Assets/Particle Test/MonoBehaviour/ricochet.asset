@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: ricochet
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 0.9
+  DeltaVolume: 0.1
+  Rolloff: 75
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 1
+  SourceType: 2
+  _clipLiength: 2.0572336
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 436bc58990291464aa6d7f4a9425b90b, type: 3}
+      - {fileID: 8300000, guid: a7d9f6f90bf21924483ef4c41140255e, type: 3}
+      - {fileID: 8300000, guid: 742ecf0540a1f2f4d9d43700d080809c, type: 3}
+      - {fileID: 8300000, guid: 1c899438313d10b468844ac348429f18, type: 3}
+      - {fileID: 8300000, guid: fefd29728c6d6874094a7e97d5ea9ce9, type: 3}
+      - {fileID: 8300000, guid: 1ec49572778959148a4dc85aac2dee9c, type: 3}
+      - {fileID: 8300000, guid: 0334b2f6e4496e144b6d9b77b03f3cbe, type: 3}
+      - {fileID: 8300000, guid: a25caa8b43d566746a963a7e1537ce99, type: 3}
+      - {fileID: 8300000, guid: f3981da97f5d25841958d63db675d23e, type: 3}
+      - {fileID: 8300000, guid: cedcb6aa1a060364a9c0e2714263b746, type: 3}
+      - {fileID: 8300000, guid: dd5eb99905f3e7c49a600d01a68db990, type: 3}
+      - {fileID: 8300000, guid: c7f8e00c03f07984c9745244412c20a2, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 0}

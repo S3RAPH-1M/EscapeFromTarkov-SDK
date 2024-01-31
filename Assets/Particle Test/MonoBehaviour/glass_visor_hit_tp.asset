@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: glass_visor_hit_tp
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 100
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 4
+  _clipLiength: 0.8331292
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: ccc749903bfc5a648b217c815027a698, type: 3}
+      - {fileID: 8300000, guid: 9b1ba5e6336643847b915e05b8a17cab, type: 3}
+      - {fileID: 8300000, guid: 2c4fb1146a3c8ec44873e4de5df87d7a, type: 3}
+      - {fileID: 8300000, guid: cc5bc4b03000ce54d89d3e52a493ea7e, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 0}

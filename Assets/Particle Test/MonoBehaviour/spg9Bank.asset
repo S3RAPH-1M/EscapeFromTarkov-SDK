@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: spg9Bank
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 1000
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 0
+  _clipLiength: 6.3811336
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: a4cb1854f39405946abb93b678f0ea44, type: 3}
+      - {fileID: 8300000, guid: ae8a0d1029ef065499fa1216c8ba0f8f, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: bd3afb9b23b6d1947916591685f8d936, type: 3}
+      - {fileID: 8300000, guid: d330a5660d54a634bb5a3c24b0a18211, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 1ff2a54caa578d246ad3721d2b029bef, type: 3}
+      - {fileID: 8300000, guid: 4658d4cd6457f614d974e127947a3e4c, type: 3}
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 108efb930423fbb48a00374e159b2837, type: 3}
+      - {fileID: 8300000, guid: 10cb2a7826397b74584ad421f47b9447, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 02c0e11d70caa2d4b9110bd3da7b5dae, type: 3}
+      - {fileID: 8300000, guid: d6a73c4cd866a914abeb220ab3df30c3, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+  BlendOptions: {fileID: 11400000, guid: 1832803bc148a624c988a3f838d3b4ef, type: 2}
