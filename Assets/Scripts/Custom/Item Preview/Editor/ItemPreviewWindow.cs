@@ -91,7 +91,6 @@ public class ItemPreviewWindow : EditorWindow
         itemPreviewInstance = Instantiate(itemPreview);
         SceneManager.MoveGameObjectToScene(itemPreviewInstance.gameObject, previewScene);
         itemPreviewInstance.previewCamera.scene = previewScene;
-        itemPreviewInstance.previewCamera.renderingPath = RenderingPath.DeferredShading;
         itemToRenderInstance = Instantiate(itemToRender, itemPreviewInstance.previewPivot);
         PreviewPivot component = itemToRenderInstance.GetComponent<PreviewPivot>();
         if (component != null)

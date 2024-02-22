@@ -16,7 +16,6 @@ namespace EFT.EnvironmentEffect
 		[Space]
 		private AudioSource OutdoorSource;
 
-		public static EnvironmentManager Instance;
 		// Token: 0x0400A9EC RID: 43500
 		[SerializeField]
 		private AudioSource OutdoorMixSource;
