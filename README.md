@@ -16,11 +16,11 @@ This project is meant for the modders who want to work on custom assets for Esca
 
 ## Installation
 
-Install EscapeFromTarkov-SDK with git
+Install MPT-SDK with git
 - Step 1: 
 ```bash
-  git clone "https://github.com/S3RAPH-1M/EscapeFromTarkov-SDK.git"
-  cd EscapeFromTarkov-SDK
+  git clone "https://github.com/mpt-coop/MPT-SDK.git"
+  cd MPT-SDK
 ```
 - Step 2: Download & Install Unity Hub. 
 - Step 3: Download & Install Unity 2019.4.39 (Click on the unity icon at the bottom)
@@ -58,20 +58,3 @@ Install EscapeFromTarkov-SDK with git
 If you need support. Here are the 2 ways you can find me.
 1. Join the SPT Discord. (click the Discord icon below)
 2. Add me on Discord. My username is "ssh__"
-
-
-<p align="left">
-<a href="https://discord.gg/sptarkov" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Xn9msqQZan" height="30" width="40" /></a>
-</p>
-
-
-
-
-
-
-
-
-
-
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://unity.com/releases/editor/whats-new/2019.4.39" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> </a> </p>
