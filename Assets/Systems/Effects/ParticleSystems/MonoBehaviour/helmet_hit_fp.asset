@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: helmet_hit_fp
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 100
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 4
+  _clipLiength: 0.76689345
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 5dd9dbfef56aaf5448a27d5df4347a89, type: 3}
+      - {fileID: 8300000, guid: 8da16d8f81caaac48910b7b3c6a1bf1c, type: 3}
+      - {fileID: 8300000, guid: b58de5c663bf1454398b362f634577bd, type: 3}
+      - {fileID: 8300000, guid: 2bea9f3f69672ab4683bf57770140b21, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 0}

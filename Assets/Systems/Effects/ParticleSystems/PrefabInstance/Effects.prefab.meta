@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: edfd2a81af6a8f147b2e52cffb5ec785
+timeCreated: 1706547128
+licenseType: Free
+PrefabImporter:
+  externalObjects: {}
+  addedObjectFileIDs: []
+  isPrefabVariant: 0
+  unableToImportOnPreviousDomainReload: 0
+  userData:
+  assetBundleName: assets/systems/effects/particlesystems/effects.bundle
+  assetBundleVariant:

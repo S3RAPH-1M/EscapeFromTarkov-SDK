@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: hammer_hit
+  m_EditorClassIdentifier: 
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 80
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 2
+  _clipLiength: 3.2656915
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: e31825b87d9f14c45bb5f6d062ca1352, type: 3}
+      - {fileID: 8300000, guid: ed024c255bf912f409dd3ae5d618b3c8, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 85c7c65e44302e8409ebf686c829d79d, type: 3}
+      - {fileID: 8300000, guid: 64804baa6917f0645986ef7560b241a5, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 9ce807d5847b80d42949620b395be0ae, type: 3}
+      - {fileID: 8300000, guid: 9694c92c6db4b7d4588b97ee52a152d7, type: 3}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 11400000, guid: 2e8c680d97236304080f9bd4e34a6e59, type: 2}

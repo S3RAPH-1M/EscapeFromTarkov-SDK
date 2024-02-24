@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SimpleSparksTestMaterial
+  m_Shader: {fileID: 4800000, guid: d9da137c3059ce94ebf04acfcf3f7102, type: 3}
+  m_ShaderKeywords: TURBULENCE
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3003
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2a92e370200fcc84188f3c821a51e8c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AddLength: 0.03
+    - _FadeOut: 8
+    - _HDR: 1
+    - _Size: 0.04
+    - _Turbulence: 1
+    - _TurbulenceAmplitude: 0.1
+    - _TurbulenceAmplitude0: 5
+    - _TurbulenceAmplitude1: 1
+    - _TurbulenceDensity: 8
+    - _TurbulenceFrequency: 1
+    - _TurbulenceFrequency0: 8
+    - _TurbulenceFrequency1: 30
+    - _TurbulenceStrenght: 0.51
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 2, g: 1.1260908, b: 0.58039224, a: 1}

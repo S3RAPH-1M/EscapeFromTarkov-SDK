@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: sparks
+  m_EditorClassIdentifier: 
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 120
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 1
+  SourceType: 2
+  _clipLiength: 0.48052084
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 98954a6dc28e3264fa3675a682a928fa, type: 3}
+      - {fileID: 8300000, guid: fc2e5f72ab195d2448fc68f66b86e45a, type: 3}
+      - {fileID: 8300000, guid: f7abbd426f4fb874a81f45153b47e97f, type: 3}
+      - {fileID: 8300000, guid: f59a11d619cb00b4d9f602df15461c71, type: 3}
+      - {fileID: 8300000, guid: 9c884ec3fb42d58448ce0f433ffa0764, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 11400000, guid: 8084efe24c9c9fe49a5054f94b4dc83d, type: 2}

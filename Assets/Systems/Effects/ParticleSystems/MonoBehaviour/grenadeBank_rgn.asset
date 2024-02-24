@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: grenadeBank_rgn
+  m_EditorClassIdentifier: 
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 1000
+  IgnoreOcclusion: 1
+  Physical: 1
+  _noEnvironment: 0
+  SourceType: 11
+  _clipLiength: 3.7936459
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 1d5add87acd058d49aac1e56af2c34b7, type: 3}
+      - {fileID: 8300000, guid: 24f4a62a0e2ffec4db65aa118a4bd97d, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 0f84c918e7878c8478575c96c904bc15, type: 3}
+      - {fileID: 8300000, guid: e1e2ab49f105f7e41bebbf4bc0169b48, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: af0d003fc4ce3bc49bfa11863bd1d707, type: 3}
+      - {fileID: 8300000, guid: fe8aa9cbae562e84699db406bafbf22e, type: 3}
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: 4b9f08eb7e4bae743a61cc61b576243a, type: 3}
+      - {fileID: 8300000, guid: a0100e97437324a4fbc7376fd18976aa, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 46ab1324daa282544b2344dbc484e215, type: 3}
+      - {fileID: 8300000, guid: c088d5a607f754245a3ca41df04b8e6d, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+  BlendOptions: {fileID: 11400000, guid: d01cec99623f75d4fb68137dbf2617a0, type: 2}

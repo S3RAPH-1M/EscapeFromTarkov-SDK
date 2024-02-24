@@ -21,5 +21,13 @@ namespace AnimationEventSystem
 
 		// Token: 0x0400583B RID: 22587
 		public int EventsListId = -1;
-	}
+
+#if UNITY_EDITOR		
+        private void OnValidate()
+        {
+            // Automatically generate a random hash for FullNameHash
+            FullNameHash = UnityEngine.Random.Range(int.MinValue, int.MaxValue);				
+        }
+#endif
+    }
 }
