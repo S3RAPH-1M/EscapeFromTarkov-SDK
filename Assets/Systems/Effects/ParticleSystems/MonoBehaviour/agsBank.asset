@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: agsBank
+  m_EditorClassIdentifier:
+  CustomLength: 0.1
+  BaseVolume: 0.65
+  DeltaVolume: 0
+  Rolloff: 1000
+  IgnoreOcclusion: 0
+  Physical: 1
+  _noEnvironment: 0
+  SourceType: 0
+  _clipLiength: 2.24
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: b019f82466a444d4592953ae3a2c8d7a, type: 3}
+      - {fileID: 8300000, guid: a52d5a4d0075c114f9f3fb9b51c57516, type: 3}
+      - {fileID: 8300000, guid: 4f98dd1c4740fac4d97ea99bcae08c8c, type: 3}
+      - {fileID: 8300000, guid: c043a8834b6ec2b4487879f719329197, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 74fec4e3055006641be24e1597bd8b6b, type: 3}
+      - {fileID: 8300000, guid: 74dccdad65ba810428fb5d9e24a2706e, type: 3}
+      - {fileID: 8300000, guid: 0baceb35eba1b0d418fed9f4b63e0228, type: 3}
+      - {fileID: 8300000, guid: e72b2ca672a59e34bb94cacab61286c5, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 8dea1cfad49dc0b4ca9c58d2716d6437, type: 3}
+      - {fileID: 8300000, guid: 4d0ad07352338f54196684886537812c, type: 3}
+      - {fileID: 8300000, guid: 00ade91974fe1234cacd6cfadbf2aaec, type: 3}
+      - {fileID: 8300000, guid: 3d5d7a9f7c8dca340aaf8e056bdbd162, type: 3}
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: de30f5d6da6359a49b40c99df50a0ed8, type: 3}
+      - {fileID: 8300000, guid: 5f538982a4942bf4cb158f8b87eb22bf, type: 3}
+      - {fileID: 8300000, guid: de30f5d6da6359a49b40c99df50a0ed8, type: 3}
+      - {fileID: 8300000, guid: 5f538982a4942bf4cb158f8b87eb22bf, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: e3ae6cdb4d7b7ac438747f8af210f837, type: 3}
+      - {fileID: 8300000, guid: ecf6308001b62d24a8fa77453fe50f40, type: 3}
+      - {fileID: 8300000, guid: e3ae6cdb4d7b7ac438747f8af210f837, type: 3}
+      - {fileID: 8300000, guid: ecf6308001b62d24a8fa77453fe50f40, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: e3ae6cdb4d7b7ac438747f8af210f837, type: 3}
+      - {fileID: 8300000, guid: ecf6308001b62d24a8fa77453fe50f40, type: 3}
+      - {fileID: 8300000, guid: e3ae6cdb4d7b7ac438747f8af210f837, type: 3}
+      - {fileID: 8300000, guid: ecf6308001b62d24a8fa77453fe50f40, type: 3}
+  BlendOptions: {fileID: 11400000, guid: ef28804afe6aa7546b584018363f38e1, type: 2}

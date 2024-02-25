@@ -37,6 +37,7 @@ Install EscapeFromTarkov-SDK with git
 - Ability to Create Custom Melee Weapons - Examples Included
 - Ability to Create Custom Firearms - Examples Included
 - Ability to Create Custom Maps - Examples Included
+- Ability to Create Custom Particle Effects - Examples Included (Requires plugin to load custom particle.)
 - Full Unity Engine Control when bundling Assets
 - Quick & Easy Asset Bundler.
 

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: glass_break_big
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 0.8
+  DeltaVolume: 0
+  Rolloff: 110
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 1
+  SourceType: 12
+  _clipLiength: 2.8065624
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: d8e64d2408914af4a9d9500755c19ff1, type: 3}
+      - {fileID: 8300000, guid: ca599e352d8ec4a41916fac36b4e99ce, type: 3}
+      - {fileID: 8300000, guid: 68724d86c86937e4a97d973a05339141, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 59fdf3ed6494f7e418af7a31d57d6044, type: 3}
+      - {fileID: 8300000, guid: ffeb5b673c577b54cb40de34d32cff43, type: 3}
+      - {fileID: 8300000, guid: 59fdf3ed6494f7e418af7a31d57d6044, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 0}

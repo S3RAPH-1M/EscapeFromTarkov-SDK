@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: wood
+  m_EditorClassIdentifier: 
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0.307
+  Rolloff: 150
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 1
+  SourceType: 2
+  _clipLiength: 1.3193125
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: b75552c22ddb8c241b03dd5ac72393b4, type: 3}
+      - {fileID: 8300000, guid: 3c217aca34a630b4cbd6e4bcfe572c02, type: 3}
+      - {fileID: 8300000, guid: 664bc21ecc875c24f81efd45158dc3cb, type: 3}
+      - {fileID: 8300000, guid: 5c3e5c2e62580fa458d1337929ad53c9, type: 3}
+      - {fileID: 8300000, guid: 6386e1b928fcc5e48bc23ec438f05bfb, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 739b380b72cb85f4582de336c27d27a4, type: 3}
+      - {fileID: 8300000, guid: 2ac7db2a55acb5244bb62a719b9c336b, type: 3}
+      - {fileID: 8300000, guid: 12770dd2ea50b8a438344b91739638eb, type: 3}
+      - {fileID: 8300000, guid: 9512de7d544abda4f8919892f8b4ebc7, type: 3}
+      - {fileID: 8300000, guid: 739b380b72cb85f4582de336c27d27a4, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 11400000, guid: 8084efe24c9c9fe49a5054f94b4dc83d, type: 2}

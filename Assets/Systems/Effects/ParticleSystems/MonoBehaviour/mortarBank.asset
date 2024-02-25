@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: mortarBank
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 1
+  DeltaVolume: 0
+  Rolloff: 1000
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 0
+  _clipLiength: 5.324626
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: df8dffbb18de8364e9f95221b4db9632, type: 3}
+      - {fileID: 8300000, guid: fecd6b69a297e964bab1f4d6c7c6eacf, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: d61640785e3a41148bb9cf6fae65cc21, type: 3}
+      - {fileID: 8300000, guid: a43db18992b79464fb7088badb53be84, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 00aa5bda17deab34083c54db6d2aced5, type: 3}
+      - {fileID: 8300000, guid: 531f9075d59c28a44a452b10f60e5623, type: 3}
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: df8dffbb18de8364e9f95221b4db9632, type: 3}
+      - {fileID: 8300000, guid: fecd6b69a297e964bab1f4d6c7c6eacf, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: d61640785e3a41148bb9cf6fae65cc21, type: 3}
+      - {fileID: 8300000, guid: a43db18992b79464fb7088badb53be84, type: 3}
+    - Clips:
+      - {fileID: 8300000, guid: 00aa5bda17deab34083c54db6d2aced5, type: 3}
+      - {fileID: 8300000, guid: 531f9075d59c28a44a452b10f60e5623, type: 3}
+  BlendOptions: {fileID: 11400000, guid: 551bef3f53e054340b6cfb0a38272491, type: 2}

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72e4002075f93d489919d2355326a4e, type: 3}
+  m_Name: glass_fall
+  m_EditorClassIdentifier:
+  CustomLength: 0
+  BaseVolume: 0.8
+  DeltaVolume: 0
+  Rolloff: 90
+  IgnoreOcclusion: 0
+  Physical: 0
+  _noEnvironment: 0
+  SourceType: 12
+  _clipLiength: 2.7409751
+  Environments:
+  - Clips:
+    - Clips:
+      - {fileID: 8300000, guid: c4f9853a253ebba4f864415f7af81b89, type: 3}
+      - {fileID: 8300000, guid: f8fa474adc1257e4eb41b6ca972d6745, type: 3}
+      - {fileID: 8300000, guid: e19bd59591bec4144813d5ca833e346a, type: 3}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+      - {fileID: 0}
+      - {fileID: 0}
+  - Clips:
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+    - Clips:
+      - {fileID: 0}
+  BlendOptions: {fileID: 0}

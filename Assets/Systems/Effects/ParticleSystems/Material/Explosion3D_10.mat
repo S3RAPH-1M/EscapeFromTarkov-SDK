@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Explosion3D_10
+  m_Shader: {fileID: 4800000, guid: c65d34bd9b9853d4a8cd312e9c89f05d, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 0d7f16879029b484f958416bccdaf038, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorStrength: 2.5
+    - _Cutoff: 0.5
+    - _DiffuseThreshold: -0.08750001
+    - _Diffusion: 2.2214286
+    - _Fog: 1
+    - _InvFade: 0.5
+    m_Colors:
+    - _AdditiveColor: {r: 0.6102941, g: 0.6102941, b: 0.6102941, a: 0.31764707}
+    - _BlendedColor: {r: 0.22794116, g: 0.22794116, b: 0.22794116, a: 0.25882354}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _LocalMinimalAmbientLight: {r: 0, g: 0, b: 0, a: 1}
+    - _TintColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 0.60784316}
+    - _TintColor2: {r: 0.83823526, g: 0.7346035, b: 0.6964749, a: 0.22745098}

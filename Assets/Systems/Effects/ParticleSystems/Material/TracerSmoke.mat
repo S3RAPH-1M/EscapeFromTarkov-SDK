@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TracerSmoke
+  m_Shader: {fileID: 4800000, guid: 3a314660045e0cf4a8cffb61a80db2dd, type: 3}
+  m_ShaderKeywords:
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e6235de223e12d94fbe13242c2182f9e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 4b08635d37b50124bbd81d8352ae5af0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _AnimationSpeed: 0.1
+    - _Distortion: 0.699
+    - _DistortionMax: 0.165
+    - _DistortionMin: 0.052
+    - _FadeIn: 0.3
+    - _FadeOut: 0.2
+    - _NoiseScale: 0.2
+    - _RandomShift: 0.05
+    - _SizeMax: 0.4
+    - _SizeMin: 0.1
+    - _TracerPeriod: 0.1
+    - _VanishSpeed: 1
+    - _ViewDirCosAlpha: 0.651
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 0.141}
+    - _Vals: {r: 0.28, g: 0.08, b: 0, a: 0}

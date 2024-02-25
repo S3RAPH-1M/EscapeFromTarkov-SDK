@@ -95,7 +95,9 @@ public sealed class BetterAudio : MonoBehaviour
 		Nonspatial,
 		// Token: 0x04002CFA RID: 11514
 		Voip,
-		// Token: 0x04002CFB RID: 11515
-		Grenades
-	}
+        // Token: 0x04002CFB RID: 11515
+        Grenades,
+        // Token: 0x04002EF6 RID: 12022
+        Windows
+    }
 }
