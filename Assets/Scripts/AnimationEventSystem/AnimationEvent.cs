@@ -50,7 +50,7 @@ namespace AnimationEventSystem
                     _functionNameHash = -1583670125;
                     break;
 				case "Arm":
-                    _functionNameHash = -386854108;
+                    _functionNameHash = 386854108;
                     break;
 				case "Cook":
                     _functionNameHash = 963907342;
