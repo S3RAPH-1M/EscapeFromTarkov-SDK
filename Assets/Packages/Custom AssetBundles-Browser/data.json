@@ -316,7 +316,13 @@
         2711291729508103207,
         -8673532909072891451,
         4921328853517070634,
-        3670677548031929071
+        3670677548031929071,
+        -5942673788293409571,
+        -8277034359600565239,
+        -5625356831644460961,
+        -2121006104173233229,
+        7413179433146571143,
+        -3651280088676542067
     ],
     "eft": [
         -9098473984068178372,
@@ -635,7 +641,13 @@
         -2653987686338258619,
         9135010303812802124,
         2869931323635496818,
-        -5225142014578404658
+        -5225142014578404658,
+        4708055182941646225,
+        -1673956468052687406,
+        5373734507727661949,
+        165996314024159816,
+        5997129945768020551,
+        6729946233178204048
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -954,6 +966,12 @@
         "Vis HSL Additive",
         "Vis Smoke Distorted Grenade",
         "Vis SuperAdditive",
-        "Vis Water Splash"
+        "Vis Water Splash",
+        "shaders | Custom/LaserBeam",
+        "shaders | Custom/LaserPoint",
+        "shaders | Custom/multiFlare",
+        "shaders | Custom/ShitOnScreen",
+        "shaders | CW FX/Collimator",
+        "shaders | EFT/Glass"
     ]
 }
