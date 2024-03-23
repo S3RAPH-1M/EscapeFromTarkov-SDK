@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: tactical_all_surefire_x400_vis_laser_LOD1
+  m_Shader: {fileID: 4800000, guid: 504def2d01a063a4c9cb00b60713f9c1, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: 99d77aa54d38b404b8a1f01c76789b46, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 6a8a45b5a63637b4bb0a736881a65c24, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TintMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - USEHEAT: 0
+    - _BumpScale: 1
+    - _BumpTiling: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DropsSpec: 128
+    - _DstBlend: 0
+    - _Factor: 0
+    - _Glossiness: 0.5
+    - _Glossness: 1
+    - _HasTint: 0
+    - _HeatTemp: 0
+    - _HeatVisible: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NdotLOffset: 0.4
+    - _NightRippleFakeLightOffset: 0.2
+    - _NormalIntensity: 1
+    - _NormalUVMultiplier: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RippleFakeLightIntensityOffset: 0.7
+    - _RippleTexScale: 4
+    - _Shininess: 1
+    - _SkinnedMeshMaterial: 0
+    - _SpecPower: 1
+    - _Specularness: 0.078125
+    - _SrcBlend: 1
+    - _StencilType: 2
+    - _USERAIN: 0
+    - _UVSec: 0
+    - _Units: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseTintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.7352941, g: 0.7352941, b: 0.7352941, a: 1}
+    - _DefVals: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HeatCenter: {r: 0, g: 0, b: 0, a: 1}
+    - _HeatColor1: {r: 1, g: 0, b: 0, a: 1}
+    - _HeatColor2: {r: 1, g: 0.34, b: 0, a: 1}
+    - _HeatSize: {r: 0.02, g: 0.04, b: 0.02, a: 1}
+    - _ReflectColor: {r: 0.625, g: 0.625, b: 0.625, a: 0.5}
+    - _SpecColor: {r: 0.7205882, g: 0.7205882, b: 0.7205882, a: 1}
+    - _SpecVals: {r: 1, g: 1, b: 0, a: 0}
+    - _Temperature: {r: 0.1, g: 1, b: 1, a: 0}
