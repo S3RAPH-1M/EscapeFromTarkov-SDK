@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LaserBeamIk_3
+  m_Shader: {fileID: 4800000, guid: 6f6e938838de0a44d9ad46ed3a0f3703, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 825293f9edace4a498c9920069920860, type: 3}
+        m_Scale: {x: 0, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Tex3D:
+        m_Texture: {fileID: 11700000, guid: 6dfe356952daf8a46930ceb637b6237a, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _Energy: 1.2
+    - _Factor: 0
+    - _Glossiness: 0.5
+    - _Glossness: 1
+    - _HDR: 28.84
+    - _IkFactor: 1
+    - _InvFade: 10
+    - _InvWindowSize: 1
+    - _MarkScale: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _NoiseScale0: 0.1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RandomizePhase: 1
+    - _Specularness: 0.078125
+    - _SrcBlend: 1
+    - _UVSec: 0
+    - _ZShift: 1
+    - _ZWrite: 1
+    m_Colors:
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _DefVals: {r: 0.5, g: 0.7, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _MarkShift: {r: 0, g: 0, b: 0, a: 0}
+    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _SpecVals: {r: 1.1, g: 2, b: 0, a: 0}
+    - _Temperature: {r: 0.1, g: 0.2, b: 0.33, a: 0}
+    - _TintColor: {r: 1, g: 0, b: 0, a: 1}
