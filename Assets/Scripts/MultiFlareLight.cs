@@ -6,10 +6,6 @@ using UnityEngine;
 public sealed class MultiFlareLight : MonoBehaviour
 {
 	// Token: 0x06003CCB RID: 15563 RVA: 0x0012169A File Offset: 0x0011F89A
-	private void OnDrawGizmos()
-	{
-		Gizmos.DrawIcon(base.transform.position, "flareGismo.png", true);
-	}
 
 	// Token: 0x04003B6B RID: 15211
 	public MultiFlare Parent;
