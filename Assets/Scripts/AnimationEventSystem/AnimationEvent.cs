@@ -40,6 +40,7 @@ namespace AnimationEventSystem
             // also change param type if the name supports it
             // Not Included; PutMagToRig, MessageName, ReplaceSecondMag, ShowAmmo, ShowMag, SliderOut, SoundAtPoint
             // UseSecondMagForReload, OnCurrentAnimStateEnded, OnSetActiveObject, OnDeactivateObject
+            // As they aren't used by BSG as of now
 
             switch (_functionName) 
 			{				
@@ -140,6 +141,9 @@ namespace AnimationEventSystem
 					_functionNameHash = 0;
                     Parameter.ParamType = 0;
                     Parameter.BoolParam = false;
+                    Parameter.FloatParam = 0;
+                    Parameter.StringParam = "";
+                    Parameter.IntParam = 0;
                     break;
             }
         }
