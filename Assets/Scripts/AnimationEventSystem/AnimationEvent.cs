@@ -137,6 +137,9 @@ namespace AnimationEventSystem
                     _functionNameHash = 1554795451;
                     Parameter.ParamType = (EAnimationEventParamType)3;
                     break;
+                case "OnBackpackDrop":
+                    _functionNameHash = 224242560;                    
+                    break;
                 default:
 					_functionNameHash = 0;
                     Parameter.ParamType = 0;
