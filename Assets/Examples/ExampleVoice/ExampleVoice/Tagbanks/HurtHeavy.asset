@@ -19,14 +19,14 @@ MonoBehaviour:
     Volume: 1
     Clips:
     - Clip: {fileID: 8300000, guid: dfba9a31946a7dd4d922c11241bf5045, type: 3}
-      Mask: 0
+      Mask: 4096
       Volume: 0
       Falloff: 0
       NetId: 0
       Length: 0.5485714
   Clips:
   - Clip: {fileID: 8300000, guid: dfba9a31946a7dd4d922c11241bf5045, type: 3}
-    Mask: 0
+    Mask: 4096
     Volume: 0
     Falloff: 0
     NetId: 0
