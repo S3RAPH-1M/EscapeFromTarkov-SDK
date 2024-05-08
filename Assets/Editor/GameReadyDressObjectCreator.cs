@@ -4,6 +4,12 @@ using EFT.Visual;
 
 public class GameReadyDressObjectCreatorEditor : EditorWindow
 {
+    [MenuItem("Groovey GUI Toolbox/Tools/Create Game Ready Dress Object(s)", priority = 2)]
+    public static void ShowWindow()
+    {
+        EditorWindow.GetWindow(typeof(GameReadyDressObjectCreatorEditor));
+    }
+
     private void OnGUI()
     {
         GUILayout.Label("Create Game Ready Dress Object(s):");
@@ -23,20 +29,15 @@ public class GameReadyDressObjectCreatorEditor : EditorWindow
             if (selectedObject == null)
                 continue;
 
-            // Create the empty gameobject with the same name as the selected Dress Object
             GameObject emptyGameObject = new GameObject(selectedObject.name);
             emptyGameObject.transform.position = Vector3.zero;
 
-            // Set the selected Dress Object as a child of the empty gameobject
             selectedObject.transform.SetParent(emptyGameObject.transform);
 
-            // Add the "Dress" script to the empty gameobject
             Dress dressScript = emptyGameObject.AddComponent<Dress>();
 
-            // Add the "Preview Pivot" script to the empty gameobject
             PreviewPivot previewPivotScript = emptyGameObject.AddComponent<PreviewPivot>();
 
-            // Use reflection to set the 'Renderers' field in the 'Dress' script
             System.Type dressType = typeof(Dress);
             System.Reflection.FieldInfo renderersField = dressType.GetField("Renderers", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
             if (renderersField != null)
@@ -45,13 +46,8 @@ public class GameReadyDressObjectCreatorEditor : EditorWindow
             }
         }
 
-        // Notify the user that the process is complete
         EditorUtility.DisplayDialog("GameReady Dress Object(s) Created", "The GameReady dress object(s) have been created successfully!", "OK");
     }
 
-    [MenuItem("Custom/Dress Object Creator/Create Game Ready Dress Object(s)", priority = 0)]
-    public static void ShowWindow()
-    {
-        EditorWindow.GetWindow(typeof(GameReadyDressObjectCreatorEditor));
-    }
+
 }
