@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
+  m_Name: Regroup
+  m_EditorClassIdentifier: 
+  Trigger: 47
+  SpreadGroups:
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 76539aae74471b24bbff8c4eb33dc7c3, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 1.1493877
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 3deda06da8bc5b44e965819428a8257d, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 1.3322449
+  Clips:
+  - Clip: {fileID: 8300000, guid: 76539aae74471b24bbff8c4eb33dc7c3, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 1.1493877
+  - Clip: {fileID: 8300000, guid: 3deda06da8bc5b44e965819428a8257d, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 1.3322449
+  ChainEvent:
+    Event: 8
+    Probability: 1
+    Who: 0
+  Importance: 2
+  Blocker: 0
+  IgnoreTags: 0

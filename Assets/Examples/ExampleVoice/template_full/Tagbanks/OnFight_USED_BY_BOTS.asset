@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
+  m_Name: OnFight_USED_BY_BOTS
+  m_EditorClassIdentifier: 
+  Trigger: 27
+  SpreadGroups:
+  - Falloff: 120
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 3fcb1a3cee7d0c843866f0dddac52fb9, type: 3}
+      Mask: 0
+      Volume: 1
+      Falloff: 80
+      NetId: 0
+      Length: 0.090839
+    - Clip: {fileID: 8300000, guid: dc7b970a1f256f1478ff6884f0981b55, type: 3}
+      Mask: 32
+      Volume: 1
+      Falloff: 80
+      NetId: 1
+      Length: 0.090839
+    - Clip: {fileID: 8300000, guid: 5cd4aa273296bd4409303629858eab6d, type: 3}
+      Mask: 64
+      Volume: 1
+      Falloff: 80
+      NetId: 2
+      Length: 0.090839
+  Clips:
+  - Clip: {fileID: 8300000, guid: 3fcb1a3cee7d0c843866f0dddac52fb9, type: 3}
+    Mask: 0
+    Volume: 1
+    Falloff: 80
+    NetId: 0
+    Length: 0.090839
+  - Clip: {fileID: 8300000, guid: dc7b970a1f256f1478ff6884f0981b55, type: 3}
+    Mask: 32
+    Volume: 1
+    Falloff: 80
+    NetId: 1
+    Length: 0.090839
+  - Clip: {fileID: 8300000, guid: 5cd4aa273296bd4409303629858eab6d, type: 3}
+    Mask: 64
+    Volume: 1
+    Falloff: 80
+    NetId: 2
+    Length: 0.090839
+  ChainEvent:
+    Event: 8
+    Probability: 0
+    Who: 0
+  Importance: 0
+  Blocker: 0
+  IgnoreTags: 0

@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
+  m_Name: OnFight
+  m_EditorClassIdentifier: 
+  Trigger: 27
+  SpreadGroups:
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 72be15cbfeb150b40b8d62cc08f09319, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 2.4032652
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 75503a5d1a7657e47acd750251f11334, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 1.9853061
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 7fbb429a0ffa15a47aaf3eb8f1ff7c3e, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 3.1608164
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: d76cdfd668623404caae571c5e0b635f, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 4.075102
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 5b291d1501d8d4d4686c15230648ed79, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 4.4408164
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 924d7347bf5d90e4a8d471e3f18a4ec0, type: 3}
+      Mask: 0
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 1.9591837
+  Clips:
+  - Clip: {fileID: 8300000, guid: 72be15cbfeb150b40b8d62cc08f09319, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 2.4032652
+  - Clip: {fileID: 8300000, guid: 75503a5d1a7657e47acd750251f11334, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 1.9853061
+  - Clip: {fileID: 8300000, guid: 7fbb429a0ffa15a47aaf3eb8f1ff7c3e, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 3.1608164
+  - Clip: {fileID: 8300000, guid: d76cdfd668623404caae571c5e0b635f, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 4.075102
+  - Clip: {fileID: 8300000, guid: 5b291d1501d8d4d4686c15230648ed79, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 4.4408164
+  - Clip: {fileID: 8300000, guid: 924d7347bf5d90e4a8d471e3f18a4ec0, type: 3}
+    Mask: 0
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 1.9591837
+  ChainEvent:
+    Event: 8
+    Probability: 0
+    Who: 0
+  Importance: 0
+  Blocker: 0
+  IgnoreTags: 0
