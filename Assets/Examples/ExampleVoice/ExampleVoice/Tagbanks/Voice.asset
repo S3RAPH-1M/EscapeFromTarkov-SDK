@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f89c33663079a43b90cc38dc932637, type: 3}
+  m_Name: Voice
+  m_EditorClassIdentifier: 
+  Name: exampleeee
+  Banks:
+  - {fileID: 11400000, guid: b16e4bf9fe0078d498c110e725e2554c, type: 2}
+  - {fileID: 11400000, guid: 0be572fdc556fda4980505bc6f77cb2d, type: 2}
+  - {fileID: 11400000, guid: e57492fa4425866428fe5e34d71af70a, type: 2}
+  - {fileID: 11400000, guid: fdff42148e244b54dbc865baff30450a, type: 2}
+  - {fileID: 11400000, guid: 135ffba4347be4b418b885d640a172da, type: 2}
+  - {fileID: 11400000, guid: 9b3c5f34f09be0e4eac1055161b398f9, type: 2}
+  - {fileID: 11400000, guid: 6ab38b45f4de56d46a6165f26f3fa0f2, type: 2}
+  - {fileID: 11400000, guid: 49c9717ee9c0f214fa3066a94231a38c, type: 2}

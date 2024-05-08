@@ -1,0 +1,268 @@
+fileFormatVersion: 2
+guid: 8f9c6b642e27ae244a15baffb61a1a23
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 687324669879384683
+    second: Armature|fshield_off|Base Layer
+  - first:
+      74: 7532762375898704082
+    second: Armature|fshield_on|Base Layer
+  - first:
+      74: 5679036676873795554
+    second: Armature|generic_0|Base Layer
+  - first:
+      74: 3543586946810130790
+    second: Armature|generic_180|Base Layer
+  - first:
+      74: 3418575195956156834
+    second: Armature|generic_270|Base Layer
+  - first:
+      74: 7872815239641510417
+    second: Armature|generic_90|Base Layer
+  - first:
+      74: 4380885238749015668
+    second: Armature|gestures_00_there|Base Layer
+  - first:
+      74: -6583455731163086430
+    second: Armature|gestures_01_hold|Base Layer
+  - first:
+      74: 6166155443133629904
+    second: Armature|gestures_02_friendly|Base Layer
+  - first:
+      74: 1369125101939847586
+    second: Armature|gestures_03_get_off|Base Layer
+  - first:
+      74: 7201312176945193176
+    second: Armature|gestures_04_ok|Base Layer
+  - first:
+      74: -6715589655050703968
+    second: Armature|gestures_05_no|Base Layer
+  - first:
+      74: -9147776464273395612
+    second: Armature|gestures_06_come_with_me|Base Layer
+  - first:
+      74: -5899792469545202865
+    second: Armature|grizly_out_to_use_s|Base Layer
+  - first:
+      74: 749381229125341442
+    second: Armature|grizly_take_new_syringe|Base Layer
+  - first:
+      74: -749477336304054877
+    second: Armature|grizly_use_s|Base Layer
+  - first:
+      74: 7119803004848313453
+    second: Armature|grizly_use_to_out_s|Base Layer
+  - first:
+      74: 2514705536087760950
+    second: Armature|hand_backward|Base Layer
+  - first:
+      74: -6834663690289553617
+    second: Armature|hand_cover_close|Base Layer
+  - first:
+      74: -3568793012102608643
+    second: Armature|hand_cover_open|Base Layer
+  - first:
+      74: 252208957544617497
+    second: Armature|hand_drop_stuff|Base Layer
+  - first:
+      74: -7834941469143947687
+    second: Armature|hand_forward_idle|Base Layer
+  - first:
+      74: 3037219914938875730
+    second: Armature|hand_forward|Base Layer
+  - first:
+      74: 1591873129288824726
+    second: Armature|hand_idle|Base Layer
+  - first:
+      74: 1472741410591076480
+    second: Armature|hand_key_use|Base Layer
+  - first:
+      74: 6696714437653128470
+    second: Armature|hand_nv_off|Base Layer
+  - first:
+      74: 6200898712242242905
+    second: Armature|hand_nv_on|Base Layer
+  - first:
+      74: 3423406175223595808
+    second: Armature|hand_search|Base Layer
+  - first:
+      74: -5334479741455631027
+    second: Armature|hand_slap_forward|Base Layer
+  - first:
+      74: -2525832400784031401
+    second: Armature|hand_slap_left|Base Layer
+  - first:
+      74: -4837679262321960685
+    second: Armature|hand_slap_right|Base Layer
+  - first:
+      74: 1919135695608718957
+    second: Armature|hand_switch_0|Base Layer
+  - first:
+      74: 6265901326241349432
+    second: Armature|hand_take|Base Layer
+  - first:
+      74: 5283770842079387602
+    second: Armature|hand_time_bear|Base Layer
+  - first:
+      74: 928283699619413200
+    second: Armature|hand_time_usec|Base Layer
+  - first:
+      74: -4322001604179391471
+    second: Armature|item_meds_grizly_loop|Base Layer
+  - first:
+      74: -1294122997292776539
+    second: Armature|item_meds_grizly_out_to_use|Base Layer
+  - first:
+      74: -5134337111246532241
+    second: Armature|item_meds_grizly_out|Base Layer
+  - first:
+      74: 7422153375116311827
+    second: Armature|item_meds_grizly_use_to_out|Base Layer
+  - first:
+      74: -3840314670152886020
+    second: Armature|items_bandage_in|Base Layer
+  - first:
+      74: 2281991952070285955
+    second: Armature|items_bandage_loop|Base Layer
+  - first:
+      74: 4673317410514410084
+    second: Armature|items_bandage_out|Base Layer
+  - first:
+      74: 7589718219532941644
+    second: Armature|items_morphine_in|Base Layer
+  - first:
+      74: 1172634320701048811
+    second: Armature|items_morphine_loop|Base Layer
+  - first:
+      74: 2273883976373285340
+    second: Armature|items_morphine_out|Base Layer
+  - first:
+      74: 7779095991154193114
+    second: Armature|lockpick_idle_to_out|Base Layer
+  - first:
+      74: 1332432781213044322
+    second: Armature|lockpick_loop|Base Layer
+  - first:
+      74: 9155772475203084230
+    second: Armature|lockpick_out_to_idle|Base Layer
+  - first:
+      74: -7131741568453147710
+    second: Armature|Pickup|Base Layer
+  - first:
+      74: 1968214910705120928
+    second: Armature|pull_hinge_left|Base Layer
+  - first:
+      74: -7408463021036375332
+    second: Armature|pull_hinge_right|Base Layer
+  - first:
+      74: 7149038435337351165
+    second: Armature|push_hinge_left|Base Layer
+  - first:
+      74: -4322981830197678476
+    second: Armature|push_hinge_right|Base Layer
+  - first:
+      74: -34746368401533400
+    second: Armature|rot_pull_hinge_left|Base Layer
+  - first:
+      74: 7179150092378088146
+    second: Armature|rot_pull_hinge_right|Base Layer
+  - first:
+      74: 1806441860178753446
+    second: Armature|rot_push_hinge_left|Base Layer
+  - first:
+      74: -1995578666045230316
+    second: Armature|rot_push_hinge_right|Base Layer
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

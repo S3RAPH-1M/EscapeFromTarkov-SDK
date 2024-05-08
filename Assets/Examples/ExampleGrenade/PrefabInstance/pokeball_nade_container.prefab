@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1903769355073213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4564408010237976}
+  - component: {fileID: 114460179544674652}
+  - component: {fileID: 114397826310769570}
+  - component: {fileID: 114768043500990632}
+  m_Layer: 0
+  m_Name: pokeball_nade_container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4564408010237976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903769355073213}
+  m_LocalRotation: {x: 0.39605376, y: -0.15967575, z: -0.74745804, w: 0.50887287}
+  m_LocalPosition: {x: 0.024505768, y: 1.4714946, z: 0.1392797}
+  m_LocalScale: {x: 1.0000005, y: 1.0000023, z: 1.0000014}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 45.291336, y: -25.4395, z: 100.7462}
+--- !u!114 &114460179544674652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903769355073213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527a414e2ef61f848a90eb09f249913c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AdditionalSounds:
+  - EventName: SndDraw
+    RollOff: 30
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: 1b20b565a2513ff42acf21b2e4fcbdd0, type: 3}
+  - EventName: SndHolster
+    RollOff: 30
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: da280281fef7b60448f37a46f6bc3b6d, type: 3}
+  - EventName: SndSafety
+    RollOff: 30
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: 6e12c1e04a0a13c488a6130b5a343933, type: 3}
+  - EventName: SndThrow
+    RollOff: 30
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: be8581856f80dc742a6958df2eeb14c2, type: 3}
+  - EventName: SndPin
+    RollOff: 14
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: e869795ae93fbc345a92db8be9f9e9c5, type: 3}
+  - EventName: SndLever
+    RollOff: 14
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: 8e1e0cf3a6feb524f918911e23bbf914, type: 3}
+  - EventName: SndDropBackpack
+    RollOff: 30
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: 5212e5ec314a8a247a67406e7c16f1f5, type: 3}
+    - {fileID: 8300000, guid: 504a37e6510ae4843812c510ce8bbb03, type: 3}
+    - {fileID: 8300000, guid: c6f689b46b3c6de438d2f6f8606325ce, type: 3}
+  - EventName: SndFuse
+    RollOff: 30
+    Volume: 1
+    SoundClips:
+    - {fileID: 8300000, guid: d0a4a4aa48ad06a4faaae2f167501f3d, type: 3}
+    - {fileID: 8300000, guid: e9b80e6c92c007944b50fe087498f1cd, type: 3}
+    - {fileID: 8300000, guid: ddba2afe134f24a4da17383eb3d7cdda, type: 3}
+  MainSounds: []
+--- !u!114 &114397826310769570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903769355073213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e88583c408674d4bad1d52c226ee09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pivotPosition: {x: 0.1326624, y: -0.09949315, z: 0.2793842}
+  pivotRotation: {x: -0.12796664, y: 0.95647687, z: -0.23609667, w: 0.11417023}
+  scale: {x: 1, y: 1, z: 1}
+  SpawnPosition: {x: 0, y: 0, z: 0}
+  Icon:
+    position: {x: 0.20071007, y: 0.7746302, z: 0.14125997}
+    hasOffset: 0
+    rotation: {x: 0.23864946, y: -0.100169055, z: -0.37383512, w: 0.8906514}
+    rotationEuler: {x: 20.500376, y: 337.60495, z: 310.3609}
+    boundsScale: 1
+    perspective: 15
+    orthographic: 0
+    orthographicSize: 10
+--- !u!114 &114768043500990632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903769355073213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6418f6dd8639cd0458363617f195f834, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoolHistory: []
+  Colliders: []
+  _originallyEnabledComponents: []
+  RegisteredComponentsToClean: []
+  _weaponObject: {fileID: 1338059077066832290, guid: 45dd39eb55561794e98ed0d6197a5b2f,
+    type: 3}
+  _weaponObjectSimple: {fileID: 0}
+  _originalAnimatorController: {fileID: 9100000, guid: e6fdfdc3d14eb5f409d9709c2ddd11b9,
+    type: 2}
+  _animatorSimple: {fileID: 0}
+  _animatorSpirit: {fileID: 0}
+  _fastAnimatorControllerBinaryData: {fileID: 0}
+  _avatar: {fileID: 0}
+  RestSettings: {fileID: 0}
+  DefaultMuzzlePrefab: {fileID: 0}
+  DefaultSmokeport: {fileID: 0}
+  DefaultHeatHazeEffect: {fileID: 0}
+  RecoilCenter: {x: 0, y: -0.23, z: 0}
+  RotationCenter: {x: 0, y: 0, z: 0}
+  RotationCenterNoStock: {x: 0, y: 0, z: 0}
+  DupletAccuracyPenaltyX: {x: 0, y: 0}
+  DupletAccuracyPenaltyY: {x: 0, y: 0}
+  FarPlane:
+    Name: farplane
+    Depth: 0.5
+  DefaultAimPlane:
+    Name: default
+    Depth: 0
+  CustomAimPlanes: []
+  _objectInstance: {fileID: 0}
+  _localWeaponRoot: {fileID: 0}
+  RemoveChildrenOf: []
+  AnimatedBones:
+  - weapon_pin
+  - weapon_skoba
+  - ball
+  - weapon_pin_l
+  - weapon_pin_r
+  Hierarchy: {fileID: 0}
+  LayersDefaultStates: 00000000570d5a672b1a167c
+  MaterialsConfig: []
+  LodsConfig: []
+  ThrowingParts:
+  - ball
+  - weapon_skoba
+  GrenadeItself: {fileID: 6814799158756199366, guid: f63b098165fbc8646b52aa34fa7553dd,
+    type: 3}

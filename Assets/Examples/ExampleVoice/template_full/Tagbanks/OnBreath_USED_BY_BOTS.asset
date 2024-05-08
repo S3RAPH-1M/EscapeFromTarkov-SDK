@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
+  m_Name: OnBreath_USED_BY_BOTS
+  m_EditorClassIdentifier: 
+  Trigger: 29
+  SpreadGroups:
+  - Falloff: 30
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: 4d82073688ae6b14c85646f763731336, type: 3}
+      Mask: 6144
+      Volume: 1
+      Falloff: 20
+      NetId: 0
+      Length: 16.807642
+    - Clip: {fileID: 8300000, guid: 4f084afbe974dfb499cd25388a82de72, type: 3}
+      Mask: 8192
+      Volume: 1
+      Falloff: 20
+      NetId: 1
+      Length: 15.93703
+    - Clip: {fileID: 8300000, guid: ce3022d7fd9dc1e43979be36ebc420cd, type: 3}
+      Mask: 1025
+      Volume: 1
+      Falloff: 20
+      NetId: 2
+      Length: 18.460182
+    - Clip: {fileID: 8300000, guid: 6b53da17dc335954ea0ca0843e78b770, type: 3}
+      Mask: 1026
+      Volume: 1
+      Falloff: 20
+      NetId: 3
+      Length: 3.1279366
+  Clips:
+  - Clip: {fileID: 8300000, guid: 4d82073688ae6b14c85646f763731336, type: 3}
+    Mask: 6144
+    Volume: 1
+    Falloff: 20
+    NetId: 0
+    Length: 16.807642
+  - Clip: {fileID: 8300000, guid: 4f084afbe974dfb499cd25388a82de72, type: 3}
+    Mask: 8192
+    Volume: 1
+    Falloff: 20
+    NetId: 1
+    Length: 15.93703
+  - Clip: {fileID: 8300000, guid: ce3022d7fd9dc1e43979be36ebc420cd, type: 3}
+    Mask: 1025
+    Volume: 1
+    Falloff: 20
+    NetId: 2
+    Length: 18.460182
+  - Clip: {fileID: 8300000, guid: 6b53da17dc335954ea0ca0843e78b770, type: 3}
+    Mask: 1026
+    Volume: 1
+    Falloff: 20
+    NetId: 3
+    Length: 3.1279366
+  ChainEvent:
+    Event: 8
+    Probability: 0
+    Who: 0
+  Importance: 0
+  Blocker: 0
+  IgnoreTags: 0

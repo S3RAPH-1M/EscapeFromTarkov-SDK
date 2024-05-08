@@ -1,0 +1,1375 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cd7383f30b391498402bd11e45fff5, type: 3}
+  m_Name: weapon_grenade_rgd5_StaticData
+  m_EditorClassIdentifier:
+  _stateHashToEventsCollection:
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 1
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.0089899525
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Draw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.12057112
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Safety
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.5947368
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: WeapIn
+      _functionNameHash: -224219248
+      Enabled: 1
+      _time: 0.921
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Safety
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.31578946
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 2
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.4507772
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Holster
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.6858805
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: WeapOut
+      _functionNameHash: 1174204865
+      Enabled: 1
+      _time: 0.9682708
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: StartUtilityOperation
+      _functionNameHash: 1134400241
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Safety
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.24274406
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Draw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.6105263
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 4
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.009518772
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Throw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.30100334
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FiringBullet
+      _functionNameHash: -58181185
+      Enabled: 1
+      _time: 0.37625417
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: SndFuse
+        ParamType: 3
+      _functionName: SoundAtPoint
+      _functionNameHash: -833254918
+      Enabled: 1
+      _time: 0.7009009
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FireEnd
+      _functionNameHash: -1677976749
+      Enabled: 1
+      _time: 0.963
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 3
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.003787879
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Pin
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.2405303
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Lever
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.48295453
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 3
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.004009623
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: WeapIn
+      _functionNameHash: -224219248
+      Enabled: 1
+      _time: 0.028311964
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Pin
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.19675925
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: AddAmmoInChamber
+      _functionNameHash: -508605542
+      Enabled: 1
+      _time: 0.27457264
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Throw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.5462963
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FiringBullet
+      _functionNameHash: -58181185
+      Enabled: 1
+      _time: 0.5848757
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Lever
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.599537
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FireEnd
+      _functionNameHash: -1677976749
+      Enabled: 1
+      _time: 0.951
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 7
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.0089899525
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Holster
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.33796296
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 6
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.009518772
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Throw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.30100334
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FiringBullet
+      _functionNameHash: -58181185
+      Enabled: 1
+      _time: 0.37625417
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: SndFuse
+        ParamType: 3
+      _functionName: SoundAtPoint
+      _functionNameHash: -833254918
+      Enabled: 1
+      _time: 0.7009009
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FireEnd
+      _functionNameHash: -1677976749
+      Enabled: 1
+      _time: 0.963
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 3
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.003787879
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Pin
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.2405303
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Lever
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.48295453
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 5
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.011226945
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Holster
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.33684212
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: StartUtilityOperation
+      _functionNameHash: 1134400241
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 1
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 4
+      _functionName: UseProp
+      _functionNameHash: -1376281788
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 4
+      _functionName: UseProp
+      _functionNameHash: -1376281788
+      Enabled: 1
+      _time: 0.5
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: SndDropBackpack
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: OnBackpackDrop
+      _functionNameHash: 224242560
+      Enabled: 1
+      _time: 0.25
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: IdleStart
+      _functionNameHash: 198060848
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 9
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.004009623
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: WeapIn
+      _functionNameHash: -224219248
+      Enabled: 1
+      _time: 0.028311964
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Pin
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.19675925
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: AddAmmoInChamber
+      _functionNameHash: -508605542
+      Enabled: 1
+      _time: 0.27457264
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Throw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.5462963
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FiringBullet
+      _functionNameHash: -58181185
+      Enabled: 1
+      _time: 0.5848757
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Lever
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.599537
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: SndFuse
+        ParamType: 3
+      _functionName: SoundAtPoint
+      _functionNameHash: -833254918
+      Enabled: 1
+      _time: 0.65225226
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FireEnd
+      _functionNameHash: -1677976749
+      Enabled: 1
+      _time: 0.951
+      EventConditions: []
+  _stateHashToLActionSetups:
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.79999995
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.79999995
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.53999996
+        value: 1.0017858
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.79999995
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.2
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.79999995
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: -0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: -0.054121032
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 0.4003662
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 0.4003662
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 0
+        inSlope: 0.5
+        outSlope: 0.5
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0.054121032
+        weightedMode: 3
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 3
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0
+  - StartThreshold: 0.9
+    LayerWeight:
+      m_Curve:
+      - time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 0.9
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - time: 1
+        value: 0
+        inSlope: 0.5
+        outSlope: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    _stateHash: 0

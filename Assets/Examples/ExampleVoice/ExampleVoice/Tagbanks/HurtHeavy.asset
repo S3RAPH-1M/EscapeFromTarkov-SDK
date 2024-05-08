@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
+  m_Name: HurtHeavy
+  m_EditorClassIdentifier: 
+  Trigger: 55
+  SpreadGroups:
+  - LoudnessType: 1
+    Falloff: 50
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 8300000, guid: dfba9a31946a7dd4d922c11241bf5045, type: 3}
+      Mask: 4096
+      Volume: 0
+      Falloff: 0
+      NetId: 0
+      Length: 0.5485714
+  Clips:
+  - Clip: {fileID: 8300000, guid: dfba9a31946a7dd4d922c11241bf5045, type: 3}
+    Mask: 4096
+    Volume: 0
+    Falloff: 0
+    NetId: 0
+    Length: 0.5485714
+  ChainEvent:
+    Event: 8
+    Probability: 0
+    Who: 0
+  Importance: 3
+  Blocker: 0
+  IgnoreTags: 1

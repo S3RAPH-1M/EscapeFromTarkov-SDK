@@ -13,7 +13,7 @@ public class GameReadyClothingHeadCreatorEditor : EditorWindow
     private GameObject[] skinGameObjects;
     private Preset[] skinPresets;
 
-    [MenuItem("Custom/Game Ready Object Creator/Clothing and Head Creator")]
+    [MenuItem("Groovey GUI Toolbox/Tools/Clothing and Head Creator", priority = 3)]
     public static void ShowWindow()
     {
         EditorWindow.GetWindow(typeof(GameReadyClothingHeadCreatorEditor));
@@ -75,21 +75,15 @@ public class GameReadyClothingHeadCreatorEditor : EditorWindow
             GameObject skinGameObject = skinGameObjects[i];
             Preset skinPreset = skinPresets[i];
 
-            // Your existing CreateGameReadyCharacterArms() logic here using the current item's objects and preset
-
-            // Unpack the mainGameObject prefab if it is a prefab
             if (PrefabUtility.GetPrefabInstanceStatus(mainGameObject) == PrefabInstanceStatus.Connected)
             {
                 PrefabUtility.UnpackPrefabInstance(mainGameObject, PrefabUnpackMode.Completely, InteractionMode.AutomatedAction);
             }
 
-            // Add "Lodded Skin" script to the main_gameobject
             LoddedSkin loddedSkinComponent = mainGameObject.AddComponent<LoddedSkin>();
 
-            // Add "Skin" script to skin_gameobject
             Skin skinComponent = skinGameObject.AddComponent<Skin>();
 
-            // Set the preset to "ExampleSkeletonHands" if it is not null
             if (skinPreset != null)
             {
                 skinPreset.ApplyTo(skinComponent);
@@ -99,7 +93,6 @@ public class GameReadyClothingHeadCreatorEditor : EditorWindow
                 Debug.LogError("Skin Preset not set.");
             }
 
-            // Set the SkinnedMeshRenderer for the Skin component using reflection
             SkinnedMeshRenderer skinnedMeshRenderer = skinGameObject.GetComponent<SkinnedMeshRenderer>();
             if (skinnedMeshRenderer != null)
             {
@@ -111,24 +104,19 @@ public class GameReadyClothingHeadCreatorEditor : EditorWindow
                 Debug.LogError("SkinnedMeshRenderer not found on the Skin GameObject.");
             }
 
-            // Set the LOD levels to 1 and assign the skinGameObject to Element 0 of the _lods array using reflection
             FieldInfo lodsField = typeof(LoddedSkin).GetField("_lods", BindingFlags.NonPublic | BindingFlags.Instance);
             AbstractSkin[] lodsArray = new AbstractSkin[1];
             lodsArray[0] = skinGameObject.GetComponent<AbstractSkin>();
             lodsField.SetValue(loddedSkinComponent, lodsArray);
 
-            // Move the skin_gameobject to be a child of our main_gameobject
             skinGameObject.transform.SetParent(mainGameObject.transform);
 
-            // Reset the references to the gameobjects
             mainGameObjects[i] = null;
             skinGameObjects[i] = null;
         }
 
-        // Repaint the window to update the GUI
         Repaint();
 
-        // Notify the user that the process is complete
         EditorUtility.DisplayDialog("GameReady Clothing/Head Created", "The GameReady Clothes/Head have been created successfully!", "OK");
     }
 }

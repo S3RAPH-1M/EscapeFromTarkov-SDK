@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: item_grizzly_LOD0
+  m_Shader: {fileID: 4800000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+  m_ShaderKeywords:
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 092c93b1146b250479a84d33e073d98a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 2700000, guid: 0000000deadbeef15deadf00d0000000, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: c4859c9e1eb7f1c4e9b0a7b1222d5868, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecMap:
+        m_Texture: {fileID: 2800000, guid: 598e00af4fd794348a50721692abdf4c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _TintMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - USEHEAT: 0
+    - _BumpScale: 1
+    - _BumpTiling: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DropsSpec: 128
+    - _DstBlend: 0
+    - _Factor: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _Glossness: 1.04
+    - _GlossyReflections: 1
+    - _HasTint: 0
+    - _HeatTemp: 0
+    - _HeatVisible: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NdotLOffset: 0.4
+    - _NightRippleFakeLightOffset: 0.2
+    - _NormalIntensity: 1
+    - _NormalUVMultiplier: 1
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _RippleFakeLightIntensityOffset: 0.7
+    - _RippleTexScale: 4
+    - _SkinnedMeshMaterial: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _Specularness: 1
+    - _SrcBlend: 1
+    - _StencilType: 2
+    - _USERAIN: 0
+    - _UVSec: 0
+    - _Units: 0
+    - _ZWrite: 1
+    m_Colors:
+    - _BaseTintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.8161765, g: 0.8161765, b: 0.8161765, a: 1}
+    - _DefVals: {r: 1, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _HeatCenter: {r: 0, g: 0, b: 0, a: 1}
+    - _HeatColor1: {r: 1, g: 0, b: 0, a: 1}
+    - _HeatColor2: {r: 1, g: 0.34, b: 0, a: 1}
+    - _HeatSize: {r: 0.02, g: 0.04, b: 0.02, a: 1}
+    - _ReflectColor: {r: 0.64705884, g: 0.64705884, b: 0.64705884, a: 0.5}
+    - _SpecColor: {r: 0.61764705, g: 0.61764705, b: 0.61764705, a: 1}
+    - _SpecVals: {r: 1, g: 1, b: 0, a: 0}
+    - _Temperature: {r: 0.1, g: 0.2, b: 0.28, a: 0}
