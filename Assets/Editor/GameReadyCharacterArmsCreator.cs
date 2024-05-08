@@ -13,7 +13,7 @@ public class GameReadyCharacterArmsCreatorEditor : EditorWindow
     private GameObject[] skinGameObjects;
     private Preset[] skinPresets;
 
-    [MenuItem("Groovey GUI Toolbox/Tools//First Person Character Arms Creator", priority = 4)]
+    [MenuItem("Groovey GUI Toolbox/Tools/First Person Character Arms Creator", priority = 4)]
     public static void ShowWindow()
     {
         EditorWindow.GetWindow(typeof(GameReadyCharacterArmsCreatorEditor));

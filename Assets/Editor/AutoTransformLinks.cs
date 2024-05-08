@@ -44,7 +44,6 @@ public class TransformLinksAutomation : EditorWindow
             transformLinks = mainObject.AddComponent<TransformLinks>();
         }
 
-        // Define bone names in the exact order you provided.
         List<string> boneNames = new List<string>
         {
             "Base HumanLCollarbone",

@@ -78,13 +78,10 @@ public class VoiceTagBankCreator : EditorWindow
             string voiceFolderPath = $"Assets/CustomVoices/{voiceName}";
             if (!AssetDatabase.IsValidFolder(voiceFolderPath))
             {
-                // Extract the parent directory path
                 string parentDirectory = Path.GetDirectoryName(voiceFolderPath);
 
-                // Create all parent directories if they don't exist
                 Directory.CreateDirectory(parentDirectory);
 
-                // Now create the specific folder
                 AssetDatabase.CreateFolder("Assets/CustomVoices", voiceName);
             }
 
@@ -104,14 +101,13 @@ public class VoiceTagBankCreator : EditorWindow
 
             List<string> unprocessedAudioClips = new List<string>();
 
-            // Process audio files
             foreach (string audioFile in audioFiles)
             {
                 string fileName = Path.GetFileNameWithoutExtension(audioFile);
                 string[] nameParts = fileName.Split('_');
                 if (nameParts.Length > 0)
                 {
-                    string tagbankName = nameParts[0]; // Extract the tag bank name
+                    string tagbankName = nameParts[0]; 
 
                     if (templateTagbankNames.Contains(tagbankName))
                     {
@@ -122,7 +118,6 @@ public class VoiceTagBankCreator : EditorWindow
 
                         if (existingTagBank == null)
                         {
-                            // Tagbank doesn't exist, duplicate and add audioclip
                             string templatePath = templatePaths.FirstOrDefault(path =>
                                 Path.GetFileNameWithoutExtension(path).StartsWith(tagbankName)
                             );
@@ -147,7 +142,6 @@ public class VoiceTagBankCreator : EditorWindow
                     }
                     else
                     {
-                        // No matching tagbank found for audio clip
                         Debug.LogWarning(
                             $"No matching tagbank found for audio clip '{audioFile}'."
                         );
@@ -199,13 +193,10 @@ public class VoiceTagBankCreator : EditorWindow
             string voiceFolderPath = $"Assets/CustomVoices/{voiceName}";
             if (!AssetDatabase.IsValidFolder(voiceFolderPath))
             {
-                // Extract the parent directory path
                 string parentDirectory = Path.GetDirectoryName(voiceFolderPath);
 
-                // Create all parent directories if they don't exist
                 Directory.CreateDirectory(parentDirectory);
 
-                // Now create the specific folder
                 AssetDatabase.CreateFolder("Assets/CustomVoices", voiceName);
             }
 
@@ -225,14 +216,13 @@ public class VoiceTagBankCreator : EditorWindow
 
             List<string> unprocessedAudioClips = new List<string>();
 
-            // Process audio files
             foreach (string audioFile in audioFiles)
             {
                 string fileName = Path.GetFileNameWithoutExtension(audioFile);
                 string[] nameParts = fileName.Split('_');
                 if (nameParts.Length > 0)
                 {
-                    string tagbankName = nameParts[0]; // Extract the tag bank name
+                    string tagbankName = nameParts[0]; 
 
                     if (templateTagbankNames.Contains(tagbankName))
                     {
@@ -243,7 +233,6 @@ public class VoiceTagBankCreator : EditorWindow
 
                         if (existingTagBank != null)
                         {
-                            // Tagbank already exists, add audioclip to it
                             string relativePath = "Assets" + audioFile.Substring(Application.dataPath.Length);
                             AudioClip audioClip = AssetDatabase.LoadAssetAtPath<AudioClip>(relativePath);
 
@@ -268,7 +257,6 @@ public class VoiceTagBankCreator : EditorWindow
                                         },
                                     };
 
-                                    // Add the new spread group to the existing tag bank
                                     List<SpreadGroup> spreadGroups = new List<SpreadGroup>(existingTagBank.SpreadGroups);
                                     spreadGroups.Add(newSpreadGroup);
                                     existingTagBank.SpreadGroups = spreadGroups.ToArray();
@@ -319,7 +307,6 @@ public class VoiceTagBankCreator : EditorWindow
                         }
                         else
                         {
-                            // No matching tagbank found for audio clip
                             Debug.LogWarning(
                                 $"No matching tagbank found for audio clip '{audioFile}'."
                             );
@@ -328,7 +315,6 @@ public class VoiceTagBankCreator : EditorWindow
                     }
                     else
                     {
-                        // No matching tagbank found for audio clip
                         Debug.LogWarning(
                             $"No existing tagbank found for audio clip '{audioFile}'."
                         );
@@ -337,7 +323,6 @@ public class VoiceTagBankCreator : EditorWindow
                 }
             }
 
-            // Load the voice template
             string voiceTemplatePath = "Assets/Examples/ExampleVoice/template_full/Tagbanks/Voice.asset";
             Voice voiceTemplate = AssetDatabase.LoadAssetAtPath<Voice>(voiceTemplatePath);
 
@@ -348,17 +333,13 @@ public class VoiceTagBankCreator : EditorWindow
 
                 if (newVoice == null)
                 {
-                    // Duplicate the voice template if it hasn't been created in the new output folder
                     newVoice = Instantiate(voiceTemplate);
                     AssetDatabase.CreateAsset(newVoice, newVoicePath);
                     Debug.Log($"Voice asset created for voice '{voiceName}'.");
                 }
-                // Set the name
                 newVoice.Name = voiceName;
-                // Clear existing tagbanks
                 newVoice.Banks = new TagBank[0];
 
-                // Assign every tagbank in the output folder to the new voice's tagbanks
                 string[] outputTagBankPaths = Directory.GetFiles(voiceFolderPath, "*.asset");
                 foreach (string tagBankPath in outputTagBankPaths)
                 {
@@ -371,15 +352,11 @@ public class VoiceTagBankCreator : EditorWindow
                     }
                 }
 
-                // Set dirty
                 EditorUtility.SetDirty(newVoice);
                 Debug.Log($"Tagbanks assigned to voice '{voiceName}'.");
 
-                // Save assets
                 AssetDatabase.SaveAssets();
 
-
-                // Refresh asset database after a short delay to ensure assets are saved first
                 EditorApplication.delayCall += () =>
                 {
                     AssetDatabase.Refresh();
