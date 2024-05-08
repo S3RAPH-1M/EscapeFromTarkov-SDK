@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87cd7383f30b391498402bd11e45fff5, type: 3}
+  m_Name: StaticData
+  m_EditorClassIdentifier:
+  _stateHashToEventsCollection:
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 1
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.025
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: WeapIn
+      _functionNameHash: -224219248
+      Enabled: 1
+      _time: 0.028311964
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Draw
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.18195489
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Switch
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.38947368
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam: Place
+        ParamType: 3
+      _functionName: Sound
+      _functionNameHash: 1554795451
+      Enabled: 1
+      _time: 0.7518797
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FiringBullet
+      _functionNameHash: -58181185
+      Enabled: 1
+      _time: 0.90804595
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 0
+        StringParam:
+        ParamType: 0
+      _functionName: FireEnd
+      _functionNameHash: -1677976749
+      Enabled: 1
+      _time: 0.951
+      EventConditions: []
+    - Parameter:
+        BoolParam: 0
+        FloatParam: 0
+        IntParam: 2
+        StringParam:
+        ParamType: 1
+      _functionName: ThirdAction
+      _functionNameHash: -612501071
+      Enabled: 1
+      _time: 0.9915014
+      EventConditions: []
+  _stateHashToLActionSetups: []
