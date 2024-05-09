@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
+  m_Name: OpenDoor
+  m_EditorClassIdentifier: 
+  Trigger: 102
+  SpreadGroups:
+  - Falloff: 75
+    Volume: 1
+    Clips:
+    - Clip: {fileID: 0}
+      Mask: 0
+      Volume: 1
+      Falloff: 50
+      NetId: 0
+      Length: 0
+  Clips:
+  - Clip: {fileID: 0}
+    Mask: 0
+    Volume: 1
+    Falloff: 50
+    NetId: 0
+    Length: 0
+  ChainEvent:
+    Event: 8
+    Probability: 1
+    Who: 0
+  Importance: 2
+  Blocker: 0
+  IgnoreTags: 0

@@ -322,7 +322,14 @@
         -5625356831644460961,
         -2121006104173233229,
         7413179433146571143,
-        -3651280088676542067
+        -3651280088676542067,
+        -273069456917153111,
+        7941374659126267548,
+        2743129955223629175,
+        -4081405562490178525,
+        -1374118985756178409,
+        3115971018399462371,
+        3464988009001945076
     ],
     "eft": [
         -9098473984068178372,
@@ -647,7 +654,14 @@
         5373734507727661949,
         165996314024159816,
         5997129945768020551,
-        6729946233178204048
+        6729946233178204048,
+        6086908475319526841,
+        -2839820890974624566,
+        -8552750963032114788,
+        2314135436746240096,
+        -4389574519118335014,
+        -5177608033793706819,
+        8593907857721467843
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -972,6 +986,13 @@
         "shaders | Custom/multiFlare",
         "shaders | Custom/ShitOnScreen",
         "shaders | CW FX/Collimator",
-        "shaders | EFT/Glass"
+        "shaders | EFT/Glass",
+        "shaders | Unlit/Color2",
+        "shaders | p0/Reflective/Specular",
+        "shaders | Legacy Shaders/Reflective/VertexLit",
+        "shaders | Legacy Shaders/Reflective/Bumped Diffuse",
+        "shaders | p0/Cutout/Bumped Diffuse",
+        "shaders | Legacy Shaders/Transparent/Cutout/Diffuse",
+        "shaders | Legacy Shaders/Transparent/Cutout/VertexLit"
     ]
 }

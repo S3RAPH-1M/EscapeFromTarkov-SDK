@@ -4,7 +4,7 @@ using EFT.Visual;
 
 public class GameReadyLootItemEditor : EditorWindow
 {
-    [MenuItem("Custom/Game Ready Object Creator/Create GameReady Loot Object(s)")]
+    [MenuItem("Groovey GUI Toolbox/Tools/Create GameReady Loot Object(s)", priority = 0)]
     public static void ShowWindow()
     {
         EditorWindow.GetWindow(typeof(GameReadyLootItemEditor));
@@ -26,27 +26,20 @@ public class GameReadyLootItemEditor : EditorWindow
     {
         foreach (GameObject selectedObject in Selection.gameObjects)
         {
-            // Create the main gameobject with the same name as the selected GameObject
             GameObject mainGameObject = new GameObject(selectedObject.name);
             
-            // Set the position to the origin (0, 0, 0)
             mainGameObject.transform.position = Vector3.zero;
 
-            // Set the selected GameObject as a child of the main gameobject
             selectedObject.transform.SetParent(mainGameObject.transform);
 
-            // Add a Mesh Collider with "Convex" option ticked to the selected GameObject
             MeshCollider meshCollider = selectedObject.AddComponent<MeshCollider>();
             meshCollider.convex = true;
 
-            // Add the Preview Pivot to the main gameobject
             PreviewPivot previewPivot = mainGameObject.AddComponent<PreviewPivot>();
         }
 
-        // Notify the user that the process is complete
         EditorUtility.DisplayDialog("GameReady Loot Objects Created", "The GameReady loot objects have been created successfully for the selected GameObjects!", "OK");
 
-        // Repaint the window to update the GUI
         Repaint();
     }
 }

@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: 50d2063b7efc92a46a86472dd552f9a7
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 5024572469521206458
+    second: Armature|Armature|compass_idle_to_out|Base Layer
+  - first:
+      74: -1774371865379705317
+    second: Armature|Armature|compass_out_to_idle|Base Layer
+  - first:
+      74: -683259739083207978
+    second: Armature|Armature|compass_use|Base Layer
+  - first:
+      74: -8662657674861616181
+    second: Armature|Armature|fshield_off|Base Layer
+  - first:
+      74: 115642368169259445
+    second: Armature|Armature|fshield_on|Base Layer
+  - first:
+      74: -2209820729724962674
+    second: Armature|Armature|generic_0|Base Layer
+  - first:
+      74: -2162882043456541972
+    second: Armature|Armature|generic_180|Base Layer
+  - first:
+      74: -8931340896721631071
+    second: Armature|Armature|generic_270|Base Layer
+  - first:
+      74: -3224796859306464567
+    second: Armature|Armature|generic_90|Base Layer
+  - first:
+      74: 6590387079000574244
+    second: Armature|Armature|gestures_00_there|Base Layer
+  - first:
+      74: -7890426511049759389
+    second: Armature|Armature|gestures_01_hold|Base Layer
+  - first:
+      74: 227035500346932927
+    second: Armature|Armature|gestures_02_friendly|Base Layer
+  - first:
+      74: -368184974896502577
+    second: Armature|Armature|gestures_03_get_off|Base Layer
+  - first:
+      74: 3011051267663221567
+    second: Armature|Armature|gestures_04_ok|Base Layer
+  - first:
+      74: -7684234995393313720
+    second: Armature|Armature|gestures_05_no|Base Layer
+  - first:
+      74: -8542287542128159144
+    second: Armature|Armature|gestures_06_come_with_me|Base Layer
+  - first:
+      74: -2474800821536344136
+    second: Armature|Armature|hand_backward|Base Layer
+  - first:
+      74: 8165678149670592376
+    second: Armature|Armature|hand_cover_close|Base Layer
+  - first:
+      74: -3873165179632455037
+    second: Armature|Armature|hand_cover_open|Base Layer
+  - first:
+      74: -7394335840288150916
+    second: Armature|Armature|hand_drop_stuff|Base Layer
+  - first:
+      74: 2694784383642522437
+    second: Armature|Armature|hand_forward_idle|Base Layer
+  - first:
+      74: 586021740821032876
+    second: Armature|Armature|hand_forward|Base Layer
+  - first:
+      74: 3359190373197444466
+    second: Armature|Armature|hand_idle|Base Layer
+  - first:
+      74: -1286453819316629003
+    second: Armature|Armature|hand_key_use|Base Layer
+  - first:
+      74: -3366913481370389548
+    second: Armature|Armature|hand_nv_off|Base Layer
+  - first:
+      74: -6242121449175020181
+    second: Armature|Armature|hand_nv_on|Base Layer
+  - first:
+      74: 6607879678266810995
+    second: Armature|Armature|hand_search|Base Layer
+  - first:
+      74: 4826054813649691848
+    second: Armature|Armature|hand_slap_forward|Base Layer
+  - first:
+      74: -4481042503755753949
+    second: Armature|Armature|hand_slap_left|Base Layer
+  - first:
+      74: -8322977685398931567
+    second: Armature|Armature|hand_slap_right|Base Layer
+  - first:
+      74: 7724497688601064252
+    second: Armature|Armature|hand_switch_0|Base Layer
+  - first:
+      74: 1406393157559806523
+    second: Armature|Armature|hand_take|Base Layer
+  - first:
+      74: -3009733553209598921
+    second: Armature|Armature|hand_time_bear|Base Layer
+  - first:
+      74: -7739603207790796184
+    second: Armature|Armature|hand_time_usec|Base Layer
+  - first:
+      74: -5239153969698074913
+    second: Armature|Armature|items_bandage_in|Base Layer
+  - first:
+      74: -6236539058040042016
+    second: Armature|Armature|items_bandage_loop|Base Layer
+  - first:
+      74: 5101618870037480290
+    second: Armature|Armature|items_bandage_out|Base Layer
+  - first:
+      74: 5911504462532664671
+    second: Armature|Armature|items_morphine_in|Base Layer
+  - first:
+      74: 7677704788144546844
+    second: Armature|Armature|items_morphine_loop|Base Layer
+  - first:
+      74: 5262812089499517429
+    second: Armature|Armature|items_morphine_out|Base Layer
+  - first:
+      74: 8141961789339585344
+    second: Armature|Armature|lockpick_idle_to_out|Base Layer
+  - first:
+      74: -1866270335295421072
+    second: Armature|Armature|lockpick_loop|Base Layer
+  - first:
+      74: 4407849424169884143
+    second: Armature|Armature|lockpick_out_to_idle|Base Layer
+  - first:
+      74: -7811907812160360792
+    second: Armature|Armature|Pickup|Base Layer
+  - first:
+      74: -9120881845810099864
+    second: Armature|Armature|pull_hinge_left|Base Layer
+  - first:
+      74: -2404949306020485856
+    second: Armature|Armature|pull_hinge_right|Base Layer
+  - first:
+      74: -6860992353463021601
+    second: Armature|Armature|push_hinge_left|Base Layer
+  - first:
+      74: -6750239889316802148
+    second: Armature|Armature|push_hinge_right|Base Layer
+  - first:
+      74: -5159514272321548081
+    second: Armature|Armature|rgd5_actions_end|Base Layer
+  - first:
+      74: 1522644310780317397
+    second: Armature|Armature|rgd5_actions_start|Base Layer
+  - first:
+      74: -2779322593246638563
+    second: Armature|Armature|rgd5_check|Base Layer
+  - first:
+      74: 1422032049635218777
+    second: Armature|Armature|rgd5_fire1|Base Layer
+  - first:
+      74: -6509799502144596803
+    second: Armature|Armature|rgd5_fire2|Base Layer
+  - first:
+      74: -796246472132943821
+    second: Armature|Armature|rgd5_fire_abort_half|Base Layer
+  - first:
+      74: -7086376880945530356
+    second: Armature|Armature|rgd5_fire_abort|Base Layer
+  - first:
+      74: 7982913844483644336
+    second: Armature|Armature|rgd5_fire_idle|Base Layer
+  - first:
+      74: 4839807089494255980
+    second: Armature|Armature|rgd5_fire_quick|Base Layer
+  - first:
+      74: -6428380714748257906
+    second: Armature|Armature|rgd5_fire_start|Base Layer
+  - first:
+      74: -5509091327831154474
+    second: Armature|Armature|rgd5_hands_in_half_2|Base Layer
+  - first:
+      74: -8242220378994707672
+    second: Armature|Armature|rgd5_hands_in|Base Layer
+  - first:
+      74: -7864874438038760253
+    second: Armature|Armature|rgd5_hands_off|Base Layer
+  - first:
+      74: -7976398057051912427
+    second: Armature|Armature|rgd5_hands_out_half_1|Base Layer
+  - first:
+      74: -6082561841509454442
+    second: Armature|Armature|rgd5_hands_out|Base Layer
+  - first:
+      74: 5551784078446376332
+    second: Armature|Armature|rgd5_idle_to_out|Base Layer
+  - first:
+      74: -102360251084791664
+    second: Armature|Armature|rgd5_idle|Base Layer
+  - first:
+      74: -3362376759474915557
+    second: Armature|Armature|rgd5_look|Base Layer
+  - first:
+      74: -7537748617902676829
+    second: Armature|Armature|rgd5_out_to_idle|Base Layer
+  - first:
+      74: 4294685011233262809
+    second: Armature|Armature|rgd5_out|Base Layer
+  - first:
+      74: 2334827432917748498
+    second: Armature|Armature|rgd5_patrol_in|Base Layer
+  - first:
+      74: -1115873186729965542
+    second: Armature|Armature|rgd5_patrol_out|Base Layer
+  - first:
+      74: -2938002734908463732
+    second: Armature|Armature|rgd5_patrol|Base Layer
+  - first:
+      74: -255575357519483310
+    second: Armature|Armature|rgd5_too_idle1|Base Layer
+  - first:
+      74: 6015094641594119699
+    second: Armature|Armature|rot_pull_hinge_left|Base Layer
+  - first:
+      74: -7116530751482630484
+    second: Armature|Armature|rot_pull_hinge_right|Base Layer
+  - first:
+      74: -185735241696751061
+    second: Armature|Armature|rot_push_hinge_left|Base Layer
+  - first:
+      74: -3039579061256839537
+    second: Armature|Armature|rot_push_hinge_right|Base Layer
+  - first:
+      74: 8806263929569226285
+    second: pin_l|Armature|rgd5_fire1|Base Layer
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

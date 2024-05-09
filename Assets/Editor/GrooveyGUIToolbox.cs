@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CustomGUIToolboxEditor : EditorWindow
 {
-    [MenuItem("Custom Windows/Groovey GUI Toolbox")]
+    [MenuItem("Groovey GUI Toolbox/Groovey's GUI Toolbox")]
     public static void ShowWindow()
     {
         EditorWindow.GetWindow(typeof(CustomGUIToolboxEditor), false, "GUI Toolbox");
@@ -14,8 +14,8 @@ public class CustomGUIToolboxEditor : EditorWindow
         GUILayout.Label("Groovey's GUI Toolbox");
 		
 		GUILayout.Label("Automate the creation of (almost) every Tarkov Item");
-        GUILayout.Space(10); // Add space between buttons
-		GUILayout.Label("Loot items are usable items, cases, basically anything you can't wear or attach to a weapon");
+        GUILayout.Space(10); 
+		GUILayout.Label("Loot items are static items: Quest items, cases, hideout items, basically anything you can't wear or attach to a weapon, that ISN'T animated.");
 
 
         if (GUILayout.Button("Open Game Ready Loot Item Creator"))
@@ -23,7 +23,7 @@ public class CustomGUIToolboxEditor : EditorWindow
             GameReadyLootItemEditor.ShowWindow();
         }
 		
-		GUILayout.Space(10); // Add space between buttons
+		GUILayout.Space(10); 
 		GUILayout.Label("Skinned items are anything the character wears that requires weight painting. Chest rigs, backpacks, armor, etc.");
 
         if (GUILayout.Button("Open Game Ready Skinned Object Creator"))
@@ -31,7 +31,7 @@ public class CustomGUIToolboxEditor : EditorWindow
             GameReadySkinnedObjectCreatorEditor.ShowWindow();
         }
 		
-		GUILayout.Space(10); // Add space between buttons
+		GUILayout.Space(10); 
 		GUILayout.Label("Dress objects are items the character wears that DON'T require weight painting (helmets) or objects that go into mod slots (masks, NVG, etc).");
 
         if (GUILayout.Button("Open Game Ready Dress Object Creator"))
@@ -39,7 +39,7 @@ public class CustomGUIToolboxEditor : EditorWindow
             GameReadyDressObjectCreatorEditor.ShowWindow();
         }
 		
-		GUILayout.Space(10); // Add space between buttons
+		GUILayout.Space(10); 
 		GUILayout.Label("Heads and clothing both have the same setup, so this works for both.");
 
         if (GUILayout.Button("Open Game Ready Clothing and Head Creator"))
@@ -47,7 +47,7 @@ public class CustomGUIToolboxEditor : EditorWindow
             GameReadyClothingHeadCreatorEditor.ShowWindow();
         }
 		
-		GUILayout.Space(10); // Add space between buttons
+		GUILayout.Space(10); 
 		GUILayout.Label("First person arms creator for custom models.");
 
         if (GUILayout.Button("Open Game Ready Character Arms Creator"))
@@ -55,6 +55,29 @@ public class CustomGUIToolboxEditor : EditorWindow
             GameReadyCharacterArmsCreatorEditor.ShowWindow();
         }
 
-        // Add more buttons for your other custom GUIs here
+		GUILayout.Space(10); 
+		GUILayout.Label("This tool allows you to automatically configure your custom rig layout after you've made it, and optionally export the grid servercode.");
+
+        if (GUILayout.Button("Open Custom Rig Layout Editor"))
+        {
+            CustomRigEditor.ShowWindow();
+        }
+
+		GUILayout.Space(10); 
+		GUILayout.Label("This tool automatically creates and configures tagbanks for your custom voicelines. This REQUIRES each audioclip be named the same as its corresponding tagbank.");
+
+        if (GUILayout.Button("Open Custom Voice Creator"))
+        {
+            VoiceTagBankCreator.ShowWindow();
+        }
+
+		GUILayout.Space(10); 
+		GUILayout.Label("This tool automatically configures your transform links for animated items. It fills out all the bones in the proper order, and converts the rotational data to quaterions.");
+
+        if (GUILayout.Button("Open Auto Transform Links"))
+        {
+            TransformLinksAutomation.ShowWindow();
+        }
+
     }
 }
