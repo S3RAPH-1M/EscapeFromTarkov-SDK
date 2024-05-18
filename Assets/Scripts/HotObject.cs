@@ -8,8 +8,52 @@ using UnityEngine;
 public class HotObject : MonoBehaviour
 {
 
-	// Token: 0x04003B6C RID: 15212
-	[Tooltip("Apply to all materials on Renderer")]
+#if UNITY_EDITOR
+
+    [ContextMenu("Fill Heat and Haze Bounds")]
+    private void FillHeatAndHazeBounds()
+    {        
+        GameObject centerObject = FindChildByName("center");
+        GameObject extentObject = FindChildByName("extent");
+        GameObject hazeObject = FindChildByName("haze");
+        
+        if (centerObject != null && extentObject != null && hazeObject != null)
+        {
+            // Get the positions of the game objects
+            Vector3 centerPosition = centerObject.transform.localPosition;
+            Vector3 extentPosition = extentObject.transform.localPosition;
+            Vector3 hazePosition = hazeObject.transform.localPosition;
+
+            // Insert the position
+            HeatBounds = new Bounds(centerPosition, extentPosition * 2);          
+            HeatHazeBounds = new Bounds(centerPosition, hazePosition * 2);
+
+            Debug.Log("HeatBound and HazeBound filled successfully!");
+        }
+        else
+        {
+            Debug.LogError("One or more game objects not found. Please check their names. \"center, extent, haze\" Make sure they are named like this, case sensitive");
+        }
+    }
+
+    // Loops to all GameObject within a prefab to find the specific gameobject with said name.
+    private GameObject FindChildByName(string name)
+    {
+        Transform[] children = GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in children)
+        {
+            if (child.name == name)
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
+    }
+
+#endif
+
+    // Token: 0x04003B6C RID: 15212
+    [Tooltip("Apply to all materials on Renderer")]
 	[Header("Sets the temperature for a specific object")]
 	[SerializeField]
 	public bool IsApplyAllMaterials;
