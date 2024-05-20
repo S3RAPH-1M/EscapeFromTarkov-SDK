@@ -8,10 +8,9 @@ using UnityEngine;
 public class HotObject : MonoBehaviour
 {
 
-#if UNITY_EDITOR
-
+#if UNITY_EDITOR	
     [ContextMenu("Fill Heat and Haze Bounds")]
-    private void FillHeatAndHazeBounds()
+    private void FillBounds()
     {        
         GameObject centerObject = FindChildByName("center");
         GameObject extentObject = FindChildByName("extent");
@@ -25,8 +24,8 @@ public class HotObject : MonoBehaviour
             Vector3 hazePosition = hazeObject.transform.localPosition;
 
             // Insert the position
-            HeatBounds = new Bounds(centerPosition, extentPosition * 2);          
-            HeatHazeBounds = new Bounds(centerPosition, hazePosition * 2);
+            HeatBounds = new Bounds(centerPosition, extentPosition * 4);          
+            HeatHazeBounds = new Bounds(centerPosition, hazePosition * 4);
 
             Debug.Log("HeatBound and HazeBound filled successfully!");
         }
@@ -50,6 +49,37 @@ public class HotObject : MonoBehaviour
         return null;
     }
 
+	[ContextMenu("Create Points")]
+	private void CreateChildren()
+	{
+        GameObject centerObject = FindChildByName("center");
+        GameObject extentObject = FindChildByName("extent");
+        GameObject hazeObject = FindChildByName("haze");
+
+        if (centerObject == null && extentObject == null && hazeObject == null)
+		{
+            GameObject center = new GameObject("center");
+            center.transform.parent = transform;
+            center.transform.localPosition = Vector3.zero;
+            center.transform.localEulerAngles = Vector3.zero;
+
+            GameObject extent = new GameObject("extent");
+            extent.transform.parent = center.transform;
+            extent.transform.localPosition = Vector3.zero;
+            extent.transform.localEulerAngles = Vector3.zero;
+
+            GameObject haze = new GameObject("haze");
+            haze.transform.parent = center.transform;
+            haze.transform.localPosition = Vector3.zero;
+            haze.transform.localEulerAngles = Vector3.zero;
+        }
+		else
+		{
+			Debug.LogWarning("An existing game object already exist, no game object will be added. Please delete the existing one and run \"Create Points\" again.");
+		}
+
+		
+    }
 #endif
 
     // Token: 0x04003B6C RID: 15212
