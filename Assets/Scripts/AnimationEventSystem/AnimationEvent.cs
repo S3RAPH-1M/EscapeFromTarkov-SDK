@@ -147,6 +147,7 @@ namespace AnimationEventSystem
                     Parameter.FloatParam = 0;
                     Parameter.StringParam = "";
                     Parameter.IntParam = 0;
+                    Enabled = true;
                     break;
             }
         }
