@@ -248,8 +248,7 @@ public class StaticDataEditor : EditorWindow
         var animationEvent = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
 
         // Function name dropdown
-        selectedFunctionIndex = EditorGUILayout.Popup("Function Name", selectedFunctionIndex, functionNames);
-        animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
+        selectedFunctionIndex = EditorGUILayout.Popup("Function Name", selectedFunctionIndex, functionNames);        
 
         switch (functionNames[selectedFunctionIndex])
         {
@@ -287,6 +286,7 @@ public class StaticDataEditor : EditorWindow
         if (GUILayout.Button("Add Event"))
         {
             AddOrUpdateEvent(staticData, eventsCollection, animationEvent);
+            animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
         }
     }
 
