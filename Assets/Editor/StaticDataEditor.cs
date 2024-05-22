@@ -6,7 +6,6 @@ using AnimationEventSystem;
 using AnimationEvent = AnimationEventSystem.AnimationEvent;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Linq;
 
 public class StaticDataEditor : EditorWindow
 {
@@ -103,7 +102,8 @@ public class StaticDataEditor : EditorWindow
         // Static data editing section
         GUILayout.Label("Static Data Editor", EditorStyles.boldLabel);
         staticData = (AnimatorControllerStaticData)EditorGUILayout.ObjectField("Static Data", staticData, typeof(AnimatorControllerStaticData), false);
-
+        eventCollectionIndex = EditorGUILayout.IntField("Events Collection Index", eventCollectionIndex);
+        animationEventIndex = EditorGUILayout.IntField("Animation Event Index", animationEventIndex);
         if (staticData == null)
         {
             EditorGUILayout.HelpBox("Please assign an AnimatorControllerStaticData object.", MessageType.Warning);
@@ -201,8 +201,8 @@ public class StaticDataEditor : EditorWindow
                 }
                 else if (e.button == 1)
                 {
-                    pivotPoint += previewRenderUtility.camera.transform.right * -e.delta.x * 0.02f * Mathf.Lerp(0.1f, 1f, previewDistance / 50f);
-                    pivotPoint -= previewRenderUtility.camera.transform.up * -e.delta.y * 0.02f * Mathf.Lerp(0.1f, 1f, previewDistance / 50f);
+                    pivotPoint += previewRenderUtility.camera.transform.right * -e.delta.x * 0.02f * Mathf.Lerp(0.1f, 1f, previewDistance / 75f);
+                    pivotPoint -= previewRenderUtility.camera.transform.up * -e.delta.y * 0.02f * Mathf.Lerp(0.1f, 1f, previewDistance / 75f);
                     e.Use();
                 }
             }
@@ -244,17 +244,12 @@ public class StaticDataEditor : EditorWindow
 
     private void DrawStaticDataEditor()
     {
-        // Input index for EventsCollection
-        eventCollectionIndex = EditorGUILayout.IntField("Events Collection Index", eventCollectionIndex);
-        var eventsCollection = GetOrCreateElement<EventsCollection>(staticData, "_stateHashToEventsCollection", eventCollectionIndex);
-
-        // Input index for AnimationEvent
-        animationEventIndex = EditorGUILayout.IntField("Animation Event Index", animationEventIndex);
+        var eventsCollection = GetOrCreateElement<EventsCollection>(staticData, "_stateHashToEventsCollection", eventCollectionIndex);      
         var animationEvent = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
 
         // Function name dropdown
         selectedFunctionIndex = EditorGUILayout.Popup("Function Name", selectedFunctionIndex, functionNames);
-        animationEvent.GetType().GetField("_functionName", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
+        animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
 
         switch (functionNames[selectedFunctionIndex])
         {
@@ -332,7 +327,7 @@ public class StaticDataEditor : EditorWindow
 
     private T GetOrCreateElement<T>(object obj, string fieldName, int index) where T : new()
     {
-        var list = obj.GetType().GetField(fieldName, System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance).GetValue(obj) as List<T>;
+        var list = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj) as List<T>;
         EnsureListSize(list, index + 1);
         return list[index];
     }
