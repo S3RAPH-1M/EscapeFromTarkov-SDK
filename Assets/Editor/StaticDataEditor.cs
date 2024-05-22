@@ -6,6 +6,7 @@ using AnimationEventSystem;
 using AnimationEvent = AnimationEventSystem.AnimationEvent;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Linq;
 
 public class StaticDataEditor : EditorWindow
 {
@@ -15,7 +16,7 @@ public class StaticDataEditor : EditorWindow
     private int eventConditionIndex = 0;
 
     // Temporary function list
-    private string[] functionNames = {
+    private readonly string[] functionNames = {
         "None",
         "Sound",
         "ThirdAction",
@@ -50,7 +51,7 @@ public class StaticDataEditor : EditorWindow
     };    
     private int selectedFunctionIndex = 0;
     private int paramType = 0;
-    private string[] paramName = { "None", "Int32", "Float", "String", "Boolean" };
+    private readonly string[] paramName = { "None", "Int32", "Float", "String", "Boolean" };
 
     private bool showEventConditions = false;
 
@@ -262,6 +263,9 @@ public class StaticDataEditor : EditorWindow
             case "UseProp":
                 DrawAnimationEventParameter(animationEvent);
                 break;
+            default:
+                ResetEventParameter(animationEvent);
+                break;            
         }
 
         // Show event conditions
@@ -278,6 +282,10 @@ public class StaticDataEditor : EditorWindow
             eventCondition.ParameterName = EditorGUILayout.TextField("Parameter Name", eventCondition.ParameterName);
             eventCondition.ConditionParamType = (EEventConditionParamTypes)EditorGUILayout.EnumPopup("Condition Param Type", eventCondition.ConditionParamType);
             eventCondition.ConditionMode = (EEventConditionModes)EditorGUILayout.EnumPopup("Condition Mode", eventCondition.ConditionMode);
+        }
+        else
+        {
+            animationEvent.EventConditions.Clear();
         }
 
         // Add Event button
@@ -304,6 +312,22 @@ public class StaticDataEditor : EditorWindow
         parameter.StringParam = EditorGUILayout.TextField("String Param", parameter.StringParam);
         paramType = EditorGUILayout.Popup("Param Type", paramType, paramName);
         parameter.ParamType = (EAnimationEventParamType)paramType;
+    }
+
+    private void ResetEventParameter(AnimationEvent animationEvent)
+    {
+        var parameter = animationEvent.Parameter;
+        if (parameter == null)
+        {
+            parameter = new AnimationEventParameter();
+            animationEvent.Parameter = parameter;
+        }
+
+        parameter.BoolParam = false;
+        parameter.FloatParam = 0;
+        parameter.IntParam = 0;
+        parameter.StringParam = "";
+        parameter.ParamType = 0;
     }
 
     private T GetOrCreateElement<T>(object obj, string fieldName, int index) where T : new()

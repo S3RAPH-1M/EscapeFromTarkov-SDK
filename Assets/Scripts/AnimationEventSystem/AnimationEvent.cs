@@ -125,7 +125,7 @@ namespace AnimationEventSystem
                     break;
                 case "UseProp":
                     _functionNameHash = -1376281788;
-                    Parameter.BoolParam = true;
+                    Parameter.ParamType = (EAnimationEventParamType)4;
                     break;
                 case "WeapIn":
                     _functionNameHash = -224219248;
