@@ -781,9 +781,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FullName: LActions.hand_drop_stuff
-  FullNameHash: 0
+  FullNameHash: -173722685
   EventsData: {fileID: 11400000, guid: f60f9ffe9acc3fa449bdbd189a244a29, type: 2}
-  EventsListId: 2
+  EventsListId: 3
 --- !u!114 &-3607037662212523542
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1061,9 +1061,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FullName: LActions.compass_out_to_idle
-  FullNameHash: 0
+  FullNameHash: 146114421
   EventsData: {fileID: 11400000, guid: f60f9ffe9acc3fa449bdbd189a244a29, type: 2}
-  EventsListId: 0
+  EventsListId: 1
 --- !u!114 &-1639869707736660317
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3015,9 +3015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FullName: LActions.compass_idle_to_out
-  FullNameHash: 0
+  FullNameHash: 1000479809
   EventsData: {fileID: 11400000, guid: f60f9ffe9acc3fa449bdbd189a244a29, type: 2}
-  EventsListId: 1
+  EventsListId: 2
 --- !u!1102 &5608961559921281444
 AnimatorState:
   serializedVersion: 6
