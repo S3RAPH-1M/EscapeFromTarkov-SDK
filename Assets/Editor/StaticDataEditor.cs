@@ -248,7 +248,7 @@ public class StaticDataEditor : EditorWindow
         var animationEvent = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
 
         // Function name dropdown
-        selectedFunctionIndex = EditorGUILayout.Popup("Function Name", selectedFunctionIndex, functionNames);        
+        selectedFunctionIndex = EditorGUILayout.Popup("Function Name", selectedFunctionIndex, functionNames);
 
         switch (functionNames[selectedFunctionIndex])
         {
@@ -258,15 +258,15 @@ public class StaticDataEditor : EditorWindow
                 DrawAnimationEventParameter(animationEvent);
                 break;
             default:
-                ResetEventParameter(animationEvent);
-                break;            
+                ResetEventParam(animationEvent);
+                break;
         }
-
+        GUILayout.Label("Conditions", EditorStyles.boldLabel);
+        eventConditionIndex = EditorGUILayout.IntField("Event Condition Index", eventConditionIndex);
         // Show event conditions
         showEventConditions = EditorGUILayout.Toggle("Show Event Conditions", showEventConditions);
         if (showEventConditions)
-        {
-            eventConditionIndex = EditorGUILayout.IntField("Event Condition Index", eventConditionIndex);
+        {            
             EnsureListSize(animationEvent.EventConditions, eventConditionIndex + 1);
 
             var eventCondition = animationEvent.EventConditions[eventConditionIndex];
@@ -277,16 +277,20 @@ public class StaticDataEditor : EditorWindow
             eventCondition.ConditionParamType = (EEventConditionParamTypes)EditorGUILayout.EnumPopup("Condition Param Type", eventCondition.ConditionParamType);
             eventCondition.ConditionMode = (EEventConditionModes)EditorGUILayout.EnumPopup("Condition Mode", eventCondition.ConditionMode);
         }
-        else
+        
+        if (GUILayout.Button("Clear Condition"))
         {
-            animationEvent.EventConditions.Clear();
+            if(!showEventConditions && animationEvent.EventConditions != null)
+            {
+                animationEvent.EventConditions.Clear();
+            }
         }
 
         // Add Event button
         if (GUILayout.Button("Add Event"))
         {
-            AddOrUpdateEvent(staticData, eventsCollection, animationEvent);
-            animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
+            animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);            
+            AddOrUpdateEvent(staticData, eventsCollection, animationEvent);            
         }
     }
 
@@ -309,22 +313,6 @@ public class StaticDataEditor : EditorWindow
         parameter.ParamType = (EAnimationEventParamType)paramType;
     }
 
-    private void ResetEventParameter(AnimationEvent animationEvent)
-    {
-        var parameter = animationEvent.Parameter;
-        if (parameter == null)
-        {
-            parameter = new AnimationEventParameter();
-            animationEvent.Parameter = parameter;
-        }
-
-        parameter.BoolParam = false;
-        parameter.FloatParam = 0;
-        parameter.IntParam = 0;
-        parameter.StringParam = "";
-        parameter.ParamType = 0;
-    }
-
     private T GetOrCreateElement<T>(object obj, string fieldName, int index) where T : new()
     {
         var list = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj) as List<T>;
@@ -340,6 +328,23 @@ public class StaticDataEditor : EditorWindow
         }
     }
 
+    private void ResetEventParam(AnimationEvent animationEvent)
+    {
+        var parameter = animationEvent.Parameter;
+
+        if (parameter == null)
+        {
+            parameter = new AnimationEventParameter();
+            animationEvent.Parameter = parameter;
+        }
+
+        parameter.BoolParam = false;
+        parameter.FloatParam = 0;
+        parameter.IntParam = 0;
+        parameter.StringParam = "";
+        parameter.ParamType = 0;
+    }
+
     private void AddOrUpdateEvent(AnimatorControllerStaticData staticData, EventsCollection eventCollection, AnimationEvent animationEvent)
     {
         var animationEvents = eventCollection.GetType().GetField("_animationEvents", BindingFlags.NonPublic | BindingFlags.Instance).GetValue(eventCollection) as List<AnimationEvent>;
@@ -353,10 +358,10 @@ public class StaticDataEditor : EditorWindow
             animationEvents.Add(animationEvent);
         }
 
-        animationEvent.GetType().GetField("_time", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, animationTime / animationClip.length);
-        CallValidate(staticData);
+        animationEvent.GetType().GetField("_time", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, animationTime / animationClip.length);        
         EditorUtility.SetDirty(staticData);
         AssetDatabase.SaveAssets();
+        CallValidate(staticData);
     }
 
     private void CallValidate(AnimatorControllerStaticData staticData)

@@ -142,11 +142,6 @@ namespace AnimationEventSystem
                     break;
                 default:
 					_functionNameHash = 0;
-                    Parameter.ParamType = 0;
-                    Parameter.BoolParam = false;
-                    Parameter.FloatParam = 0;
-                    Parameter.StringParam = "";
-                    Parameter.IntParam = 0;
                     Enabled = true;
                     break;
             }
