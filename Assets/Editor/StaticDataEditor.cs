@@ -1,11 +1,11 @@
-﻿using UnityEngine;
-using UnityEditor;
-using UnityEngine.Playables;
-using UnityEngine.Animations;
-using AnimationEventSystem;
-using AnimationEvent = AnimationEventSystem.AnimationEvent;
+﻿using AnimationEventSystem;
 using System.Collections.Generic;
 using System.Reflection;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.Playables;
+using AnimationEvent = AnimationEventSystem.AnimationEvent;
 
 public class StaticDataEditor : EditorWindow
 {
@@ -47,7 +47,7 @@ public class StaticDataEditor : EditorWindow
         "WeapIn",
         "WeapOut",
         "OnBackpackDrop"
-    };    
+    };
     private int selectedFunctionIndex = 0;
     private int paramType = 0;
     private readonly string[] paramName = { "None", "Int32", "Float", "String", "Boolean" };
@@ -90,7 +90,7 @@ public class StaticDataEditor : EditorWindow
     private void OnDisable()
     {
         playableGraph.Destroy();
-        previewRenderUtility.Cleanup();
+        previewRenderUtility?.Cleanup();
         if (previewLight != null)
         {
             DestroyImmediate(previewLight.gameObject);
@@ -122,7 +122,7 @@ public class StaticDataEditor : EditorWindow
 
         EditorGUILayout.LabelField("Preview Object", EditorStyles.boldLabel);
         userPreviewObject = (GameObject)EditorGUILayout.ObjectField("User Preview Object", userPreviewObject, typeof(GameObject), false);
-        
+
         if (animationClip == null)
         {
             EditorGUILayout.HelpBox("Please assign an Animation Clip.", MessageType.Warning);
@@ -161,8 +161,7 @@ public class StaticDataEditor : EditorWindow
 
         Quaternion camRotation = Quaternion.Euler(previewDir.y, previewDir.x, 0f);
         Vector3 camPosition = pivotPoint - camRotation * Vector3.forward * previewDistance;
-        previewRenderUtility.camera.transform.position = camPosition;
-        previewRenderUtility.camera.transform.rotation = camRotation;
+        previewRenderUtility.camera.transform.SetPositionAndRotation(camPosition, camRotation);
         previewRenderUtility.Render();
         previewRenderUtility.EndAndDrawPreview(previewRect);
 
@@ -244,7 +243,7 @@ public class StaticDataEditor : EditorWindow
 
     private void DrawStaticDataEditor()
     {
-        var eventsCollection = GetOrCreateElement<EventsCollection>(staticData, "_stateHashToEventsCollection", eventCollectionIndex);      
+        var eventsCollection = GetOrCreateElement<EventsCollection>(staticData, "_stateHashToEventsCollection", eventCollectionIndex);        
         var animationEvent = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
 
         // Function name dropdown
@@ -266,9 +265,8 @@ public class StaticDataEditor : EditorWindow
         // Show event conditions
         showEventConditions = EditorGUILayout.Toggle("Show Event Conditions", showEventConditions);
         if (showEventConditions)
-        {            
+        {
             EnsureListSize(animationEvent.EventConditions, eventConditionIndex + 1);
-
             var eventCondition = animationEvent.EventConditions[eventConditionIndex];
             eventCondition.BoolValue = EditorGUILayout.Toggle("Bool Value", eventCondition.BoolValue);
             eventCondition.FloatValue = EditorGUILayout.FloatField("Float Value", eventCondition.FloatValue);
@@ -277,10 +275,10 @@ public class StaticDataEditor : EditorWindow
             eventCondition.ConditionParamType = (EEventConditionParamTypes)EditorGUILayout.EnumPopup("Condition Param Type", eventCondition.ConditionParamType);
             eventCondition.ConditionMode = (EEventConditionModes)EditorGUILayout.EnumPopup("Condition Mode", eventCondition.ConditionMode);
         }
-        
+
         if (GUILayout.Button("Clear Condition"))
         {
-            if(!showEventConditions && animationEvent.EventConditions != null)
+            if (!showEventConditions && animationEvent.EventConditions != null)
             {
                 animationEvent.EventConditions.Clear();
             }
@@ -289,8 +287,8 @@ public class StaticDataEditor : EditorWindow
         // Add Event button
         if (GUILayout.Button("Add Event"))
         {
-            animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);            
-            AddOrUpdateEvent(staticData, eventsCollection, animationEvent);            
+            animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
+            AddOrUpdateEvent(staticData, eventsCollection, animationEvent);
         }
     }
 
@@ -315,8 +313,9 @@ public class StaticDataEditor : EditorWindow
 
     private T GetOrCreateElement<T>(object obj, string fieldName, int index) where T : new()
     {
-        var list = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj) as List<T>;
-        EnsureListSize(list, index + 1);
+        int size = index + 1;
+        var list = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj) as List<T>?? new List<T>(size);
+        EnsureListSize(list, size);
         return list[index];
     }
 
@@ -358,7 +357,7 @@ public class StaticDataEditor : EditorWindow
             animationEvents.Add(animationEvent);
         }
 
-        animationEvent.GetType().GetField("_time", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, animationTime / animationClip.length);        
+        animationEvent.GetType().GetField("_time", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, animationTime / animationClip.length);
         EditorUtility.SetDirty(staticData);
         AssetDatabase.SaveAssets();
         CallValidate(staticData);
