@@ -19,7 +19,7 @@ MonoBehaviour:
         FloatParam: 0
         IntParam: 0
         StringParam: 
-        ParamType: 0
+        ParamType: 4
       _functionName: UseProp
       _functionNameHash: -1376281788
       Enabled: 1
@@ -27,11 +27,23 @@ MonoBehaviour:
       EventConditions: []
   - _animationEvents:
     - Parameter:
-        BoolParam: 0
+        BoolParam: 1
         FloatParam: 0
         IntParam: 0
         StringParam: 
-        ParamType: 0
+        ParamType: 4
+      _functionName: UseProp
+      _functionNameHash: -1376281788
+      Enabled: 1
+      _time: 0
+      EventConditions: []
+  - _animationEvents:
+    - Parameter:
+        BoolParam: 1
+        FloatParam: 0
+        IntParam: 0
+        StringParam: 
+        ParamType: 4
       _functionName: UseProp
       _functionNameHash: -1376281788
       Enabled: 1
@@ -45,7 +57,7 @@ MonoBehaviour:
         StringParam: SndDropBackpack
         ParamType: 3
       _functionName: Sound
-      _functionNameHash: 0
+      _functionNameHash: 1554795451
       Enabled: 1
       _time: 0
       EventConditions: []

@@ -329,7 +329,10 @@
         -4081405562490178525,
         -1374118985756178409,
         3115971018399462371,
-        3464988009001945076
+        3464988009001945076,
+        -1983537840394637290,
+        -1564489364788530321,
+        5726561954152842280
     ],
     "eft": [
         -9098473984068178372,
@@ -661,7 +664,10 @@
         2314135436746240096,
         -4389574519118335014,
         -5177608033793706819,
-        8593907857721467843
+        8593907857721467843,
+        -1506130380187102247,
+        -1713581976433109572,
+        -1506130380187102247
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -993,6 +999,9 @@
         "shaders | Legacy Shaders/Reflective/Bumped Diffuse",
         "shaders | p0/Cutout/Bumped Diffuse",
         "shaders | Legacy Shaders/Transparent/Cutout/Diffuse",
-        "shaders | Legacy Shaders/Transparent/Cutout/VertexLit"
+        "shaders | Legacy Shaders/Transparent/Cutout/VertexLit",
+        "Vis DepthZwrite",
+        "Vis DepthZwrite_Dithered",
+        "shaders | Transparent/DepthZwrite"
     ]
 }

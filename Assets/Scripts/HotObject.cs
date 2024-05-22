@@ -8,8 +8,82 @@ using UnityEngine;
 public class HotObject : MonoBehaviour
 {
 
-	// Token: 0x04003B6C RID: 15212
-	[Tooltip("Apply to all materials on Renderer")]
+#if UNITY_EDITOR	
+    [ContextMenu("Fill Heat and Haze Bounds")]
+    private void FillBounds()
+    {        
+        GameObject centerObject = FindChildByName("center");
+        GameObject extentObject = FindChildByName("extent");
+        GameObject hazeObject = FindChildByName("haze");
+        
+        if (centerObject != null && extentObject != null && hazeObject != null)
+        {
+            // Get the positions of the game objects
+            Vector3 centerPosition = centerObject.transform.localPosition;
+            Vector3 extentPosition = extentObject.transform.localPosition;
+            Vector3 hazePosition = hazeObject.transform.localPosition;
+
+            // Insert the position
+            HeatBounds = new Bounds(centerPosition, extentPosition * 4);          
+            HeatHazeBounds = new Bounds(centerPosition, hazePosition * 4);
+
+            Debug.Log("HeatBound and HazeBound filled successfully!");
+        }
+        else
+        {
+            Debug.LogError("One or more game objects not found. Please check their names. \"center, extent, haze\" Make sure they are named like this, case sensitive");
+        }
+    }
+
+    // Loops to all GameObject within a prefab to find the specific gameobject with said name.
+    private GameObject FindChildByName(string name)
+    {
+        Transform[] children = GetComponentsInChildren<Transform>(true);
+        foreach (Transform child in children)
+        {
+            if (child.name == name)
+            {
+                return child.gameObject;
+            }
+        }
+        return null;
+    }
+
+	[ContextMenu("Create Points")]
+	private void CreateChildren()
+	{
+        GameObject centerObject = FindChildByName("center");
+        GameObject extentObject = FindChildByName("extent");
+        GameObject hazeObject = FindChildByName("haze");
+
+        if (centerObject == null && extentObject == null && hazeObject == null)
+		{
+            GameObject center = new GameObject("center");
+            center.transform.parent = transform;
+            center.transform.localPosition = Vector3.zero;
+            center.transform.localEulerAngles = Vector3.zero;
+
+            GameObject extent = new GameObject("extent");
+            extent.transform.parent = center.transform;
+            extent.transform.localPosition = Vector3.zero;
+            extent.transform.localEulerAngles = Vector3.zero;
+
+            GameObject haze = new GameObject("haze");
+            haze.transform.parent = center.transform;
+            haze.transform.localPosition = Vector3.zero;
+            haze.transform.localEulerAngles = Vector3.zero;
+        }
+		else
+		{
+			Debug.LogWarning("An existing game object already exist, no game object will be added. Please delete the existing one and run \"Create Points\" again.");
+		}
+
+		
+    }
+#endif
+
+    // Token: 0x04003B6C RID: 15212
+    [Tooltip("Apply to all materials on Renderer")]
 	[Header("Sets the temperature for a specific object")]
 	[SerializeField]
 	public bool IsApplyAllMaterials;
