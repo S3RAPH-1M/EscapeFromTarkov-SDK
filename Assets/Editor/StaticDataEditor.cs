@@ -19,6 +19,12 @@ public class StaticDataEditor : EditorWindow
     private int eventsCollectionIndex = 0;
     private int animationEventIndex = 0;
     private int eventConditionIndex = 0;
+    private bool save = false;
+    private bool paramBool = false;
+    private int paramInt = 0;
+    private float paramFloat = 0f;
+    private string paramString = "";
+
 
     // Temporary function list
     private readonly string[] functionNames = {
@@ -285,7 +291,11 @@ public class StaticDataEditor : EditorWindow
         showEventConditions = EditorGUILayout.Toggle("Show Event Conditions", showEventConditions);
         if (showEventConditions)
         {
-            animationEvent.EventConditions = new List<EventCondition>();
+            
+            if (animationEvent.EventConditions == null)
+            {
+                animationEvent.EventConditions = new List<EventCondition>();
+            }
             EnsureListSize(animationEvent.EventConditions, eventConditionIndex + 1);
             var eventCondition = animationEvent.EventConditions[eventConditionIndex];
             eventCondition.BoolValue = EditorGUILayout.Toggle("Bool Value", eventCondition.BoolValue);
@@ -325,18 +335,21 @@ public class StaticDataEditor : EditorWindow
         EditorGUILayout.LabelField("Animation Event Parameter", EditorStyles.boldLabel);
         var parameter = animationEvent.Parameter;
 
-        if (parameter == null)
-        {
-            parameter = new AnimationEventParameter();
-            animationEvent.Parameter = parameter;
-        }
-
-        parameter.BoolParam = EditorGUILayout.Toggle("Bool Param", parameter.BoolParam);
-        parameter.FloatParam = EditorGUILayout.FloatField("Float Param", parameter.FloatParam);
-        parameter.IntParam = EditorGUILayout.IntField("Int Param", parameter.IntParam);
-        parameter.StringParam = EditorGUILayout.TextField("String Param", parameter.StringParam);
+        paramBool = EditorGUILayout.Toggle("Bool Param", paramBool);
+        paramFloat = EditorGUILayout.FloatField("Float Param", paramFloat);
+        paramInt = EditorGUILayout.IntField("Int Param", paramInt);
+        paramString = EditorGUILayout.TextField("String Param", paramString);
         paramType = EditorGUILayout.Popup("Param Type", paramType, paramName);
-        parameter.ParamType = (EAnimationEventParamType)paramType;
+
+        if (save)
+        {
+            parameter.BoolParam = paramBool;
+            parameter.FloatParam = paramFloat;
+            parameter.IntParam = paramInt;
+            parameter.StringParam = paramString;
+            parameter.ParamType = (EAnimationEventParamType)paramType;
+        }
+        save = false;
     }
 
     private T GetOrCreateElement<T>(object obj, string fieldName, int index) where T : new()
@@ -364,12 +377,15 @@ public class StaticDataEditor : EditorWindow
             parameter = new AnimationEventParameter();
             animationEvent.Parameter = parameter;
         }
-
-        parameter.BoolParam = false;
-        parameter.FloatParam = 0;
-        parameter.IntParam = 0;
-        parameter.StringParam = "";
-        parameter.ParamType = 0;
+        if (save)
+        {
+            parameter.BoolParam = false;
+            parameter.FloatParam = 0;
+            parameter.IntParam = 0;
+            parameter.StringParam = "";
+            parameter.ParamType = 0;
+        }
+        save = false;
     }
 
     private void AddOrUpdateEvent(AnimatorControllerStaticData staticData, EventsCollection eventCollection, AnimationEvent animationEvent)
@@ -384,7 +400,7 @@ public class StaticDataEditor : EditorWindow
         {
             animationEvents.Add(animationEvent);
         }
-
+        save = true;
         animationEvent.GetType().GetField("_time", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, animationTime / animationClip.length);
         EditorUtility.SetDirty(staticData);
         AssetDatabase.SaveAssets();
