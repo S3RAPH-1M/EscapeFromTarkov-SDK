@@ -1,4 +1,5 @@
 ﻿using AnimationEventSystem;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEditor;
@@ -9,8 +10,13 @@ using AnimationEvent = AnimationEventSystem.AnimationEvent;
 
 public class StaticDataEditor : EditorWindow
 {
+    private static readonly Type _animatorControllerStaticDataType = typeof(AnimatorControllerStaticData);
+    private static readonly Type _eventsCollectionType = typeof(EventsCollection);
+    private static readonly FieldInfo _animatorControllerStaticData_stateHashToEventsCollectionField = _animatorControllerStaticDataType.GetField("_stateHashToEventsCollection", BindingFlags.NonPublic | BindingFlags.Instance);
+    private static readonly FieldInfo _eventsCollection_animationEventsField = _eventsCollectionType.GetField("_animationEvents", BindingFlags.NonPublic | BindingFlags.Instance);
+
     private AnimatorControllerStaticData staticData;
-    private int eventCollectionIndex = 0;
+    private int eventsCollectionIndex = 0;
     private int animationEventIndex = 0;
     private int eventConditionIndex = 0;
 
@@ -89,7 +95,10 @@ public class StaticDataEditor : EditorWindow
 
     private void OnDisable()
     {
-        playableGraph.Destroy();
+        if (playableGraph.IsValid())
+        {
+            playableGraph.Destroy();
+        }
         previewRenderUtility?.Cleanup();
         if (previewLight != null)
         {
@@ -102,7 +111,7 @@ public class StaticDataEditor : EditorWindow
         // Static data editing section
         GUILayout.Label("Static Data Editor", EditorStyles.boldLabel);
         staticData = (AnimatorControllerStaticData)EditorGUILayout.ObjectField("Static Data", staticData, typeof(AnimatorControllerStaticData), false);
-        eventCollectionIndex = EditorGUILayout.IntField("Events Collection Index", eventCollectionIndex);
+        eventsCollectionIndex = EditorGUILayout.IntField("Events Collection Index", eventsCollectionIndex);
         animationEventIndex = EditorGUILayout.IntField("Animation Event Index", animationEventIndex);
         if (staticData == null)
         {
@@ -242,9 +251,19 @@ public class StaticDataEditor : EditorWindow
     }
 
     private void DrawStaticDataEditor()
-    {
-        var eventsCollection = GetOrCreateElement<EventsCollection>(staticData, "_stateHashToEventsCollection", eventCollectionIndex);        
-        var animationEvent = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
+    {        
+        List<EventsCollection> eventsCollections = _animatorControllerStaticData_stateHashToEventsCollectionField.GetValue(staticData) as List<EventsCollection>;
+        while (eventsCollections.Count < eventsCollectionIndex + 1)
+        {
+            var newEventCollection = new EventsCollection();
+            _eventsCollection_animationEventsField.SetValue(newEventCollection, new List<AnimationEvent>()
+            {
+                new AnimationEvent()
+            });
+            eventsCollections.Add(newEventCollection);
+        }
+        EventsCollection eventsCollection = eventsCollections[eventsCollectionIndex];
+        AnimationEvent animationEvent = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
 
         // Function name dropdown
         selectedFunctionIndex = EditorGUILayout.Popup("Function Name", selectedFunctionIndex, functionNames);
@@ -266,6 +285,7 @@ public class StaticDataEditor : EditorWindow
         showEventConditions = EditorGUILayout.Toggle("Show Event Conditions", showEventConditions);
         if (showEventConditions)
         {
+            animationEvent.EventConditions = new List<EventCondition>();
             EnsureListSize(animationEvent.EventConditions, eventConditionIndex + 1);
             var eventCondition = animationEvent.EventConditions[eventConditionIndex];
             eventCondition.BoolValue = EditorGUILayout.Toggle("Bool Value", eventCondition.BoolValue);
@@ -289,6 +309,14 @@ public class StaticDataEditor : EditorWindow
         {
             animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
             AddOrUpdateEvent(staticData, eventsCollection, animationEvent);
+        }
+
+        EditorGUILayout.Space();
+        if (GUILayout.Button("Save Changes"))
+        {
+            EditorUtility.SetDirty(staticData);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
         }
     }
 
@@ -314,7 +342,7 @@ public class StaticDataEditor : EditorWindow
     private T GetOrCreateElement<T>(object obj, string fieldName, int index) where T : new()
     {
         int size = index + 1;
-        var list = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj) as List<T>?? new List<T>(size);
+        var list = obj.GetType().GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance).GetValue(obj) as List<T>?? new List<T>(size){ new T()};
         EnsureListSize(list, size);
         return list[index];
     }
