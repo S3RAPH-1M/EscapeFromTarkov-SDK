@@ -25,6 +25,116 @@ public class StaticDataEditor : EditorWindow
     private float paramFloat = 0f;
     private string paramString = "";
 
+    //Conditions Event
+    private int conditionNameEnum = 0;
+    private readonly string[] condEnum = { "Int", "Float", "Boolean" };
+    private int condType;
+    private float condFloat;
+    private bool condBool;
+    private int condInt;
+    private int mode;
+    private readonly string[] conditionNameBool = { 
+        "Active", 
+        "AddAmmoInChamber",
+        "AddAmmoInMag",
+        "AltFire",
+        "Arm",
+        "Armed",
+        "BoltActionReload",
+        "BoltCatch",
+        "CanReload",
+        "DelAmmoChamber",
+        "DelAmmoFromMag",
+        "Disarm",
+        "Discharge",
+        "FastHide",
+        "Fire",
+        "Grip",
+        "Hvat",
+        "Idle",
+        "IncompatibleAmmo",
+        "Inventory",
+        "IsExternalMag",
+        "LauncherReady",
+        "LoadOne",
+        "MagFull",
+        "MagIn",
+        "MagInWeapon",
+        "MagOut",
+        "MagSwap",
+        "ModSet",
+        "OffBoltCatch",
+        "OnBoltCatch",
+        "Patrol",
+        "QuickFire",
+        "SetFiremode0",
+        "SetFiremode1",
+        "ShellEject",
+        "StockFolded",
+        "UseLeftHand",
+        "Rechamber",
+        "MalfunctionRepair",
+        "MisfireSlideUnknown",
+        "RollCylinder"
+    };
+    private readonly string[] conditionNameFloat = {
+        "DoubleActionFireModeFloat",
+        "Aim_angle",
+        "AmmoInChamber",
+        "AmmoInMag",
+        "AmmoCountForRemove",
+        "CharacterID",
+        "Deflected",
+        "EmptyLinksCount",
+        "FireMode",
+        "GestureIndex",
+        "GripWeight",
+        "IdlePosition",
+        "IdleVar",
+        "LauncherID",
+        "LeftHandProgress",
+        "RadioCommand",
+        "RelTypeNew",
+        "RelTypeOld",
+        "ShellsInWeapon",
+        "ShoulderReach",
+        "SpeedDraw",
+        "SpeedFix",
+        "SpeedReload",
+        "StockAnimationIndex",
+        "SwingSpeed",
+        "ThirdPerson",
+        "UnderMod",
+        "UseTimeMultiplier",
+        "WeaponLevel",
+        "CamoraIndex",
+        "CamoraIndexForLoadAmmo",
+        "CamoraIndexWithShellForRemove",
+        "CamoraIndexForRemoveAmmo",
+        "CamoraFireIndex",
+        "ChamberIndex",
+        "ChamberIndexWithShell"
+    };
+    private readonly string[] conditionNameInt = {
+        "AnimationVariant",
+        "FireVar",
+        "GrenadeAltFire",
+        "GrenadeFire",
+        "LActionIndex",
+        "PlayerState",
+        "ThirdAction",
+        "Malfunction",
+        "MalfType"
+    };
+    private readonly string[] modeNames = { 
+        "Equal",
+        "NotEqual",
+        "GreaterThan",
+        "LessThan",
+        "GreaterEqualThan",
+        "LessEqualThan" 
+    };
+
 
     // Temporary function list
     private readonly string[] functionNames = {
@@ -81,6 +191,10 @@ public class StaticDataEditor : EditorWindow
     private Vector3 pivotPoint = Vector3.zero;
     private Light previewLight;
 
+    //Audio stuff
+    private AudioSource Audio;
+    private List<BaseSoundPlayer.SoundElement> Sounds = new List<BaseSoundPlayer.SoundElement>();
+
     [MenuItem("Custom Windows/Static Data Editor")]
     public static void ShowWindow()
     {
@@ -91,9 +205,9 @@ public class StaticDataEditor : EditorWindow
     {
         playableGraph = PlayableGraph.Create();
         playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
-        previewRenderUtility = new PreviewRenderUtility();
-        previewRenderUtility.cameraFieldOfView = 30f;
+        previewRenderUtility = new PreviewRenderUtility() { cameraFieldOfView = 30f };
         previewLight = new GameObject("Preview Light").AddComponent<Light>();
+        Audio = new GameObject("Sound").AddComponent<AudioSource>();
         previewLight.type = LightType.Directional;
         previewLight.intensity = 1.0f;
         previewRenderUtility.AddSingleGO(previewLight.gameObject);
@@ -109,6 +223,10 @@ public class StaticDataEditor : EditorWindow
         if (previewLight != null)
         {
             DestroyImmediate(previewLight.gameObject);
+        }
+        if (Audio != null)
+        {
+            DestroyImmediate(Audio.gameObject);
         }
     }
 
@@ -173,6 +291,7 @@ public class StaticDataEditor : EditorWindow
         previewRenderUtility.camera.farClipPlane = 1000f;
         previewLight.transform.position = previewRenderUtility.camera.transform.position;
         previewLight.transform.LookAt(pivotPoint);
+        Audio.transform.parent = previewRenderUtility.camera.transform;
 
         Quaternion camRotation = Quaternion.Euler(previewDir.y, previewDir.x, 0f);
         Vector3 camPosition = pivotPoint - camRotation * Vector3.forward * previewDistance;
@@ -215,8 +334,8 @@ public class StaticDataEditor : EditorWindow
                 }
                 else if (e.button == 1)
                 {
-                    pivotPoint += previewRenderUtility.camera.transform.right * -e.delta.x * 0.02f * Mathf.Lerp(0.1f, 1f, previewDistance / 75f);
-                    pivotPoint -= previewRenderUtility.camera.transform.up * -e.delta.y * 0.02f * Mathf.Lerp(0.1f, 1f, previewDistance / 75f);
+                    pivotPoint += 0.02f * -e.delta.x * Mathf.Lerp(0.1f, 1f, previewDistance / 75f) * previewRenderUtility.camera.transform.right;
+                    pivotPoint -= 0.02f * -e.delta.y * Mathf.Lerp(0.1f, 1f, previewDistance / 75f) * previewRenderUtility.camera.transform.up;
                     e.Use();
                 }
             }
@@ -289,6 +408,7 @@ public class StaticDataEditor : EditorWindow
         eventConditionIndex = EditorGUILayout.IntField("Event Condition Index", eventConditionIndex);
         // Show event conditions
         showEventConditions = EditorGUILayout.Toggle("Show Event Conditions", showEventConditions);
+        GUILayout.Space(5f);
         if (showEventConditions)
         {
             
@@ -298,12 +418,23 @@ public class StaticDataEditor : EditorWindow
             }
             EnsureListSize(animationEvent.EventConditions, eventConditionIndex + 1);
             var eventCondition = animationEvent.EventConditions[eventConditionIndex];
-            eventCondition.BoolValue = EditorGUILayout.Toggle("Bool Value", eventCondition.BoolValue);
-            eventCondition.FloatValue = EditorGUILayout.FloatField("Float Value", eventCondition.FloatValue);
-            eventCondition.IntValue = EditorGUILayout.IntField("Int Value", eventCondition.IntValue);
-            eventCondition.ParameterName = EditorGUILayout.TextField("Parameter Name", eventCondition.ParameterName);
-            eventCondition.ConditionParamType = (EEventConditionParamTypes)EditorGUILayout.EnumPopup("Condition Param Type", eventCondition.ConditionParamType);
-            eventCondition.ConditionMode = (EEventConditionModes)EditorGUILayout.EnumPopup("Condition Mode", eventCondition.ConditionMode);
+            switch (condType = EditorGUILayout.Popup("Condition Type", condType, condEnum))
+            {
+                case 0:
+                    conditionNameEnum = EditorGUILayout.Popup("Name", conditionNameEnum, conditionNameInt);
+                    condInt = EditorGUILayout.IntField("Int Value", condInt);
+                    mode = EditorGUILayout.Popup("Condition Mode", mode, modeNames);
+                    break;
+                case 1:
+                    conditionNameEnum = EditorGUILayout.Popup("Name", conditionNameEnum, conditionNameFloat);
+                    condFloat = EditorGUILayout.FloatField("Float Value", condFloat);
+                    mode = EditorGUILayout.Popup("Condition Mode", mode, modeNames);
+                    break;
+                case 2:
+                    conditionNameEnum = EditorGUILayout.Popup("Name", conditionNameEnum, conditionNameBool);
+                    condBool = EditorGUILayout.Toggle("Bool Value", condBool);
+                    break;
+            }
         }
 
         if (GUILayout.Button("Clear Condition"))
@@ -319,14 +450,34 @@ public class StaticDataEditor : EditorWindow
         {
             animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
             AddOrUpdateEvent(staticData, eventsCollection, animationEvent);
-        }
-
-        EditorGUILayout.Space();
-        if (GUILayout.Button("Save Changes"))
-        {
-            EditorUtility.SetDirty(staticData);
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            //Condition maybe?
+            AnimationEvent animationEvents = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
+            var eventCondition = animationEvents.EventConditions[eventConditionIndex];
+            var condition = eventCondition.GetType().GetField("ParameterName", BindingFlags.Public | BindingFlags.Instance);
+            switch (eventCondition.ConditionParamType = (EEventConditionParamTypes)condType)
+            {
+                case 0:
+                    eventCondition.BoolValue = false;
+                    eventCondition.FloatValue = 0;
+                    eventCondition.IntValue = condInt;
+                    eventCondition.ConditionMode = (EEventConditionModes)mode;
+                    condition.SetValue(eventCondition, conditionNameInt[conditionNameEnum]);
+                    break;
+                case (EEventConditionParamTypes)1:
+                    eventCondition.FloatValue = condFloat;
+                    eventCondition.ConditionMode = (EEventConditionModes)mode;
+                    eventCondition.BoolValue = false;
+                    eventCondition.IntValue = 0;
+                    condition.SetValue(eventCondition, conditionNameFloat[conditionNameEnum]);
+                    break;
+                case (EEventConditionParamTypes)2:
+                    eventCondition.BoolValue = condBool;
+                    eventCondition.FloatValue = 0;
+                    eventCondition.ConditionMode = 0;
+                    eventCondition.IntValue = 0;
+                    condition.SetValue(eventCondition, conditionNameBool[conditionNameEnum]);
+                    break;
+            }
         }
     }
 
@@ -410,10 +561,7 @@ public class StaticDataEditor : EditorWindow
     private void CallValidate(AnimatorControllerStaticData staticData)
     {
         MethodInfo onValidateMethod = typeof(AnimatorControllerStaticData).GetMethod("OnValidate", BindingFlags.NonPublic | BindingFlags.Instance);
-        if (onValidateMethod != null)
-        {
-            onValidateMethod.Invoke(staticData, null);
-        }
+        onValidateMethod?.Invoke(staticData, null);
     }
 
     private void StopAnimation()
