@@ -76,14 +76,23 @@ public class VoiceTagBankCreator : EditorWindow
             }
 
             string voiceFolderPath = $"Assets/CustomVoices/{voiceName}";
+            string parentDirectory = Path.GetDirectoryName(voiceFolderPath);
+
+            // Check if parent directory exists, create it if it doesn't
+            if (!AssetDatabase.IsValidFolder(parentDirectory))
+            {
+                AssetDatabase.CreateFolder("Assets", "CustomVoices");
+            }
+
+            AssetDatabase.Refresh();
+
+            // Check if the specific voice folder exists, create it if it doesn't
             if (!AssetDatabase.IsValidFolder(voiceFolderPath))
             {
-                string parentDirectory = Path.GetDirectoryName(voiceFolderPath);
-
-                Directory.CreateDirectory(parentDirectory);
-
                 AssetDatabase.CreateFolder("Assets/CustomVoices", voiceName);
             }
+
+            AssetDatabase.Refresh();
 
 
             List<string> templateTagbankNames = new List<string>();
@@ -252,6 +261,8 @@ public class VoiceTagBankCreator : EditorWindow
                                                 Clip = audioClip,
                                                 Length = audioClip.length,
                                                 Mask = 0,
+                                                Volume = 100,
+                                                Falloff = 50,
                                                 Exclude = false
                                             }
                                         },
@@ -286,6 +297,8 @@ public class VoiceTagBankCreator : EditorWindow
                                             Clip = audioClip,
                                             Length = audioClip.length,
                                             Mask = 0,
+                                            Volume = 100,
+                                            Falloff = 50,
                                             Exclude = false
                                         }
                                     );

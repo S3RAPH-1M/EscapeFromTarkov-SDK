@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Trigger: 34
   SpreadGroups:
-  - Falloff: 75
+  - LoudnessType: 1
+    Falloff: 75
     Volume: 1
     Clips:
     - Clip: {fileID: 0}
