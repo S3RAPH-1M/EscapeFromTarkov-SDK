@@ -34,10 +34,17 @@ public class GameReadyDressObjectCreatorEditor : EditorWindow
 
             selectedObject.transform.SetParent(emptyGameObject.transform);
 
+            // Add Dress script
             Dress dressScript = emptyGameObject.AddComponent<Dress>();
 
+            // Add PreviewPivot script
             PreviewPivot previewPivotScript = emptyGameObject.AddComponent<PreviewPivot>();
 
+            // Add BoxCollider
+            BoxCollider boxCollider = selectedObject.AddComponent<BoxCollider>();
+            boxCollider.enabled = false;
+
+            // Set the Renderers field in Dress script
             System.Type dressType = typeof(Dress);
             System.Reflection.FieldInfo renderersField = dressType.GetField("Renderers", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic);
             if (renderersField != null)
@@ -48,6 +55,4 @@ public class GameReadyDressObjectCreatorEditor : EditorWindow
 
         EditorUtility.DisplayDialog("GameReady Dress Object(s) Created", "The GameReady dress object(s) have been created successfully!", "OK");
     }
-
-
 }
