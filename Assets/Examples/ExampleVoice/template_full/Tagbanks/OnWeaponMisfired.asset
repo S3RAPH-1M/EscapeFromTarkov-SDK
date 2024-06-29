@@ -10,31 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c3e5ff03e09c6a4e88717ccd8627409, type: 3}
-  m_Name: OnWeaponReload_USED_BY_BOTS
+  m_Name: OnWeaponMisfired
   m_EditorClassIdentifier: 
-  Trigger: 23
+  Trigger: 25
   SpreadGroups:
   - LoudnessType: 1
-    Falloff: 112
+    Falloff: 75
     Volume: 1
     Clips:
     - Clip: {fileID: 0}
-      Mask: 16
+      Mask: 0
       Volume: 1
-      Falloff: 75
+      Falloff: 50
       NetId: 0
       Length: 0
   Clips:
   - Clip: {fileID: 0}
-    Mask: 16
+    Mask: 0
     Volume: 1
-    Falloff: 75
+    Falloff: 50
     NetId: 0
     Length: 0
   ChainEvent:
     Event: 8
     Probability: 0
     Who: 0
-  Importance: 0
+  Importance: 2
   Blocker: 0
   IgnoreTags: 0
