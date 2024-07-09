@@ -2317,9 +2317,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hooded:
-  - {fileID: 1186127856356269641}
-  _notHooded:
   - {fileID: 5650268817831729188}
+  _notHooded:
+  - {fileID: 1186127856356269641}
 --- !u!1 &7539180461218241681
 GameObject:
   m_ObjectHideFlags: 0
