@@ -191,10 +191,6 @@ public class StaticDataEditor : EditorWindow
     private Vector3 pivotPoint = Vector3.zero;
     private Light previewLight;
 
-    //Audio stuff
-    private AudioSource Audio;
-    private List<BaseSoundPlayer.SoundElement> Sounds = new List<BaseSoundPlayer.SoundElement>();
-
     [MenuItem("Custom Windows/Static Data Editor")]
     public static void ShowWindow()
     {
@@ -207,7 +203,6 @@ public class StaticDataEditor : EditorWindow
         playableGraph.SetTimeUpdateMode(DirectorUpdateMode.Manual);
         previewRenderUtility = new PreviewRenderUtility() { cameraFieldOfView = 30f };
         previewLight = new GameObject("Preview Light").AddComponent<Light>();
-        Audio = new GameObject("Sound").AddComponent<AudioSource>();
         previewLight.type = LightType.Directional;
         previewLight.intensity = 1.0f;
         previewRenderUtility.AddSingleGO(previewLight.gameObject);
@@ -223,10 +218,6 @@ public class StaticDataEditor : EditorWindow
         if (previewLight != null)
         {
             DestroyImmediate(previewLight.gameObject);
-        }
-        if (Audio != null)
-        {
-            DestroyImmediate(Audio.gameObject);
         }
     }
 
@@ -291,7 +282,6 @@ public class StaticDataEditor : EditorWindow
         previewRenderUtility.camera.farClipPlane = 1000f;
         previewLight.transform.position = previewRenderUtility.camera.transform.position;
         previewLight.transform.LookAt(pivotPoint);
-        Audio.transform.parent = previewRenderUtility.camera.transform;
 
         Quaternion camRotation = Quaternion.Euler(previewDir.y, previewDir.x, 0f);
         Vector3 camPosition = pivotPoint - camRotation * Vector3.forward * previewDistance;
@@ -451,33 +441,37 @@ public class StaticDataEditor : EditorWindow
             animationEvent.GetType().GetField("_functionName", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(animationEvent, functionNames[selectedFunctionIndex]);
             AddOrUpdateEvent(staticData, eventsCollection, animationEvent);
             //Condition maybe?
-            AnimationEvent animationEvents = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);
-            var eventCondition = animationEvents.EventConditions[eventConditionIndex];
-            var condition = eventCondition.GetType().GetField("ParameterName", BindingFlags.Public | BindingFlags.Instance);
-            switch (eventCondition.ConditionParamType = (EEventConditionParamTypes)condType)
+            AnimationEvent animationEvents = GetOrCreateElement<AnimationEvent>(eventsCollection, "_animationEvents", animationEventIndex);                        
+            if (showEventConditions)
             {
-                case 0:
-                    eventCondition.BoolValue = false;
-                    eventCondition.FloatValue = 0;
-                    eventCondition.IntValue = condInt;
-                    eventCondition.ConditionMode = (EEventConditionModes)mode;
-                    condition.SetValue(eventCondition, conditionNameInt[conditionNameEnum]);
-                    break;
-                case (EEventConditionParamTypes)1:
-                    eventCondition.FloatValue = condFloat;
-                    eventCondition.ConditionMode = (EEventConditionModes)mode;
-                    eventCondition.BoolValue = false;
-                    eventCondition.IntValue = 0;
-                    condition.SetValue(eventCondition, conditionNameFloat[conditionNameEnum]);
-                    break;
-                case (EEventConditionParamTypes)2:
-                    eventCondition.BoolValue = condBool;
-                    eventCondition.FloatValue = 0;
-                    eventCondition.ConditionMode = 0;
-                    eventCondition.IntValue = 0;
-                    condition.SetValue(eventCondition, conditionNameBool[conditionNameEnum]);
-                    break;
+                var eventCondition = animationEvents.EventConditions[eventConditionIndex];
+                var condition = eventCondition.GetType().GetField("ParameterName", BindingFlags.Public | BindingFlags.Instance);
+                switch (eventCondition.ConditionParamType = (EEventConditionParamTypes)condType)
+                {
+                    case 0:
+                        eventCondition.BoolValue = false;
+                        eventCondition.FloatValue = 0;
+                        eventCondition.IntValue = condInt;
+                        eventCondition.ConditionMode = (EEventConditionModes)mode;
+                        condition.SetValue(eventCondition, conditionNameInt[conditionNameEnum]);
+                        break;
+                    case (EEventConditionParamTypes)1:
+                        eventCondition.FloatValue = condFloat;
+                        eventCondition.ConditionMode = (EEventConditionModes)mode;
+                        eventCondition.BoolValue = false;
+                        eventCondition.IntValue = 0;
+                        condition.SetValue(eventCondition, conditionNameFloat[conditionNameEnum]);
+                        break;
+                    case (EEventConditionParamTypes)2:
+                        eventCondition.BoolValue = condBool;
+                        eventCondition.FloatValue = 0;
+                        eventCondition.ConditionMode = 0;
+                        eventCondition.IntValue = 0;
+                        condition.SetValue(eventCondition, conditionNameBool[conditionNameEnum]);
+                        break;
+                }
             }
+            
         }
     }
 
