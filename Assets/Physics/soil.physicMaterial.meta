@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: d98d462d6ebacda459e24b03d76e1ffa
+timeCreated: 1728188258
+licenseType: Free
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 13400000
+  userData:
+  assetBundleName: assets/commonassets/physics/physicsmaterials.bundle
+  assetBundleVariant:
