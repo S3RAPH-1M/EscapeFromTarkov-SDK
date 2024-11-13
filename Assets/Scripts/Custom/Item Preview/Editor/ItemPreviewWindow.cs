@@ -15,6 +15,8 @@ public class ItemPreviewWindow : EditorWindow
     private Texture2D generatedIcon;
     private int _itemWidth = 1;
     private int _itemHeight = 1;
+    private float iconSizeFactor = 1.0f;
+    private float previewSizeFactor = 0.5f;
 
     [MenuItem("Custom Windows/Item Preview")]
     static void Init()
@@ -34,12 +36,12 @@ public class ItemPreviewWindow : EditorWindow
 
     void OnGUI()
     {
-        var style = new GUIStyle(EditorStyles.boldLabel) {alignment = TextAnchor.MiddleCenter, fontSize = 14};
+        var style = new GUIStyle(EditorStyles.boldLabel) { alignment = TextAnchor.MiddleCenter, fontSize = 14 };
         GUILayout.BeginVertical(GUILayout.Width(position.width), GUILayout.Height(position.height));
         GUILayout.Space(5f);
+
         EditorGUI.BeginChangeCheck();
-        itemToRender =
-            (GameObject) EditorGUILayout.ObjectField("Item to preview", itemToRender, typeof(GameObject), true);
+        itemToRender = (GameObject)EditorGUILayout.ObjectField("Item to preview", itemToRender, typeof(GameObject), true);
         if (EditorGUI.EndChangeCheck())
         {
             if (itemToRender == null)
@@ -55,12 +57,16 @@ public class ItemPreviewWindow : EditorWindow
 
         GUILayout.Space(5f);
         GUILayout.Label("Model Preview", style);
+
+        previewSizeFactor = EditorGUILayout.Slider("Model Preview Size", previewSizeFactor, 0.1f, 1.0f);
         RenderPreviewWindow();
+
         GUILayout.Space(position.height / 2.5f);
         GUILayout.Label("Icon Generator", style);
         GUILayout.Space(5f);
         _itemHeight = EditorGUILayout.IntField("Item Height From Template", _itemHeight);
         _itemWidth = EditorGUILayout.IntField("Item Width From Template", _itemWidth);
+
         if (GUILayout.Button("Save current rotation to PreviewPivot"))
         {
             itemToRender.GetComponent<PreviewPivot>().Icon.rotation = itemToRenderInstance.transform.rotation;
@@ -72,14 +78,26 @@ public class ItemPreviewWindow : EditorWindow
             RenderIcon();
         }
 
+        iconSizeFactor = EditorGUILayout.Slider("Icon Preview Size", iconSizeFactor, 0.1f, 2.0f);
+
         if (generatedIcon)
         {
-            var rect = new Rect(0, 0, generatedIcon.width, generatedIcon.height)
+            float maxIconSize = Mathf.Min(position.width * 0.5f, position.height * 0.2f) * iconSizeFactor;
+            float iconAspect = (float)_itemWidth / _itemHeight;
+            float iconWidth = maxIconSize * iconAspect;
+            float iconHeight = maxIconSize;
+
+            if (iconWidth > maxIconSize)
+            {
+                iconWidth = maxIconSize;
+                iconHeight = maxIconSize / iconAspect;
+            }
+
+            var rect = new Rect(0, 0, iconWidth, iconHeight)
             {
                 center = new Vector2(position.width / 2f, position.height / 1.25f)
             };
             EditorGUI.DrawPreviewTexture(rect, generatedIcon, null, ScaleMode.StretchToFill);
-
         }
 
         GUILayout.EndVertical();
@@ -116,9 +134,9 @@ public class ItemPreviewWindow : EditorWindow
     {
         if (!showPreview) return;
 
-        var windowRect = new Rect(0, 0, position.size.x, position.size.y / 2f)
+        var windowRect = new Rect(0, 0, position.size.x, position.size.y * previewSizeFactor)
         {
-            center = new Vector2(position.width / 2f, position.height / 1.33f)
+            center = new Vector2(position.width / 2f, position.height / 1.13f)
         };
 
         itemPreviewInstance.previewCamera.pixelRect = windowRect;
