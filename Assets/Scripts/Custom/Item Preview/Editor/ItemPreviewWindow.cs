@@ -17,6 +17,8 @@ public class ItemPreviewWindow : EditorWindow
     private int _itemHeight = 1;
     private float iconSizeFactor = 1.0f;
     private float previewSizeFactor = 0.5f;
+    private Quaternion originalRotation;
+    private Quaternion modelPreviewRotation;
 
     [MenuItem("Custom Windows/Item Preview")]
     static void Init()
@@ -105,22 +107,31 @@ public class ItemPreviewWindow : EditorWindow
 
     private void SetupItemPreviewWindow()
     {
+        if (itemPreviewInstance != null) return;
+
         previewScene = EditorSceneManager.NewPreviewScene();
         itemPreviewInstance = Instantiate(itemPreview);
         SceneManager.MoveGameObjectToScene(itemPreviewInstance.gameObject, previewScene);
         itemPreviewInstance.previewCamera.scene = previewScene;
+
         itemToRenderInstance = Instantiate(itemToRender, itemPreviewInstance.previewPivot);
-        PreviewPivot component = itemToRenderInstance.GetComponent<PreviewPivot>();
-        if (component != null)
+        var previewPivot = itemToRenderInstance.GetComponent<PreviewPivot>();
+
+        if (previewPivot != null)
         {
-            itemToRenderInstance.transform.localPosition = -component.pivotPosition;
-            itemPreviewInstance.previewPivot.localRotation = component.Icon.rotation;
+            if (originalRotation == Quaternion.identity)
+                originalRotation = previewPivot.Icon.rotation;
+
+            itemToRenderInstance.transform.localPosition = -previewPivot.pivotPosition;
+            itemToRenderInstance.transform.rotation = originalRotation;
+            itemPreviewInstance.previewPivot.localRotation = originalRotation;
         }
         else
         {
             itemToRenderInstance.transform.localPosition = ItemPreview.GetBounds(itemToRenderInstance).center;
         }
-        itemToRenderInstance.transform.localScale = component != null ? component.scale : Vector3.one;
+
+        itemToRenderInstance.transform.localScale = previewPivot != null ? previewPivot.scale : Vector3.one;
     }
 
     private void ClosePreviewWindow()
@@ -158,13 +169,24 @@ public class ItemPreviewWindow : EditorWindow
 
     private void RenderIcon()
     {
+        if (itemToRenderInstance != null)
+            modelPreviewRotation = itemToRenderInstance.transform.rotation;
+
         ClosePreviewWindow();
         SetupItemPreviewWindow();
+
+        if (itemToRenderInstance != null)
+            itemToRenderInstance.transform.rotation = modelPreviewRotation;
+
         itemPreviewInstance.ChangeLights();
         generatedIcon = GenerateIcon();
         ClosePreviewWindow();
         SetupItemPreviewWindow();
+
+        if (itemToRenderInstance != null)
+            itemToRenderInstance.transform.rotation = modelPreviewRotation;
     }
+
 
     private Texture2D GenerateIcon()
     {
