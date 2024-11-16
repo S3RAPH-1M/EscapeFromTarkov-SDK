@@ -490,6 +490,7 @@
      <Compile Include="Assets\Scripts\WetRenderer.cs" />
      <Compile Include="Assets\Scripts\WildSpawnType.cs" />
      <Compile Include="Assets\Scripts\ZoneTriangleData.cs" />
+     <None Include="Assets\Shaders\p0_Cutout_Bumped Diffuse Emissive.shader" />
      <None Include="Assets\Shaders\OpticSight.shader" />
      <None Include="Assets\Examples\Particles\READ ME FIRST.txt" />
      <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\StdLib.hlsl" />
@@ -519,7 +520,6 @@
      <None Include="Assets\Shaders\Effects_Explosions_DistortionFresnel.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\Lut3DBaker.compute" />
-     <None Include="Assets\Shaders\Replace\p0_Cutout_Bumped Diffuse.shader" />
      <None Include="Assets\Shaders\Particles_Smoke Distorted Grenade.shader" />
      <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Debug\Waveform.compute" />
      <None Include="Assets\Shaders\OpticGlass.shader" />
@@ -632,6 +632,7 @@
      <None Include="Assets\Shaders\Time of Day_Cloud Shadow.shader" />
      <None Include="Assets\Systems\Effects\LaserBeam\Custom_LaserBeam.shader" />
      <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Colors.hlsl" />
+     <None Include="Assets\Shaders\p0_Cutout_Bumped Diffuse.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
