@@ -1,6 +1,6 @@
 Shader "p0/Cutout/Bumped Diffuse" {
 	Properties {
-		_Color ("Main Color", Vector) = (1,1,1,1)
+		_Color ("Main Color", Color) = (1,1,1,1)
 		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
 		_BumpMap ("Normalmap", 2D) = "bump" {}
 		_Cutoff ("Alpha cutoff", Range(0, 1)) = 0.5

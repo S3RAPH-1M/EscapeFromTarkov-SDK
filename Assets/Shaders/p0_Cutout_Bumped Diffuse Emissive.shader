@@ -1,6 +1,6 @@
 Shader "p0/Cutout/Bumped Diffuse Emissive" {
 	Properties {
-		_Color ("Main Color", Vector) = (1,1,1,1)
+		_Color ("Main Color", Color) = (1,1,1,1)
 		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
 		_EmissionMap ("Emission map", 2D) = "white" {}
 		[HDR] _EmissionColor ("Emission Color", Vector) = (0,0,0,1)
