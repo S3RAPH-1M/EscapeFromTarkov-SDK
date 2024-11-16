@@ -327,7 +327,6 @@
         7941374659126267548,
         2743129955223629175,
         -4081405562490178525,
-        -1374118985756178409,
         3115971018399462371,
         3464988009001945076,
         -1983537840394637290,
@@ -340,7 +339,9 @@
         -827983822791675415,
         -653695376701646653,
         -3763808691114923945,
-        3313425940790551341
+        3313425940790551341,
+        5211070582136498203,
+        -7329926250833290353
     ],
     "eft": [
         -9098473984068178372,
@@ -670,7 +671,6 @@
         -2839820890974624566,
         -8552750963032114788,
         2314135436746240096,
-        -4389574519118335014,
         -5177608033793706819,
         8593907857721467843,
         -1506130380187102247,
@@ -683,7 +683,9 @@
         5024303708822562625,
         6669080041517290600,
         7384262309760390154,
-        8641909798222921370
+        8641909798222921370,
+        -4389574519118335014,
+        5787167421889116845
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -1013,7 +1015,6 @@
         "shaders | p0/Reflective/Specular",
         "shaders | Legacy Shaders/Reflective/VertexLit",
         "shaders | Legacy Shaders/Reflective/Bumped Diffuse",
-        "shaders | p0/Cutout/Bumped Diffuse",
         "shaders | Legacy Shaders/Transparent/Cutout/Diffuse",
         "shaders | Legacy Shaders/Transparent/Cutout/VertexLit",
         "Vis DepthZwrite",
@@ -1026,6 +1027,8 @@
         "phyiscs | wood",
         "physics | soil",
         "physics | concrete",
-        "physics | metal"
+        "physics | metal",
+        "shaders | p0_Cutout_Bumped Diffuse",
+        "shdaers | p0/Cutout/Bumped Diffuse Emissive"
     ]
 }
