@@ -165,6 +165,7 @@ public class StaticDataEditor : EditorWindow
         "OffBoltCatch",
         "OnBoltCatch",
         "RemoveShell",
+        "StartUtilityOperation",
         "ShellEject",
         "WeapIn",
         "WeapOut",
