@@ -340,8 +340,9 @@
         -653695376701646653,
         -3763808691114923945,
         3313425940790551341,
-        5211070582136498203,
-        -7329926250833290353
+        -4647289170258090062,
+        -2188193855807202408,
+        -7618668221254957821
     ],
     "eft": [
         -9098473984068178372,
@@ -685,7 +686,8 @@
         7384262309760390154,
         8641909798222921370,
         -4389574519118335014,
-        5787167421889116845
+        5787167421889116845,
+        3229027661643688328
     ],
     "descriptionList": [
         "shaders | p0/Reflective/Bumped Specular SMap",
@@ -1028,7 +1030,8 @@
         "physics | soil",
         "physics | concrete",
         "physics | metal",
-        "shaders | p0_Cutout_Bumped Diffuse",
-        "shdaers | p0/Cutout/Bumped Diffuse Emissive"
+        "Vis p0_Cutout_Bumped Diffuse",
+        "Vis p0/Cutout/Bumped Diffuse Emissive",
+        "Vis Crosshair Shader [From Hensoldt zf4]"
     ]
 }
