@@ -15,6 +15,10 @@ public class ItemPreviewWindow : EditorWindow
     private Texture2D generatedIcon;
     private int _itemWidth = 1;
     private int _itemHeight = 1;
+    private float iconSizeFactor = 1.0f;
+    private float previewSizeFactor = 0.5f;
+    private Quaternion originalRotation;
+    private Quaternion modelPreviewRotation;
 
     [MenuItem("Custom Windows/Item Preview")]
     static void Init()
@@ -34,12 +38,12 @@ public class ItemPreviewWindow : EditorWindow
 
     void OnGUI()
     {
-        var style = new GUIStyle(EditorStyles.boldLabel) {alignment = TextAnchor.MiddleCenter, fontSize = 14};
+        var style = new GUIStyle(EditorStyles.boldLabel) { alignment = TextAnchor.MiddleCenter, fontSize = 14 };
         GUILayout.BeginVertical(GUILayout.Width(position.width), GUILayout.Height(position.height));
         GUILayout.Space(5f);
+
         EditorGUI.BeginChangeCheck();
-        itemToRender =
-            (GameObject) EditorGUILayout.ObjectField("Item to preview", itemToRender, typeof(GameObject), true);
+        itemToRender = (GameObject)EditorGUILayout.ObjectField("Item to preview", itemToRender, typeof(GameObject), true);
         if (EditorGUI.EndChangeCheck())
         {
             if (itemToRender == null)
@@ -55,12 +59,16 @@ public class ItemPreviewWindow : EditorWindow
 
         GUILayout.Space(5f);
         GUILayout.Label("Model Preview", style);
+
+        previewSizeFactor = EditorGUILayout.Slider("Model Preview Size", previewSizeFactor, 0.1f, 1.0f);
         RenderPreviewWindow();
+
         GUILayout.Space(position.height / 2.5f);
         GUILayout.Label("Icon Generator", style);
         GUILayout.Space(5f);
         _itemHeight = EditorGUILayout.IntField("Item Height From Template", _itemHeight);
         _itemWidth = EditorGUILayout.IntField("Item Width From Template", _itemWidth);
+
         if (GUILayout.Button("Save current rotation to PreviewPivot"))
         {
             itemToRender.GetComponent<PreviewPivot>().Icon.rotation = itemToRenderInstance.transform.rotation;
@@ -72,14 +80,26 @@ public class ItemPreviewWindow : EditorWindow
             RenderIcon();
         }
 
+        iconSizeFactor = EditorGUILayout.Slider("Icon Preview Size", iconSizeFactor, 0.1f, 2.0f);
+
         if (generatedIcon)
         {
-            var rect = new Rect(0, 0, generatedIcon.width, generatedIcon.height)
+            float maxIconSize = Mathf.Min(position.width * 0.5f, position.height * 0.2f) * iconSizeFactor;
+            float iconAspect = (float)_itemWidth / _itemHeight;
+            float iconWidth = maxIconSize * iconAspect;
+            float iconHeight = maxIconSize;
+
+            if (iconWidth > maxIconSize)
+            {
+                iconWidth = maxIconSize;
+                iconHeight = maxIconSize / iconAspect;
+            }
+
+            var rect = new Rect(0, 0, iconWidth, iconHeight)
             {
                 center = new Vector2(position.width / 2f, position.height / 1.25f)
             };
             EditorGUI.DrawPreviewTexture(rect, generatedIcon, null, ScaleMode.StretchToFill);
-
         }
 
         GUILayout.EndVertical();
@@ -87,22 +107,31 @@ public class ItemPreviewWindow : EditorWindow
 
     private void SetupItemPreviewWindow()
     {
+        if (itemPreviewInstance != null) return;
+
         previewScene = EditorSceneManager.NewPreviewScene();
         itemPreviewInstance = Instantiate(itemPreview);
         SceneManager.MoveGameObjectToScene(itemPreviewInstance.gameObject, previewScene);
         itemPreviewInstance.previewCamera.scene = previewScene;
+
         itemToRenderInstance = Instantiate(itemToRender, itemPreviewInstance.previewPivot);
-        PreviewPivot component = itemToRenderInstance.GetComponent<PreviewPivot>();
-        if (component != null)
+        var previewPivot = itemToRenderInstance.GetComponent<PreviewPivot>();
+
+        if (previewPivot != null)
         {
-            itemToRenderInstance.transform.localPosition = -component.pivotPosition;
-            itemPreviewInstance.previewPivot.localRotation = component.Icon.rotation;
+            if (originalRotation == Quaternion.identity)
+                originalRotation = previewPivot.Icon.rotation;
+
+            itemToRenderInstance.transform.localPosition = -previewPivot.pivotPosition;
+            itemToRenderInstance.transform.rotation = originalRotation;
+            itemPreviewInstance.previewPivot.localRotation = originalRotation;
         }
         else
         {
             itemToRenderInstance.transform.localPosition = ItemPreview.GetBounds(itemToRenderInstance).center;
         }
-        itemToRenderInstance.transform.localScale = component != null ? component.scale : Vector3.one;
+
+        itemToRenderInstance.transform.localScale = previewPivot != null ? previewPivot.scale : Vector3.one;
     }
 
     private void ClosePreviewWindow()
@@ -116,9 +145,9 @@ public class ItemPreviewWindow : EditorWindow
     {
         if (!showPreview) return;
 
-        var windowRect = new Rect(0, 0, position.size.x, position.size.y / 2f)
+        var windowRect = new Rect(0, 0, position.size.x, position.size.y * previewSizeFactor)
         {
-            center = new Vector2(position.width / 2f, position.height / 1.33f)
+            center = new Vector2(position.width / 2f, position.height / 1.13f)
         };
 
         itemPreviewInstance.previewCamera.pixelRect = windowRect;
@@ -140,13 +169,24 @@ public class ItemPreviewWindow : EditorWindow
 
     private void RenderIcon()
     {
+        if (itemToRenderInstance != null)
+            modelPreviewRotation = itemToRenderInstance.transform.rotation;
+
         ClosePreviewWindow();
         SetupItemPreviewWindow();
+
+        if (itemToRenderInstance != null)
+            itemToRenderInstance.transform.rotation = modelPreviewRotation;
+
         itemPreviewInstance.ChangeLights();
         generatedIcon = GenerateIcon();
         ClosePreviewWindow();
         SetupItemPreviewWindow();
+
+        if (itemToRenderInstance != null)
+            itemToRenderInstance.transform.rotation = modelPreviewRotation;
     }
+
 
     private Texture2D GenerateIcon()
     {
