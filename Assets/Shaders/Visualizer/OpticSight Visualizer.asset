@@ -7,7 +7,7 @@ Shader:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Visualizer/CW FX/OpticSight
+  m_Name:  Visualizer/CW FX/OpticSight
   m_ParsedForm:
     m_PropInfo:
       m_Props:
@@ -21,7 +21,7 @@ Shader:
         m_DefValue[2]: 0
         m_DefValue[3]: 0
         m_DefTexture:
-          m_DefaultName: white
+          m_DefaultName: black
           m_TexDim: 2
       - m_Name: _MaskTex
         m_Description: Mask Texture(A)
@@ -386,7 +386,7 @@ Shader:
               name: '<noninit>'
             name: unity_FogColor
           fogMode: -1
-          gpuProgramID: 32587
+          gpuProgramID: 63001
           m_Tags:
             tags:
             - LIGHTMODE: ALWAYS
@@ -772,7 +772,7 @@ Shader:
               name: '<noninit>'
             name: unity_FogColor
           fogMode: -1
-          gpuProgramID: 121303
+          gpuProgramID: 66674
           m_Tags:
             tags:
             - LIGHTMODE: ALWAYS
@@ -1215,7 +1215,7 @@ Shader:
               name: '<noninit>'
             name: unity_FogColor
           fogMode: -1
-          gpuProgramID: 172145
+          gpuProgramID: 152192
           m_Tags:
             tags:
             - LIGHTMODE: ALWAYS
@@ -1757,7 +1757,7 @@ Shader:
               name: '<noninit>'
             name: unity_FogColor
           fogMode: -1
-          gpuProgramID: 251188
+          gpuProgramID: 246322
           m_Tags:
             tags:
             - LIGHTMODE: ALWAYS
@@ -2271,7 +2271,7 @@ Shader:
               name: '<noninit>'
             name: unity_FogColor
           fogMode: -1
-          gpuProgramID: 291743
+          gpuProgramID: 296144
           m_Tags:
             tags:
             - LIGHTMODE: ALWAYS
@@ -2574,7 +2574,7 @@ Shader:
         - LIGHTMODE: ALWAYS
         - QUEUE: Transparent+100
       m_LOD: 0
-    m_Name: Visualizer/CW FX/OpticSight
+    m_Name:  Visualizer/CW FX/OpticSight
     m_CustomEditorName: OpticSightEditor
     m_FallbackName:
     m_Dependencies: []

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: scope_all_monstrum_compact_prism_scope_2x32_LOD0_linza_0
-  m_Shader: {fileID: 4800000, guid: 10da4adbaeba40240ae498c1159bbd5d, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3ad87418e651acb4f8cfa69b0616d688, type: 2}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -53,6 +53,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
-    - _Scales: {r: 40, g: 1, b: 100, a: 100}
+    - _Scales: {r: 40, g: 0.6, b: 100, a: 100}
     - _ShiftDirection: {r: 0, g: 1, b: 0, a: 0}
     - _Shifts: {r: -0.15, g: 0.0685, b: 0, a: 0}

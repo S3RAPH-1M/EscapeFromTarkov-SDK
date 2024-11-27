@@ -90,6 +90,7 @@ MonoBehaviour:
     position: {x: -0.0332, y: -0.073609, z: 0.0058}
     hasOffset: 0
     rotation: {x: 0, y: 0.8433914, z: 0, w: -0.53729963}
+    rotationEuler: {x: -0, y: 245, z: 0}
     boundsScale: 0.9
     perspective: 15
     orthographic: 0
@@ -433,7 +434,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1736573014914591}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd248f335b7d13d41913623b35e28ab3, type: 3}
   m_Name: 
@@ -441,17 +442,7 @@ MonoBehaviour:
   LensRenderer: {fileID: 23298055235424571}
   ScopeTransform: {fileID: 4791111605154377}
   DistanceToCamera: 0.11504359
-  TemplateCamera: {fileID: 20209335092147535}
-  OpticCullingMask: {fileID: 114844545942574727}
-  ChromaticAberration: {fileID: 114622210689793492}
-  BloomOptimized: {fileID: 0}
-  ThermalVision: {fileID: 0}
-  FastVignette: {fileID: 0}
-  UltimateBloom: {fileID: 0}
-  Tonemapping: {fileID: 0}
-  NightVision: {fileID: 0}
-  Fisheye: {fileID: 0}
-  CameraLodBiasController: {fileID: 0}
+  ScopeData: {fileID: 7847012093870432669}
   IsThermalSightAvailableAt45Degrees: 0
 --- !u!1 &1880185011155315
 GameObject:
@@ -542,14 +533,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4269038088422210}
-  - component: {fileID: 20209335092147535}
-  - component: {fileID: 114844545942574727}
-  - component: {fileID: 114290288513729150}
-  - component: {fileID: 114085584649128138}
-  - component: {fileID: 114296102540947040}
-  - component: {fileID: 114622210689793492}
-  - component: {fileID: 114189510842221899}
-  - component: {fileID: 114433857532784069}
+  - component: {fileID: 721551977657136081}
+  - component: {fileID: 2307690229630349693}
+  - component: {fileID: 7847012093870432669}
   m_Layer: 8
   m_Name: optic_camera
   m_TagString: unknown_20012
@@ -571,50 +557,7 @@ Transform:
   m_Father: {fileID: 4606679308304233}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: -0, z: 0}
---- !u!20 &20209335092147535
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994975866291710}
-  m_Enabled: 0
-  serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.05
-  far clip plane: 1000
-  field of view: 0.61
-  orthographic: 0
-  orthographic size: 1
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 1
-  m_OcclusionCulling: 0
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!114 &114844545942574727
+--- !u!114 &721551977657136081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -623,12 +566,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1994975866291710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef70b0bf7a1a944b81c0021ac706e38, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e5a4f829302b924b8852a834a943464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cullingMaskShader: {fileID: 4800000, guid: 2fa4cc6533611ea4786109d750ab1325, type: 3}
-  _maskScale: 1
---- !u!114 &114290288513729150
+  ChromaticAberration: 1
+  ChromaticAberrationAniso: 3
+  ChromaticAberrationShift: 0.00325
+  BloomOptimized: 0
+  BloomOptimizedIntensity: 0
+  BloomOptimizedThreshold: 0
+  BloomOptimizedBlurSize: 0
+  FastVignette: 0
+  UltimateBloom: 0
+  Fisheye: 0
+  Tonemapping: 0
+  White: 0
+  AdaptionSpeed: 0
+  ExposureAdjustment: 0
+  MiddleGrey: 0
+  AdaptiveTextureSize: 0
+  Type: 0
+--- !u!114 &2307690229630349693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -637,77 +595,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1994975866291710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Script: {fileID: 11500000, guid: dabbc36786e379648bb30f5558171f96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 0}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 3
-  temporalAntialiasing:
-    jitterSpread: 1
-    sharpness: 0.05
-    stationaryBlending: 0.99
-    motionBlending: 0.99
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 0
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  masterLayerExposure: {fileID: 0}
-  lastExposureTexture: {fileID: 0}
-  storeLastExposureTexture: 0
-  computeAutoExposure: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
---- !u!114 &114085584649128138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994975866291710}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 707bc2f9618cd244e8589e3fd57a50a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 0}
-  useTriangleBlit: 1
-  _distortion: 0
---- !u!114 &114296102540947040
+  FieldOfView: 11
+  NearClipPlane: 0.05
+  FarClipPlane: 1000
+  OpticCullingMask: 1
+  OpticCullingMaskScale: 1
+  CameraLodBiasController: 0
+  LodBiasFactor: 0
+--- !u!114 &7847012093870432669
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -716,74 +614,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1994975866291710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd1e5dbb83dd594491859b0888c7097, type: 3}
+  m_Script: {fileID: 11500000, guid: 0beeb7eea54e44149b5bc7554b6a430e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsOn: 1
-  IsOptic: 0
-  Resolution: 1
-  DefaultSpotCookie: {fileID: 0}
---- !u!114 &114622210689793492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994975866291710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e736bb22f04a074791137a5ca9e88c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Shift: 0.00325
-  Aniso: 3
-  Simple: 0
-  shader: {fileID: 4800000, guid: 944e147681ddd304cacddf40a9992e63, type: 3}
---- !u!114 &114189510842221899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994975866291710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 333a213dc6392db47b6e2408aac32198, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shader: {fileID: 4800000, guid: 9c4218d40d38a7744ba14939e43bfa81, type: 3}
-  BlendMode: 0
-  FogColor: {r: 0, g: 0, b: 0, a: 0}
-  FogStrength: 0
-  FogY: 0
-  FogToplength: 0
-  FogTopIntensity: 0
-  FogMaxDistance: 0
-  FogStart: 0
-  DirectionDifferenceThreshold: 0.047
-  FuncSoftness: 0
-  FuncStart: 0
---- !u!114 &114433857532784069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994975866291710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ed7dc203028e7846b0d7136e173df16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sky: {fileID: 0}
-  Lighten: 0
-  FromLevelSettings: 1
-  ScatteringShader: {fileID: 4800000, guid: 4434059b83bac4b49b65375a1c4dec39, type: 3}
-  DitheringTexture: {fileID: 2800000, guid: de762741848a03b49b6f044fb3b54931, type: 3}
-  GlobalDensity: 0.001
-  HeightFalloff: 0.001
-  SunrizeGlow: 0.95
-  ZeroLevel: 0
+  Reticle: {fileID: 0}
+  NightVisionData: {fileID: 0}
+  ThermalVisionData: {fileID: 0}
+  PostEffectsData: {fileID: 721551977657136081}
 --- !u!1 &1997758233738675
 GameObject:
   m_ObjectHideFlags: 0
