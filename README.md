@@ -47,12 +47,9 @@ Install EscapeFromTarkov-SDK with git
 
 ## Roadmap
 
-- Add Custom Usable Items Framework
-
-- Add Custom Weapons Framework
-
-- Release to Public eventually.
-
+- Custom UI Elements
+- Custom WorldInteractiveObjects
+- Custom Hideout Stations
 
 ## Support
 

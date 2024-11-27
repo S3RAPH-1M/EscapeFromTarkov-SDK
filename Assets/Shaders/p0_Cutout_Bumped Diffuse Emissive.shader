@@ -1,7 +1,10 @@
-Shader "p0/Cutout/Bumped Diffuse" {
+Shader "p0/Cutout/Bumped Diffuse Emissive" {
 	Properties {
-		_Color ("Main Color", Vector) = (1,1,1,1)
+		_Color ("Main Color", Color) = (1,1,1,1)
 		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
+		_EmissionMap ("Emission map", 2D) = "white" {}
+		[HDR] _EmissionColor ("Emission Color", Vector) = (0,0,0,1)
+		_EmissionAlphaCutoff ("Alpha Cutoff", Range(0, 1)) = 0
 		_BumpMap ("Normalmap", 2D) = "bump" {}
 		_Cutoff ("Alpha cutoff", Range(0, 1)) = 0.5
 		_SpecVals ("Specular Vals", Vector) = (0.35,2,0,0)
@@ -16,7 +19,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			LOD 300
 			Tags { "IGNOREPROJECTOR" = "true" "LIGHTMODE" = "FORWARDBASE" "QUEUE" = "AlphaTest" "RenderType" = "TransparentCutout" "SHADOWSUPPORT" = "true" }
 			ColorMask RGB -1
-			GpuProgramID 21702
+			GpuProgramID 11533
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -41,8 +44,11 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			// $Globals ConstantBuffers for Fragment Shader
 			float4 _LightColor0;
 			float4 _Color;
+			float4 _EmissionColor;
+			float _EmissionAlphaCutoff;
+			float3 _SpecVals;
 			float3 _DefVals;
-			float4 _Temperature;
+			float3 _Temperature;
 			float _ThermalVisionOn;
 			float _Cutoff;
 			// Custom ConstantBuffers for Vertex Shader
@@ -51,6 +57,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			// Texture params for Fragment Shader
 			sampler2D _MainTex;
 			sampler2D _BumpMap;
+			sampler2D _EmissionMap;
 			
 			// Keywords: DIRECTIONAL
 			v2f vert(appdata_full v)
@@ -130,6 +137,8 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 tmp0.x = min(tmp0.x, 1.0);
                 tmp0.x = 1.0 - tmp0.x;
                 tmp2.z = sqrt(tmp0.x);
+                tmp4 = tex2D(_EmissionMap, inp.texcoord.xy);
+                tmp4.xyz = tmp4.xyz * _EmissionColor.xyz;
                 tmp0.x = dot(tmp1.xyz, tmp1.xyz);
                 tmp0.x = rsqrt(tmp0.x);
                 tmp1.xyz = tmp0.xxx * tmp1.xyz;
@@ -137,14 +146,21 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 tmp0.x = 1.0 - tmp0.x;
                 tmp0.x = tmp0.x * tmp0.x;
                 tmp0.x = tmp0.x * 0.5;
+                tmp1.x = _SpecVals.y * tmp0.x + _SpecVals.x;
+                tmp1.x = tmp1.x * 0.5;
                 tmp0.x = _DefVals.y * tmp0.x + _DefVals.x;
-                tmp1.xyz = tmp0.xxx * tmp3.xyz;
+                tmp1.yzw = tmp0.xxx * tmp3.xyz;
+                tmp3.xyz = tmp1.xxx * tmp4.xyz;
+                tmp0.x = tmp2.w * _Color.w + -_EmissionAlphaCutoff;
+                tmp0.x = tmp0.x < 0.0;
+                if (tmp0.x) {
+                    discard;
+                }
                 tmp0.x = _ThermalVisionOn > 0.0;
-                tmp3.xyz = tmp1.xyz * _Temperature.zzz;
-                tmp3.xyz = max(tmp3.xyz, _Temperature.xxx);
-                tmp3.xyz = min(tmp3.xyz, _Temperature.yyy);
-                tmp3.xyz = tmp3.xyz + _Temperature.www;
-                tmp1.xyz = tmp0.xxx ? tmp3.xyz : tmp1.xyz;
+                tmp4.xyz = tmp1.yzw * _Temperature;
+                tmp4.xyz = max(tmp4.xyz, _Temperature);
+                tmp4.xyz = min(tmp4.xyz, _Temperature);
+                tmp1.xyz = tmp0.xxx ? tmp4.xyz : tmp1.yzw;
                 tmp0.x = tmp2.w * _Color.w + -_Cutoff;
                 tmp0.x = tmp0.x < 0.0;
                 if (tmp0.x) {
@@ -153,11 +169,11 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 tmp0.x = unity_ProbeVolumeParams.x == 1.0;
                 if (tmp0.x) {
                     tmp0.x = unity_ProbeVolumeParams.y == 1.0;
-                    tmp3.xyz = inp.texcoord2.www * unity_ProbeVolumeWorldToObject._m01_m11_m21;
-                    tmp3.xyz = unity_ProbeVolumeWorldToObject._m00_m10_m20 * inp.texcoord1.www + tmp3.xyz;
-                    tmp3.xyz = unity_ProbeVolumeWorldToObject._m02_m12_m22 * inp.texcoord3.www + tmp3.xyz;
-                    tmp3.xyz = tmp3.xyz + unity_ProbeVolumeWorldToObject._m03_m13_m23;
-                    tmp0.xyz = tmp0.xxx ? tmp3.xyz : tmp0.yzw;
+                    tmp4.xyz = inp.texcoord2.www * unity_ProbeVolumeWorldToObject._m01_m11_m21;
+                    tmp4.xyz = unity_ProbeVolumeWorldToObject._m00_m10_m20 * inp.texcoord1.www + tmp4.xyz;
+                    tmp4.xyz = unity_ProbeVolumeWorldToObject._m02_m12_m22 * inp.texcoord3.www + tmp4.xyz;
+                    tmp4.xyz = tmp4.xyz + unity_ProbeVolumeWorldToObject._m03_m13_m23;
+                    tmp0.xyz = tmp0.xxx ? tmp4.xyz : tmp0.yzw;
                     tmp0.xyz = tmp0.xyz - unity_ProbeVolumeMin;
                     tmp0.yzw = tmp0.xyz * unity_ProbeVolumeSizeInv;
                     tmp0.y = tmp0.y * 0.25 + 0.75;
@@ -168,17 +184,17 @@ Shader "p0/Cutout/Bumped Diffuse" {
                     tmp0 = float4(1.0, 1.0, 1.0, 1.0);
                 }
                 tmp0.x = saturate(dot(tmp0, unity_OcclusionMaskSelector));
-                tmp3.x = dot(inp.texcoord1.xyz, tmp2.xyz);
-                tmp3.y = dot(inp.texcoord2.xyz, tmp2.xyz);
-                tmp3.z = dot(inp.texcoord3.xyz, tmp2.xyz);
-                tmp0.y = dot(tmp3.xyz, tmp3.xyz);
+                tmp4.x = dot(inp.texcoord1.xyz, tmp2.xyz);
+                tmp4.y = dot(inp.texcoord2.xyz, tmp2.xyz);
+                tmp4.z = dot(inp.texcoord3.xyz, tmp2.xyz);
+                tmp0.y = dot(tmp4.xyz, tmp4.xyz);
                 tmp0.y = rsqrt(tmp0.y);
-                tmp0.yzw = tmp0.yyy * tmp3.xyz;
+                tmp0.yzw = tmp0.yyy * tmp4.xyz;
                 tmp2.xyz = tmp0.xxx * _LightColor0.xyz;
                 tmp0.x = dot(tmp0.xyz, _WorldSpaceLightPos0.xyz);
                 tmp0.x = max(tmp0.x, 0.0);
                 tmp0.yzw = tmp1.xyz * tmp2.xyz;
-                o.sv_target.xyz = tmp0.xxx * tmp0.yzw;
+                o.sv_target.xyz = tmp0.yzw * tmp0.xxx + tmp3.xyz;
                 o.sv_target.w = tmp3.w;
                 return o;
 			}
@@ -191,7 +207,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			Blend One One, One One
 			ColorMask RGB -1
 			ZWrite Off
-			GpuProgramID 91344
+			GpuProgramID 129728
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -219,8 +235,9 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			// $Globals ConstantBuffers for Fragment Shader
 			float4 _LightColor0;
 			float4 _Color;
+			float _EmissionAlphaCutoff;
 			float3 _DefVals;
-			float4 _Temperature;
+			float3 _Temperature;
 			float _ThermalVisionOn;
 			float _Cutoff;
 			// Custom ConstantBuffers for Vertex Shader
@@ -321,11 +338,15 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 tmp0.w = tmp0.w * 0.5;
                 tmp0.w = _DefVals.y * tmp0.w + _DefVals.x;
                 tmp1.xyz = tmp0.www * tmp3.xyz;
+                tmp0.w = tmp2.w * _Color.w + -_EmissionAlphaCutoff;
+                tmp0.w = tmp0.w < 0.0;
+                if (tmp0.w) {
+                    discard;
+                }
                 tmp0.w = _ThermalVisionOn > 0.0;
-                tmp3.xyz = tmp1.xyz * _Temperature.zzz;
-                tmp3.xyz = max(tmp3.xyz, _Temperature.xxx);
-                tmp3.xyz = min(tmp3.xyz, _Temperature.yyy);
-                tmp3.xyz = tmp3.xyz + _Temperature.www;
+                tmp3.xyz = tmp1.xyz * _Temperature;
+                tmp3.xyz = max(tmp3.xyz, _Temperature);
+                tmp3.xyz = min(tmp3.xyz, _Temperature);
                 tmp1.xyz = tmp0.www ? tmp3.xyz : tmp1.xyz;
                 tmp0.w = tmp2.w * _Color.w + -_Cutoff;
                 tmp0.w = tmp0.w < 0.0;
@@ -377,7 +398,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			Name "PREPASS"
 			LOD 300
 			Tags { "IGNOREPROJECTOR" = "true" "LIGHTMODE" = "PREPASSBASE" "QUEUE" = "AlphaTest" "RenderType" = "TransparentCutout" }
-			GpuProgramID 131694
+			GpuProgramID 148994
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -400,6 +421,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			float4 _BumpMap_ST;
 			// $Globals ConstantBuffers for Fragment Shader
 			float4 _Color;
+			float _EmissionAlphaCutoff;
 			float _Cutoff;
 			// Custom ConstantBuffers for Vertex Shader
 			// Custom ConstantBuffers for Fragment Shader
@@ -464,8 +486,12 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 float4 tmp0;
                 float4 tmp1;
                 tmp0 = tex2D(_MainTex, inp.texcoord.xy);
-                tmp0.x = tmp0.w * _Color.w + -_Cutoff;
-                tmp0.x = tmp0.x < 0.0;
+                tmp0.x = tmp0.w * _Color.w + -_EmissionAlphaCutoff;
+                tmp0.y = tmp0.w * _Color.w + -_Cutoff;
+                tmp0.xy = tmp0.xy < float2(0.0, 0.0);
+                if (tmp0.y) {
+                    discard;
+                }
                 if (tmp0.x) {
                     discard;
                 }
@@ -493,7 +519,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			LOD 300
 			Tags { "IGNOREPROJECTOR" = "true" "LIGHTMODE" = "PREPASSFINAL" "QUEUE" = "AlphaTest" "RenderType" = "TransparentCutout" }
 			ZWrite Off
-			GpuProgramID 228378
+			GpuProgramID 214433
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -518,8 +544,11 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			float4 _BumpMap_ST;
 			// $Globals ConstantBuffers for Fragment Shader
 			float4 _Color;
+			float4 _EmissionColor;
+			float _EmissionAlphaCutoff;
+			float3 _SpecVals;
 			float3 _DefVals;
-			float4 _Temperature;
+			float3 _Temperature;
 			float _ThermalVisionOn;
 			float _Cutoff;
 			// Custom ConstantBuffers for Vertex Shader
@@ -528,6 +557,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			// Texture params for Fragment Shader
 			sampler2D _MainTex;
 			sampler2D _BumpMap;
+			sampler2D _EmissionMap;
 			sampler2D _LightBuffer;
 			
 			// Keywords: 
@@ -606,6 +636,11 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 float4 tmp1;
                 float4 tmp2;
                 tmp0 = tex2D(_MainTex, inp.texcoord.xy);
+                tmp1.x = tmp0.w * _Color.w + -_EmissionAlphaCutoff;
+                tmp1.x = tmp1.x < 0.0;
+                if (tmp1.x) {
+                    discard;
+                }
                 tmp1.x = tmp0.w * _Color.w + -_Cutoff;
                 tmp0 = tmp0 * _Color;
                 tmp1.x = tmp1.x < 0.0;
@@ -626,20 +661,24 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 tmp1.x = 1.0 - tmp1.x;
                 tmp1.x = tmp1.x * tmp1.x;
                 tmp1.x = tmp1.x * 0.5;
-                tmp1.x = _DefVals.y * tmp1.x + _DefVals.x;
-                tmp0.xyz = tmp0.xyz * tmp1.xxx;
+                tmp1.y = _DefVals.y * tmp1.x + _DefVals.x;
+                tmp1.x = _SpecVals.y * tmp1.x + _SpecVals.x;
+                tmp1.x = tmp1.x * 0.5;
+                tmp0.xyz = tmp0.xyz * tmp1.yyy;
                 o.sv_target.w = tmp0.w;
-                tmp1.xyz = tmp0.xyz * _Temperature.zzz;
-                tmp1.xyz = max(tmp1.xyz, _Temperature.xxx);
-                tmp1.xyz = min(tmp1.xyz, _Temperature.yyy);
-                tmp1.xyz = tmp1.xyz + _Temperature.www;
+                tmp1.yzw = tmp0.xyz * _Temperature;
+                tmp1.yzw = max(tmp1.yzw, _Temperature);
+                tmp1.yzw = min(tmp1.yzw, _Temperature);
                 tmp0.w = _ThermalVisionOn > 0.0;
-                tmp0.xyz = tmp0.www ? tmp1.xyz : tmp0.xyz;
-                tmp1.xy = inp.texcoord3.xy / inp.texcoord3.ww;
-                tmp1 = tex2D(_LightBuffer, tmp1.xy);
-                tmp1.xyz = log(tmp1.xyz);
-                tmp1.xyz = inp.texcoord5.xyz - tmp1.xyz;
-                o.sv_target.xyz = tmp0.xyz * tmp1.xyz;
+                tmp0.xyz = tmp0.www ? tmp1.yzw : tmp0.xyz;
+                tmp2 = tex2D(_EmissionMap, inp.texcoord.xy);
+                tmp1.yzw = tmp2.xyz * _EmissionColor.xyz;
+                tmp1.xyz = tmp1.xxx * tmp1.yzw;
+                tmp2.xy = inp.texcoord3.xy / inp.texcoord3.ww;
+                tmp2 = tex2D(_LightBuffer, tmp2.xy);
+                tmp2.xyz = log(tmp2.xyz);
+                tmp2.xyz = inp.texcoord5.xyz - tmp2.xyz;
+                o.sv_target.xyz = tmp0.xyz * tmp2.xyz + tmp1.xyz;
                 return o;
 			}
 			ENDCG
@@ -648,7 +687,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			Name "DEFERRED"
 			LOD 300
 			Tags { "IGNOREPROJECTOR" = "true" "LIGHTMODE" = "DEFERRED" "QUEUE" = "AlphaTest" "RenderType" = "TransparentCutout" }
-			GpuProgramID 267257
+			GpuProgramID 264070
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
@@ -676,8 +715,11 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			float4 _BumpMap_ST;
 			// $Globals ConstantBuffers for Fragment Shader
 			float4 _Color;
+			float4 _EmissionColor;
+			float _EmissionAlphaCutoff;
+			float3 _SpecVals;
 			float3 _DefVals;
-			float4 _Temperature;
+			float3 _Temperature;
 			float _ThermalVisionOn;
 			float _Cutoff;
 			// Custom ConstantBuffers for Vertex Shader
@@ -686,6 +728,7 @@ Shader "p0/Cutout/Bumped Diffuse" {
 			// Texture params for Fragment Shader
 			sampler2D _MainTex;
 			sampler2D _BumpMap;
+			sampler2D _EmissionMap;
 			
 			// Keywords: 
 			v2f vert(appdata_full v)
@@ -749,6 +792,11 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 float4 tmp1;
                 float4 tmp2;
                 tmp0 = tex2D(_MainTex, inp.texcoord.xy);
+                tmp1.x = tmp0.w * _Color.w + -_EmissionAlphaCutoff;
+                tmp1.x = tmp1.x < 0.0;
+                if (tmp1.x) {
+                    discard;
+                }
                 tmp0.w = tmp0.w * _Color.w + -_Cutoff;
                 tmp0.xyz = tmp0.xyz * _Color.xyz;
                 tmp0.w = tmp0.w < 0.0;
@@ -769,25 +817,30 @@ Shader "p0/Cutout/Bumped Diffuse" {
                 tmp0.w = 1.0 - tmp0.w;
                 tmp0.w = tmp0.w * tmp0.w;
                 tmp0.w = tmp0.w * 0.5;
-                tmp0.w = _DefVals.y * tmp0.w + _DefVals.x;
-                tmp0.xyz = tmp0.www * tmp0.xyz;
-                tmp1.xyz = tmp0.xyz * _Temperature.zzz;
-                tmp1.xyz = max(tmp1.xyz, _Temperature.xxx);
-                tmp1.xyz = min(tmp1.xyz, _Temperature.yyy);
-                tmp1.xyz = tmp1.xyz + _Temperature.www;
-                tmp0.w = _ThermalVisionOn > 0.0;
-                o.sv_target.xyz = tmp0.www ? tmp1.xyz : tmp0.xyz;
+                tmp1.x = _DefVals.y * tmp0.w + _DefVals.x;
+                tmp0.w = _SpecVals.y * tmp0.w + _SpecVals.x;
+                tmp0.w = tmp0.w * 0.5;
+                tmp0.xyz = tmp0.xyz * tmp1.xxx;
+                tmp1.xyz = tmp0.xyz * _Temperature;
+                tmp1.xyz = max(tmp1.xyz, _Temperature);
+                tmp1.xyz = min(tmp1.xyz, _Temperature);
+                tmp1.w = _ThermalVisionOn > 0.0;
+                o.sv_target.xyz = tmp1.www ? tmp1.xyz : tmp0.xyz;
                 o.sv_target.w = 1.0;
                 o.sv_target1 = float4(0.0, 0.0, 0.0, 0.0);
                 tmp0.x = dot(inp.texcoord1.xyz, tmp2.xyz);
                 tmp0.y = dot(inp.texcoord2.xyz, tmp2.xyz);
                 tmp0.z = dot(inp.texcoord3.xyz, tmp2.xyz);
-                tmp0.w = dot(tmp0.xyz, tmp0.xyz);
-                tmp0.w = rsqrt(tmp0.w);
-                tmp0.xyz = tmp0.www * tmp0.xyz;
+                tmp1.x = dot(tmp0.xyz, tmp0.xyz);
+                tmp1.x = rsqrt(tmp1.x);
+                tmp0.xyz = tmp0.xyz * tmp1.xxx;
                 o.sv_target2.xyz = tmp0.xyz * float3(0.5, 0.5, 0.5) + float3(0.5, 0.5, 0.5);
                 o.sv_target2.w = 1.0;
-                o.sv_target3 = float4(1.0, 1.0, 1.0, 1.0);
+                tmp1 = tex2D(_EmissionMap, inp.texcoord.xy);
+                tmp0.xyz = tmp1.xyz * _EmissionColor.xyz;
+                tmp0.xyz = tmp0.www * tmp0.xyz;
+                o.sv_target3.xyz = exp(-tmp0.xyz);
+                o.sv_target3.w = 1.0;
                 return o;
 			}
 			ENDCG
