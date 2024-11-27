@@ -91,6 +91,7 @@
      <Compile Include="Assets\Scripts\BezierSplineTools\SplineDecorator.cs" />
      <Compile Include="Assets\Scripts\BezierSplineTools\SplineWalker.cs" />
      <Compile Include="Assets\Scripts\BezierSplineTools\SplineWalkerMode.cs" />
+     <Compile Include="Assets\Scripts\BipodViewController.cs" />
      <Compile Include="Assets\Scripts\BotCellController.cs" />
      <Compile Include="Assets\Scripts\BotLocationModifier.cs" />
      <Compile Include="Assets\Scripts\BotPointOfInterest.cs" />
@@ -154,6 +155,7 @@
      <Compile Include="Assets\Scripts\DressItem.cs" />
      <Compile Include="Assets\Scripts\DynamicDeferredDecalRenderer.cs" />
      <Compile Include="Assets\Scripts\EAutoFoldableSightMode.cs" />
+     <Compile Include="Assets\Scripts\EBipodToggleDirection.cs" />
      <Compile Include="Assets\Scripts\ECoverPointSpecial.cs" />
      <Compile Include="Assets\Scripts\EDecalTextureType.cs" />
      <Compile Include="Assets\Scripts\EFT\Airdrop\AirdropPoint.cs" />
@@ -170,6 +172,12 @@
      <Compile Include="Assets\Scripts\EFT\CameraControl\CameraLodBiasController.cs" />
      <Compile Include="Assets\Scripts\EFT\CameraControl\OpticSight.cs" />
      <Compile Include="Assets\Scripts\EFT\CameraControl\PlayerCameraController.cs" />
+     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeData.cs" />
+     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeEffectsData.cs" />
+     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeNightVisionData.cs" />
+     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeReticle.cs" />
+     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeSmoothCameraData.cs" />
+     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeThermalVisionData.cs" />
      <Compile Include="Assets\Scripts\EFT\DistanceBlendOptions.cs" />
      <Compile Include="Assets\Scripts\EFT\DistanceVarity.cs" />
      <Compile Include="Assets\Scripts\EFT\EAmmoBeltSpawnDirection.cs" />
@@ -239,8 +247,10 @@
      <Compile Include="Assets\Scripts\EFT\Interactive\WindowBreakingConfig.cs" />
      <Compile Include="Assets\Scripts\EFT\Interactive\WorldInteractiveObject.cs" />
      <Compile Include="Assets\Scripts\EFT\InventoryLogic\EItemAttributeId.cs" />
+     <Compile Include="Assets\Scripts\EFT\InventoryLogic\ESmoothScopeState.cs" />
      <Compile Include="Assets\Scripts\EFT\InventoryLogic\EquipmentSlot.cs" />
      <Compile Include="Assets\Scripts\EFT\InventoryLogic\FoldableComponent.cs" />
+     <Compile Include="Assets\Scripts\EFT\InventoryLogic\IAdjustableOpticData.cs" />
      <Compile Include="Assets\Scripts\EFT\InventoryLogic\Item.cs" />
      <Compile Include="Assets\Scripts\EFT\InventoryLogic\LightComponent.cs" />
      <Compile Include="Assets\Scripts\EFT\InventoryLogic\Mod.cs" />
@@ -403,6 +413,7 @@
      <Compile Include="Assets\Scripts\SceneLights.cs" />
      <Compile Include="Assets\Scripts\ScopeMaskRenderer.cs" />
      <Compile Include="Assets\Scripts\ScopePrefabCache.cs" />
+     <Compile Include="Assets\Scripts\ScopeZoomHandler.cs" />
      <Compile Include="Assets\Scripts\SightModVisualControllers.cs" />
      <Compile Include="Assets\Scripts\SimpleSparksAdapter.cs" />
      <Compile Include="Assets\Scripts\SimpleSparksRenderer.cs" />
@@ -490,6 +501,7 @@
      <Compile Include="Assets\Scripts\WetRenderer.cs" />
      <Compile Include="Assets\Scripts\WildSpawnType.cs" />
      <Compile Include="Assets\Scripts\ZoneTriangleData.cs" />
+     <Compile Include="Assets\Tools\Unity Bundle Loader\AssetBundleLoader.cs" />
      <None Include="Assets\Shaders\p0_Cutout_Bumped Diffuse Emissive.shader" />
      <None Include="Assets\Shaders\OpticSight.shader" />
      <None Include="Assets\Examples\Particles\READ ME FIRST.txt" />
