@@ -17,7 +17,7 @@ TagManager:
   - DoorLowPolyCollider
   - PlayerCollisionTest
   - Terrain
-  - HighPolyCollider
+  - HighPolyCollidder
   - Triggers
   - DisablerCullingObject
   - Loot
@@ -29,7 +29,7 @@ TagManager:
   - CullingMask
   - Interactive
   - DeadBody
-  - RainDrops
+  - Raindrops
   - Menu Environment
   - Foliage
   - PlayerSpiritAura
