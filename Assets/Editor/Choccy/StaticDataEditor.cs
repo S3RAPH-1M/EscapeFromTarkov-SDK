@@ -192,7 +192,7 @@ public class StaticDataEditor : EditorWindow
     private Vector3 pivotPoint = Vector3.zero;
     private Light previewLight;
 
-    [MenuItem("Custom Windows/Static Data Editor")]
+    [MenuItem("Custom Windows/Choccy/Animations/Static Data Editor")]
     public static void ShowWindow()
     {
         GetWindow<StaticDataEditor>("Static Data Editor");

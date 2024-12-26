@@ -9,7 +9,7 @@ public class VoiceTagBankCreator : EditorWindow
     private string voiceName = "";
     private string audioRootDirectory = "";
 
-    [MenuItem("Groovey GUI Toolbox/Tools/Custom Voice Creator", priority = 6)]
+    [MenuItem("Custom Windows/Groovey/Tools/Custom Voice Creator")]
     public static void ShowWindow()
     {
         GetWindow<VoiceTagBankCreator>("Voice TagBank Creator");

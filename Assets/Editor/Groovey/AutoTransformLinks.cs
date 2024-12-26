@@ -9,7 +9,7 @@ public class TransformLinksAutomation : EditorWindow
     private GameObject mainObject;
     private bool showErrors = false;
 
-    [MenuItem("Groovey GUI Toolbox/Tools/Transform Links Automation", priority = 7)]
+    [MenuItem("Custom Windows/Groovey/Tools/Transform Links Automation")]
     public static void ShowWindow()
     {
         GetWindow<TransformLinksAutomation>("Transform Links Automation");
