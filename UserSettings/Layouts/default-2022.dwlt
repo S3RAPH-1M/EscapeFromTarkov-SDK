@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 8
-    y: 130
-    width: 1904
-    height: 894
+    x: 0
+    y: 43
+    width: 1920
+    height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
+  m_Maximized: 1
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -43,8 +43,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1904
-    height: 844
+    width: 1920
+    height: 939
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
@@ -65,15 +65,15 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1518
+    x: 1531
     y: 0
-    width: 386
-    height: 844
+    width: 389
+    height: 939
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 13}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &4
@@ -93,13 +93,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 376
-    height: 511
+    width: 379
+    height: 568
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 14}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 14}
+  - {fileID: 15}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -118,15 +118,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 511
-    width: 1518
-    height: 333
+    y: 568
+    width: 1531
+    height: 371
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 12}
+  m_ActualView: {fileID: 13}
   m_Panes:
-  - {fileID: 12}
-  - {fileID: 17}
+  - {fileID: 13}
+  - {fileID: 18}
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &6
@@ -149,8 +149,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1904
-    height: 894
+    width: 1920
+    height: 989
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -174,7 +174,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1904
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 874
-    width: 1904
+    y: 969
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -219,8 +219,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1518
-    height: 844
+    width: 1531
+    height: 939
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
@@ -245,8 +245,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1518
-    height: 511
+    width: 1531
+    height: 568
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
@@ -267,19 +267,569 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 376
+    x: 379
     y: 0
-    width: 1142
-    height: 511
+    width: 1152
+    height: 568
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 15}
+  m_ActualView: {fileID: 16}
   m_Panes:
-  - {fileID: 15}
   - {fileID: 16}
+  - {fileID: 17}
+  - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 2
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15478322cbd3d2f4a862552f839978da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: AssetBundles
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 379
+    y: 73
+    width: 1150
+    height: 547
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_Mode: 0
+  m_DataSourceIndex: 0
+  m_ManageTab:
+    m_BundleTreeState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_AssetListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_AssetListMCHState:
+      m_Columns:
+      - width: 50
+        sortedAscending: 0
+        headerContent:
+          m_Text: Asset
+          m_Image: {fileID: 0}
+          m_Tooltip: Short name of asset. For full name select asset and see message
+            below
+        contextMenuText: 
+        headerTextAlignment: 0
+        sortingArrowAlignment: 1
+        minWidth: 50
+        maxWidth: 300
+        autoResize: 1
+        allowToggleVisibility: 1
+        canSort: 1
+        userData: 0
+      - width: 50
+        sortedAscending: 0
+        headerContent:
+          m_Text: Bundle
+          m_Image: {fileID: 0}
+          m_Tooltip: Bundle name. 'auto' means asset was pulled in due to dependency
+        contextMenuText: 
+        headerTextAlignment: 0
+        sortingArrowAlignment: 1
+        minWidth: 50
+        maxWidth: 300
+        autoResize: 1
+        allowToggleVisibility: 1
+        canSort: 1
+        userData: 0
+      - width: 30
+        sortedAscending: 0
+        headerContent:
+          m_Text: Size
+          m_Image: {fileID: 0}
+          m_Tooltip: Size on disk
+        contextMenuText: 
+        headerTextAlignment: 0
+        sortingArrowAlignment: 1
+        minWidth: 30
+        maxWidth: 100
+        autoResize: 1
+        allowToggleVisibility: 1
+        canSort: 1
+        userData: 0
+      - width: 16
+        sortedAscending: 0
+        headerContent:
+          m_Text: '!'
+          m_Image: {fileID: 0}
+          m_Tooltip: Errors, Warnings, or Info
+        contextMenuText: 
+        headerTextAlignment: 0
+        sortingArrowAlignment: 1
+        minWidth: 16
+        maxWidth: 16
+        autoResize: 0
+        allowToggleVisibility: 1
+        canSort: 1
+        userData: 0
+      m_VisibleColumns: 00000000010000000200000003000000
+      m_SortedColumns: 
+    m_BundleDetailState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_HorizontalSplitterPercent: 0.4
+    m_VerticalSplitterPercentRight: 0.7
+    m_VerticalSplitterPercentLeft: 0.85
+  m_BuildTab:
+    m_AdvancedSettings: 0
+    m_ScrollPosition: {x: 0, y: 0}
+  m_InspectTab:
+    m_Data:
+      m_BundlePaths: []
+      m_BundleFolders: []
+    m_BundleTreeState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+  m_ReplacerTab:
+    data:
+      sdk: 5a6aeda1efde543aa635ed633df42f4f9e22b7f36231d990229c108cda8d6ff201bcd360f141d7333f8bcd417bb62a10b0b041770bcd0648fd497ed8396a1b13281c43a6a2036c3476b92a05820ddabd15edeafc193357810124b552b734ae4e3bd1152f1beed162809e6691319c471941a99f97ff1cab01b7129a664cbbaf4adc2b836b5e6e3f279e4e54b90265fed2e898fe8551c5025a79accff3786ef5c6dc299fe9117cf83d6259c69967d8bef1b084578393bb91d8be01741ad04160e302fe5f1994dbc01c34260dac53064e301cfaff78c03793a9595a53bdeefd1aae7409f5e1454f5e40e58da595607750ab8184a9ad6caeb05e63391858f3f945a2ee5f33135b50b6be0483cb4c0cac97d97b5257b8862505cafd3a2ec9c3603659b19c54bd5c31db2b1ae2b696a9e2a2bfd5965191d4240395790364d06138dcbfd8e1a8a57adceceae9df19982f8b9688a5a40de8d2f12ce61070ab0f1b8a506a057bf2a675435ad53c19bed555f6481df323fa4b4c0a1b2e7c530010c062401e585ebf740fc1990888d2c43b133e0016b97102c8b19ebf3c8b93c3a38a7b2e5977da513e300f9d36a1cb20c202f4bba994f54233feb3e40114e3723f2ffc7043e6313057c63c6b4b11badea9ca8d2f8a60d6a8c8bfaabe81fe66a890158d2cf87d0ea9c08555200ae9cf4f3ff7ca98abe3a9aaa73b799edc958bc585aa4fb3ac486a75f7c8f48d05b7dcf71734ef8fc1c54da4141a2cacbaeb5300e80922a2f969065533abff1e8bdecbb44b5432c5c0db4260d0bbdbd89f1afcc3de88e9bc784b073daf4dab9c9a7163b09b01fc820f9b04923dbc13f9c742016b8a825f20f6334b11729f8e9743aabb14891fda44be2c9f057026da1ac2f1b09e426d082cc957da61a1fd281e3c62b8f3fbb16be344e963fb132f11d8878824433e350dc978f2c7bf3af1c3e3b1e519f2e67aab638bf78bc2f7fdfbd0b47430827f4807930c6d6edf3acc0a94eab7522c69bd44c55e4282bb647e9387c65157b78a4c7f5f27b535fbcfc43fad68210c89bd67ed437714e4bd0092245410bb52b867d4e4317cf2df8d3cb0a65acfc2aac3e8da61bee37e323f97a85afcbe75b4e6e430dbd6409fa7a0d3bf8d1b2810728d81522edb6bdaf3f717a0fed0487ec6147fa178c4919a52a6c80feacb270c6cb0edfb2b601befe0a5bc45ca38220f24fd3dbcd3e5c061727d8fd58a68f9e1c6c873484390d4e220f105ebd7e5c4186b93656c19637859f1470709e153c86987186173a2ac2efb7990d94343a22d05fb6890a320cd5b35500341f10fd4800bbfd86b722358476110338cc2c385532d466822330ea507236680d889bdadb26d9efc9925434b6b5c023cb8ef4cb081082352fc53cc36a035987501a64533224554e4cceaaa69cc8c4e0d2c8438153521e8113117a6045b2265e386d4444253ff7f035b1dd6b4a34761d496351b6378769c81ddc7c0a9e05fb9d6cf75337ef60ad42e90438275523a35c23513dc9a80549fc17a064c180d9046678a9bdef36188e767e38251777945daa4f4f4105a07d9b55f93db5c37462330171aa02900ba085e7abbdfa47aab82afb588f40a31d28e80fda1b7bba873eb366de5965a619a82be107c374aa0b4f964dbc6ebd7ed604da92f79b885a844e828e1bed468b7b43d6d1c14e15b9274cf4138659b2845ffe5d40c9a883fc70bf1601913fa7ece8a75a83fbe8b1518f764585c7c815e6e765efe69c6bf52aaf4c43482b685c075805ec1249800cceacced43885c6ec95e8e9585c1915e90acabc05869c7f5f0afa03a7d6ccc9bd99abbf4b671dd54ec01caf8b30e8168ba2390678a7048eb5121fa9684d878433df3ac1fd5d6c97cc18463b9da095192a2aace82faa022c85439d3aa04290d8104f745dcdf61f0aae43f55daa0851b4c9ddd70b18df762e2a92cdb10226db4afba3d9783c55f4a049d36aeaa1fab971bfded7926361f21989400d6c59231334d0b5bf036fc9a32a29d5b8ad73b7193e7d32b5a66f9c0c8e9cbc8cc1b1990a9387f04a1e0d372a7397782e7dd2e6afb9d049928832e871567095ee60f3bd1a6be1747bdad915cef25707f6c9e758884dd97bab3e8e4173f9754e41bdcbb15fbbae839f10c66ef2b5c1d1ca8e106c4d13337b2f7f2abc10fc6abee5dd872bdfb87c134b96a2b8488aeb6378066fa85d811c59be3f36b1c938c0a9cc02e9b0327a0d02567f650253396135893a4cb65497297dd63ca406479faa2b461e9a950115cb01f80c0ee3d69048e7c0f13bbd21f3d9c9732782c5abee21f62444dc63d194a0a3543fa34a0984b2c0766706937c32376166820a6220f49e2a615cf572b3ee40659a07b302234c9ce3b77d6dac5d45424c7133e4d0284338cc2f5a6b99f8b44fe7cc0575a7d7352fd5bc2a1df03559b3e090e18328bb8e55af3fd1ce21067bc68476075e6df6419eaf2abbf44201754264fa4b118e8f4b7c63c8c3b6db207d6b5d0e41a6c9efee897fb7d72df8c70841ab1eb63c1a6dae2e6c6d446a9de13d511e5173289793176355f4a13d6077d16749e84b6a2c2d706df31bb15537d834c2098fee700528d6769f684d9b47260f70421d1b3df8bf8ef36cfd0890509ade280fabb26360e0ccdba71a8c4aa066e6c9f09deac274a44bd07fac486d1c6eb714032dce05e3200efb395cca1fec50c4d8d8e9a928ac97aa3d1ee9e18bcb5b49645c39ae394556f7d4c866e9cce6e604c4950c3d3d79ef72428d3c82f9ee0f8c2949cc64cd2eb9114bed6afa937cd6c4964088bac8cdc7694e3588a03ac4d886c943ac9aaf0cf5b2930caa13e47aa6bd0b28e909ce8ef36f99824836ba083aabfdd1e319460d4489ebe61cd3a15fc2113b9c7fa957aaa34771fb3f3d9041c11d0dbef964c86a3889891cf427dd8dd1d2ba90dee2ef1b7790c7f8a775faf53da311fc8880b31e74f9f0bbda520fa77935370ddade1d34aa09cb51709a28d34e6e7c82747c89930a41352ea88d44ee9036385f26de109cb2ee711e01fca1473a8ff23597c5d610b5bfc0b1c551c2958cba691cc321e2e5e4632d8e21c343044397cd9d134c6c5b19c3b7a3a4fa56ecdb972a7e9f89687fa5188855c2ae279d6fee06ffc26161e6bcc5050417d9679b30a7230a190a05aac92d5a0f4b6a3a016b856129c056d88d2c7918682316a1d5c1c8c5fe6376728e8bed3fe1be94c1328021481edfb1cd19fa0d18e39d975b07465702ec4d46063cd2e52ad5c5272ec0f7ca759f34055cc1c6503909c2a0db06df23fa8a79de6e92986bd58d28fee2f5ac16ec246566aeab9c5dd87b37f5d658bc158b77e7e8ca6560e2dbd2e665dc07a95e7df7b5d2c830f71497b41f1c42c0693995541fdd216153c6dd496b76b6fcffddc4c74faa6eaaae8b942616918ff59a4542536e038991a50ac60e4efbee3e16355e58fb69c963a0f279827bbb691d01360d32143e95bb08191e5b5ddceee9a9ce4d5fb88257545dfd98dc3920f7e8d06a6ba3428bb5caa8e6317489f27f4c8837671a025c5c10c07c66ba1872af1c39884124c44efea7127c8ddf032dd14bfd8ac6187ad09344e821a11228d5fd8031bc4b7eeb1b3bb51922fac90e287d9eef06ae7e0668d59faca1a0c54cda9ba7195c6dc35fc9c8e82612d6e356e776dd619298e1126233478df43ef5bc7e3b31cd221273e2bf4878c633c1c16301670bbe8d70e79e46f33e73436d149ea28048cb5c1d5784fc05ca8acee863f17a39f9b26f903b0795b34bf85b677ecd7bbac61bc105d5bf4e971bb9a196982f4c31862b0849bedf6572891dbef43c4cb2da3627e56a7fb2db2273f3e1f8381bf985beb1c48f9a1e103858a429e0d4596
+      eft: 3cae7b051ebabb81b276c9db9fb2c10a61522f423bb9f99b2e49bcb262640a5010e3ff21a5d408888c2ada426d483070e0698c86580d434e5287827475e853499540ea460137794f1926e9e0d1ecd64b2bdc92fbd3c792ca43202f15fa9d84800dc5a47fc9b1d994212dc8089f763fb5e05de8ac23c5029988c169055a82e43525fb8609ac5fe2f22d3abd85131e50487fd5622cf4a0d0a787e0c7e28d411587ab19871203d027a4cd05a11de98a1769ec1dc31b6bb8be64edcaae651723816655b37580f7fc00ae4fb44b91df49c69d3ba8a8a5cc2d1bdb17e3542eecdc5118ec6079d92a19e9a68ed870f7df59b9e91ef3edb0ecab8b630022391143594791236f6347755754302dfe473c06290cdb66dffab8d1ee7521765d706b34115042ffb622b98480b2df3f2e720e0705251600709b6bffcb1b5697034fe8c5b7aa4a48bc87e3fb15e99f7014fd8d1c953b8a194d5a8c0ce640a85f3eda9315592860633eaa56a3cb1a38b9c8b48ebf0bd53cdb39aebfc12c17e8024b954d8c1d4e90eb32c750058bd02f037a452f08e841ade4a62f5edf70239f30cb3342ea8128c6b879f9d262c5ffdfc1777aea337797d9cc60e5043367684be59410430e3a55c0090c65885db03c8c8a40de87659cab02431a82fd25263d169be276e461dbff777909fcfaaf5ed4f8f0f40df96a2c9c54319bb4c98e78ba66e8db30e3e18f76f370d1ce256c61f20c1095e998fd61c22baeed8db7ece7db8b474a5c59e9153a53af8b5c4861f4e5f3ab81d7ce8dfa0092f268d24e8343f4525d850e6ff1dc6f49594148354506c1dd226192053972ff362e49bcb262640a506c213fe3165cf24536ae58ba1922a430532bc6ccc5d01eab398cde5bd7cd14676aa60178fd6d8e4413eb95f5a95e55c7f1fb19a5427c9c0e6d2e711003c61a8776ad774a33c2b66dd596c16df657eb6420f981740de8496704f11062998875dadaae47afe4b40e786fd2b7df590d45d78da395820398f59d3f25119bc93d0c07631606747a7d8022d4253f84517eab9d5ef45629795dfcee74f8e23d919c62a1fdbde928a6cddf9e67055e7653796fe6b3592a769b5f79e8dfd6450e8bd35c94d7a98cada9ecc51054e6494bdf98cc830e0112554bd46aa202e7e886d0cb3330e4cf372eaf22186bb650be4d89c8750e1ceecc74835cd3874ec3fb2466d6e0818b3dd9c12afe0ae63ad745d741969eed226efcb4cdde0d2ee3a6c8b77b440276daaff83168e3bebffc8e354e13a47222c1ac45d66cf5602e65ef37212ca3e99fe67ee3141f1ae6986f9b337172b04a69d64384eb0a993a976fa47e43f07898bb3154001b5977f1d2894a2881e097413493d09609a0d58770c1a2e5ec312829b481bcf8a9904d4e3ec1ff4bb33ee288927c43e8e9ae719e1a30265d49a1274a399c9a950aaa0676565e5eeced99f4ecfcdd462f24860af74742603ec0f66ccab604e63a6755c5260633716944a01b5daefd0e5542744e0aa6ff1b278d68fbbfa50525c1d1f68f96ac17a3775de452e6b61c87deb450ea13eb047e7b6967395122f832adcb0276ca2660165aa9d231942d624d66edcc04afbe1b3270e01593e69eace11d7e9caf67900d387234920d46ff81541692da98077fa8b04ba6906c9e4f9670ebae3edeafa408756baadc0e8906f07da784bd1e900e3bc7656c013a692beadef67d99a4e52a4c84c294ca284304d82f33a9527111252784b95c0cc67c9071441206235f4edc2d49b88bcd4283613cef63e108794e596fae97e2b983f8a158615505c5629ca3cc1f03ddd13bd3b1742f6202b9109b66a20ad9f5592cff7f43d11979027a3f657b984fe41f93bd84e25ddbd1ff3487c7f65e62427206c33a005eb32deb30ccf2193d0f1b1da6eb81ef805ad955a0af1ea6f696989283de2ff8d89840d785db907da69ebf11be128033c8da0ecdea8f5cbaaefdd1d4c389a42023231e0b8f1e74af783d6d969f00d7561aa24fbd241b15bc553179452238e8164087e61ba14407aba7e62a4b5bbef1ced2159005917cb7005a437c59620e5267ba7627f0fcb5d9bc6bd8e09400705c9ce7dca5780474f04c964bd27813c67e12682d909a802458b375bb7cc680c0d2a85561db6f16e81d72770f53550bd4279bd76d0c3817abcc45198cbd42242bdbfcafdfe75cee0f7756387a12ce11e8a4e33145214fd87647ce170f164d9b465ab42e6f1780eee14e9fd74918c4bc10d5c0015a2f17e9b1496ad222fe0e182024af8b5c4861f4e5f356387a12ce11e8a412682d909a802458d7a7230b1808e8635362df2fb88d6edc9841e58ddbe6acae40ace1ed7402809b1a5b8b1ceb815c73fc19cbfb5947405846d0ee746e725ef268d20274df8c9ffa7370687e662980da17195e5ef74c52f4f29a40a6bc9f8401127aa770131cc77840fbfe8d73f557145062e00b20ae50b2e49cc97ba7faa00cc654d5aee6ecbf180553e1e2c9f3d4c8ec45e74503ecdf12342e19e34cb3c3ab8dc3f606dab3dee1e4be5b6f7f774aa5eb2790925e71517b323a2babc1d30acb426055f685d3bba352863e240a96d6d263964fb92605acdeef67531049c517fdb9df640691d76e03b19547e1f4a851aa17ba6faaa18095082b96d1b919b09649510b134cbb3977e17f8d4155baeba7561ecfb3427871c33ad66326d6374f0fbeb126da344d5c091e7c3bf36cdec2959d1ffe378ddb5f35b0de5ad00760556828c4156efe6e9eabf053c7be5066d04564792abc151293442241488ca0380174cd7f47e2aa00331135b7fdc5c8da63a2a14fc23b8619cbb9048ace13f70896150b2afe492f3eb7466fe447a1f9143ecc06facf25253dca787274ac0b0407f78451d6435d2b180af789d1d13ee7bbad0c386d974e4c04d3b31a4d7049598ee0b7cbcf4eeaab48f35070c7ad7f299dd7d0fe723e1ffa42279017ff8ab4cae1ef746b7d4e002ba2e506ed7d6d49cdd649c2fbc4effa85b5f82f8700d38c65ceada8bf16d09529e095643ea82f381644a2cbdb91f4f01214156c36608ca5433f29be0db1adc3d70e397e892182dcc71dadcf5e310eeee22310b2bbb613b535b857b39f43c7261a471f296b2d15eaabbe4e1e29ddf37abe390bf3d3af48cf78d16e572781617a0b43043e2d939adf0cd9156b36b8b9aa0028434d7c71f4ee774e2c35e43600c20f6bcac215f4badfd754fcc84336129fb4949d4d7c00af6ac7910a3a9e790ceca4f32ccb71b063cd3beb991a3c21c17b1c63504999847528d3aa90f4727001f1f3cfee947a8a91025561f72fc237bd261fea5d0ffe5464e423d6ead2353a9f7b3aaa8697c0c5439530f2fa6e0da85561db6f16e81db375bb7cc680c0d267ba7627f0fcb5d9bc6bd8e09400705c005a437c59620e529ce7dca5780474f0c0015a2f17e9b1496ad222fe0e182024164087e61ba144079fd74918c4bc10d5b42e6f1780eee14ee33145214fd87647ce170f164d9b465aaba7e62a4b5bbef1fcafdfe75cee0f779bd76d0c3817abcc45198cbd42242bdb4c964bd27813c67e72770f53550bd427ced2159005917cb7916d2c9a3e5f5641d285401876e9c4e87dab5d421057934a482a6fa3c4bc4d02474a5c59e9153a5390a7103a7192655db925bc2b020b7954ca64b917f2ed96d89c39174450864e896030673deb751d20bd7484e7ec7025b8c323ed03aab14377d9138627662619ebbc553179452238e8d9138627662619eb73d0e125353733c46a43ea87990090007d19a14ad9de671e92c9f16beb46ca3e41e70b709ae9b945681449a5f6548d5c0ad4927d722b7a669a7e0bb82c3bee77da73d8583b1915c3adfa69c51b26505088a92ed68ccfcf2c
+      descriptionList:
+      - shaders | p0/Reflective/Bumped Specular SMap
+      - shaders | Custom/MuzzleSmoke
+      - shaders | Custom/Additive
+      - shaders | Custom/OpticGlass
+      - weapon_root_anim_fix
+      - LAction anims | fshield_off
+      - LAction anims | fshield_on
+      - LAction anims | generic_0
+      - LAction anims | generic_180
+      - LAction anims | generic_270
+      - LAction anims | generic_90
+      - LAction anims | gestures_00_there
+      - LAction anims | gestures_01_hold
+      - LAction anims | gestures_02_friendly
+      - LAction anims | gestures_03_get_off
+      - LAction anims | gestures_04_ok
+      - LAction anims | gestures_05_no
+      - LAction anims | gestures_06_come_with_me
+      - LAction anims | hand_backward
+      - LAction anims | hand_cover_close
+      - LAction anims | hand_cover_open
+      - LAction anims | hand_drop_stuff
+      - LAction anims | hand_forward
+      - LAction anims | hand_forward_idle
+      - LAction anims | hand_idle
+      - LAction anims | hand_key_use
+      - LAction anims | hand_nv_off
+      - LAction anims | hand_nv_on
+      - LAction anims | hand_search
+      - LAction anims | hand_slap_forward
+      - LAction anims | hand_slap_left
+      - LAction anims | hand_slap_right
+      - LAction anims | hand_switch_0
+      - LAction anims | hand_take
+      - LAction anims | Pickup
+      - LAction anims | pull_hinge_left
+      - LAction anims | pull_hinge_right
+      - LAction anims | push_hinge_left
+      - LAction anims | push_hinge_right
+      - LAction anims | rot_pull_hinge_left
+      - LAction anims | rot_pull_hinge_right
+      - LAction anims | rot_push_hinge_left
+      - LAction anims | rot_push_hinge_right
+      - Effects | Smoke | MuzzleSmoke
+      - Effects | MuzzleFlash | muzzle_default
+      - Effects | MuzzleFlash | MuzzleFlashTest
+      - Effects | HeatHaze | DefaultHeatHaze
+      - Prefabs | muzzleflash_base
+      - Blendoption | Hammer
+      - Blendoption | Impact
+      - Blendoption | Silenced
+      - Blendoption | Standard
+      - Kibas Tuning | DTK Big
+      - Kibas Tuning | Pistol
+      - Kibas Tuning | Rifle
+      - Kibas Tuning | Silenced Pistol
+      - Kibas Tuning | Silenced Rifle
+      - Kibas Tuning | RTC_Front
+      - Kibas Tuning | Utes MuzzleFlash
+      - shaders | p0/Reflective/Bumped Specular SMap_Decal
+      - Optic Sight | Mask 1
+      - Optic Sight | Mask 2
+      - Optic Sight | Mask Camera
+      - Optic Sight | Mask Scope
+      - Optic Sight | Mask Window
+      - Optic Sight | Optic Camera Mask
+      - shaders | CW FX/BackLens
+      - shaders | CW FX/Collimator
+      - shaders | CW FX/OpticSight
+      - shaders | Hidden/ChromaticAberration
+      - shaders | Hidden/Custom Global Fog
+      - shaders | Hidden/OpticCullingMask
+      - shaders | Hidden/ScreenMask
+      - shaders | Hidden/Time of Day/Scattering
+      - shaders | Custom/OpticGlass
+      - Hole Manager | Spec Round Mask
+      - cubemap | patron metal
+      - cubemap | patron brass matte
+      - cubemap | patron full
+      - cubemap | patron red
+      - cubemap | patron brass
+      - cubemap | patron metal matte
+      - generic | ak magin fail 1
+      - generic | ak magin fail 2
+      - generic | ak magin fail 3
+      - generic | hand hit
+      - generic | mag in pouch 1
+      - generic | mag in pouch 2
+      - generic | mag in pouch 3
+      - generic | mag in pouch 4
+      - generic | mag in pouch 5
+      - generic | mag in pouch 6
+      - generic | mag in pouch 7
+      - generic | mag out pouch 1
+      - generic | mag out pouch 2
+      - generic | mag out pouch 3
+      - generic | mag out pouch 4
+      - generic | mag out pouch 5
+      - generic | mag out pouch 6
+      - generic | mag out pouch 7
+      - generic | hand grip 1
+      - generic | hand grip 2
+      - generic | hand grip 3
+      - generic | hand grip 4
+      - generic | hand grip 5
+      - generic | hand grip 6
+      - generic | hand grip 7
+      - generic | pistol mag in fail 1
+      - generic | pistol mag in fail 2
+      - generic | pistol mag in fail 3
+      - generic | rifle plastic magin fail 1
+      - generic | rifle plastic magin fail 2
+      - generic | rifle plastic magin fail 3
+      - generic | weap bolt catch
+      - generic | weap bolt catch button
+      - generic | weap handle in
+      - generic | weap handle out
+      - generic | weap bolt in
+      - generic | weap bolt in fast
+      - generic | weap bolt out
+      - generic | fire selector
+      - generic | hand off
+      - generic | hand on
+      - generic | weap in
+      - generic | weap mag pullout
+      - generic | weap mag shaftlock
+      - generic | weap mag drop plastic
+      - generic | weap mag in plastic
+      - generic | weap mag in rig
+      - generic | weap mag in sbrosnik
+      - generic | weap mag out plastic
+      - generic | weap mag release button
+      - generic | weap out
+      - generic | weap round in chamber hand
+      - generic | weap round in chamber mag
+      - generic | weap round out
+      - generic | weap round pullout
+      - generic | weap trigger empty
+      - generic | weap trigger hammer
+      - generic | weap generic pistol spin 1
+      - generic | weap generic pistol spin 2
+      - generic | weap generic pistol spin 3
+      - generic | weap generic pistol spin 4
+      - generic | weap generic rifle spin 1
+      - generic | weap generic rifle spin 10
+      - generic | weap generic rifle spin 2
+      - generic | weap generic rifle spin 3
+      - generic | weap generic rifle spin 4
+      - generic | weap generic rifle spin 5
+      - generic | weap generic rifle spin 6
+      - generic | weap generic rifle spin 7
+      - generic | weap generic rifle spin 8
+      - generic | weap generic rifle spin 9
+      - generic | weap generic spin 1
+      - generic | weap generic spin 10
+      - generic | weap generic spin 2
+      - generic | weap generic spin 3
+      - generic | weap generic spin 4
+      - generic | weap generic spin 5
+      - generic | weap generic spin 6
+      - generic | weap generic spin 7
+      - generic | weap generic spin 8
+      - generic | weap generic spin 9
+      - generic | light switch button 1
+      - generic | light switch button 2
+      - generic | light switch button 3
+      - shaders | Time of Day/Atmosphere
+      - shaders | Time of Day/Clear Alpha
+      - shaders | Time of Day/Cloud Billboard
+      - shaders | Time of Day/Cloud Layer
+      - shaders | Time of Day/Cloud Layer 2
+      - shaders | Time of Day/Cloud Layer 2 Light
+      - shaders | Time of Day/Cloud Layer 2 Pointlight
+      - shaders | Time of Day/Cloud Shadow
+      - shaders | Time of Day/Moon
+      - shaders | Time of Day/Skybox
+      - shaders | Time of Day/Space
+      - shaders | Time of Day/Sun
+      - shaders | Transparent/DepthZwriteDithered
+      - shaders | Ultra Deferred Decal Of God 3000
+      - shaders | AlphaBumpedFresnel
+      - shaders | Water Splash
+      - shaders | TracerSmoke2
+      - shaders | TracerLight
+      - shaders | TracerSmoke
+      - shaders | HDRFireParticle
+      - shaders | Smoke Distorted Grenade
+      - shaders | Smoke Bumped
+      - shaders | SimpleParticleMoveAdd
+      - shaders | MultiflareOffscreen
+      - shaders | SuperAdditive
+      - shaders | DistortAndBlur Simple
+      - shaders | HSL Additive
+      - shaders | AdditiveSimple
+      - shaders | Smoke Distorted
+      - shaders | BumpedGlass
+      - shaders | Alpha Blended Lighted
+      - shaders | DistortionFresnel
+      - shaders | ParticlesCutOut
+      - shaders | Deffered Decal Diff Norm
+      - shaders | Deffered Decal Diff Norm dynamic
+      - Vis Optic Sight
+      - Vis Smoke Distorted
+      - Vis Smoke Bumped
+      - Mats | Blood1
+      - Mats | Blood Splash
+      - Mats | Blood Body Decal
+      - Mats | Decal Defl Blood Env
+      - Mats | Decal Defl Blood Env Dynamic
+      - Mats | Decal Beton
+      - Mats | Decal Plastic
+      - Mats | Decal Soil
+      - Mats | Decal Body
+      - Mats | Decal Def Bleeding
+      - Mats | Decal Def Bleeding Dynamic
+      - Mats | Decal Def Concrete
+      - Mats | Decal Def Concrete Dynamic
+      - Mats | Decal Def Default
+      - Mats | Decal Def Default Dynamic
+      - Mats | Decal Def Glass
+      - Mats | Decal Def Glass Dynamic
+      - Mats | Decal Def Grenade
+      - Mats | Decal Def Grenade Dynamic
+      - Mats | Decal Def Metal
+      - Mats | Decal Def Metal Dynamic
+      - Mats | Decal Def Plastic
+      - Mats | Decal Def Plastic Dynamic
+      - Mats | Decal Def Soil
+      - Mats | Decal Def Soil Dynamic
+      - Mats | Decal Def Wood
+      - Mats | Decal Def Wood Dynamic
+      - Mats | Distortion
+      - Mats | Distortion 3d
+      - Mats | Drop Beton
+      - Mats | Drop Beton white
+      - Mats | Drop Beton new
+      - Mats | Drop Blood
+      - Mats | Drop Glass
+      - Mats | Drop Glass Shard
+      - Mats | Drop Plastic
+      - Mats | Drop Water
+      - Mats | Dust
+      - Mats | Dust 2
+      - Mats | Dust Dark
+      - Mats | Dust Bloody
+      - Mats | Dust Splash
+      - Mats | Dust Splash 2
+      - Mats | Effect Flash
+      - Mats | Effect Spark
+      - Mats | Explosion3D 1 Buster
+      - Mats | Explosion3D 10
+      - Mats | Explosion3D 10 Black
+      - Mats | Explosion3D 10 White
+      - Mats | Explosion3D 10 White More
+      - Mats | Explosion Shockwave
+      - Mats | Explosion Fire
+      - Mats | Flame Spark
+      - Mats | Fog Glass Particle
+      - Mats | Fog Particle Spark
+      - Mats | Glass Decal
+      - Mats | Heat Material
+      - Mats | Metal Decal
+      - Mats | Multi Flare Offscreen
+      - Mats | Muzzle Smoke
+      - Mats | Particle Spray
+      - Mats | Particle Spray Dirt
+      - Mats | Particle Spray Water
+      - Mats | Particle Spray Water Dust
+      - Mats | Simple Spark Test Material
+      - Mats | Smoke Atlas
+      - Mats | Smoke Bumped
+      - Mats | Smoke Bumped For Stretched PR
+      - Mats | Smoke Bumped New
+      - Mats | Smoke Distorted
+      - Mats | Smoke Distorted3
+      - Mats | Smoke Distorted lonf
+      - Mats | Smoke Distorted Smoke Green
+      - Mats | Smoke Distorted Smoke White
+      - Mats | Smoke Distorted Smoke White Dense
+      - Mats | Spark
+      - Mats | Spark Falling
+      - Mats | Spark Grenade
+      - Mats | Tracer Fire Front
+      - Mats | Tracer Fire Side
+      - Mats | Tracer Smoke
+      - Mats | Tracer Light
+      - Mats | Tracer Smoke
+      - Mats | Water Ripple
+      - Mats | Water Splash
+      - Mats | Water Drop
+      - Mats | Wood Decal
+      - Mats | Wood Drop
+      - Audio | AGS Bank
+      - Audio | Grenade RGN Bank
+      - Audio | Heavy Bullet Bank
+      - Audio | Mortar Bank
+      - Audio | SPG 9 Bank
+      - Vis MultiflareOffscreen
+      - Vis SimpleParticleMoveAdd
+      - Vis TracerLight
+      - Vis TracerSmoke
+      - Vis TracerSmoke2
+      - Vis HDRFireParticle
+      - Vis Deffered Decal Shader Diff+Normals
+      - Vis Deffered Decal Shader Diff+Normals Dynamic
+      - Vis Decal of god 3000
+      - Vis Explosion ParticlesCutOut
+      - Vis Explosions DistortionFresnel
+      - Vis Bumped Glass
+      - Vis Alpha Blended Lighted
+      - Vis AlphaBumpedFresnel
+      - Vis AdditiveSimple
+      - Vis DistortAndBlur
+      - Vis HSL Additive
+      - Vis Smoke Distorted Grenade
+      - Vis SuperAdditive
+      - Vis Water Splash
+      - shaders | Custom/LaserBeam
+      - shaders | Custom/LaserPoint
+      - shaders | Custom/multiFlare
+      - shaders | Custom/ShitOnScreen
+      - shaders | CW FX/Collimator
+      - shaders | EFT/Glass
+      - shaders | Unlit/Color2
+      - shaders | p0/Reflective/Specular
+      - shaders | Legacy Shaders/Reflective/VertexLit
+      - shaders | Legacy Shaders/Reflective/Bumped Diffuse
+      - shaders | Legacy Shaders/Transparent/Cutout/Diffuse
+      - shaders | Legacy Shaders/Transparent/Cutout/VertexLit
+      - Vis DepthZwrite
+      - Vis DepthZwrite_Dithered
+      - shaders | Transparent/DepthZwrite
+      - physics | loot
+      - physics | flesh
+      - physics | glass
+      - physics | plastic
+      - phyiscs | wood
+      - physics | soil
+      - physics | concrete
+      - physics | metal
+      - Vis p0_Cutout_Bumped Diffuse
+      - Vis p0/Cutout/Bumped Diffuse Emissive
+      - Vis Crosshair Shader [From Hensoldt zf4]
+  multiDataSource: 0
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -300,10 +850,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 671
-    width: 1517
-    height: 312
+    x: 0
+    y: 641
+    width: 1530
+    height: 350
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -340,9 +890,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 6e060000
-    m_LastClickedID: 1646
-    m_ExpandedIDs: 000000006e060000ae0600007607000092070000b6070000160800001a0900006e0a0000960b000000ca9a3bffffff7f
+    m_SelectedIDs: 1c5b0000
+    m_LastClickedID: 23324
+    m_ExpandedIDs: 000000001c5b00002c5b000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -370,7 +920,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 000000001c5b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -401,18 +951,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Examples
-      m_OriginalName: Examples
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 1710
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
@@ -426,7 +976,7 @@ MonoBehaviour:
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 115
---- !u!114 &13
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -447,10 +997,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1526
-    y: 160
-    width: 385
-    height: 823
+    x: 1531
+    y: 73
+    width: 388
+    height: 918
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -474,7 +1024,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -495,10 +1045,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 160
-    width: 375
-    height: 490
+    x: 0
+    y: 73
+    width: 378
+    height: 547
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -514,7 +1064,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: b8f3feff
+      m_ExpandedIDs: f2f9ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -538,7 +1088,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 42dd0cf3493225547baeb82f1cf3aa8d
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -559,10 +1109,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 384
-    y: 160
-    width: 1140
-    height: 490
+    x: 379
+    y: 73
+    width: 1150
+    height: 547
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -871,7 +1421,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -11.77449, y: -1.7065389, z: -11.459317}
     speed: 2
-    m_Value: {x: -0.25639158, y: 1.4599261, z: 0.19731677}
+    m_Value: {x: -11.77449, y: -1.7065389, z: -11.459317}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -919,11 +1469,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.054275855, y: 0.91042846, z: -0.12673298, w: -0.38997737}
     speed: 2
-    m_Value: {x: -0.12860413, y: 0.86335117, z: -0.27589944, w: -0.4024491}
+    m_Value: {x: -0.054276686, y: 0.9104424, z: -0.12673491, w: -0.38998333}
   m_Size:
     m_Target: 10
     speed: 2
-    m_Value: 0.79688394
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -948,7 +1498,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,7 +1597,7 @@ MonoBehaviour:
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
