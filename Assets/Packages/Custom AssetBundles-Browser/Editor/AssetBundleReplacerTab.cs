@@ -233,7 +233,7 @@ namespace AssetBundleBrowser.Custom
 
                 var bundle = am.LoadBundleFile(path);
                 var assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
-                var assetList = assetsFile.table.assetFileInfo;
+                var assetList = assetsFile.file.AssetInfos;
 
                 var replaced = TryReplaceFields(assetList, am, assetsFile, replacers);
                 if (!replaced)
@@ -253,16 +253,15 @@ namespace AssetBundleBrowser.Custom
             }
         }
 
-        private bool TryReplaceFields(AssetFileInfoEx[] assetList, AssetsManager am, AssetsFileInstance assetsFile,
+        private bool TryReplaceFields(List<AssetFileInfo> assetList, AssetsManager am, AssetsFileInstance assetsFile,
             List<AssetsReplacer> replacers)
         {
             var counter = 0;
             foreach (var asset in assetList)
             {
-                var typeInstance = am.GetTypeInstance(assetsFile, asset);
-                var baseField = typeInstance.GetBaseField();
+                var typeInstance = am.GetBaseField(assetsFile, asset);
 
-                RecursiveSearch(baseField);
+                RecursiveSearch(typeInstance);
 
                 if (_fieldsToChange.Count == 0) continue;
 
@@ -271,12 +270,12 @@ namespace AssetBundleBrowser.Custom
                     var fieldValue = kvp.Key;
                     var pathID = kvp.Value;
 
-                    fieldValue.Set(pathID);
+                    fieldValue.AsLong = pathID;
                 }
 
-                var newBytes = baseField.WriteToByteArray();
-                var replacer = new AssetsReplacerFromMemory(0, asset.index, (int) asset.curFileType,
-                    AssetHelper.GetScriptIndex(assetsFile.file, asset), newBytes);
+                var newBytes = typeInstance.WriteToByteArray();
+                var replacer = new AssetsReplacerFromMemory(asset.PathId, asset.ClassId,
+                assetsFile.file.GetScriptIndex(asset), newBytes);
                 replacers.Add(replacer);
                 counter++;
                 _fieldsToChange.Clear();
@@ -287,19 +286,19 @@ namespace AssetBundleBrowser.Custom
         
         private void RecursiveSearch(AssetTypeValueField field)
         {
-            foreach (var child in field.children)
+            foreach (var child in field.Children)
             {
-                if (child.templateField.hasValue && !child.templateField.isArray) 
+                if (child.TemplateField.HasValue && !child.TemplateField.IsArray) 
                     continue;
-                if (child.templateField.isArray && child.templateField.children[1].valueType != EnumValueTypes.ValueType_None)
+                if (child.TemplateField.IsArray && child.TemplateField.Children[1].ValueType != AssetValueType.None)
                     continue;
 
-                var typeName = child.templateField.type;
+                var typeName = child.TemplateField.Type;
 
-                if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.childrenCount == 2)
+                if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.Children.Count == 2)
                 {
-                    var fieldValue = child.Get("m_PathID").GetValue();
-                    var pathId = fieldValue.AsInt64();
+                    var fieldValue = child.Get("m_PathID").Value;
+                    var pathId = fieldValue.AsLong;
 
                     if (pathId == 0) continue;
 
@@ -309,7 +308,7 @@ namespace AssetBundleBrowser.Custom
 
                     _fieldsToChange.Add(fieldValue, eftPathID);
                     if (_logging)
-                        Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.GetName()}");
+                        Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.FieldName}");
                 }
                 else
                 {
@@ -353,7 +352,7 @@ namespace AssetBundleBrowser.Custom
                     var modPath = path + "_c";
                     using (var writer = new AssetsFileWriter(modPath))
                     {
-                        bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZMA);
+                        bundle.file.Pack(bundle.file.Reader, writer, AssetBundleCompressionType.LZMA);
                     }
                     am.UnloadAll();
                     File.Delete(path);
@@ -365,7 +364,7 @@ namespace AssetBundleBrowser.Custom
                     var modPath = path + "_c";
                     using (var writer = new AssetsFileWriter(modPath))
                     {
-                        bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZ4);
+                        bundle.file.Pack(bundle.file.Reader, writer, AssetBundleCompressionType.LZ4);
                     }
                     am.UnloadAll();
                     File.Delete(path);
