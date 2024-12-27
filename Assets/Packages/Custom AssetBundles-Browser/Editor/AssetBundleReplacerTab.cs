@@ -193,16 +193,16 @@ namespace AssetBundleBrowser.Custom
 	            string json = streamReader.ReadToEnd();
 	            var dictionaryData = JsonUtility.FromJson<DictionaryData>(json);
 
-	            if (!data.SuitableForDict)
+	            if (dictionaryData == null || !dictionaryData.SuitableForDict)
 	            {
 		            throw new Exception("Json is faulty");
 	            }
 
 	            return dictionaryData;
             }
-            catch
+            catch (Exception ex)
             {
-                Debug.LogError($"Some error occured while reading data at path: {path}, temporary empty file will be created.");
+                Debug.LogError($"Some error occured while reading data at path: {path}, temporary empty file will be created. Exception: {ex}");
                 /*using (var streamWriter = new StreamWriter(path))
                 {
                     streamWriter.Write("{}");
@@ -293,13 +293,14 @@ namespace AssetBundleBrowser.Custom
 	        List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
 	        directoryInfos[0].SetNewData(assetsFile.file);
 
-            var modPath = path + "_mod";
-            using var writer = new AssetsFileWriter(modPath);
-            bundle.file.Write(writer);
-
+            string modPath = path + "_mod";
+            using (var writer = new AssetsFileWriter(modPath))
+            {
+	            bundle.file.Write(writer);
+            }
             File.Delete(path);
             File.Move(modPath, path);
-            
+
             // !!!if sharing violation exception will come back, uncomment things above!!!
         }
 
