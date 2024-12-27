@@ -13,7 +13,6 @@ namespace AssetBundleBrowser.Custom
     public class AssetBundleReplacerTab
     {
         [SerializeField] private DictionaryData data;
-        private Dictionary<AssetTypeValue, long> _fieldsToChange;
         private long _key;
         private long _value;
         private bool _logging;
@@ -24,7 +23,6 @@ namespace AssetBundleBrowser.Custom
         {
             data = GetDataFromFile();
             _position = pos;
-            _fieldsToChange = new Dictionary<AssetTypeValue, long>();
         }
 
         internal void OnGUI(Rect pos)
@@ -181,11 +179,9 @@ namespace AssetBundleBrowser.Custom
         private void WriteDataToFile()
         {
             var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
-            using (var streamWriter = new StreamWriter(path))
-            {
-                var json = JsonUtility.ToJson(data, true);
-                streamWriter.Write(json);
-            }
+            using var streamWriter = new StreamWriter(path);
+            string json = JsonUtility.ToJson(data, true);
+            streamWriter.Write(json);
         }
 
         private DictionaryData GetDataFromFile()
@@ -193,18 +189,16 @@ namespace AssetBundleBrowser.Custom
             var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
             try
             {
-                using (var streamReader = new StreamReader(path))
-                {
-                    var json = streamReader.ReadToEnd();
-                    var data = JsonUtility.FromJson<DictionaryData>(json);
+	            using var streamReader = new StreamReader(path);
+	            string json = streamReader.ReadToEnd();
+	            var dictionaryData = JsonUtility.FromJson<DictionaryData>(json);
 
-                    if (!data.SuitableForDict)
-                    {
-                        throw new Exception("Json is faulty");
-                    }
+	            if (!data.SuitableForDict)
+	            {
+		            throw new Exception("Json is faulty");
+	            }
 
-                    return data;
-                }
+	            return dictionaryData;
             }
             catch
             {
@@ -223,14 +217,13 @@ namespace AssetBundleBrowser.Custom
             try
             {
                 var path = $"{Directory.GetCurrentDirectory()}/{outputDirectory}/{bundleName}";
-                var replacers = new List<AssetsReplacer>();
                 var am = new AssetsManager();
 
-                var bundle = am.LoadBundleFile(path);
-                var assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
-                var assetList = assetsFile.table.assetFileInfo;
+                BundleFileInstance bundle = am.LoadBundleFile(path);
+                AssetsFileInstance assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
+                IList<AssetFileInfo> assetList = assetsFile.file.AssetInfos;
 
-                var replaced = TryReplaceFields(assetList, am, assetsFile, replacers);
+                bool replaced = TryReplaceFields(assetList, am, assetsFile);
                 if (!replaced)
                 {
                     Debug.Log($"skipping {bundle.name} as no ids were found to replace");
@@ -238,7 +231,7 @@ namespace AssetBundleBrowser.Custom
                     return;
                 }
 
-                WriteChangesFromMemory(assetsFile, replacers, path, bundle);
+                SaveChangesToBundle(assetsFile, path, bundle);
                 am.UnloadAll();
                 CompressBundle(am, options, path);
             }
@@ -248,107 +241,79 @@ namespace AssetBundleBrowser.Custom
             }
         }
 
-        private bool TryReplaceFields(AssetFileInfoEx[] assetList, AssetsManager am, AssetsFileInstance assetsFile,
-            List<AssetsReplacer> replacers)
+        private bool TryReplaceFields(IList<AssetFileInfo> assetList, AssetsManager am, AssetsFileInstance assetsFile)
         {
             var counter = 0;
-            foreach (var asset in assetList)
+            foreach (AssetFileInfo asset in assetList)
             {
-                var typeInstance = am.GetTypeInstance(assetsFile, asset);
-                var baseField = typeInstance.GetBaseField();
-
-                RecursiveSearch(baseField);
-
-                if (_fieldsToChange.Count == 0) continue;
-
-                foreach (var kvp in _fieldsToChange)
-                {
-                    var fieldValue = kvp.Key;
-                    var pathID = kvp.Value;
-
-                    fieldValue.Set(pathID);
-                }
-
-                var newBytes = baseField.WriteToByteArray();
-                var replacer = new AssetsReplacerFromMemory(0, asset.index, (int) asset.curFileType,
-                    AssetHelper.GetScriptIndex(assetsFile.file, asset), newBytes);
-                replacers.Add(replacer);
+                AssetTypeValueField baseField = am.GetBaseField(assetsFile, asset);
+                RecursiveReplace(baseField);
+                byte[] newBytes = baseField.WriteToByteArray();
+                asset.SetNewData(newBytes);
                 counter++;
-                _fieldsToChange.Clear();
             }
 
             return counter > 0;
         }
         
-        private void RecursiveSearch(AssetTypeValueField field)
+        private void RecursiveReplace(AssetTypeValueField field)
         {
-            foreach (var child in field.children)
+            foreach (AssetTypeValueField child in field.Children)
             {
-                if (child.templateField.hasValue && !child.templateField.isArray) 
+                if (child.TemplateField.HasValue && !child.TemplateField.IsArray) 
                     continue;
-                if (child.templateField.isArray && child.templateField.children[1].valueType != EnumValueTypes.ValueType_None)
+                if (child.TemplateField.IsArray && child.TemplateField.Children[1].ValueType != AssetValueType.None)
                     continue;
 
-                var typeName = child.templateField.type;
-
-                if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.childrenCount == 2)
+                string typeName = child.TypeName;
+                if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.Children.Count == 2)
                 {
-                    var fieldValue = child.Get("m_PathID").GetValue();
-                    var pathId = fieldValue.AsInt64();
+                    AssetTypeValue fieldValue = child.Get("m_PathID").Value;
+                    long pathId = fieldValue.AsLong;
 
                     if (pathId == 0) continue;
 
-                    if (!data.Lookup.TryGetValue(pathId, out var eftPathID)) continue;
+                    if (!data.Lookup.TryGetValue(pathId, out long eftPathID)) continue;
 
-                    if (_fieldsToChange.ContainsKey(fieldValue)) continue;
+                    //if (!_fieldsToChange.TryAdd(fieldValue, eftPathID)) continue;
+                    fieldValue.AsLong = eftPathID;
 
-                    _fieldsToChange.Add(fieldValue, eftPathID);
                     if (_logging)
-                        Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.GetName()}");
+                        Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.FieldName}");
                 }
                 else
                 {
-                    RecursiveSearch(child);
+                    RecursiveReplace(child);
                 }
             }
         }
 
-        private static void WriteChangesFromMemory(AssetsFileInstance assetsFile, List<AssetsReplacer> replacers, 
-            string path, BundleFileInstance bundle)
+        private static void SaveChangesToBundle(AssetsFileInstance assetsFile, string path, BundleFileInstance bundle)
         {
-            byte[] newAssetData;
-            using (var memoryStream = new MemoryStream())
-            using (var writer = new AssetsFileWriter(memoryStream))
-            {
-                assetsFile.file.Write(writer, 0, replacers);
-                newAssetData = memoryStream.ToArray();
-            }
+	        List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
+	        directoryInfos[0].SetNewData(assetsFile.file);
 
-            var bunRepl = new BundleReplacerFromMemory(assetsFile.name, null, true, newAssetData, -1);
+            var modPath = path + "_mod";
+            using var writer = new AssetsFileWriter(modPath);
+            bundle.file.Write(writer);
 
-            //var modPath = path + "_mod";
-            using (var writer = new AssetsFileWriter(path))
-            {
-                bundle.file.Write(writer, new List<BundleReplacer> {bunRepl});
-            }
-            
-            //File.Delete(path);
-            //File.Move(modPath, path);
+            File.Delete(path);
+            File.Move(modPath, path);
             
             // !!!if sharing violation exception will come back, uncomment things above!!!
         }
 
         private void CompressBundle(AssetsManager am, BuildAssetBundleOptions options, string path)
         {
-            var bundle = am.LoadBundleFile(path);
+            BundleFileInstance bundle = am.LoadBundleFile(path);
             switch (options)
             {
                 case BuildAssetBundleOptions.None:
                 {
-                    var modPath = path + "_c";
+                    string modPath = path + "_c";
                     using (var writer = new AssetsFileWriter(modPath))
                     {
-                        bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZMA);
+                        bundle.file.Pack(writer, AssetBundleCompressionType.LZMA);
                     }
                     am.UnloadAll();
                     File.Delete(path);
@@ -357,10 +322,10 @@ namespace AssetBundleBrowser.Custom
                 }
                 case BuildAssetBundleOptions.ChunkBasedCompression:
                 {
-                    var modPath = path + "_c";
+                    string modPath = path + "_c";
                     using (var writer = new AssetsFileWriter(modPath))
                     {
-                        bundle.file.Pack(bundle.file.reader, writer, AssetBundleCompressionType.LZ4);
+                        bundle.file.Pack(writer, AssetBundleCompressionType.LZ4);
                     }
                     am.UnloadAll();
                     File.Delete(path);
