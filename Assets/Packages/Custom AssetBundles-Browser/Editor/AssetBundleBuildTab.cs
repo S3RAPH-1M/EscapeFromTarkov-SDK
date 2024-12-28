@@ -1,14 +1,15 @@
-using UnityEditor;
-using UnityEngine;
+using AssetBundleBrowser.AssetBundleDataSource;
+using AssetBundleBrowser.AssetBundleModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-
-using AssetBundleBrowser.AssetBundleDataSource;
+using UnityEditor;
+using UnityEngine;
 
 namespace AssetBundleBrowser
 {
-    [System.Serializable]
+    [Serializable]
     internal class AssetBundleBuildTab
     {
         const string k_BuildPrefPrefix = "ABBBuild:";
@@ -22,7 +23,7 @@ namespace AssetBundleBrowser
         private Vector2 m_ScrollPosition;
 
 
-        class ToggleData
+        private class ToggleData
         {
             internal ToggleData(bool s, 
                 string title, 
@@ -81,7 +82,7 @@ namespace AssetBundleBrowser
 
         internal void OnDisable()
         {
-            string dataPath = System.IO.Path.GetFullPath(".");
+            string dataPath = Path.GetFullPath(".");
             dataPath = dataPath.Replace("\\", "/");
             dataPath += "/Library/AssetBundleBrowserBuild.dat";
 
@@ -97,7 +98,7 @@ namespace AssetBundleBrowser
             m_InspectTab = (parent as AssetBundleBrowserMain)?.m_InspectTab;
 
             //LoadData...
-            string dataPath = System.IO.Path.GetFullPath(".");
+            string dataPath = Path.GetFullPath(".");
             dataPath = dataPath.Replace("\\", "/");
             dataPath += "/Library/AssetBundleBrowserBuild.dat";
 
@@ -185,7 +186,7 @@ namespace AssetBundleBrowser
             GUILayout.BeginVertical();
 
             // build target
-            using (new EditorGUI.DisabledScope (!AssetBundleModel.Model.DataSource.CanSpecifyBuildTarget)) {
+            using (new EditorGUI.DisabledScope (!Model.DataSource.CanSpecifyBuildTarget)) {
                 ValidBuildTarget tgt = (ValidBuildTarget)EditorGUILayout.EnumPopup(m_TargetContent, m_UserData.m_BuildTarget);
                 if (tgt != m_UserData.m_BuildTarget)
                 {
@@ -201,7 +202,7 @@ namespace AssetBundleBrowser
 
 
             ////output path
-            using (new EditorGUI.DisabledScope (!AssetBundleModel.Model.DataSource.CanSpecifyBuildOutputDirectory)) {
+            using (new EditorGUI.DisabledScope (!Model.DataSource.CanSpecifyBuildOutputDirectory)) {
                 EditorGUILayout.Space();
                 GUILayout.BeginHorizontal();
                 string newPath = EditorGUILayout.TextField("Output Path", m_UserData.m_OutputPath);
@@ -248,7 +249,7 @@ namespace AssetBundleBrowser
             }
 
             // advanced options
-            using (new EditorGUI.DisabledScope (!AssetBundleModel.Model.DataSource.CanSpecifyBuildOptions)) {
+            using (new EditorGUI.DisabledScope (!Model.DataSource.CanSpecifyBuildOptions)) {
                 EditorGUILayout.Space();
                 m_AdvancedSettings = EditorGUILayout.Foldout(m_AdvancedSettings, "Advanced Settings");
                 if(m_AdvancedSettings)
@@ -293,7 +294,7 @@ namespace AssetBundleBrowser
 
         private void ExecuteBuild()
         {
-            if (AssetBundleModel.Model.DataSource.CanSpecifyBuildOutputDirectory) {
+            if (Model.DataSource.CanSpecifyBuildOutputDirectory) {
                 if (string.IsNullOrEmpty(m_UserData.m_OutputPath))
                     BrowseForFolder();
 
@@ -319,7 +320,7 @@ namespace AssetBundleBrowser
                             if (m_CopyToStreaming.state && Directory.Exists(m_streamingPath))
 	                            Directory.Delete(m_streamingPath, true);
                         }
-                        catch (System.Exception e)
+                        catch (Exception e)
                         {
                             Debug.LogException(e);
                         }
@@ -331,7 +332,7 @@ namespace AssetBundleBrowser
 
             var opt = BuildAssetBundleOptions.None;
 
-            if (AssetBundleModel.Model.DataSource.CanSpecifyBuildOptions) {
+            if (Model.DataSource.CanSpecifyBuildOptions) {
                 if (m_UserData.m_Compression == CompressOptions.Uncompressed)
                     opt |= BuildAssetBundleOptions.UncompressedAssetBundle;
                 else if (m_UserData.m_Compression == CompressOptions.ChunkBasedCompression)
@@ -347,19 +348,18 @@ namespace AssetBundleBrowser
             {
                 outputDirectory = m_UserData.m_OutputPath,
                 options = opt,
-                buildTarget = (BuildTarget)m_UserData.m_BuildTarget
+                buildTarget = (BuildTarget)m_UserData.m_BuildTarget,
+                onBuild = (assetBundleName) =>
+                {
+	                AssetBundleBrowserMain.instance.m_ReplacerTab.ReplacePathIDs(assetBundleName,
+		                m_UserData.m_OutputPath, opt);
+	                if (m_InspectTab == null) return;
+	                m_InspectTab.AddBundleFolder(m_UserData.m_OutputPath);
+	                m_InspectTab.RefreshBundles();
+                }
             };
 
-            buildInfo.onBuild = (assetBundleName) =>
-            {
-                AssetBundleBrowserMain.instance.m_ReplacerTab.ReplacePathIDs(assetBundleName, buildInfo.outputDirectory,
-                    buildInfo.options);
-                if (m_InspectTab == null) return;
-                m_InspectTab.AddBundleFolder(buildInfo.outputDirectory);
-                m_InspectTab.RefreshBundles();
-            };
-
-            AssetBundleModel.Model.DataSource.BuildAssetBundles (buildInfo);
+            Model.DataSource.BuildAssetBundles (buildInfo);
 
             AssetDatabase.Refresh(ImportAssetOptions.ForceUpdate);
 
@@ -397,7 +397,7 @@ namespace AssetBundleBrowser
             string newPath = EditorUtility.OpenFolderPanel("Bundle Folder", m_UserData.m_OutputPath, string.Empty);
             if (!string.IsNullOrEmpty(newPath))
             {
-                string gamePath = System.IO.Path.GetFullPath(".");
+                string gamePath = Path.GetFullPath(".");
                 gamePath = gamePath.Replace("\\", "/");
                 if (newPath.StartsWith(gamePath) && newPath.Length > gamePath.Length)
                     newPath = newPath.Remove(0, gamePath.Length+1);
@@ -450,7 +450,7 @@ namespace AssetBundleBrowser
             Switch = 38
         }
 
-        [System.Serializable]
+        [Serializable]
         internal class BuildTabData
         {
             internal List<string> m_OnToggles;
