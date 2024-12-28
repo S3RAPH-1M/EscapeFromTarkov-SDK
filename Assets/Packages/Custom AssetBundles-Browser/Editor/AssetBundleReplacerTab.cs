@@ -71,6 +71,11 @@ namespace AssetBundleBrowser.Custom
                 data = GetDataFromFile();
             }
 
+            if (GUILayout.Button("SORT AND SAVE"))
+            {
+                data.SortAndSaveData();
+            }
+
             //==\\ VISUAL DICTIONARY REPRESENTATION //==\\
             _scrollPosition = GUILayout.BeginScrollView(_scrollPosition);
             GUILayout.Space(5f);
@@ -379,6 +384,7 @@ namespace AssetBundleBrowser.Custom
         
         public bool SuitableForDict => sdk.Count == eft.Count;
         
+
         public void Add(long key, long value, string description = "")
         {
             sdk.Add(key);
@@ -440,5 +446,60 @@ namespace AssetBundleBrowser.Custom
                 descriptionList.Add("");
             }
         }
+
+        public void SortAndSaveData()
+        {
+            var sortedIndices = GetSortedIndices(descriptionList, true); // true for ascending (alphabetical order)
+
+            SortListsByIndices(sortedIndices);
+            WriteDataToFile();
+        }
+
+        private List<int> GetSortedIndices(List<string> list, bool ascending)
+        {
+            var sortedIndices = new List<int>();
+            for (int i = 0; i < list.Count; i++)
+            {
+                sortedIndices.Add(i);
+            }
+
+            sortedIndices.Sort((a, b) => ascending ? string.Compare(list[a], list[b]) : string.Compare(list[b], list[a]));
+            return sortedIndices;
+        }
+
+        private void SortListsByIndices(List<int> sortedIndices)
+        {
+            var sortedSdk = new List<long>();
+            var sortedEft = new List<long>();
+            var sortedDescriptions = new List<string>();
+
+            foreach (var index in sortedIndices)
+            {
+                sortedSdk.Add(sdk[index]);
+                sortedEft.Add(eft[index]);
+                sortedDescriptions.Add(descriptionList[index]);
+            }
+
+            sdk = sortedSdk;
+            eft = sortedEft;
+            descriptionList = sortedDescriptions;
+
+            Lookup.Clear();
+            for (int i = 0; i < sdk.Count; i++)
+            {
+                Lookup[sdk[i]] = eft[i];
+            }
+        }
+
+        private void WriteDataToFile()
+        {
+            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
+            using (var streamWriter = new StreamWriter(path))
+            {
+                var json = JsonUtility.ToJson(this, true);
+                streamWriter.Write(json);
+            }
+        }
+
     }
 }

@@ -20,7 +20,7 @@ public class ItemPreviewWindow : EditorWindow
     private Quaternion originalRotation;
     private Quaternion modelPreviewRotation;
 
-    [MenuItem("Custom Windows/Item Preview")]
+    [MenuItem("Custom Windows/💙SamSWAT💙/Item Preview Creator")]
     static void Init()
     {
         window = (ItemPreviewWindow) GetWindow(typeof(ItemPreviewWindow));
