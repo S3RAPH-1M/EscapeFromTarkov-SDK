@@ -1,0 +1,2 @@
+D:\UnityProjects\EscapeFromTarkov-SDK\obj\Debug\Unity.AssetBundleBrowser.Editor.csproj.AssemblyReference.cache
+D:\UnityProjects\EscapeFromTarkov-SDK\obj\Debug\Unity.AssetBundleBrowser.Editor.csproj.CoreCompileInputs.cache

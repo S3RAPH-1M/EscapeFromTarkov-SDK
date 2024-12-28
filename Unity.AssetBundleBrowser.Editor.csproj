@@ -48,9 +48,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AssetsTools.NET, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Assets\Plugins\AssetsTools.NET.dll</HintPath>
+    <Reference Include="AssetsTools.NET">
+      <HintPath>Assets\Plugins\AssetsTools.NET.3.0.0\lib\net40\AssetsTools.NET.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2019.4.39f1\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -80,6 +79,7 @@
     <Compile Include="Assets\Packages\Custom AssetBundles-Browser\Editor\MessageList.cs" />
     <Compile Include="Assets\Packages\Custom AssetBundles-Browser\Editor\MessageSystem.cs" />
     <None Include="Assets\Packages\Custom AssetBundles-Browser\Editor\Unity.AssetBundleBrowser.Editor.asmdef" />
+    <None Include="packages.config" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.39f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
