@@ -1,10 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using UnityEditor;
-using UnityEngine.Assertions;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEditor.IMGUI.Controls;
+using UnityEngine;
 
 namespace AssetBundleBrowser.AssetBundleDataSource
 {
@@ -18,28 +14,19 @@ namespace AssetBundleBrowser.AssetBundleDataSource
             return retList;
         }
 
-        public string Name {
-            get {
-                return "Default";
-            }
-        }
-
-        public string ProviderName {
-            get {
-                return "Built-in";
-            }
-        }
+        public string Name => "Default";
+        public string ProviderName => "Built-in";
 
         public string[] GetAssetPathsFromAssetBundle (string assetBundleName) {
             return AssetDatabase.GetAssetPathsFromAssetBundle(assetBundleName);
         }
 
         public string GetAssetBundleName(string assetPath) {
-            var importer = AssetImporter.GetAtPath(assetPath);
+            AssetImporter importer = AssetImporter.GetAtPath(assetPath);
             if (importer == null) {
                 return string.Empty;
             }
-            var bundleName = importer.assetBundleName;
+            string bundleName = importer.assetBundleName;
             if (importer.assetBundleVariant.Length > 0) {
                 bundleName = bundleName + "." + importer.assetBundleVariant;
             }
@@ -66,16 +53,9 @@ namespace AssetBundleBrowser.AssetBundleDataSource
             AssetDatabase.RemoveUnusedAssetBundleNames ();
         }
 
-        public bool CanSpecifyBuildTarget { 
-            get { return true; } 
-        }
-        public bool CanSpecifyBuildOutputDirectory { 
-            get { return true; } 
-        }
-
-        public bool CanSpecifyBuildOptions { 
-            get { return true; } 
-        }
+        public bool CanSpecifyBuildTarget => true;
+        public bool CanSpecifyBuildOutputDirectory => true;
+        public bool CanSpecifyBuildOptions => true;
 
         public bool BuildAssetBundles (ABBuildInfo info) {
             if(info == null)
@@ -84,20 +64,19 @@ namespace AssetBundleBrowser.AssetBundleDataSource
                 return false;
             }
 
-            var buildManifest = BuildPipeline.BuildAssetBundles(info.outputDirectory, info.options, info.buildTarget);
+            AssetBundleManifest buildManifest =
+	            BuildPipeline.BuildAssetBundles(info.outputDirectory, info.options, info.buildTarget);
             if (buildManifest == null)
             {
                 Debug.Log("Error in build");
                 return false;
             }
 
-            foreach(var assetBundleName in buildManifest.GetAllAssetBundles())
+            foreach(string assetBundleName in buildManifest.GetAllAssetBundles())
             {
-                if (info.onBuild != null)
-                {
-                    info.onBuild(assetBundleName);
-                }
+	            info.onBuild?.Invoke(assetBundleName);
             }
+            
             return true;
         }
     }
