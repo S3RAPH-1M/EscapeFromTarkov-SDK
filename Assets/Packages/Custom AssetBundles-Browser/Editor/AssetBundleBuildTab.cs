@@ -1,5 +1,6 @@
 using AssetBundleBrowser.AssetBundleDataSource;
 using AssetBundleBrowser.AssetBundleModel;
+using AssetsTools.NET.Extra;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -344,6 +345,7 @@ namespace AssetBundleBrowser
                 }
             }
 
+            var assetsManager = new AssetsManager();
             var buildInfo = new ABBuildInfo
             {
                 outputDirectory = m_UserData.m_OutputPath,
@@ -351,7 +353,7 @@ namespace AssetBundleBrowser
                 buildTarget = (BuildTarget)m_UserData.m_BuildTarget,
                 onBuild = (assetBundleName) =>
                 {
-	                AssetBundleBrowserMain.instance.m_ReplacerTab.ReplacePathIDs(assetBundleName,
+	                AssetBundleBrowserMain.instance.m_ReplacerTab.ReplacePathIDs(assetsManager, assetBundleName,
 		                m_UserData.m_OutputPath, opt);
 	                if (m_InspectTab == null) return;
 	                m_InspectTab.AddBundleFolder(m_UserData.m_OutputPath);

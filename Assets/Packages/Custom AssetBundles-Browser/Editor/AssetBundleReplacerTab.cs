@@ -212,28 +212,28 @@ namespace AssetBundleBrowser.Custom
             }
         }
 
-        public void ReplacePathIDs(string bundleName, string outputDirectory, BuildAssetBundleOptions options)
+        public void ReplacePathIDs(AssetsManager assetsManager, string bundleName, string outputDirectory,
+	        BuildAssetBundleOptions options)
         {
             try
             {
                 var path = $"{Directory.GetCurrentDirectory()}/{outputDirectory}/{bundleName}";
-                var am = new AssetsManager();
 
-                BundleFileInstance bundle = am.LoadBundleFile(path);
-                AssetsFileInstance assetsFile = am.LoadAssetsFileFromBundle(bundle, 0, true);
+                BundleFileInstance bundle = assetsManager.LoadBundleFile(path);
+                AssetsFileInstance assetsFile = assetsManager.LoadAssetsFileFromBundle(bundle, 0, true);
                 IList<AssetFileInfo> assetList = assetsFile.file.AssetInfos;
 
-                bool replaced = TryReplaceFields(assetList, am, assetsFile);
+                bool replaced = TryReplaceFields(assetList, assetsManager, assetsFile);
                 if (!replaced)
                 {
-                    Debug.Log($"skipping {bundle.name} as no ids were found to replace");
-                    am.UnloadAll();
+                    Debug.Log($"skipping {bundle.name} as no IDs were found to replace");
+                    assetsManager.UnloadAll();
                     return;
                 }
 
                 SaveChangesToBundle(assetsFile, path, bundle);
-                am.UnloadAll();
-                CompressBundle(am, options, path);
+                assetsManager.UnloadAll();
+                CompressBundle(assetsManager, options, path);
             }
             catch (Exception e)
             {
@@ -247,7 +247,8 @@ namespace AssetBundleBrowser.Custom
             foreach (AssetFileInfo assetInfo in assetList)
             {
                 AssetTypeValueField baseField = am.GetBaseField(assetsFile, assetInfo);
-                RecursiveReplace(baseField);
+	            ReplacePathId(assetInfo);
+                RecursiveReplaceChildPathIds(baseField);
                 byte[] newBytes = baseField.WriteToByteArray();
                 assetInfo.SetNewData(newBytes);
                 counter++;
@@ -255,8 +256,35 @@ namespace AssetBundleBrowser.Custom
 
             return counter > 0;
         }
-        
-        private void RecursiveReplace(AssetTypeValueField field)
+
+        private void ReplacePathId(AssetFileInfo assetInfo)
+        {
+	        if (assetInfo.PathId == 0) return;
+
+	        if (data.Lookup.TryGetValue(assetInfo.PathId, out long eftPathId))
+	        {
+		        assetInfo.PathId = eftPathId;
+	        }
+        }
+
+        private void ReplacePathId(AssetTypeValueField field)
+        {
+	        AssetTypeValue fieldValue = field.Get("m_PathID").Value;
+	        if (fieldValue == null) return;
+	        
+	        long pathId = fieldValue.AsLong;
+	        if (pathId == 0) return;
+	        
+	        if (data.Lookup.TryGetValue(pathId, out long eftPathId))
+	        {
+		        fieldValue.AsLong = eftPathId;
+	        }
+	        
+	        if (_logging)
+		        Debug.Log($"Found matching pathID: {pathId.ToString()} asset {field.TypeName}{field.FieldName}");
+        }
+
+        private void RecursiveReplaceChildPathIds(AssetTypeValueField field)
         {
             foreach (AssetTypeValueField child in field.Children)
             {
@@ -266,23 +294,13 @@ namespace AssetBundleBrowser.Custom
                     continue;
 
                 string typeName = child.TypeName;
-                if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.Children.Count == 2)
+                if (typeName.StartsWith("PPtr<") && child.Children.Count == 2)
                 {
-	                AssetTypeValue fieldValue = child.Get("m_PathID").Value;
-                    long pathId = fieldValue.AsLong;
-
-                    if (pathId == 0) continue;
-
-                    if (!data.Lookup.TryGetValue(pathId, out long eftPathID)) continue;
-
-                    fieldValue.AsLong = eftPathID;
-
-                    if (_logging)
-                        Debug.Log($"Found matching pathID: {pathId.ToString()} asset {typeName}{child.FieldName}");
+	                ReplacePathId(child);
                 }
                 else
                 {
-                    RecursiveReplace(child);
+                    RecursiveReplaceChildPathIds(child);
                 }
             }
         }
