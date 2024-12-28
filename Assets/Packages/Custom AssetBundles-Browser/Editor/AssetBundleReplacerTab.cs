@@ -244,12 +244,12 @@ namespace AssetBundleBrowser.Custom
         private bool TryReplaceFields(IList<AssetFileInfo> assetList, AssetsManager am, AssetsFileInstance assetsFile)
         {
             var counter = 0;
-            foreach (AssetFileInfo asset in assetList)
+            foreach (AssetFileInfo assetInfo in assetList)
             {
-                AssetTypeValueField baseField = am.GetBaseField(assetsFile, asset);
+                AssetTypeValueField baseField = am.GetBaseField(assetsFile, assetInfo);
                 RecursiveReplace(baseField);
                 byte[] newBytes = baseField.WriteToByteArray();
-                asset.SetNewData(newBytes);
+                assetInfo.SetNewData(newBytes);
                 counter++;
             }
 
@@ -268,18 +268,17 @@ namespace AssetBundleBrowser.Custom
                 string typeName = child.TypeName;
                 if (typeName.StartsWith("PPtr<") && typeName.EndsWith(">") && child.Children.Count == 2)
                 {
-                    AssetTypeValue fieldValue = child.Get("m_PathID").Value;
+	                AssetTypeValue fieldValue = child.Get("m_PathID").Value;
                     long pathId = fieldValue.AsLong;
 
                     if (pathId == 0) continue;
 
                     if (!data.Lookup.TryGetValue(pathId, out long eftPathID)) continue;
 
-                    //if (!_fieldsToChange.TryAdd(fieldValue, eftPathID)) continue;
                     fieldValue.AsLong = eftPathID;
 
                     if (_logging)
-                        Debug.Log($"Found matching pathID: {pathId} asset {typeName}{child.FieldName}");
+                        Debug.Log($"Found matching pathID: {pathId.ToString()} asset {typeName}{child.FieldName}");
                 }
                 else
                 {
@@ -290,16 +289,22 @@ namespace AssetBundleBrowser.Custom
 
         private static void SaveChangesToBundle(AssetsFileInstance assetsFile, string path, BundleFileInstance bundle)
         {
+	        using (var memoryStream = new MemoryStream())
+	        using (var assetWriter = new AssetsFileWriter(memoryStream))
+	        {
+		        assetsFile.file.Write(assetWriter);
+	        }
+	        
 	        List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
 	        directoryInfos[0].SetNewData(assetsFile.file);
 
-            string modPath = path + "_mod";
-            using (var writer = new AssetsFileWriter(modPath))
+            //string modPath = path + "_mod";
+            using (var bundleWriter = new AssetsFileWriter(path))
             {
-	            bundle.file.Write(writer);
+	            bundle.file.Write(bundleWriter);
             }
-            File.Delete(path);
-            File.Move(modPath, path);
+            //File.Delete(path);
+            //File.Move(modPath, path);
 
             // !!!if sharing violation exception will come back, uncomment things above!!!
         }
