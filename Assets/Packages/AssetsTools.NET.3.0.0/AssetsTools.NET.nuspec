@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>AssetsTools.NET</id>
+    <version>3.0.0</version>
+    <authors>nesrak1</authors>
+    <owners>nesrak1</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/nesrak1/AssetsTools.NET</projectUrl>
+    <description>An assets/bundle library, inspired by UABE's AssetsTools. Read and write assets and bundle files from engine versions 5.x and later. For most cases, you'll need the class data file which you can find in the AssetRipper/Tpk repo. See the wiki for usage and examples.</description>
+    <summary>An assets/bundle library, inspired by UABE's AssetsTools</summary>
+    <releaseNotes>v3.0.0 - the complete overhaul of assetstools.net. bug fixes, new replacers, and more.</releaseNotes>
+    <repository type="Git" url="https://github.com/nesrak1/AssetsTools.NET" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
