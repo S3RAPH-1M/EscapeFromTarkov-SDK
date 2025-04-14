@@ -18,6 +18,11 @@ namespace AssetBundleBrowser.Custom
         private bool _logging;
         private Rect _position;
         private Vector2 _scrollPosition;
+        AssetBundleCabReplacerTab _tab;
+        public AssetBundleReplacerTab(AssetBundleCabReplacerTab tab) 
+        {
+            _tab = tab;
+        }
 
         internal void OnEnable(Rect pos)
         {
@@ -183,7 +188,7 @@ namespace AssetBundleBrowser.Custom
 
         private void WriteDataToFile()
         {
-            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
+            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/path_data.json";
             using var streamWriter = new StreamWriter(path);
             string json = JsonUtility.ToJson(data, true);
             streamWriter.Write(json);
@@ -191,7 +196,7 @@ namespace AssetBundleBrowser.Custom
 
         private DictionaryData GetDataFromFile()
         {
-            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
+            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/path_data.json";
             try
             {
 	            using var streamReader = new StreamReader(path);
@@ -237,6 +242,9 @@ namespace AssetBundleBrowser.Custom
                 }
 
                 SaveChangesToBundle(assetsFile, path, bundle);
+
+                AssetBundleBrowserMain.instance.m_CabReplacerTab.ReplaceCabIDs(path);
+
                 assetsManager.UnloadAll();
                 CompressBundle(assetsManager, options, path);
             }
@@ -312,23 +320,20 @@ namespace AssetBundleBrowser.Custom
 
         private static void SaveChangesToBundle(AssetsFileInstance assetsFile, string path, BundleFileInstance bundle)
         {
-	        using (var memoryStream = new MemoryStream())
-	        using (var assetWriter = new AssetsFileWriter(memoryStream))
-	        {
-		        assetsFile.file.Write(assetWriter);
-	        }
-	        
-	        List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
-	        directoryInfos[0].SetNewData(assetsFile.file);
+            using (var memoryStream = new MemoryStream())
+            using (var assetWriter = new AssetsFileWriter(memoryStream))
+            {
+                assetsFile.file.Write(assetWriter);
+            }
+
+            List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
+            directoryInfos[0].SetNewData(assetsFile.file);
 
             //string modPath = path + "_mod";
             using (var bundleWriter = new AssetsFileWriter(path))
             {
-	            bundle.file.Write(bundleWriter);
+                bundle.file.Write(bundleWriter);
             }
-            //File.Delete(path);
-            //File.Move(modPath, path);
-
             // !!!if sharing violation exception will come back, uncomment things above!!!
         }
 
@@ -493,7 +498,7 @@ namespace AssetBundleBrowser.Custom
 
         private void WriteDataToFile()
         {
-            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/data.json";
+            var path = $"{Directory.GetCurrentDirectory()}/Assets/Packages/Custom AssetBundles-Browser/path_data.json";
             using (var streamWriter = new StreamWriter(path))
             {
                 var json = JsonUtility.ToJson(this, true);
