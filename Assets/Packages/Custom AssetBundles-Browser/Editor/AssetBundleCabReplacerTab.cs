@@ -228,8 +228,8 @@ namespace AssetBundleBrowser.Custom
 
         void ReplaceIds(byte[] pattern, byte[] bytes, Dictionary<string, string> mappings)
         {
-            Debug.Log($"There are {bytes.Length} Bytes!!!");
-            Debug.Log($"There are {mappings.Count} mappings");
+            //Debug.Log($"There are {bytes.Length} Bytes!!!");
+            //Debug.Log($"There are {mappings.Count} mappings");
             var buffer = new byte[32];
 
             for (var i = 0; i < bytes.Length; i++)
@@ -255,12 +255,12 @@ namespace AssetBundleBrowser.Custom
                     if (mappings.TryGetValue(id, out var newId))
                     {
                         var newIdBytes = Encoding.UTF8.GetBytes(newId);
-                        Debug.Log($"Replaced {id} with {newId}");
+                        //Debug.Log($"Replaced {id} with {newId}");
                         Array.Copy(newIdBytes, 0, bytes, offset, 32);
                     }
                     else
                     {
-                        Debug.Log($"Failed to get mapping for id: {id}");
+                        //Debug.Log($"Failed to get mapping for id: {id}");
                     }
                 }
             }
