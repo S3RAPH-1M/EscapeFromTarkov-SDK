@@ -40,7 +40,7 @@ Install EscapeFromTarkov-SDK with git
 - Ability to Create Custom Particle Effects - Examples Included (Requires plugin to load custom particle.)
 - Full Unity Engine Control when bundling Assets
 - Quick & Easy Asset Bundler.
-
+- Bundle Viewer / Importer.
 
 
 
