@@ -23,7 +23,7 @@ Install EscapeFromTarkov-SDK with git
   cd EscapeFromTarkov-SDK
 ```
 - Step 2: Download & Install Unity Hub. 
-- Step 3: Download & Install Unity 2019.4.39 (Click on the unity icon at the bottom)
+- Step 3: Download & Install Unity 2022.3.43 (Click on the unity icon at the bottom)
 - Step 4: Within Unity Hub. Add the EFT SDK Project to Unity Hub.
 - Step 5: Launch the SDK
     
