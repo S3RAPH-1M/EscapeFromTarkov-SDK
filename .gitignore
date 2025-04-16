@@ -1,6 +1,7 @@
 Library/
 *.bundle
 AssetBundles/
+Assets/Tools/Unity Bundle Loader/Loaded Bundles
 .vs/EFT-SDK/v17/.suo
 *.cache
 Temp/
