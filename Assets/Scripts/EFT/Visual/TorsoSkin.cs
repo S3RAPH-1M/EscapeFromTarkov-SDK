@@ -1,26 +1,25 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using Diz.Skinning;
-using EFT.InventoryLogic;
 using UnityEngine;
 
 namespace EFT.Visual
 {
-	// Token: 0x02001523 RID: 5411
+	// Token: 0x02001DD1 RID: 7633
 	public class TorsoSkin : AbstractSkin
 	{
+		// Token: 0x04008E0C RID: 36364
 		[SerializeField]
 		private Skin _skin;
 
-		// Token: 0x0400797F RID: 31103
+		// Token: 0x04008E0D RID: 36365
 		[SerializeField]
 		private Mesh _base;
 
-		// Token: 0x04007980 RID: 31104
+		// Token: 0x04008E0E RID: 36366
 		[SerializeField]
 		private Mesh _armor;
 
-		// Token: 0x04007981 RID: 31105
+		// Token: 0x04008E0F RID: 36367
 		[SerializeField]
 		private Mesh _vest;
 	}

@@ -162,6 +162,7 @@
     <Compile Include="Assets\Scripts\DeluxeFilmicCurve.cs" />
     <Compile Include="Assets\Scripts\EFT\Weather\WindController.cs" />
     <Compile Include="Assets\Scripts\BezierSplineTools\SplineDecorator.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\HeadSkin.cs" />
     <Compile Include="Assets\Scripts\DecalSystem.cs" />
     <Compile Include="Assets\Scripts\AdvancedLight.cs" />
     <Compile Include="Assets\Scripts\Bsg\GameSettings\IGameSetting.cs" />
@@ -169,6 +170,7 @@
     <Compile Include="Assets\Scripts\UnityStandardAssets\ImageEffects\PostEffectBase.cs" />
     <Compile Include="Assets\Scripts\PatrolPointType.cs" />
     <Compile Include="Assets\Scripts\VolumetricLightRenderer.cs" />
+    <Compile Include="Assets\Scripts\EFT\PlayerBody.cs" />
     <Compile Include="Assets\Scripts\Prism\Utils\DoFSamples.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\ESpecificInteractionContext.cs" />
     <Compile Include="Assets\Scripts\TOD_NightParameters.cs" />
@@ -227,6 +229,7 @@
     <Compile Include="Assets\Scripts\EFT\Visual\FoldableStockView.cs" />
     <Compile Include="Assets\Scripts\TracersLight.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\WorldInteractiveObject.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\HelmetDress.cs" />
     <Compile Include="Assets\Scripts\FollowerCullingObject.cs" />
     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeEffectsData.cs" />
     <Compile Include="Assets\Scripts\EFT\KnifeCollider.cs" />
@@ -256,6 +259,7 @@
     <Compile Include="Assets\Scripts\TOD_Sky.cs" />
     <Compile Include="Assets\Scripts\EFT\Game\Spawning\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\UnityStandardAssets\ImageEffects\Fisheye.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\HeadSkinData.cs" />
     <Compile Include="Assets\Scripts\TOD_CloudQualityType.cs" />
     <Compile Include="Assets\Scripts\DoorHandle.cs" />
     <Compile Include="Assets\Scripts\NavMeshCutGroup.cs" />
@@ -278,6 +282,7 @@
     <Compile Include="Assets\Scripts\EFT\WeaponSounds.cs" />
     <Compile Include="Assets\Scripts\CustomGlobalFog.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\VestSkinData.cs" />
     <Compile Include="Assets\Scripts\RenderQueue.cs" />
     <Compile Include="Assets\Scripts\CoverPointCreatorPreset.cs" />
     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeThermalVisionData.cs" />
@@ -400,11 +405,13 @@
     <Compile Include="Assets\Scripts\GClass256.cs" />
     <Compile Include="Assets\Scripts\DepthPhotograper.cs" />
     <Compile Include="Assets\Scripts\EFT\Game\Spawning\ESpawnCategoryMask.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\VestSkin.cs" />
     <Compile Include="Assets\Scripts\MuzzleSmoke.cs" />
     <Compile Include="Assets\Scripts\CustomNavigationPoint.cs" />
     <Compile Include="Assets\Scripts\EFT\Weather\EFogType.cs" />
     <Compile Include="Assets\Scripts\CC_Base.cs" />
     <Compile Include="Assets\Scripts\EFT\Ballistics\MaterialType.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\ArmBandView.cs" />
     <Compile Include="Assets\Scripts\ArmorHitSoundPlayer.cs" />
     <Compile Include="Assets\Scripts\PatrolWay.cs" />
     <Compile Include="Assets\Scripts\ScopePrefabCache.cs" />
@@ -457,6 +464,7 @@
     <Compile Include="Assets\Scripts\EFT\Weather\EWeatherType.cs" />
     <Compile Include="Assets\Scripts\AnimationEventSystem\EventsCollection.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\MaterialEmission.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\VestlikeArmor.cs" />
     <Compile Include="Assets\Scripts\UnityStandardAssets\ImageEffects\BloomOptimized.cs" />
     <Compile Include="Assets\Scripts\TOD_AmbientType.cs" />
     <Compile Include="Assets\Scripts\GAttribute7.cs" />
