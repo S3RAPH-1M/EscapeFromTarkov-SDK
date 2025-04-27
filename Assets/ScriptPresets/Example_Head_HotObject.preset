@@ -6,11 +6,10 @@ Preset:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HotObject-Test
+  m_Name: Example_Head_HotObject
   m_TargetType:
     m_NativeTypeID: 114
-    m_ManagedTypePPtr: {fileID: 11500000, guid: 9a1734fcf7da8f84c9c144e71d2449a1,
-      type: 3}
+    m_ManagedTypePPtr: {fileID: 0}
     m_ManagedTypeFallback: 
   m_Properties:
   - target: {fileID: 0}
@@ -31,7 +30,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: Temperature.x
-    value: 0.7
+    value: 0.1
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: Temperature.y
@@ -39,7 +38,7 @@ Preset:
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: Temperature.z
-    value: 4
+    value: 3.5
     objectReference: {fileID: 0}
   - target: {fileID: 0}
     propertyPath: TemperatureCelsio
@@ -357,3 +356,4 @@ Preset:
     propertyPath: HeatParticleSizeByTemp.m_RotationOrder
     value: 4
     objectReference: {fileID: 0}
+  m_ExcludedProperties: []

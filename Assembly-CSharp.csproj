@@ -278,11 +278,11 @@
     <Compile Include="Assets\Scripts\RainSplashController.cs" />
     <Compile Include="Assets\Scripts\BotZoneNavMeshCutter.cs" />
     <Compile Include="Assets\Scripts\ProFlareAtlas.cs" />
+    <Compile Include="Assets\Scripts\EFT\Visual\VestSkinData.cs" />
     <Compile Include="Assets\Scripts\ETagStatus.cs" />
     <Compile Include="Assets\Scripts\EFT\WeaponSounds.cs" />
     <Compile Include="Assets\Scripts\CustomGlobalFog.cs" />
     <Compile Include="Assets\Scripts\Noise.cs" />
-    <Compile Include="Assets\Scripts\EFT\Visual\VestSkinData.cs" />
     <Compile Include="Assets\Scripts\RenderQueue.cs" />
     <Compile Include="Assets\Scripts\CoverPointCreatorPreset.cs" />
     <Compile Include="Assets\Scripts\EFT\CameraControl\ScopeThermalVisionData.cs" />
@@ -410,8 +410,8 @@
     <Compile Include="Assets\Scripts\CustomNavigationPoint.cs" />
     <Compile Include="Assets\Scripts\EFT\Weather\EFogType.cs" />
     <Compile Include="Assets\Scripts\CC_Base.cs" />
-    <Compile Include="Assets\Scripts\EFT\Ballistics\MaterialType.cs" />
     <Compile Include="Assets\Scripts\EFT\Visual\ArmBandView.cs" />
+    <Compile Include="Assets\Scripts\EFT\Ballistics\MaterialType.cs" />
     <Compile Include="Assets\Scripts\ArmorHitSoundPlayer.cs" />
     <Compile Include="Assets\Scripts\PatrolWay.cs" />
     <Compile Include="Assets\Scripts\ScopePrefabCache.cs" />
