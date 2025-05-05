@@ -194,6 +194,7 @@
     <Compile Include="Assets\Scripts\ObjectInHandsAnimator.cs" />
     <Compile Include="Assets\Scripts\RainCondensator.cs" />
     <Compile Include="Assets\Scripts\BotCellController.cs" />
+    <Compile Include="Assets\Scripts\ClippingRuleChanger.cs" />
     <Compile Include="Assets\Scripts\EFT\Visual\TorsoSkin.cs" />
     <Compile Include="Assets\Scripts\EFT\Interactive\Turnable.cs" />
     <Compile Include="Assets\Scripts\PatrolType.cs" />
@@ -376,6 +377,7 @@
     <Compile Include="Assets\Scripts\CloudsController.cs" />
     <Compile Include="Assets\Scripts\Diz\Binding\IBindable.cs" />
     <Compile Include="Assets\Scripts\EFT\InventoryLogic\EquipmentSlot.cs" />
+    <Compile Include="Assets\Scripts\EClippingCustoms.cs" />
     <Compile Include="Assets\Scripts\DefaultNamespace\LayerWeightStateController.cs" />
     <Compile Include="Assets\Scripts\EFT\CameraControl\CameraLodBiasController.cs" />
     <Compile Include="Assets\Scripts\MuzzleEffect.cs" />
