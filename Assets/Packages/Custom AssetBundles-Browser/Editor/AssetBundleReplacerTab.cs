@@ -241,7 +241,7 @@ namespace AssetBundleBrowser.Custom
                     return;
                 }
 
-                SaveChangesToBundle(assetsFile, path, bundle);
+                SaveChangesToBundle(assetsManager, assetsFile, path, bundle);
 
                 AssetBundleBrowserMain.instance.m_CabReplacerTab.ReplaceCabIDs(path);
 
@@ -318,22 +318,28 @@ namespace AssetBundleBrowser.Custom
             }
         }
 
-        private static void SaveChangesToBundle(AssetsFileInstance assetsFile, string path, BundleFileInstance bundle)
+        private static void SaveChangesToBundle(AssetsManager assetsManager, AssetsFileInstance assetsFile, string path, BundleFileInstance bundle)
         {
-            using (var memoryStream = new MemoryStream())
-            using (var assetWriter = new AssetsFileWriter(memoryStream))
-            {
-                assetsFile.file.Write(assetWriter);
-            }
+	        using (var memoryStream = new MemoryStream())
+	        using (var assetWriter = new AssetsFileWriter(memoryStream))
+	        {
+		        assetsFile.file.Write(assetWriter);
+	        }
+	        
+	        List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
+	        directoryInfos[0].SetNewData(assetsFile.file);
 
-            List<AssetBundleDirectoryInfo> directoryInfos = bundle.file.BlockAndDirInfo.DirectoryInfos;
-            directoryInfos[0].SetNewData(assetsFile.file);
-
-            //string modPath = path + "_mod";
-            using (var bundleWriter = new AssetsFileWriter(path))
+            string modPath = path + "_mod";
+            using (var bundleWriter = new AssetsFileWriter(modPath))
             {
-                bundle.file.Write(bundleWriter);
+	            bundle.file.Write(bundleWriter);
             }
+            
+            // We need to unload this bundle file as the AM holds an open handle to it.
+            assetsManager.UnloadBundleFile(path);
+            File.Delete(path);
+            File.Move(modPath, path);
+
             // !!!if sharing violation exception will come back, uncomment things above!!!
         }
 
