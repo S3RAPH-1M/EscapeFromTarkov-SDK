@@ -7,7 +7,16 @@ namespace EFT.CameraControl
 	[ExecuteAlways]
 	public class OpticSight : MonoBehaviour
 	{
-		private static readonly int int_0 = Shader.PropertyToID("_SwitchToSight");
+		public void OnEnable()
+		{
+            return;
+        }
+        public void OnDisable()
+        {
+			return;
+        }
+
+        private static readonly int int_0 = Shader.PropertyToID("_SwitchToSight");
 		public Renderer LensRenderer;
 		public Transform ScopeTransform;
 		[SerializeField]
