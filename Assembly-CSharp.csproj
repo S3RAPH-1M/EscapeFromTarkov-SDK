@@ -546,6 +546,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\Distortion.hlsl" />
     <None Include="Assets\Examples\Maps\CustomLocation\README.txt" />
+    <None Include="Assets\Shaders\Visualizer\Custom_TextureGlitch.shader" />
     <None Include="Assets\Shaders\Time of Day_Moon.shader" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\ExposureHistogram.hlsl" />
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Builtins\Texture3DLerp.compute" />
@@ -666,6 +667,7 @@
     <None Include="Assets\Packages\Custom Post Processing\PostProcessing\Shaders\Colors.hlsl" />
     <None Include="Assets\Shaders\p0_Cutout_Bumped Diffuse.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\Shaders\Visualizer\Hidden_Pixelation.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
