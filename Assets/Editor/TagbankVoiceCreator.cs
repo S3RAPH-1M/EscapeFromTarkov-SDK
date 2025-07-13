@@ -96,7 +96,7 @@ public class VoiceTagBankCreator : EditorWindow
 
 
             List<string> templateTagbankNames = new List<string>();
-            string templatesFolder = "Assets/Examples/ExampleVoice/template_full/Tagbanks";
+            string templatesFolder = "Assets/Examples/Voices/template_full/Tagbanks";
             string[] templatePaths = Directory.GetFiles(templatesFolder, "*.asset");
             foreach (string templatePath in templatePaths)
             {
@@ -211,7 +211,7 @@ public class VoiceTagBankCreator : EditorWindow
 
 
             List<string> templateTagbankNames = new List<string>();
-            string templatesFolder = "Assets/Examples/ExampleVoice/template_full/Tagbanks";
+            string templatesFolder = "Assets/Examples/Voices/template_full/Tagbanks";
             string[] templatePaths = Directory.GetFiles(templatesFolder, "*.asset");
             foreach (string templatePath in templatePaths)
             {
@@ -336,7 +336,7 @@ public class VoiceTagBankCreator : EditorWindow
                 }
             }
 
-            string voiceTemplatePath = "Assets/Examples/ExampleVoice/template_full/Tagbanks/Voice.asset";
+            string voiceTemplatePath = "Assets/Examples/Voices/template_full/Tagbanks";
             Voice voiceTemplate = AssetDatabase.LoadAssetAtPath<Voice>(voiceTemplatePath);
 
             if (voiceTemplate != null)
