@@ -20,7 +20,7 @@ public class ItemPreviewWindow : EditorWindow
     private Quaternion originalRotation;
     private Quaternion modelPreviewRotation;
 
-    [MenuItem("Custom Windows/Item Preview")]
+    [MenuItem("Custom Windows/💙SamSWAT💙/Item Preview Creator")]
     static void Init()
     {
         window = (ItemPreviewWindow) GetWindow(typeof(ItemPreviewWindow));
@@ -113,6 +113,9 @@ public class ItemPreviewWindow : EditorWindow
         itemPreviewInstance = Instantiate(itemPreview);
         SceneManager.MoveGameObjectToScene(itemPreviewInstance.gameObject, previewScene);
         itemPreviewInstance.previewCamera.scene = previewScene;
+        itemPreviewInstance.previewCamera.allowHDR = false;
+        itemPreviewInstance.previewCamera.allowMSAA = false;
+        itemPreviewInstance.previewCamera.renderingPath = RenderingPath.DeferredShading;
 
         itemToRenderInstance = Instantiate(itemToRender, itemPreviewInstance.previewPivot);
         var previewPivot = itemToRenderInstance.GetComponent<PreviewPivot>();

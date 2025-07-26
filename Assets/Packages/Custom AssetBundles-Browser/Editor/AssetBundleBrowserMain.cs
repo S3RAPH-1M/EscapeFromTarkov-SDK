@@ -30,7 +30,8 @@ namespace AssetBundleBrowser
             Browser,
             Builder,
             Inspect,
-            Replacer
+            Replacer,
+            CabReplacer
         }
         [SerializeField]
         Mode m_Mode;
@@ -42,6 +43,7 @@ namespace AssetBundleBrowser
         [SerializeField] internal AssetBundleBuildTab m_BuildTab;
         [SerializeField] internal AssetBundleInspectTab m_InspectTab;
         [SerializeField] internal AssetBundleReplacerTab m_ReplacerTab;
+        [SerializeField] internal AssetBundleCabReplacerTab m_CabReplacerTab;
 
         private Texture2D m_RefreshTexture;
 
@@ -82,10 +84,12 @@ namespace AssetBundleBrowser
             if (m_InspectTab == null)
                 m_InspectTab = new AssetBundleInspectTab();
             m_InspectTab.OnEnable(subPos);
+            if (m_CabReplacerTab == null)
+                m_CabReplacerTab = new AssetBundleCabReplacerTab();
+            m_CabReplacerTab.OnEnable(subPos);
             if (m_ReplacerTab == null)
-                m_ReplacerTab = new AssetBundleReplacerTab();
+                m_ReplacerTab = new AssetBundleReplacerTab(m_CabReplacerTab);
             m_ReplacerTab.OnEnable(subPos);
-
             m_RefreshTexture = EditorGUIUtility.FindTexture("Refresh");
 
             InitDataSources();
@@ -169,6 +173,9 @@ namespace AssetBundleBrowser
                 case Mode.Replacer:
                     m_ReplacerTab.OnGUI(GetReplacerWindowArea());
                     break;
+                case Mode.CabReplacer:
+                    m_CabReplacerTab.OnGUI(GetReplacerWindowArea());
+                    break;
                 case Mode.Browser:
                 default:
                     m_ManageTab.OnGUI(GetSubWindowArea());
@@ -199,10 +206,13 @@ namespace AssetBundleBrowser
                 case Mode.Replacer:
                     GUILayout.Space(m_RefreshTexture.width + k_ToolbarPadding);
                     break;
+                case Mode.CabReplacer:
+                    GUILayout.Space(m_RefreshTexture.width + k_ToolbarPadding);
+                    break;
             }
 
             float toolbarWidth = position.width - k_ToolbarPadding * 4 - m_RefreshTexture.width;
-            string[] labels = { "Configure", "Build", "Inspect", "PathID Replacer" };
+            string[] labels = { "Configure", "Build", "Inspect", "PathID Replacer", "CabID Replacer" };
             m_Mode = (Mode)GUILayout.Toolbar((int)m_Mode, labels, "LargeButton", GUILayout.Width(toolbarWidth) );
             GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();

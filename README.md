@@ -23,7 +23,7 @@ Install EscapeFromTarkov-SDK with git
   cd EscapeFromTarkov-SDK
 ```
 - Step 2: Download & Install Unity Hub. 
-- Step 3: Download & Install Unity 2019.4.39 (Click on the unity icon at the bottom)
+- Step 3: Download & Install Unity 2022.3.43 (Click on the unity icon at the bottom)
 - Step 4: Within Unity Hub. Add the EFT SDK Project to Unity Hub.
 - Step 5: Launch the SDK
     
@@ -40,7 +40,7 @@ Install EscapeFromTarkov-SDK with git
 - Ability to Create Custom Particle Effects - Examples Included (Requires plugin to load custom particle.)
 - Full Unity Engine Control when bundling Assets
 - Quick & Easy Asset Bundler.
-
+- Bundle Viewer / Importer.
 
 
 
@@ -53,13 +53,11 @@ Install EscapeFromTarkov-SDK with git
 
 ## Support
 
-If you need support. Here are the 2 ways you can find me.
-1. Join the WTT Discord. (Click the Discord icon below. They are sponsored by the SDK team 🫡)
-2. Add me on Discord. My username is "ssh__"
+If you need support. You can join my discord & contact me via DM's or drop a message with a ping inside of the SDK channel under the tarkov category. Click the little icon below to join 🫡
 
 
 <p align="left">
-<a href="https://discord.gg/6EwrTHAwTp" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Xn9msqQZan" height="30" width="40" /></a>
+<a href="https://discord.gg/crSvqqj2h8" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/discord.svg" alt="Xn9msqQZan" height="30" width="40" /></a>
 </p>
 
 
@@ -68,8 +66,5 @@ If you need support. Here are the 2 ways you can find me.
 
 
 
-
-
-
 <h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://unity.com/releases/editor/whats-new/2019.4.39" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://unity.com/releases/editor/whats-new/2022.3.43" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> </a> </p>

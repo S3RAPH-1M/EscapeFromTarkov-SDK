@@ -4,7 +4,7 @@ using EFT.InventoryLogic;
 using JsonType;
 using UnityEngine;
 
-public class BulletClass : GClass2546
+public class BulletClass : Item
 {
 	public float buckshotDispersion;
 

@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace EFT.Visual
 {
-	// Token: 0x02001744 RID: 5956
+	// Token: 0x02001DC0 RID: 7616
 	public class LegsView : MonoBehaviour
 	{
-		// Token: 0x040082D7 RID: 33495
+		// Token: 0x04008DF3 RID: 36339
 		[SerializeField]
-		private bool _isRightLeg = true;
+		private bool _isRightLeg;
 
-		// Token: 0x040082D8 RID: 33496
+		// Token: 0x04008DF4 RID: 36340
 		[SerializeField]
 		private Transform _holster;
 	}
