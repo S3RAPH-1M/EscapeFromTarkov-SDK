@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using dnlib.DotNet;
 using dnlib.DotNet.Writer;
 using UnityEditor;
+using UnityEditor.Build;
 using UnityEngine;
 
 namespace TarkovSdk.Editor
@@ -16,7 +18,7 @@ namespace TarkovSdk.Editor
         private const string DefaultOutputRelPath = "Assets/Plugins/Tarkov.Assemblies";
         private const string EftDataPathKey = "TarkovSdk.Extractor.EftDataPath";
         private const string OutputPathKey = "TarkovSdk.Extractor.OutputPath";
-        private const string UnpackZipFileName = "unpack_after_setup.zip";
+        private const string MetaZipFileName = "Tarkov.Meta.zip";
 
         private static readonly string[] RequiredManagedDlls = new string[]
         {
@@ -293,6 +295,7 @@ namespace TarkovSdk.Editor
                                 copied++;
                                 break;
                         }
+
                     }
                     catch (Exception ex)
                     {
@@ -304,9 +307,9 @@ namespace TarkovSdk.Editor
 
                 EditorUtility.DisplayProgressBar(
                     "Extracting Tarkov assemblies",
-                    "Unpacking " + UnpackZipFileName,
+                    "Unpacking " + MetaZipFileName,
                     1f);
-                unpackAttempted = TryUnpackAfterSetupZip(out unpackNew, out unpackOverwritten, out unpackFailed);
+                unpackAttempted = TryUnpackMetaZip(absOutput, out unpackNew, out unpackOverwritten, out unpackFailed);
             }
             finally
             {
@@ -338,6 +341,35 @@ namespace TarkovSdk.Editor
             if (failedFiles.Count > 0)
             {
                 Log("Failed: " + string.Join(", ", failedFiles));
+            }
+
+            if (File.Exists(Path.Combine(absOutput, "Tarkov.Assembly.dll")))
+            {
+                TrySetDefineSymbol("TARKOV_ASSEMBLY_LOADED");
+            }
+        }
+
+        private void TrySetDefineSymbol(string symbol)
+        {
+            try
+            {
+                NamedBuildTarget target = NamedBuildTarget.FromBuildTargetGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+                string current = PlayerSettings.GetScriptingDefineSymbols(target) ?? string.Empty;
+                HashSet<string> defines = new HashSet<string>(
+                    current.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries).Select(d => d.Trim()));
+                if (defines.Add(symbol))
+                {
+                    PlayerSettings.SetScriptingDefineSymbols(target, string.Join(";", defines));
+                    Log("Scripting define '" + symbol + "' set for '" + target.TargetName + "'. Unity will recompile; modder editor asmdefs will now activate.");
+                }
+                else
+                {
+                    Log("Scripting define '" + symbol + "' already set for '" + target.TargetName + "'.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("[TarkovAssemblyExtractor] Failed to set '" + symbol + "': " + ex.Message);
             }
         }
 
@@ -408,25 +440,32 @@ namespace TarkovSdk.Editor
             }
         }
 
-        private bool TryUnpackAfterSetupZip(out int newFiles, out int overwritten, out int failed)
+        private bool TryUnpackMetaZip(string destRoot, out int newFiles, out int overwritten, out int failed)
         {
             newFiles = 0;
             overwritten = 0;
             failed = 0;
 
-            string zipPath = ResolveScriptSiblingPath(UnpackZipFileName);
+            string zipPath = ResolveScriptSiblingPath(MetaZipFileName);
             if (!File.Exists(zipPath))
             {
                 Log(string.Empty);
-                Log("No " + UnpackZipFileName + " next to script; skipping unpack.");
+                Log("No " + MetaZipFileName + " next to script; skipping meta unpack.");
                 Log("Looked at: " + zipPath);
                 return false;
             }
 
-            Log(string.Empty);
-            Log("Unpacking " + zipPath + " into Assets/...");
+            if (string.IsNullOrEmpty(destRoot))
+            {
+                Log("Meta unpack skipped: destination folder is empty.");
+                return false;
+            }
 
-            string destRoot = Application.dataPath;
+            Directory.CreateDirectory(destRoot);
+
+            Log(string.Empty);
+            Log("Unpacking " + zipPath + " into " + destRoot + " ...");
+
             string normalizedRoot = Path.GetFullPath(destRoot)
                 .TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar;
 
@@ -441,7 +480,7 @@ namespace TarkovSdk.Editor
 
                         if (!outPath.StartsWith(normalizedRoot, StringComparison.OrdinalIgnoreCase))
                         {
-                            Log("UNPACK SKIP (outside Assets): " + entry.FullName);
+                            Log("META SKIP (outside destination): " + entry.FullName);
                             failed++;
                             continue;
                         }
@@ -465,17 +504,17 @@ namespace TarkovSdk.Editor
                             if (existed)
                             {
                                 overwritten++;
-                                Log("UNPACK OVERWRITE: " + entry.FullName);
+                                Log("META OVERWRITE: " + entry.FullName);
                             }
                             else
                             {
                                 newFiles++;
-                                Log("UNPACK NEW:       " + entry.FullName);
+                                Log("META NEW:       " + entry.FullName);
                             }
                         }
                         catch (Exception ex)
                         {
-                            Log("UNPACK FAILED: " + entry.FullName + "  -  " + ex.Message);
+                            Log("META FAILED: " + entry.FullName + "  -  " + ex.Message);
                             failed++;
                         }
                     }
@@ -483,7 +522,7 @@ namespace TarkovSdk.Editor
             }
             catch (Exception ex)
             {
-                Log("Unpack failed to open " + UnpackZipFileName + ": " + ex.Message);
+                Log("Meta unpack failed to open " + MetaZipFileName + ": " + ex.Message);
                 failed++;
             }
 

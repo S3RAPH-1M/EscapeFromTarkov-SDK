@@ -9,17 +9,5 @@ Temp/
 .vs/
 /Logs
 /Logs
-/Assets/Plugins/Tarkov.Assemblies
-/unpack_after_setup
-Assets/Editor/Choccy.meta
-/Assets/Editor/Choccy
-/Assets/Editor/DrakiaXYZ
-/Assets/Editor/Groovey
-/Assets/Scripts
-Assets/Editor/DrakiaXYZ.meta
-Assets/Editor/Groovey.meta
-Assets/Scripts.meta
 /Assets/Editor/SDK2/DKC
-Assets/Editor/SDK2/DKC.meta
-/Assets/Packages/Custom AssetBundles-Browser
-Assets/Packages/Custom AssetBundles-Browser.meta
+/Assets/Plugins/Tarkov.Assemblies
